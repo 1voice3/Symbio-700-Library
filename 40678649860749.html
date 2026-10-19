@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio A2L R454B Air Handler Conversion from Digit 15 = D to Digit 15 = C - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/40678649860749-Odyssey-Symbio-A2L-R454B-Air-Handler-Conversion-from-Digit-15-D-to-Digit-15-C" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio A2L R454B Air Handler Conversion from Digit 15 = D to Digit 15 = C</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span></div>
+<div class="meta">Section: Wiring &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-10-28 &nbsp;&bull;&nbsp; Last updated: 2026-08-06</div>
+<div class="body"><h4 id="h_01K841VQXQ6WD5NEAGJGPAYX6W"><strong>Background:</strong></h4><p>This modification will convert the Symbio air handler that is ordered as a SZVAV/2 speed communicating type air handler to a 2 speed Electromechanical air handler.</p><p>The SZVAV Odyssey air handler uses Modbus communication to operate the fan directly from the Symbio 700 board located in the air handler. In some applications, communication wire is difficult to run in between the air handler and condenser for this to work. Ideally, the correct air handler can be ordered, but the SZVAV air handler can be modified.</p><p>The 2 speed Electromechanical air handler operates with relays internal to the Relay Board. When you apply 24 vac to the G input on the J5 plug, the supply fan will start in low speed. The supply fan will go to full speed by additionally applying 24 vac to the Y2, W1, or W2 terminals. Constant volume operation can be obtained by setting the VFD parameter 4-12 Motor Speed Low Limit to match parameter 4-14 Motor Speed High Limit.</p><h4 id="h_01K8NF75H33DXBN1P4PVCSJPWZ"><strong>Equipment:</strong></h4><p>Odyssey R-454B air handler with 15th digit = D</p><div class="callout-info"><div class="callout-info-content"><p><strong>Note:</strong> If the Symbio air handling unit was selected for 2-speed operation (Digit 15=C), the necessary VFD wiring was completed in the factory.</p></div></div><h4 id="h_01K8NG400CDGYEPMVCJF1W6BFH"><strong>Parts Required:</strong></h4><p>WIR13328</p><h4 id="h_01K8NG37NC7T1MAHZ1Y0N4EJPS"><strong>Modification Steps:</strong></h4><p> The following changes will be required:</p><ol>
+<li data-list-item-id="ea7c31b6300ae09c1af36aa3751781289">Order and obtain <strong>WIR13328</strong> from Trane Parts</li>
+<li data-list-item-id="e72c4c62d725a684f3f0788164253fcd1">Remove power from the unit</li>
+<li data-list-item-id="ebda71f7b127475aebc8b03c9e4ea1642">Remove the existing wire harness from PPF53 and VFD terminals 12 and 29. This harness is not<br>used with the Standard Thermostat Simplified Wiring Configuration.</li>
+<li data-list-item-id="e3f87e1bb90fb7e5b8eff854ca5f7adad">
+<p>Connect wiring harness WIR13328 from PPM53 to VFD terminals 12, 18, 50, 53, and 29.</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 500/238;" src="../../attachments/40510902901261_40510902898701_image.png" width="500" height="238"></figure>
+</li>
+<li data-list-item-id="e6c3b4d2bdd6a34027714d936516d790f">
+<p>The parameters must also be updated in the TR150 VFD.</p>
+<p>For help with changing the VFD parameters, visit the article: </p>
+<p><a href="../General/36072951827853.html" target="_blank" rel="noopener noreferrer">Changing TR150 VFD parameters</a></p>
+<p>Change or verify the following parameters in the VFD:</p>
+</li>
+</ol><p class="wysiwyg-indent4">1. Change 3-15 from [11] Local Bus reference to [1] Analog Input 53.<br>2. Change 5-10 from [0] No Operation to [8] Start.<br>3. Change 8-01 from [2] Control Word Only to [0] Digital and Control Word.<br>4. Change 8-04 from [2] Stop to [0] Off</p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p class="wysiwyg-indent1"> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/40678649860749-Odyssey-Symbio-A2L-R454B-Air-Handler-Conversion-from-Digit-15-D-to-Digit-15-C" target="_blank">https://support.trane.com/hc/en-us/articles/40678649860749-Odyssey-Symbio-A2L-R454B-Air-Handler-Conversion-from-Digit-15-D-to-Digit-15-C</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

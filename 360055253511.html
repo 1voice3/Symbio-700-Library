@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio Demand Management, EDC and Frostat - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055253511-Odyssey-Symbio-Demand-Management-EDC-and-Frostat" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio Demand Management, EDC and Frostat</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Electrical / Controls [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-11 &nbsp;&bull;&nbsp; Last updated: 2026-07-14</div>
+<div class="body"><h1 id="h_01KMNX5PYYPK58S9GAEFR202K9">Demand Management, EDC and Frostat</h1><h2 id="h_01KMNX5XRYEM1A5E35NT721VAC"><strong>Overview</strong></h2><p>The terminology used in the Symbio 700 menu is confusing when it comes to Demand Limit, EDC and Frostat. The differences are explained below.</p><p> </p><h2 id="h_01KMNX65BC19WXBHA2WVSF3QGV"><strong>EDC </strong></h2><p><em>In the Symbio Phone App menu under Settings, View Configuration.</em></p><p>When the unit is operating in a “Cool” mode with a valid Outdoor Air Temperature, the EDC function will keep track of the amount of time that at least one compressor in a unit is commanded ON and the Outdoor Air Temperature is less than the low ambient temperature defined below. If the Accumulated Compressor On Time reaches 10 minutes, the EDC function will cause the Compressor Output(s) to de-energize for three minutes. The supply fan continues to operate during this three-minute interval at 100% capacity. After the three-minute EDC timer has expired, the EDC function is ended and compressors are allowed to operate as requested by the algorithm.</p><ul><li data-list-item-id="ec1bbc3e03fa41383f20af9bcde4e9b96">Low Ambient Temperature Setpoints:<ul>
+<li data-list-item-id="e77d4fec957e2e221e6445f28ca6a75cf">Single Compressor Systems – 55F</li>
+<li data-list-item-id="e7c3a90b5fe07d9739e6bc112c19f7267">Multi-Compressor Systems – 40F</li>
+</ul>
+</li></ul><p> </p><h2 id="h_01KMNX6GNDNW8RDPA91AXNASJA">
+<strong>Demand Management</strong> </h2><p><em>In the Symbio Phone App menu under Settings, View Configuration.</em></p><p>To utilize the actual EDC switch in the Air Handler; in the Symbio 700 Phone App menu go to Demand Management and choose "Demand Limit" then go Settings, Refrigeration, Cooling Demand Limit Capacity Enable Setpoint and set that to 0%.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 454/361;" src="../../attachments/360055253511_360095185152_mceclip2.png" alt="mceclip2.png" width="454" height="361"></figure><p> </p><h2 id="h_01KMNX6VVDHS88CEVJEDRXF1Y6"><strong>Frostat </strong></h2><p><em>In the Symbio Phone App menu under Settings, View Configuration.</em></p><p>Frostat in the Phone App menu is the only on Air Handlers with a model number that has digit 15 as "D".  It is the "HTL" on the Air Handler wiring diagram, and is a snap disk in the VFD enclosure.</p><p>It will turn the compressor(s) off if the VFD enclosure temperature gets too high.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 269/342;" src="../../attachments/360055253511_360095184712_mceclip0.png" alt="mceclip0.png" width="269" height="342"></figure><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p><p>.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055253511-Odyssey-Symbio-Demand-Management-EDC-and-Frostat" target="_blank">https://support.trane.com/hc/en-us/articles/360055253511-Odyssey-Symbio-Demand-Management-EDC-and-Frostat</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

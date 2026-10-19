@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey A2L R-454B Simplified Pairing H Wiring - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/40510902901261-Odyssey-A2L-R-454B-Simplified-Pairing-H-Wiring" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey A2L R-454B Simplified Pairing H Wiring</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Odyssey &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-10-21 &nbsp;&bull;&nbsp; Last updated: 2026-10-16</div>
+<div class="body"><zd-tabs><div class="wysiwyg-disclosure wysiwyg-tabs">
+<details open="true"><summary><strong>Background</strong></summary><div class="wysiwyg-disclosure-content">
+<p><span class="wysiwyg-font-size-x-large">Overview</span></p>
+<p><strong>These instructions cover wiring the Odyssey air handler for electromechanical operation with a Symbio condenser.   </strong></p>
+<p>For pairing applications where control is provided by the thermostat, wiring between the air handler and<br>condenser is reduced to a single cable for both condenser cooling and heat pump applications. In these<br>applications, the thermostat provides control of the split system. The Symbio™ 700 accepts the Y1, Y2<br>(optional), O (heat pump only), and Limit/Shed (compressor disable) inputs from the thermostat/AHU.</p>
+<p>Some features will be lost or limited when wiring the unit with Pairing H. </p>
+<p>Features lost or limited:</p>
+<ul>
+<li data-list-item-id="ec461cc709fcc332e641492c9e3fd6d8a">Test mode on the condenser will not bring on the indoor fan.</li>
+<li data-list-item-id="e95f3e1639d8f8b18170f239388fcaf14">Equipment Shutdown Input will shut down only the condenser and will not turn off the supply fan, since the thermostat controls it.</li>
+<li data-list-item-id="eb366be9f49316ea4858d87eb9ce423d3">Without the Indoor Options Module, the Symbio 700 (heat pump only) cannot turn on electric heat in defrost mode. You can still energize electric heat using the Relay Board J5 terminals W1 and W2.</li>
+<li data-list-item-id="e43c963f871f1b9798b22ad2153b08643">Zone sensors will not be used</li>
+</ul>
+</div></details><details><summary><strong>Equipment</strong></summary><div class="wysiwyg-disclosure-content">
+<p><strong>Condenser:</strong> Odyssey R-454B Condenser with Symbio 700 controls</p>
+<p><strong>Air Handler:</strong> Odyssey R-454B air handler with 15th digit = C or <strong><span class="wysiwyg-underline">modified</span></strong> Odyssey R454B air handler with model number 15th digit = D</p>
+<p> </p>
+<p><strong>Air Handling Unit Modifications if the Symbio Air Handling Unit was selected as Single Zone VAV (Digit 15=D):</strong></p>
+<p>Note: If the Symbio air handling unit was selected for 2-speed operation (Digit 15=C), the necessary VFD wiring<br>and VFD programming steps were completed in the factory.</p>
+<p>See the article below for the modification instructions:</p>
+<p><a href="../Odyssey/40678649860749.html">Odyssey Symbio A2L R454B Air Handler Conversion from Digit 15 = D to Digit 15 = C</a> </p>
+</div></details><details><summary><strong>Wiring Diagrams</strong></summary><div class="wysiwyg-disclosure-content">
+<p><strong>How many wires do I need?</strong></p>
+<p>1- Up to 8 wires in between the air handler and condenser</p>
+<p>1 - Up to 8 wires in between the air handler and thermostat</p>
+<p>1- Optional Communication Wire for IMC Communication </p>
+<ul><li data-list-item-id="ea6082ceb2eaab8ff32740317acaf5fda">Recommended Symbio Communication Wire Article: <a href="../General/360055739011.html" target="_blank" rel="noopener noreferrer">Symbio Communication Wire</a>
+</li></ul>
+<p> </p>
+<p><strong>Cooling Only Wiring Diagrams:</strong></p>
+<figure class="wysiwyg-image wysiwyg-image-resized" style="width: 100%;"><img style="aspect-ratio: 1600/900;" src="../../attachments/40510902901261_40891847098765_image.png" width="1600" height="900"></figure><p> </p>
+<p><strong>Heat Pump Wiring Diagrams:</strong></p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1600/900;" src="../../attachments/40510902901261_40891847101709_image.png" width="1600" height="900"></figure><p> </p>
+<p><strong>Indoor Options Module Wiring Diagrams:</strong></p>
+<p>The Indoor Options Module can be added to enable the Symbio 700 to turn on electric heat in defrost mode for a heat pump.</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1600/900;" src="../../attachments/40510902901261_40891847102605_image.png" width="1600" height="900"></figure><p> </p>
+<p>Update the Symbio configuration when you add the Indoor Options Module. Change the Secondary Heat to Electric and add the applicable stages. </p>
+<p>See this article for assistance changing the configuration: <a href="../Precedent/34091872311309.html">Symbio™ 700 - How to configure or edit configurations using the Mobile Phone App</a></p>
+</div></details>
+</div></zd-tabs><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/40510902901261-Odyssey-A2L-R-454B-Simplified-Pairing-H-Wiring" target="_blank">https://support.trane.com/hc/en-us/articles/40510902901261-Odyssey-A2L-R-454B-Simplified-Pairing-H-Wiring</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

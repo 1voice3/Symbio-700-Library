@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio 700 Demand Defrost - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055393311-Odyssey-Symbio-700-Demand-Defrost" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio 700 Demand Defrost</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Heat Pump [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-13 &nbsp;&bull;&nbsp; Last updated: 2026-06-15</div>
+<div class="body"><p> </p><h1 id="h_01KRPNVCRY6Y55P5G4ARB7HJRB"><strong>Overview:</strong></h1><p>There are two schemes in common usage for heat pump outdoor coil defrosting: Demand Defrost and time temperature defrost. Demand Defrost is more efficient because defrost cycles are initiated only when necessary, compared with initiation based on operating time below the threshold temperature.</p><h1 id="h_01KRPGF1585MTKV4KFMFVYFWM6"><strong>Demand Defrost Sequence of Operation</strong></h1><p>The first defrost after a power cycle will occur after 30 minutes of run time under defrost permit conditions.</p><h2 id="h_01KRPH1CS084M7ZX5AJCY1XJZQ"><strong>Defrost Permit Conditions:</strong></h2><ul>
+<li data-list-item-id="e7b31a4d83aa338c285362cfb566761c3">Compressor heating operating</li>
+<li data-list-item-id="e9316c71fe3fee29ec3bd1f38ead1bcf3">Outdoor Ambient is less than 52°F</li>
+<li data-list-item-id="e373768e465339ba3499a94a8ecc9ebd8">Outdoor coil temp is 33°F</li>
+</ul><p>When the first defrost cycle has terminated and the outdoor coil temp had dropped to 33°F, the board will track twelve (12) minutes to assure that a dry coil condition has been achieved.</p><p>At the twelve-minute point, a Dry Coil Temp Differential <strong>(DCTD)</strong> will be calculated using the current values of Outdoor Air Temp (<strong>OAT)</strong> minus Outdoor Coil Temp (<strong>OCT)</strong>.</p><p><strong>Note:</strong> <em>The OAT is expected to be higher than the OCT.</em></p><p>The <strong>(DCTD)</strong> value is then multiplied by 1.8 to calculate the new <strong>Initiate Delta T (IDT) </strong>value.</p><p>The Defrost Initiate Temperature (<strong>DIT</strong>) is the <strong>OAT</strong> minus the<strong> IDT</strong> value</p><p>Once the <strong>OCT</strong> reaches the new<strong> DIT</strong>, the next defrost cycle is initiated.</p><p><span class="wysiwyg-underline">Example:</span></p><p>From the <a href="#h_01KRPGEVGNSSQTZTBK54HN3FEG">Figure</a>, the <strong>OAT</strong> is 45 deg and after the 12 min timer the <strong>OCT</strong> has dropped to approximately 15 deg. </p><p>The <strong>DCTD</strong> is <strong>OAT</strong> - <strong>OCT</strong> = 45° - 15° = 30°</p><p>The <strong>IDT</strong> is then 1.8 × <strong>DCTD</strong> = 1.8 × 30° = 54°</p><p>The Defrost Initiate Temperature is then <strong>OAT</strong> - <strong>IDT </strong>= 45° - 54° = -9°</p><h2 id="h_01KRPGG7BQRS7D43P6J5YX1J2W"><strong>Defrost Termination</strong></h2><p>The defrost cycle is terminated when the Outdoor Coil Temperature <strong>(OCT) </strong>exceeds the Outdoor Temperature <strong>(ODT)</strong> +47°F.</p><p>The defrost termination temperature <strong>(DTT)</strong> will be limited between 57°F and 72°F.</p><p>With some simple math, the <strong>DTT </strong>will not change from 72 degrees until the ambient temperature has fallen below 25°F.</p><p>At the end of each defrost cycle, the outdoor fan comes on 5 seconds before the reversing valve is de-energized. This reduces stress on the compressor and makes for a quieter defrost.</p><h2 id="h_01KRPGEVGNSSQTZTBK54HN3FEG"><strong>Figure: Typical demand defrost cycle</strong></h2><figure class="wysiwyg-image"><img style="aspect-ratio: 1206/596;" src="../../attachments/360055393311_45898030189069_image.png" width="1206" height="596"></figure><h1 id="h_01KRPH4Y9WDKDT7RCKF0PW9ND8"><strong>Independent Circuit Defrost Operation</strong></h1><p>For Odyssey Independent Circuit Heat Pump units with two outdoor coil temperature sensors, the unit will perform defrost per circuit based on its own coil temperature sensor value, the outdoor ambient temperature, and the accumulated circuit run time. At least one stage of auxiliary heat will be energized anytime either circuit is in defrost mode. All other defrost functionality, including the diagnostic conditions, will perform as described above independently per circuit.</p><h1 id="h_01KRPH55DBRWTZVBP1T90QWZE7"><strong>Demand Defrost Faults</strong></h1><p>Demand Defrost Fault conditions will only be cleared when defrost mode is terminated by switching the mode to Emergency Heat or cycling power to the unit. All timers associated with Demand Defrost will be cleared and once the unit mode allows mechanical heating again, the unit will start up as normal and will begin defrost again as necessary. </p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 19%;">
+<col style="width: 9%;">
+<col style="width: 11%;">
+<col style="width: 7%;">
+<col style="width: 54%;">
+</colgroup>
+<thead><tr>
+<th>Diagnostic</th>
+<th>Severity</th>
+<th>Persistence</th>
+<th>Alarm Indicator</th>
+<th>Condition/Response</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Diagnostic: Demand Defrost Disabled</td>
+<td>Warning</td>
+<td>Non-Latching</td>
+<td>No</td>
+<td>Diagnostic: Demand Defrost Disabled' becomes active, and Demand Defrost is disabled, reverting software control to time-based defrost with 30 minutes of heating followed by 5 minutes of defrost, whenever any of the following Fault Conditions are met:<br>• Fault A is active<br>• Fault B occurs more than 10 times<br>• Fault C occurs more than 16 times<br>• Fault D is active</td>
+</tr>
+<tr>
+<td>Diagnostic: Demand Defrost Fault A</td>
+<td>Warning</td>
+<td>Non-Latching</td>
+<td>No</td>
+<td>Outdoor Air Temperature versus Outdoor Coil Temperature is below minimum temperature that the Demand Defrost Initiate Delta Temperature 12 minutes after defrost is terminated. When the temperature difference remains below the low limit for more than 2 hours, defrost will be initiated and Diagnostic: Demand Defrost Disabled is active. The two hour time that is used to detect Fault A is reset when the low limit temperature difference returns within the temperature difference range.</td>
+</tr>
+<tr>
+<td>Diagnostic: Demand Defrost Fault B</td>
+<td>Warning</td>
+<td>Non-Latching</td>
+<td>No</td>
+<td>
+<p>Fault B is active if defrost is terminated by maximum allowed defrost time rather than normal termination when the condenser coil reaching termination temperature. Demand Defrost Fault B counter is incremented. </p>
+<p>If counter reaches 10, Diagnostic: Demand Defrost Disabled will be active. </p>
+<p>Defrost will be initiated. </p>
+<p>Diagnostic: Demand Defrost Disabled is active.</p>
+</td>
+</tr>
+<tr>
+<td>Diagnostic: Demand Defrost Fault C</td>
+<td>Warning</td>
+<td>Non-Latching</td>
+<td>No</td>
+<td>
+<p>Outdoor Air Temperature versus Outdoor Coil Temperature, delta-T, is above Maximum Value 12 minutes after defrost is terminated:</p>
+<ul>
+<li data-list-item-id="eb90d2d169145d79c58d4aab93b07e9ff">Defrost initiates</li>
+<li data-list-item-id="eccb6765ad21d261a11bf150c757353c9">Diagnostic: Demand Defrost Fault C is active</li>
+<li data-list-item-id="eba8aba1b54935c0c8408ce5140e12eae">Increment Fault C re-occurrence counter and when counter reaches 16 set Diagnostic: Demand Defrost Disabled active.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Diagnostic: Demand Defrost Fault D</td>
+<td>Warning</td>
+<td>Non-Latching</td>
+<td>No</td>
+<td>
+<p>When the Outdoor Air Temperature versus Outdoor Coil Temperature, delta-T, does not change by 2°F in 1 hour, starting 12 minutes after defrost terminates and delta-T is less than or equal to 6 but greater than Low delta-T degrees, 12 minutes after defrost is terminated.</p>
+<ul>
+<li data-list-item-id="e796bd41b3b7302a37fac692f9d63f1d5">Defrost initiates</li>
+<li data-list-item-id="ee482a71840e3f6f9cbd3d1410326fbfb">Diagnostic: Demand Defrost Disabled active</li>
+<li data-list-item-id="eb27cdf83f326c88fb1606050d24542c9">
+<p>Diagnostic: Demand Defrost Fault D active.</p>
+<p>Note: Fault D apply only to refrigeration circuits with 2 manifolded compressors.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table></figure><h1 id="h_01KRPMXGRHV7TVV0HAMNS1FJ84"><strong>Default Mode</strong></h1><p>If any Defrost Fault is active, the unit will revert to the default mode any time the unit is in the active heat mode with compressors running.</p><p>If <strong>Both</strong> the Outdoor Air Sensor and the Coil Temperature Sensor fails, the unit will revert to the default mode any time the unit is in the active heat mode with compressors running.</p><p>If <strong>Either </strong>the Outdoor Air Sensor and the Coil Temperature Sensor fails, the unit will revert to the default mode if the other sensor is below the Defrost Permit Temperature.</p><p>Default Mode is 5-minute defrost cycle after each 30 minutes of cumulative compressor heating operation.</p><h1 id="h_01KRPPW9YJRPTZWQ4FCTTMVD5F">Troubleshooting</h1><h2 id="h_01KRPRPW1ZSTZF9D0HAS0EZATE">Sensor Troubleshooting</h2><p>Sensor accuracy and placement are critical to the defrost operation. Verify that the outdoor air temp sensor and coil temp sensor are both accurate and correctly placed. The coil temp sensor should have good contact with the copper it is mounted on. </p><p>Here is an article on the sensor troubleshooting:</p><p><a href="https://support.trane.com/hc/en-us/articles/4856611005581">How to Troubleshoot Outdoor Air Sensor (OAS), Discharge Air Sensor (DAS), and Coil Temperature Sensor (CTS)</a></p><p>A basic check of the sensors can be looked at on the Symbio 700 App by accessing the Status menu. The values do not update in the menu until you refresh the page. </p><p>With later versions of <a href="../General/34091748625421.html">Symbio 700 firmware</a>, the app can also be used to see a data logs by going to <strong>Tools&gt;View Data Logs</strong> and selecting the sensor(s) you would like to see more information on. </p><p>See the article below on more about Data Logs:</p><p><a href="../General/42890373826829.html">Symbio™ 700 - Retrieving &amp; Viewing Data Logs with the Symbio Service &amp; Installation Mobile App</a></p><p>To see the live sensor readings that update more frequently, use the On-board display on the Symbio 700. This will be more useful for troubleshooting the coil temp sensor while the system is operating. Simply go to <strong>Status&gt;Refrigeration&gt;Coil Temperature Sensor</strong> on the display.</p><h2 id="h_01KRPS0EFT00BG0ASKDCT7FHBM">Refrigeration troubleshooting</h2><ul>
+<li data-list-item-id="ea613072c59af110fd144f0bb2e0ee0c2">Verify refrigerant pressures and temperatures are correct<ul><li data-list-item-id="e2e2ff7dd0858b43c0c01ac129df47cc1">Pressure/charging charts are located on the condenser panel<ul><li data-list-item-id="e322369732a2c3ac6e50d5869192d0714">They can also be downloaded from accessing the articles below<ul>
+<li data-list-item-id="e71aefd9b670fb257dbd9c7a84a0d60cb"><a href="../Odyssey/34720960389005.html">Odyssey Symbio Charging Charts and Pressure Curves for A2L or R454B Heat Pump Units (TWA)</a></li>
+<li data-list-item-id="e196e6e8f03cff5983ef58a6d02429ee0"><a href="../Odyssey/4912910346253.html">Odyssey Symbio Charging Data and Pressure Curves for R410A Heat Pump Units (TWA)</a></li>
+</ul>
+</li></ul>
+</li></ul>
+</li>
+<li data-list-item-id="e017e6be035384e36d2b415000c80b610">Any component suspected of causing abnormal pressures and temperatures should be evaluated and replaced by a qualified individual following all safety procedures.</li>
+</ul><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055393311-Odyssey-Symbio-700-Demand-Defrost" target="_blank">https://support.trane.com/hc/en-us/articles/360055393311-Odyssey-Symbio-700-Demand-Defrost</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

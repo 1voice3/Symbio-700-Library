@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio VFD Communication Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360060157652-Odyssey-Symbio-VFD-Communication-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio VFD Communication Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Airflow / Motors / Fans [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-04-29 &nbsp;&bull;&nbsp; Last updated: 2026-08-21</div>
+<div class="body"><h1 id="h_01KQSV13XHQHQMDAGSGXNXQRY1">Odyssey Symbio VFD Communication Troubleshooting</h1><p> </p><h1 id="h_01KQSVPNJW1Q136MKZ90NBW8Y6">Overview:</h1><p>VFD displaying <strong>W-017 Ctrl.word TO fault</strong></p><p>Symbio 700 displaying <strong>Diagnostic: Supply Fan Failure</strong></p><p>The VFD in the SZVAV / 2 Speed Air Handler (Digit 15 = D) communicates to the Symbio 700 UC via Modbus.</p><p>The Symbio 700 configuration should be set to System Type = VVZT &amp; Indoor Fan Type = Variable Speed or System Type = CVZT &amp; Indoor Fan Type = Multispeed</p><p>Wiring guides for R410A:</p><p><a href="../Odyssey/44468235217421.html">Odyssey Symbio Wiring and Startup Guide for R-410A</a></p><p><a href="../Precedent/360055517711.html">Odyssey Symbio Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler</a></p><p>Wiring guides for R454B:</p><p><a href="../Odyssey/34726405370637.html">Odyssey Symbio Wiring and Startup Guide for R-454B</a></p><p><a href="../Precedent/32480440606861.html">A2L Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler with R-454B</a></p><h1 id="h_01KQSVS129RZS7R9QG6B0FVD9D">Troubleshooting</h1><h2 id="h_01KQSVY2Z3SVAP0BP7FNYA5R4Y">The <strong>Auto/On</strong> light should be illuminated on the Keypad.</h2><ul><li data-list-item-id="e3bafaddc92c52bee6d52437672e967ae">The fan will not operate if the keypad is Off</li></ul><h2 id="h_01KQSVYD9N93H8HKDPZMYSG4J6">Verify Modbus wiring is correct and not crossed with the IMC wiring. </h2><ul>
+<li data-list-item-id="e9cad1381dfeb4e20a3422d655ad91d07">Checking for Modbus and IMC crossed can be performed with a simple continuity check. <ul>
+<li data-list-item-id="e3a4069d2397284a3e91b6c5c4512e30e">Remove the comm wiring from both ends</li>
+<li data-list-item-id="eb804b7a053c0736a2ff63e2f799af666">Tie the wires on one end together</li>
+<li data-list-item-id="e343421bf80b95a2fca25304c2bf71132">Test for continuity on the other end of the wires</li>
+<li data-list-item-id="ebe63857143f56fe169ada7d16f5b7178">This will confirm the correct orientation for the wires</li>
+</ul>
+</li>
+<li data-list-item-id="ea1f627e26d52b68f38f6b07b1385b00a">Modbus wiring is polarity sensitive, so verify Modbus+ and Modbus- are on the correct terminals on both sides.</li>
+<li data-list-item-id="ef4ce38c3d5e1d800ec3f14c280f7c0a8">Check all wiring connections and harnesses from the VFD to the Symbio 700<ul><li data-list-item-id="e9828c829f3af1fc2d6603444451c4421">VFD Communication Connections may be reversed. Check for the colors to each terminal<ul>
+<li data-list-item-id="ea3272612d2b831a67bd072809d3fe1a0">VFD 61 - Blue</li>
+<li data-list-item-id="e4ce607bf17816af10c054e94b129c87a">VFD 68 - Black</li>
+<li data-list-item-id="ee6060c128c9c2d45baa704845ab94097">VFD 69 - Red</li>
+</ul>
+</li></ul>
+</li>
+</ul><h2 id="h_01KQSVSCTCF298EZPN9Z9ZA7TD">VFD COM LED and Modbus LED status</h2><p><img src="../../attachments/360060157652_360094072312_mceclip0.png" alt="mceclip0.png" width="286" height="250"></p><ul>
+<li data-list-item-id="efe99546deaa9589dbd87bd0d6e2ed1d7">If communication is normal, the <strong>COM</strong> led on the VFD keypad will fast and slow flash in an irregular pattern. The Modbus TX and RX on the Symbio 700 will also simultaneously flash slow and fast.</li>
+<li data-list-item-id="eff67d57c15217565f846cf4f98dfcd98">If the VFD is not communicating and one of the Modbus wires are connected, the <strong>COM</strong> led on the VFD keypad flashes once every 5 seconds. The Symbio 700 Modbus TX light will also flash once every 5 seconds and Modbus RX will be off.</li>
+<li data-list-item-id="e70a929f8003bf1a37e7e8a7f9dbd0073">If the field comm wires are crossed, the <strong>COM</strong> led on the VFD keypad will be on steady. The Symbio 700 Modbus TX light will flash once every 5 seconds and Modbus RX will be off.</li>
+<li data-list-item-id="e9ffd7c55aca023070d91b866c7ec6793">If one of the field comm wires is open or Modbus - is crossed with Common, the <strong>COM</strong> led on the VFD keypad will be off. The Symbio 700 Modbus TX light will flash once every 5 seconds and Modbus RX will be off. The <strong>COM</strong> led can also be off if the Symbio 700 configuration has not been set properly for a multispeed or variable speed fan.</li>
+</ul><h2 id="h_01KQSVZRZ1FSR6NF9808Q0E661">Modbus Voltage Check</h2><ul>
+<li data-list-item-id="e2416dec7a8298c4223738f7765e4d29f">Normal VFD com voltage 4.73 to 4.15 VDC pulsing approximately 10 times a minute, no pattern.</li>
+<li data-list-item-id="e6d8d812bf7f2ea2827821839a708c5ef">If the Modbus + is crossed with Modbus - or Common between the Adapter Board and the Relay Board, you get 4.39 VDC steady on Modbus + to Modbus -, the Com LED on the VFD keypad will be <strong>ON STEADY.</strong><ul><li class="ck-list-marker-italic" data-list-item-id="e63e353e5000ee61a67ea902893cccba7"><em>Example – 1 and 2 crossed, 1 and 3 crossed.</em></li></ul>
+</li>
+<li data-list-item-id="e75edbffecd05205398c6c3d3060487e6">If Modbus + is open – terminal 68 to 69 will read 3.4 VDC, 68 to 61 will read 3.5 VDC, 69 to 61 will read .1 VDC.</li>
+<li data-list-item-id="ec5e86371e9fd8febfa998b9a55eb3170">If Modbus – is open – terminal 68 to 69 will read 3.5 VDC, 68 to 61 will read 4.88 VDC, 69 to 61 will read 1.3 VDC</li>
+<li data-list-item-id="e08bfab1db6d2877d8ad51ad8abadf09a">If all 3 of the field comm wires are open or Modbus - is crossed with Common, you will get 4.8-5.0 VDC steady at the Symbio 700 (UC) on Modbus + to Modbus -</li>
+</ul><h3 id="h_01KQT0F92XMK1EQ786Y9ATBKMT">Modbus Connection Diagrams</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 358/171;" src="../../attachments/360060157652_360094010231_mceclip0.png" alt="mceclip0.png" width="358" height="171"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 362/138;" src="../../attachments/360060157652_360094010511_mceclip1.png" alt="mceclip1.png" width="362" height="138"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 687/226;" src="../../attachments/360060157652_45594957262093_image.png" width="687" height="226"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 354/142;" src="../../attachments/360060157652_360094010711_mceclip2.png" alt="mceclip2.png" width="354" height="142"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 240/219;" src="../../attachments/360060157652_360094076392_mceclip3.png" alt="mceclip3.png" width="240" height="219"></figure><h2 id="h_01KQSW6VMJ8FBG9S4982CT6FPZ">Verify VFD Parameters</h2><p><strong>Verify VFD Parameters are correct by visiting the article: </strong><a href="../Odyssey/16010409914509.html"><strong>Odyssey Symbio VFD Parameters for Drive Replacement or Verification</strong></a></p><p>Common VFD Programming Issues:</p><p>If VFD Parameter 8-01 is set to <strong>Digital only </strong>(on a communicating VFD), the fan will not run and you get an Alarm on the Symbio for Supply Fan Failure. It should be set to Controlword Only.</p><p>If VFD Parameter 8-02 is set to [0] None, the VFD will communicate, but not run. The parameter should be set to [1] FC Port.</p><p>If VFD Parameter 8-30, 32 or 33 are set wrong (on a communicating VFD) the fan won't run and you get an Alarm on the Symbio for Supply Fan VFD Communication.</p><p><img src="../../attachments/360060157652_360095185752_mceclip0.png" alt="mceclip0.png"></p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360060157652-Odyssey-Symbio-VFD-Communication-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/360060157652-Odyssey-Symbio-VFD-Communication-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

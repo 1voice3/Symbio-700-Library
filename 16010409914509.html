@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio VFD Parameters for Drive Replacement or Verification - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/16010409914509-Odyssey-Symbio-VFD-Parameters-for-Drive-Replacement-or-Verification" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio VFD Parameters for Drive Replacement or Verification</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Airflow / Motors / Fans [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-05-22 &nbsp;&bull;&nbsp; Last updated: 2026-06-02</div>
+<div class="body"><h2 id="h_01KEEWWTZ5CFR9AYT7SHHVMG5F">Background</h2><p>When replacing the VFD within the air handler, it is important to program it correctly. A new drive from Trane Parts will not come preprogrammed for the specific unit. The choice of which set of parameters you use is based on the air handler model number. </p><p> </p><ul><li data-list-item-id="e6c1e60527b568f3e013f5dcddca3f7bc">A model with the 7th digit = K will use the Odyssey A2L R454B VFD Parameters. <ul><li data-list-item-id="ea6325b6dcf2f574afb8b5a594b5d3030">For example: TWE120K3AAA07BD4000000000000000000000000</li></ul>
+</li></ul><p> </p><ul><li data-list-item-id="e53fe76de51dc4d6e9aa7246f7bff72fa">A model with the 14th digit = B will use the Odyssey model 14th digit = B VFD Parameters<ul><li data-list-item-id="e521d6ae9754859b0e4379d4618935703">For example: TWE18043BAA07BC0000000000000000000000000</li></ul>
+</li></ul><p> </p><ul><li data-list-item-id="eeff26dac334932c0b9addc96eaee79bb">A model with the 14th digit = A will use the Odyssey model 14th digit = A VFD Parameters<ul><li data-list-item-id="ed29de5663f46844e75719d72186c5ad4">For example: TWE07244BAA05AD0000000000000000000000000</li></ul>
+</li></ul><p> </p><p>For assistance on how to navigate the parameters in the drive for programming, see the article <a href="../General/36072951827853.html" target="_blank" rel="noopener noreferrer">Programming or changing parameters in the TR150 VFD</a></p><h2 id="h_01KQSSE04CT8923SFY8Z4WX1TS">Quick Transfer of Parameter Setting from the old VFD to the replacement VFD</h2><p>For a drive that will still power the keypad, it may be faster to transfer the parameter settings with the keypad. The data can be saved to the keypad before the VFD is replaced and then transferred to the replacement VFD.</p><p>If the failed drive has no power and it is not able to save the parameters to the keypad, it is recommended once manually installing the parameters in the new drive to save the data to the keypad for any future issues.</p><p>If the replacement VFD is having the same issues as the old VFD after data transfer, there may be a parameter outside the replacement list that was changed and copied over to the new drive. For this instance, it may be necessary to restore the<a href="https://support.trane.com/hc/en-us/articles/5215124420749"> VFD to factory defaults</a> and manually install the parameters. If this corrects the issue, save the parameters to the keypad using the instructions: <a href="#h_01KQSSJ4DFA5YBZ5WS2QQJ0N3C">Data transfer from the keypad to the replacement VFD</a></p><h3 id="h_01KQSSEGMM66213DBZHD325Y89">Data transfer from the old VFD to the keypad</h3><ol>
+<li data-list-item-id="ef9c7785a3e8814f64bcb2ace39347323">Go to parameter 0-50 LCP Copy</li>
+<li data-list-item-id="ed6974032487cb266253e696a0303a330">Press [OK]</li>
+<li data-list-item-id="ebe41755b3dbf8846da1002bbd03284eb">Select [1] All to LCP</li>
+<li data-list-item-id="ea2f5cd9cde73d142f7197a0d5a4af88c">Press [OK]</li>
+</ol><h3 id="h_01KQSSJ4DFA5YBZ5WS2QQJ0N3C">Data transfer from the keypad to the replacement VFD</h3><ol>
+<li data-list-item-id="e844c86614364ba9840cb73416d27e5a2">Go to parameter 0-50 LCP Copy</li>
+<li data-list-item-id="e93c51fb8d98c3beea54a838dc576800a">Press [OK]</li>
+<li data-list-item-id="e4d13ac6d2ee946678b9fe7138d2d3fbf">Select [2] All from LCP</li>
+<li data-list-item-id="e2a3fded067f6a5ab96b08b43cc8a8a4a">Press [OK]</li>
+</ol><p> </p><hr><p>*The parameters are also available as a downloadable PDF at the end of the document.</p><h2 id="h_01KEFM0ZR6S6JNENW8WVPGP4ZP">VFD Parameters</h2><h3 class="wysiwyg-text-align-center" id="h_01KEFM1VF1N73E0TK1RMH47EDZ">Odyssey A2L R454B VFD Parameters</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 419/769;" src="../../attachments/16010409914509_42526605962125_image.png" width="419" height="769"></figure><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KEFMZZZRRQ09A49F83HCMP62">Odyssey model 14th digit = B VFD Parameters</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 420/784;" src="../../attachments/16010409914509_42526605965709_image.png" width="420" height="784"></figure><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KEEWX4QX3AAJEC5GF2D98WJC">Odyssey model 14th digit = A VFD Parameters. </h3><figure class="wysiwyg-image"><img style="aspect-ratio: 456/959;" src="../../attachments/16010409914509_42526644023693_image.png" width="456" height="959"></figure><p> </p><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/16010409914509_42526550195469_Odyssey_2018_DOE_Std_A_VFD_Parameters.pdf" download>Odyssey 2018 DOE Std A VFD Parameters.pdf (143 KB)</a><a href="../../attachments/16010409914509_42526550198157_Odyssey_Symbio_2023_DOE_Std_B_VFD_Parameters.pdf" download>Odyssey Symbio 2023 DOE Std B VFD  Parameters.pdf (138 KB)</a><a href="../../attachments/16010409914509_42526579457421_Odyssey_A2L_R454B_VFD_Parameters.pdf" download>Odyssey A2L R454B VFD Parameters.pdf (139 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/16010409914509-Odyssey-Symbio-VFD-Parameters-for-Drive-Replacement-or-Verification" target="_blank">https://support.trane.com/hc/en-us/articles/16010409914509-Odyssey-Symbio-VFD-Parameters-for-Drive-Replacement-or-Verification</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

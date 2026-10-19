@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Indoor Options Module (IOM) BAYMODU001 Installation, Communication Troubleshooting, and Information - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360060596791-Odyssey-Indoor-Options-Module-IOM-BAYMODU001-Installation-Communication-Troubleshooting-and-Information" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Indoor Options Module (IOM) BAYMODU001 Installation, Communication Troubleshooting, and Information</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Electric Heat [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-04-29 &nbsp;&bull;&nbsp; Last updated: 2026-03-17</div>
+<div class="body"><p> </p><h2 id="h_01KHBWZ85EJ5Z4CDTEA18P4P28">BAYMODU001 Installation</h2><p>For more detailed information, a link to the literature for the kit can be located in the article, <a href="../Odyssey/40334723903629.html" target="_blank" rel="noopener noreferrer">Odyssey A2L R-454B Accessory Kit Installation Instructions</a></p><h3 id="h_01KHKEZNHR0HBKR44ZFE14V5K9">Parts List</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 683/494;" src="../../attachments/360060596791_43564373311117_image.png" width="683" height="494"></figure><h3 id="h_01KHKF2DFMT8M3KM7CSEWPZY31">Options module installation location</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 1052/586;" src="../../attachments/360060596791_43564373312653_image.png" width="1052" height="586"></figure><ul>
+<li data-list-item-id="e9b1c1e5fc081aea13c31cd432d804c9b">Install the new module next to the Relay Board (RB)</li>
+<li data-list-item-id="ee8053511ba175ff7c8b18312aaa0629e">Install the IMC Communication Wire from IOM P4 to RB P2</li>
+<li data-list-item-id="e2c6ac9a318afba26444439990c7714c3">Install the Electric Heat Control Harness from IOM P6 &amp; P7 to RB J1</li>
+<li data-list-item-id="e7af34c4ed0adb93a948f5be273e47e73">If an electric heat accessory has been installed, it can be plugged into RB J2 or RB J3</li>
+</ul><h3 id="h_01KHKF3TVBB1J22JZ5J0CYSJBT">Set the Options Module address to 75</h3><ul>
+<li data-list-item-id="ed968772cf7632c7d9ba775f256266083">The Indoor Options module must be addressed to address 75 on the provided rotary dials. </li>
+<li data-list-item-id="ebca229f28997fe21599f4f31e3f0ac76">SW1 is addressed to 7</li>
+<li data-list-item-id="e3a2ec14ed2fe1b9dd50bc8d749bd9fd0">SW2 is addressed to 5</li>
+</ul><h4 class="wysiwyg-text-align-center" id="h_01KHKRXZ4MA04NQX4GKNYB6FG7"><strong>Figure 1: Options Module Address Dials</strong></h4><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 24.54%;"><img style="aspect-ratio: 260/474;" src="../../attachments/360060596791_43564387721869_image.png" width="260" height="474"></figure><h4 class="wysiwyg-text-align-center" id="h_01KHKRY34B4N6XX1HKWH3ZCKC0"><strong>Figure 2: Options Module Board and Address Dials</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 303/371;" src="../../attachments/360060596791_43564387723021_mceclip0.png" alt="mceclip0.png" width="303" height="371"></figure><ul><li data-list-item-id="e2266a26ba13f7f93655e018aebc2c5a8">Sometimes, you may need to turn the dial 360° to set the address, cycle power, or go to <strong>Tools</strong> &gt; <strong>Service</strong> &gt; scroll down to <strong>IMC LINK RESET</strong> (<a href="../General/34091499511565.html">Phone App</a>).</li></ul><h3 id="h_01KH6KPS4S2440AGKGE3B8GJM0">Verify the Symbio 700 board is correctly configured</h3><ul><li data-list-item-id="e5e602c8b6befd4fda9ae65aa67a0145e">In the Symbio App, check the <strong>Tools &gt; Service</strong> menu and scroll down to Indoor Options Module Communication Status<ul>
+<li data-list-item-id="e74dbcb4e7a922e90011babc79077c3de">If the status is <strong>Communicating - Not Configured</strong>, the Symbio 700 board has communication, but it is not configured with an option that uses the IOM board.<ul>
+<li data-list-item-id="e2ce21d9ae5f67e4bf21b0a22141c5109">Add electric heat, discharge temperature sensor and/or frostat to configure an option that uses the board.</li>
+<li data-list-item-id="e15a4f74db794dcdfad338116b86945d6">Here is an article on changing the configuration: <a href="../Precedent/16561370756237.html">Symbio™ 700 - How to configure or edit configurations using the Mobile Phone App</a>
+</li>
+</ul>
+</li>
+<li data-list-item-id="ec63b19b180de2b5c4fcc757ed06c6494">If the status is <strong>Not Communicating</strong>, the Symbio 700 has a valid configuration for the IOM, but it is not communicating.<ul><li data-list-item-id="efac5ad0d089e21f1eda014b4f6f8640c">Further troubleshooting on the communication and wiring needs to be performed.</li></ul>
+</li>
+<li data-list-item-id="ebbfa6494e93a6eec449de20d547d44e7">If the status is <strong>Not Configured</strong>, the Symbio 700 board is not configured for the IOM and it is also not communicating. <ul><li data-list-item-id="e6a499a693c97d5bf0551cfbfabe26f2f">IMC wiring and Symbio 700 configuration will need to be checked and verified</li></ul>
+</li>
+</ul>
+</li></ul><h2 id="h_01KHBX1PRPMNN7JBK8GTRRGEXN">Communication Troubleshooting</h2><h3 id="h_01KHBWZ1MCRYFSW6JGGPRADGBD">Verify the IOM has power </h3><ul><li data-list-item-id="e5d581ec509b1f1ee04676fa2926e2905">Verify that LED 8 is solid green in the middle of the module.</li></ul><h4 class="wysiwyg-text-align-center" id="h_01KHKRXNJTHTBBZF5KCB416ZYB"><strong>Figure 3: LED 8 </strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 197/357;" src="../../attachments/360060596791_43439318242957_image.png" width="197" height="357"></figure><h3 id="h_01K81K18ZD5EME387BKKPDNMJN">Verify the Field-Installed module is addressed</h3><ul><li data-list-item-id="ec13e08171bdccd807492df4034a8ba54">See <a href="#h_01KHKF3TVBB1J22JZ5J0CYSJBT">Installation Section</a> for Proper Board addressing. Address on the Board should be set to 75.</li></ul><h3 id="h_01KHKPYT16YVCJSTHWS8JQ6TF9">Verify the Symbio 700 board is properly configured</h3><ul><li data-list-item-id="e2e7a2095e97bb3af1472cac01c6f76df">See <a href="#h_01KH6KPS4S2440AGKGE3B8GJM0">Installation Section</a> for Symbio configuration verification</li></ul><h3 id="h_01KH4K6CCHZ80ZDX78Y9GZHAGY">Check IMC Wiring and Integrity</h3><ul>
+<li data-list-item-id="eb0d66919170317f8e74fc19928486633">The IMC wiring between the indoor unit and outdoor unit should be <a href="../General/360055739011.html">Trane Purple wire</a> or equivalent. </li>
+<li data-list-item-id="eb4ab81fa61cb3a976508e5fed1b1d8a8">All plugs and harnesses should be inspected and verified that the wires are fully inserted in the harness and pins are not damaged. <ul><li data-list-item-id="e2396f6196f7ad019ba82144a3968c329">See the <strong>IMC Board Connections </strong>section below for connection points and the unit wiring diagrams</li></ul>
+</li>
+<li data-list-item-id="e2641eefd2734817a9bd2a425b3c39d10">Continuity test on the IMC wiring<ul>
+<li data-list-item-id="e3fa7e65478d0cbddab4dd0c61d888ffc">Unwire the IMC from the condenser and air handler</li>
+<li data-list-item-id="e22fb0347e7e0252c5b86ede8a39bbac7">Connect the wires on the air handler side of the comm together</li>
+<li data-list-item-id="e12f68476c192566323ea8ecbdc450707">Test for continuity at the condenser end of the wiring<ul>
+<li data-list-item-id="ec631a29a716d378bfd7d013248786a7b">Wires should have less than 5 ohms of resistance</li>
+<li data-list-item-id="ef893ebce134c6cda0abc3300810ad5cc">Check/replace wiring if it is reading open resistance or resistance is too high</li>
+</ul>
+</li>
+<li data-list-item-id="ebbe2d53b09b663d29aadd1e3a81f82c7">Check for resistance to the comm shield <ul><li data-list-item-id="e340fc7452bbef57d2c117837a3cbbad1">Any resistance could indicate a damaged or shorted wire to ground and wire may need to be replaced or repaired</li></ul>
+</li>
+</ul>
+</li>
+</ul><h3 id="h_01KH4PEWYP62YD2YVMEHGQQC8Z">Check IMC voltage and communication status LEDs:</h3><h4 class="wysiwyg-text-align-center" id="h_01KHKRY9JV8DJYXEKSVJR3NQTY"><strong>Figure 4: Communication LEDs</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 204/267;" src="../../attachments/360060596791_43439318244237_image.png" width="204" height="267"></figure><p><strong>Options Board comm voltage is 4.5 to 3.25 VDC, pulsing 30 times a minute.</strong></p><p><strong>Normally, the LED5 RX will be brighter than LED6 TX and will pulse at an irregular pattern. LED6 will pulse as well, but it is much less noticeable.</strong></p><p> </p><h4 id="h_01KH6N0QVYMNQ0AZ2313RQRZA2">Measurements at the Options Board or downstream of the problem:</h4><p><strong>IMC - open </strong><em>– Options Board LED 5 off, LED 6 off.</em></p><p>(IMC + to IMC -) 4.2 VDC to 3.6 VDC.</p><p>(IMC + to Ground) 4.7 VDC to 4.3 VDC.</p><p>(IMC – to Ground) .49 VDC to .47 VDC.</p><p><strong> </strong></p><p><strong>IMC + open </strong>– <em>Options Board</em> <em>LED 5 dim flicker, LED 6 dim flicker.</em></p><p>(IMC + to IMC -) .7 VDC to .3 VDC.</p><p>(IMC + to Ground) .97 VDC to 87 VDC.</p><p>(IMC – to Ground) .91 VDC to .1 VDC.</p><p><strong> </strong></p><p><strong>Wires Crossed </strong><em>– Options Board</em> <em>LED 5 on steady, LED 6 off.</em></p><p>(IMC + to IMC -) -4.7 VDC to -.3 VDC.</p><p>(IMC + to Ground) .75 VDC to .1 VDC.</p><p>(IMC – to Ground) 4.7 VDC to 4.2 VDC.</p><p> </p><p>Other LED info – IMC wires shorted together or both open, LED 5 and 6 off.</p><p> </p><h3 id="h_01KH4P9HATQMCATNEJBMXN79F4">IMC Board Connections</h3><h4 id="h_01KH4P5TRMVX5N5KN9ATHJMRTA">Figure 5: Symbio 700 IMC Board Connections</h4><p><img src="../../attachments/360060596791_360094013991_mceclip0.png" alt="mceclip4.png"></p><h4 id="h_01KH4P6M40PD4Y2VDT35Q89SZ2">Figure 6: Adapter Board IMC Board Connections</h4><p><img src="../../attachments/360060596791_360094079712_mceclip1.png" alt="mceclip1.png"></p><h4 id="h_01KH4P7GGHWA9FXM34FRZC8TPG">Figure 7: Relay Board IMC Board Connections</h4><p><img src="../../attachments/360060596791_360094015071_mceclip5.png" alt="mceclip5.png"></p><h4 id="h_01KH4P8NSGEY44HH80ZA078DE2">Figure 8: Indoor Options Module IMC Board Connections</h4><p><img src="../../attachments/360060596791_360094080872_mceclip6.png" alt="mceclip6.png"></p><h2 id="h_01KH6KCWDCHZEAXPPDQW48HRNW">Other Troubleshooting Tips:</h2><ul><li data-list-item-id="ec046801d00ac5530c90f79cdf08f66cd">In some cases, to rule out wiring issues and determine if the board is defective, the Indoor Options Module and harness can be removed from the Relay Board on the air handler and plugged in directly on the Symbio 700 board on P2, P3, or P4. If the IOM is still not communicating, the harness or board may be defective. </li></ul><h2 id="h_01KHKNSJCV5P925N7B1Q363RPE"><strong>Indoor Options Module Pinout / LEDS</strong></h2><p> </p><p>Figure 9: Connector Pinouts and LED Location for the BAYMODU001</p><p><img style="height: auto;" src="../../attachments/360060596791_43505914086157_mceclip0.png" alt="mceclip0.png" width="572" height="463"></p><p> </p><h3 id="h_01KHKPNB5NJ167MKMY7HKJG03Z"><strong>LED Functions</strong></h3><p><br>LED 1 – On when Electric Heat Stage 1 output is energized (green)<br>LED 2 – On when Electric Heat Stage 2 output is energized (green)<br>LED 3 – On when Electric Heat Stage 3 output is energized - <em>Not used</em><br>LED 4 – <em>Not Used</em><br>LED 5 – IMC RX (amber)<br>LED 6 – IMC TX (green)<br>LED 7 – <em>Not Used</em><br>LED 8 – On when Options Module is powered up (green)</p><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p>.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360060596791-Odyssey-Indoor-Options-Module-IOM-BAYMODU001-Installation-Communication-Troubleshooting-and-Information" target="_blank">https://support.trane.com/hc/en-us/articles/360060596791-Odyssey-Indoor-Options-Module-IOM-BAYMODU001-Installation-Communication-Troubleshooting-and-Information</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

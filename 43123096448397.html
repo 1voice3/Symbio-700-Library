@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Electric Heat Installation and Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/43123096448397-Odyssey-Electric-Heat-Installation-and-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Electric Heat Installation and Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Electric Heat [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-01-30 &nbsp;&bull;&nbsp; Last updated: 2026-04-06</div>
+<div class="body"><h1 id="h_01KG8FS36YK9H7R6THC4QYD41B">Electric Heat Installation and Troubleshooting</h1><h2 id="h_01KN7XZXHEFR3A8BZNVKGAZR79"><strong>Electric Heat Installation</strong></h2><ul>
+<li data-list-item-id="e4a989806c294b6111f169bf630957743">Download the latest <a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3AACC-SVN91*" target="_blank" rel="noopener noreferrer">Electric Heat Kit Installation Guide</a> for the installation of the kit onto the Odyssey Air Handler.</li>
+<li data-list-item-id="edaa9bf099c284d59b9af7379196b8f97">For older kit installation guides, you can search for the model number in the public <a href="https://elibrary.tranetechnologies.com/public/" target="_blank" rel="noopener noreferrer">e-Library</a>. In some cases, you may need to refine the Search Type to Model Number before the Installation Guide will show up.</li>
+<li data-list-item-id="edd3364c0384dbb6ba5f0d7736431c55f">Electric Heat kits are typically backwards compatible, but not forward compatible due to regulatory restrictions. For example, a heat kit designed for a R410A air handler is not compatible to install on a R454B air handler. However, the R454B electric heat kit may be installed on the R410A air handler. Contact the local <a href="https://www.trane.com/commercial/north-america/us/en/contact-us/locate-sales-offices.html" target="_blank" rel="noopener noreferrer">Commercial Sales Office</a> representative to verify a heater is compatible for the air handler.  </li>
+</ul><p> </p><h2 id="h_01KN9YCNX61Z3HKWG7MXMYQX5B"><strong>Electric Heat Troubleshooting</strong></h2><ul>
+<li data-list-item-id="e00427aa19f0cc954c1f77e15d220be17">Check fuses for continuity<ul><li data-list-item-id="e5d15ce658b895196707f270acbc9f298">Correct any issue that could have caused the fuse to fail like shorted wire/elements or a contactor failure</li></ul>
+</li>
+<li data-list-item-id="effae6ef1a7e61dc7150f222e79aa0041">Check high temperature limits for continuity </li>
+<li data-list-item-id="e8345d7eac48177bf145d0ee99c395e82">Check Contactor <ul>
+<li data-list-item-id="efa547683b49352409463c909bc3a07c7">Contactor coil resistance typically ranges from 5-12 ohms. </li>
+<li data-list-item-id="ef4b9aaad5b3d273d50ed7d76008fd130">Check contactor contacts for excessive pitting and wear. </li>
+</ul>
+</li>
+<li data-list-item-id="e7d638ecc7b37e336fbe468f41fbb0a4f">Check the heat elements <ul><li data-list-item-id="e69fd39dfcad9e1e814212dde90d8e0b4">Testing heat element resistance and current for Delta wiring configuration<ul><li data-list-item-id="e397acec16ea647ac27055dd1ab83fc06">For 208/240V Three Phase Delta wired electric heat, the equation below can be used to estimate the Current (I) and Resistance (R). Most heat kits have multiple racks within the kit which will total to the full rated KW.</li></ul>
+</li></ul>
+</li>
+</ul><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KJANKBFKJ2EERNH4M3TH9J9Y"><strong>Figure 1: Three Phase Delta Wiring Configuration and Calculations</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 660/298;" src="../../attachments/43123096448397_43789487717645_image.png" width="660" height="298"></figure><ul><li data-list-item-id="ee7290de371f0ce1719d65978a893595f">For example, the resistance of an element coil within a 9.96 KW heat rack at 240 V can be calculated by R = 3(V<sub>L</sub><sup>2</sup>)/W<sub>Delta</sub><ul>
+<li data-list-item-id="e3cd4bb6f64267327f1b22ea10887d5ec">R = 3(240<sup>2</sup>)/9960 = approx. 17.3 ohms</li>
+<li data-list-item-id="eeac86344bde3a02dfc7fc506b1c11049"><h4 id="h_01KJFRK4M5SZVZ7KMP5YW932DW">Table 1: Resistance specifications from Delta heat kits commonly used in Odyssey</h4></li>
+</ul>
+</li></ul><figure class="wysiwyg-table" style="width: 100%;"><table><tbody>
+<tr>
+<td><strong>KW/Rack</strong></td>
+<td><strong>Volts</strong></td>
+<td><strong>OHMS/Cold Coil</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>240</td>
+<td>32.13 +/- 2.5%</td>
+</tr>
+<tr>
+<td>9.96</td>
+<td>240</td>
+<td>15.62 +/- 2.5%</td>
+</tr>
+</tbody></table></figure><ul><li data-list-item-id="eefd2c39da0103fdb5617cf8c0c5bd8a3">The current for the same heat rack can be calculated by W<sub>Delta</sub> /(1.73*V<sub>L</sub> ) = I<sub>L</sub> <ul>
+<li data-list-item-id="e4eb045a2b9eca532bf55edbc3ff7486a">I<sub>L</sub>  = 9960/(1.73*240) = approx. 24 amps</li>
+<li data-list-item-id="e198c7be34d2a6b8a8393055dbd621a00">The current can also be found on the wiring diagram in the Electrical Rating Table</li>
+</ul>
+</li></ul><p> </p><p> </p><h3 id="h_01KJ8QGNKF5KDXHZVZVHQBRPXE"><strong>Testing heat element resistance and current for Wye wiring configuration</strong></h3><ul><li data-list-item-id="ed80837bbc70f5f751099066be905ab5a">
+<p>For 480/600V Three Phase Wye wired electric heat, the following equation can be used to estimate the Current (I) and Resistance (R). Most heat kits have multiple racks within the kit which will total to the full rated KW.</p>
+<p> </p>
+<h4 class="wysiwyg-text-align-center" id="h_01KJAP70Y246Y43RNGJENZVQ9X"><strong>Figure 2: Three-Phase Wye Wiring Configuration and Calculations</strong></h4>
+</li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 633/270;" src="../../attachments/43123096448397_43809457450765_image.png" width="633" height="270"></figure><p> </p><ul><li data-list-item-id="e65a980b9bd7aae93c4683c72d415163c">For example, the resistance of an element coil within a 9.96 KW heat rack at 480 V can be calculated by R = V<sub>L</sub><sup>2</sup>/W<sub>wye</sub><ul><li data-list-item-id="eedb0b15d57a9d8e6ebbd97dddc67bc63">R = (480<sup>2</sup>)/9960 = approx. 23.1 ohms</li></ul>
+</li></ul><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KJFRPHYMHGNK8B4N7KRQ9E8G"><strong>Table 2: Resistance specifications from Wye heat kits commonly used in Odyssey</strong></h4><figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;"><tbody>
+<tr>
+<td><strong>KW/Rack</strong></td>
+<td><strong>Volts</strong></td>
+<td><strong>OHMS/Coil Cold</strong></td>
+</tr>
+<tr>
+<td>9.96</td>
+<td>480</td>
+<td>21.20 +/- 2.5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>480</td>
+<td>42.25 +/- 2.5%</td>
+</tr>
+<tr>
+<td>9.96</td>
+<td>600</td>
+<td>33.08 +/- 2.5%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>600</td>
+<td>65.93 +/- 2.5%</td>
+</tr>
+</tbody></table></figure><ul><li data-list-item-id="eac9fe5928a90240177b595de886c35c4">The current for the same heat rack can be calculated by W<sub>wye</sub> /(1.73*V<sub>L</sub> ) = I<sub>L</sub> <ul>
+<li data-list-item-id="e2930c8db754011060bd5083109664690">I<sub>L</sub>  = 9960/(1.73*480) = approx. 12 amps</li>
+<li data-list-item-id="ed823e17283a0d39dbc5da6c2cc629e3f">The current can also be found on the wiring diagram in the Electrical Rating Table</li>
+</ul>
+</li></ul><p> </p><p> </p><h3 id="h_01KJAT0T6CCZ96N8J98JJ7P5P9"><strong>Testing heat element resistance and current for single phase heater configuration</strong></h3><ul><li data-list-item-id="e62a714284723dadca817b49e8d25c837">For 240V single phase heaters, Ohm's Law can be used to estimate the resistance and current</li></ul><p class="wysiwyg-text-align-center"> </p><h4 class="wysiwyg-text-align-center" id="h_01KN9YCNX62K80EJQNAZPFPFQW"><strong>Figure 3: Single Phase Wiring Heater Calculations</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 437/145;" src="../../attachments/43123096448397_43812267762701_image.png" width="437" height="145"></figure><ul><li data-list-item-id="efdf0ded63c3826a3d1835b70b23b75ca">For example, resistance can be estimated with the equation R = V<sup>2</sup> /Watts = 240<sup>2</sup> / 5670 = approx. 10.2 Ohms.</li></ul><p class="wysiwyg-text-align-center"> </p><h4 class="wysiwyg-text-align-center" id="h_01KN9YCNX6BF0AEZVGQZHQTNVS"><strong>Table 3: Resistance specifications from single-phase heat kits commonly used in Odyssey</strong></h4><figure class="wysiwyg-table" style="width: 100%;"><table><tbody>
+<tr>
+<td><strong>KW/Rack</strong></td>
+<td><strong>Volts</strong></td>
+<td><strong>OHMS/Coil Cold</strong></td>
+</tr>
+<tr>
+<td>5.76</td>
+<td>240</td>
+<td>8.9 +/- 2.5%</td>
+</tr>
+</tbody></table></figure><ul>
+<li data-list-item-id="eb7bfaaa370cc6aa1f91f10df8df943a1">The current for the same heat rack can be calculated with I=W/V= 5670/240 = approx. 23.6 Amps</li>
+<li data-list-item-id="eed9cefccde0a695cf799400b2fe082f6">The current can also be found in the Electric Rating table on the heat schematics.</li>
+</ul><p> </p><hr><p> </p><h2 id="h_01KN7Y481ECYT77MKCJE69FDZX"><strong>Symbio Controls</strong></h2><h3 id="h_01KJDKY0KNQ892WM49X7DNWBWW"><strong>Odyssey with Symbio 700 and Indoor Options Module</strong></h3><p>Electric heat on Odyssey with Symbio can be operated with in two different manners. It can be controlled with the Symbio 700 controls with an Indoor Options Module (IOM) or directly with the Relay Board (RB). </p><p>When the Odyssey air handler unit is paired with an Odyssey condenser, the Symbio 700 can be programmed for either primary or secondary electric heat. The indoor options module and IMC communication wiring must be present for this configuration. </p><p>In this configuration, the Symbio 700 will close relays on the Indoor Options Module when electric heat is commanded from the thermostat, zone sensor, or BAS/BMS. Below in <a href="#h_01KH47QN3Z0XSNWD1D28AYKG5A">Figure 1</a>, gives an approximation of how the heat is commanded on in the air handler. </p><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KH47QN3Z0XSNWD1D28AYKG5A"><strong>Figure 4: Oversimplified Odyssey Air Handler Electric Heating Low Voltage Circuit Diagram</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 1317/733;" src="../../attachments/43123096448397_43619069808653_image.png" width="1317" height="733"></figure><p> </p><p>When electric heat is commanded on the Symbio 700, it will communicate with the IMC to the Indoor Options Module to close the K1 relay or both K1 and K2 relays depending on the heat stages selected. Once the heat is energized, the voltage will travel through the Relay Board and energize the J2 and J3 terminals after passing through the LDS (A2L only) and Fan Interlock contacts. From there, it will pass to the electric heat kit and through the limits or auxiliaries to the contactor coils for each stage.</p><p>Downloading and reviewing the <a href="../Odyssey/360060181352.html" target="_blank" rel="noopener noreferrer">Odyssey Application Guide</a> and verifying proper wiring with the <a href="../Odyssey/34726405370637.html">Odyssey Wiring Guide</a> will give a better understanding of the sequence and operation with the system. For easier troubleshooting, it is advised to download the <a href="../General/360054843552.html">Symbio Service and Installation App</a>.</p><p> </p><h4 id="h_01KN7Y4N3WJB94XD752D99RHWG"><strong>Common issues or diagnostics preventing the electric heat from working</strong></h4><ul>
+<li data-list-item-id="e1f6ac1ebfed752c07c78b7eadb229103">Symbio 700 not configured or settings are not properly set</li>
+<li data-list-item-id="e9f16dc7e06a07e1b9b2e1454c74bce5e">Leak Detection Sensor (LDS) alarm is active or mis-wired</li>
+<li data-list-item-id="e98304800302530606c607ec177710a36">IOM not communicating or powered</li>
+<li data-list-item-id="e0f679ee82657efd5d328be60f902b1d1">Fan input on the Relay Board is not energized</li>
+</ul><p> </p><h4 id="h_01KH1G5VRT5F7RERHPJ9JTNMBB"><strong>Symbio 700 is not configured, or the settings are not properly set</strong></h4><ul>
+<li data-list-item-id="e62b37992e1e7ba000db80c06fa6f9bd6">Verify the Symbio 700 is configured for Electric Heat in Primary (Cooling only) or Secondary Heat (Heat pump)<ul><li data-list-item-id="e3a667665667623b6f3f178a78377040d"><a href="../Precedent/16561370756237.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - How to configure or edit configurations using the Mobile Phone App</a></li></ul>
+</li>
+<li data-list-item-id="efdd53274e7bcd4b61b0466fb0407ce18">Check the Settings<ul>
+<li data-list-item-id="eb8e089f8d70003dba25697de3bb880ec">Verify Unit Stop Command is in Auto. <ul><li data-list-item-id="e671136e88a45655999c5a4a8aca5582d">If it is in Stop, navigate to the Tools menu to change it to Auto.</li></ul>
+</li>
+<li data-list-item-id="e196f24ee74871b3af81a13b335f7554b">Verify the Heat Lockout Command is to the Normal</li>
+<li data-list-item-id="eb71e46d01ba1bbb246848f4e2a3438fa">Verify the Heat Primary Enable BAS is set to 100%</li>
+</ul>
+</li>
+<li data-list-item-id="e90b63599b0d0866b1642220cb60ad3ca">If the Symbio 700 is configured and Settings are correct, proceed to the next section.</li>
+</ul><p> </p><h4 id="h_01KH4FNBH2XZGM6G7KH6HA42QC"><strong>Leak Detection Sensor (LDS) alarm is active, or the circuit is mis-wired</strong></h4><ul><li data-list-item-id="e9f3778b358907887a67fee575720c3a0">Leak Detection Sensor (LDS) alarm on the Relay Board or Refrigerant Concentration Alarm<ul>
+<li data-list-item-id="e0f0c754a47f62ef25b00987f0f5ae7e0">Verify the LDS Alarm light is not illuminated on the Relay Board and correct any issue with the LDS</li>
+<li data-list-item-id="e6730a6d4301dce08c702691c557d171d">Check wiring from the Symbio 700 board terminal block to the Relay Board A2L alarm contacts<ul><li data-list-item-id="ec7fdf383339e6d59fbc82916c8a9af44">Terminal Block should be connected to a closed set of contacts when the LDS is on and not in alarm</li></ul>
+</li>
+<li data-list-item-id="eef11716785d23613191614a93ff4a6bc">Below is an article for further troubleshooting<ul><li data-list-item-id="e649c81bf8d3a88859779804c8980afa4"><a href="../Odyssey/34754994953229.html">Odyssey Symbio R-454B Refrigerant Leak Sensor Information and Troubleshooting</a></li></ul>
+</li>
+</ul>
+</li></ul><p> </p><h4 id="h_01KHNWHQEX5052J01W1W8CRNVG"><strong>Indoor Options Module status along with a unit communications failure</strong></h4><ul>
+<li data-list-item-id="e65ab94219ab9ee478fdeb937ce2346c8">Visit the article below for Indoor Options Module troubleshooting</li>
+<li data-list-item-id="eb8672defe7fb95353c63cc75ed0a9b4e"> <a href="../Odyssey/360060596791.html">Odyssey Indoor Options Module (IOM) BAYMODU001 Installation, Communication Troubleshooting, and Information</a>
+</li>
+</ul><p> </p><h4 id="h_01KHP7MEDZ0XVV1NGTFM28YFB4"><strong>Supply fan VFD failure or faults</strong></h4><ul><li data-list-item-id="eb1b31b395ace1ce9bb19cbef50411c93">Below are some articles to help clear and reset VFD faults<ul>
+<li data-list-item-id="e81699b46101bc0cc08723a447699e27b"><a href="../Odyssey/360060157652.html">Odyssey Symbio VFD Communication Troubleshooting</a></li>
+<li data-list-item-id="e0fe0d38cb5723f57b62a34e35a548055"><a href="../Odyssey/16010409914509.html">*LCU Odyssey Symbio VFD Parameters for Drive Replacement or Verification</a></li>
+<li data-list-item-id="e5078c01a01056d504b12e559acbfd020"><a href="../General/36072951827853.html">Programming or changing parameters in the TR150 VFD</a></li>
+</ul>
+</li></ul><p> </p><h4 id="h_01KHPKM5JVERZXWR0C3JQNAVMX"><strong>Fan input on the Relay Board is not energized</strong></h4><ul><li data-list-item-id="efc3db65db3069823f5938be51877773c">If the Symbio 700 states the primary or secondary heat is at 100% and the supply fan is running, the problem may be the Relay Board fan interlock. As illustrated in <a href="#h_01KH47QN3Z0XSNWD1D28AYKG5A">Figure 1</a>, the T-stat G input RB J5-4 on the Relay Board will energize an interlock even if the supply fan is already operating with Modbus. Check for 24 vac and the wiring for that terminal. Typically, it will be wired to the Adapter Board on J16-1. </li></ul><p> </p><h3 id="h_01KHRSH66BP56PR8HXEF03SWDF"><strong>Odyssey without an Indoor Options Module</strong></h3><p>The Relay Board can energize the electric heat without the Indoor Options Module. This is used in applications where the air handler is paired with electromechanical condensers, 3rd party condensers or replacement applications where running communication wire is unfeasible. </p><p>As seen in <a href="#h_01KH47QN3Z0XSNWD1D28AYKG5A">Figure 1</a>, the terminal RB J5-4, T-stat G can be energized with 24 vac to close the Fan Interlock contacts internal to the board. The terminals RB J5-7, W1 and/or RB J5-8, W2 can then be energized to bring on the electric heat. </p><p> </p><hr><p> </p><h2 id="h_01KJAWMNEM1J0NSQYCXEKWFTRG"><strong>ReliaTel Controls</strong></h2><h3 id="h_01KN7Y7EMYNCB5CAC0RCGSD2CQ"><strong>Odyssey Reliatel Condenser configuration for Electric Heat</strong></h3><p>The Odyssey condenser with Reliatel controls can be configured to output 24 vac to the air handler to control the electric heat. See Figure 5 below. </p><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KN7YKHBT7XTE6FWEM0MNCY0Y"><strong>Figure 5: Odyssey Condenser Electric Heat Configuration Jumpers</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 1194/906;" src="../../attachments/43123096448397_43818921420429_image.png" width="1194" height="906"></figure><p>To enable electric heat, remove power from the unit and cut the jumper from the RTRM J2-1 to J2-2. To enable two stages of heat, cut the jumper from J1-3 to J1-6 as well.</p><p>Once the jumpers are cut and power is restored, 24 vac will be energized when heat is called on Heat 1 (H1) and Heat 2 (H2) terminals depending on the heat capacity requested. </p><p> </p><h4 id="h_01KJB38VR8JXSWDXHDD45VSR0P"><strong>Thermostat input operation</strong></h4><ul>
+<li data-list-item-id="e6b87292d56124525bb5474f48b433e36">For cooling only TTA condensers, the W1/O terminal will energize H1 and W2 will energize H2. </li>
+<li data-list-item-id="e6e5d31d7eeb8e7f22a5996e8086fb984">For heat pump, TWA condensers, the full capacity of electric heat will be energized when W2 or X2 are energized. <ul><li data-list-item-id="e3728c7d5b69c6f7a1f931647ed4f32b6">W2 will allow mechanical heat (Compressor operation) while also energizing the electric heat while X2 will lockout any mechanical heat while the electric heat is operating.</li></ul>
+</li>
+</ul><p> </p><h3 id="h_01KN7Y9CNP4YNA4209VJMXX3KY"><strong>Odyssey Reliatel SZVAV low-voltage heat connections</strong></h3><ul><li data-list-item-id="eda9faaacfc22c73de5249ece72dd1840">The electric heat on the SZVAV air handler does not include a fan interlock and will energize whenever W1 or W2 is energized, as illustrated below in Figure 6.</li></ul><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KN7YKQ2CXY17S6ZR1PX8V4F8"><strong>Figure 6: Odyssey Reliatel SZVAV low voltage heat connections</strong></h4><p class="wysiwyg-text-align-center"><img src="../../attachments/43123096448397_43847513519245_image.png" width="944" height="734"></p><ul><li data-list-item-id="ec91d64e0a4cf8da5d5a893e81bd85846">This air handler configuration must be controlled by the condenser to avoid issues with the heat operating without the indoor fan.</li></ul><p> </p><h3 id="h_01KN7YBGZY33215KHF3375FMCP"><strong>Odyssey Legacy (Pre-Symbio) 2-Speed Electromechanical Air Handler  Low Voltage Wiring</strong></h3><ul><li data-list-item-id="e33937d3e060ff68cab6bc7aed156db7c">The Odyssey 2-speed air handler utilizes a Fan Interlock relay that is energized whenever "G" is energized. The contacts will prevent the heat from operating by disconnecting the common from both electric heat relays. 24 vac should be checked from W1 or W2 to the J terminal to verify if the interlock is closed. If the interlock is open and the fan is running, you may get 24 vac from terminals W1 or W2 to B1, but not from W1 or W2 to J.  See Figure 7 for details. </li></ul><p> </p><h4 class="wysiwyg-text-align-center" id="h_01KN7YKWGXFGNG21W14ZJ9QBZZ"><strong>Figure 7: Odyssey Legacy 2-Speed EM AHU Low Voltage Wiring</strong></h4><figure class="wysiwyg-image"><img style="aspect-ratio: 865/947;" src="../../attachments/43123096448397_43847496909965_image.png" width="865" height="947"></figure><p> </p><p> </p><h3 id="h_01KN7YD4HACK4WEWRER177ZRGV"><strong>Odyssey Legacy Single Speed Electromechanical Air Handler Low Voltage Wiring</strong></h3><ul><li data-list-item-id="e19af9979acb319bc3e61a7e11987db1d">
+<p>With electromechanical air handlers, the electric can be controlled by the outputs from a Reliatel condenser or simply from a thermostat. The W1 and W2 are energized and the common is ran through the Heater Interlock on the fan contactor. If the fan contactor is not energized or the auxiliary is defective, the electric heat contactor will not energize even with W1 and W2 energized. W1 and W2 will show 24 vac to LTB2-B1 common, but will show 0 vac to LTB2-J. See the Figure 8 below for the schematic. </p>
+<p> </p>
+<h4 class="wysiwyg-text-align-center" id="h_01KN7YM51PV54R7PXFSZF6NFY8"><strong>Figure 8: Odyssey Legacy Single Speed Electromechanical Air Handler Low Voltage Wiring</strong></h4>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 619/675;" src="../../attachments/43123096448397_43869978704013_image.png" width="619" height="675"></figure>
+</li></ul><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/43123096448397-Odyssey-Electric-Heat-Installation-and-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/43123096448397-Odyssey-Electric-Heat-Installation-and-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

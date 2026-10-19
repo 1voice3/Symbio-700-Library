@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio Airflow Adjustments and Calculations - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360060947072-Odyssey-Symbio-Airflow-Adjustments-and-Calculations" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio Airflow Adjustments and Calculations</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Odyssey &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-05-17 &nbsp;&bull;&nbsp; Last updated: 2026-10-18</div>
+<div class="body"><zd-tabs><div class="wysiwyg-disclosure wysiwyg-tabs">
+<details open="true"><summary>Overview</summary><div class="wysiwyg-disclosure-content"><aside class="callout-danger">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-circle-xmark" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">Important</p>
+      <div class="callout-body"><p>Setting airflow is critical in all HVAC systems, and Odyssey equipment is no exception. Proper airflow directly affects system performance, efficiency, capacity, and overall reliability. You can adjust fan speeds in a couple of ways, depending on the air handler type and the control configuration used.</p></div>
+    </div>
+  </div>
+</aside></div></details><details open="true"><summary>Fan Tables</summary><div class="wysiwyg-disclosure-content">
+<p>You can find the evaporator fan performance tables in the product catalog using the link below. </p>
+<ul><li data-list-item-id="ed1be5b3fa42e39627559f77483e93351">
+<a href="../Odyssey/40006807253133.html">Odyssey Light Commercial - Product Catalog</a>. </li></ul>
+<aside class="callout-info">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-circle-info" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">Informational</p>
+      <div class="callout-body"><p>The design airflow ranges listed on the charts are at full fan capacity with a wet coil. If you are outside the design range, system performance and condensate management can be a problem. Typically, the normal design range is 320-480 cfm/ton with some exceptions listed in the notes below the tables. Heat pumps or air handlers with electric heat will always be within the normal design range. </p></div>
+    </div>
+  </div>
+</aside>
+</div></details><details><summary>Unit Types</summary><div class="wysiwyg-disclosure-content">
+<h2 id="h_01M50DZQAV1578YBJETWCV5HRM"><strong>Constant Volume Units (Unit model number digit 15 = "1")</strong></h2>
+<ul><li data-list-item-id="edcb81b236f4cb2f672a32ab7ae244d95">Adjust the motor sheave: close the sheave in for more fan RPMs, and open it for less.</li></ul>
+<p> </p>
+<h2 id="h_01M50E0FJ5WXJYT9YWBHB0EY2B"><strong>2 Stage Airflow/Single Zone VAV (Symbio Cond Only) - (Unit Model Number Digit 15 = “D”)</strong></h2>
+<ul><li data-list-item-id="efe54b1c50f0a4142a4c53b98361302ed">The Symbio 700 controller provides integrated Supply Fan speed setpoint control for paired air handler units with VFDs for SZVAV and two-speed fan operation. These setpoints can be manipulated through the Symbio 700 user interface (including the Symbio Service and Installation app) or through a connected BAS if required. </li></ul>
+<p> </p>
+<h3 id="h_01M50E6EHKRWZESN8F7E50XYFR">
+<strong>Supply Fan Maximum Speed Setpoint</strong> </h3>
+<p>(Range: 50-100%, Default: 100%) </p>
+<p>The Supply Fan Maximum Speed Setpoint correlates to the maximum reference setting in the VFD (defaulted to 60Hz from the factory). With the Supply Fan Maximum Speed Setpoint at its default value of 100%, and parameter 3-03 in the VFD at its default value of 60Hz, the maximum VFD output will be 60Hz. If the user reduces the Supply Fan Maximum Speed Setpoint, the maximum VFD output will be reduced from its configured value. </p>
+<ul><li data-list-item-id="e72b08c3b30b5b64a16a1a2d12061ddb1">
+<strong>Example:</strong><br>Parameter 3-03 in the VFD = 60Hz<br>Supply Fan Maximum Speed Setpoint = 80%<br>Effective Supply Fan Maximum VFD Output = 80% x 60Hz =48Hz</li></ul>
+<p><strong>Table 1 -  Maximum fan speed setpoints and effective supply fan maximum VFD output</strong></p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 614/607;" src="../../attachments/360060947072_45514976316045_image.png" width="614" height="607"></figure><h2 id="h_01KQG4R0V7HE2H1YZXFDDMXTDC"> </h2>
+<h3 id="h_01M50E0TBD8022GPKMKSPX37Z8"><strong>Supply Fan Minimum Speed Setpoint </strong></h3>
+<p>(Range: 0-100%, Default 0%) </p>
+<p>The setpoint correlates to the VFD's minimum reference setting (25Hz from the factory). With the Supply Fan Minimum Speed Setpoint at 0% and parameter 3-02 in the VFD at its default value of 25Hz, the minimum VFD output will be 25Hz. If the user increases the Supply Fan Minimum Speed Setpoint, the minimum VFD output will increase from its configured value up to the Effective Supply Fan Maximum VFD Output, as determined by the Supply Fan Maximum Speed Setpoint. See the examples below.</p>
+<p><strong><span class="wysiwyg-underline">Example 1:</span></strong></p>
+<ul>
+<li data-list-item-id="e9b03c6a8f51be8d89160fb8806ba3e33">Parameter 3-02 in the VFD = 25 Hz </li>
+<li data-list-item-id="e6f2080547ee9b8e9e97b42870d8069e0">Parameter 3-03 in the VFD = 60 Hz</li>
+<li data-list-item-id="e81859875b642c4b49fc05f5dd8eecaab">Supply Fan Maximum Speed = 100%</li>
+<li data-list-item-id="e45b2001a71174fff1fed0702f5ed73da">Effective Supply Fan Maximum VFD Output (based on Supply Fan Maximum Speed Setpoint) = 60Hz</li>
+<li data-list-item-id="eff630760b1f21ad1f61df559fcca70d0">Supply Fan Minimum Speed Setpoint = 50%</li>
+<li data-list-item-id="ee7274ab2d18da49f8aeceeb65f31653e"> Effective Supply Fan Minimum VFD Output = (Effective Supply Fan Maximum VFD Output – VFD Parameter 3-02) x Supply Fan Minimum Speed Setpoint + VFD Parameter 3-02 = (60 - 25) x 0.50 + 25 = 42.5Hz </li>
+</ul>
+<p><strong><span class="wysiwyg-underline">Example 2: </span></strong></p>
+<ul>
+<li data-list-item-id="ea6068976048f863fd61aab66ada54699">Parameter 3-02 in the VFD = 25 Hz </li>
+<li data-list-item-id="e15458b18628296e3b2dc4176bab3418f">Parameter 3-03 in the VFD = 60 Hz</li>
+<li data-list-item-id="e6e5e75baf0bf687d84ebc416f91a17a8">Supply Fan Maximum Speed = 90%</li>
+<li data-list-item-id="e907f999560dc376be2d48cb40efd2092">Effective Supply Fan Maximum VFD Output from Table 1 = 54Hz</li>
+<li data-list-item-id="e9a8d1c99f45479c23a2f3059446ccf7d">Supply Fan Minimum Speed Setpoint = 30%</li>
+<li data-list-item-id="e2b4776cd97e44c5009aadc7d7de0bafb"> Effective Supply Fan Minimum VFD Output = (Effective Supply Fan Maximum VFD Output – VFD Parameter 3-02) x Supply Fan Minimum Speed Setpoint + VFD Parameter 3-02 = (54 - 25) x 0.30 + 25 = 33.7Hz </li>
+</ul>
+<p><strong>Table 2-</strong> <strong>Minimum fan speed setpoints and effective supply fan minimum VFD output</strong></p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 726/385;" src="../../attachments/360060947072_45514992949773_image.png" width="726" height="385"></figure><p> </p>
+<h3 id="h_01M50E63ACCTXGWMQY743A7HZN"><strong>Supply Fan Speed Command Status Calculation</strong></h3>
+<p>The supply fan speed command status is calculated based on the VFD speed and the supply fan reference range.</p>
+<p>The calculation is as follows:</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 369/54;" src="../../attachments/360060947072_45514992950029_image.png" width="369" height="54"></figure><ul>
+<li data-list-item-id="e92c7af77fcea4e9f14e31bd69c2c5a88">From <a href="#h_01KQG31TN0AFVPMM0JH06VQKAC">Example 1</a>: (42.5-25) / (60 - 25) = 50%</li>
+<li data-list-item-id="ed6f1a3d9480ce568b1e0238537ba3145">From <a href="#h_01KQG31XTHHTAJQDZBGKAJKMEB">Example 2</a>: (33.7-25) / (60 - 25) = 24.9%</li>
+</ul>
+<p> </p>
+<h2 id="h_01M50E7DAG8A8SNEKNAVH1YZKC"><strong>2 Stage Airflow (Electromechanical Cond Only) (Unit Model Number Digit 15 = “C”)</strong></h2>
+<ul>
+<li data-list-item-id="e800d0f13594fb27ef2c5e5cc18d1c86f">For 2-Speed VFD-controlled units, the desired maximum airflow (High Speed) is set by reprogramming parameter 4-15 on the VFD to the frequency value that best meets the RPM requirement as shown in the catalog fan tables.</li>
+<li data-list-item-id="edc10ba70cfab54197cc764185769835d">You can increase the minimum airflow (Low Speed) by adjusting parameter 4-12 in the TR150 VFD.</li>
+<li data-list-item-id="e2c9fcd7e6ac71f568e013f598a98ebdf">You can run the supply fan on low speed by energizing the T-stat G terminal on Relay Board J5-4. High speed will require T-stat G plus either Y2, W1, or W2. </li>
+</ul>
+<p><br><strong>Example</strong> <strong>TR-150 Programming Procedure</strong></p>
+<p><em>The Main Menu accesses all parameters.</em></p>
+<ul>
+<li data-list-item-id="edebeb0f6d07b7aee34144014fb645457">Press the [Menu] key twice until the indicator on the display is placed above “Main Menu”.</li>
+<li data-list-item-id="e83c09d7fc1bba29eb4229109a5a65f3a">Press [▼] to 4-** Limits/Warnings</li>
+<li data-list-item-id="e605a5e7e317e047c65c91ab33e53d67f">Press [Ok]</li>
+<li data-list-item-id="e2d0338c8b7262f3a9ecf3abe91a8a463">Press [▼] to 4-1* Motor Limits</li>
+<li data-list-item-id="e234bf0d4073c5cdd345b1ce9d39432d8">Press [Ok]</li>
+<li data-list-item-id="e4a78320adcbb2628463b03a03b2c797c">Press [▼] to 4-14 Motor Speed High Limit [Hz]</li>
+<li data-list-item-id="e3ac8dbace6a5290d61f4bf309944250b">Press [Ok]</li>
+<li data-list-item-id="efa8588a0e96fab7aff7d378d20551119">Press [▲] [▼] to set/change.</li>
+<li data-list-item-id="eccd9c29c31407be37614a7a6559e48b1">Press [Ok] to save changes.</li>
+<li data-list-item-id="e6ce5784b24879ada76bbe7390144313e">Press [Back] until you get to the main screen.</li>
+</ul>
+<p><img src="../../attachments/360060947072_360095632572_mceclip0.png" alt="mceclip0.png" width="184" height="248"></p>
+</div></details>
+</div></zd-tabs><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360060947072-Odyssey-Symbio-Airflow-Adjustments-and-Calculations" target="_blank">https://support.trane.com/hc/en-us/articles/360060947072-Odyssey-Symbio-Airflow-Adjustments-and-Calculations</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

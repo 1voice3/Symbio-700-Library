@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio R-454B Refrigerant Leak Sensor Information and Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/34754994953229-Odyssey-Symbio-R-454B-Refrigerant-Leak-Sensor-Information-and-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio R-454B Refrigerant Leak Sensor Information and Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span></div>
+<div class="meta">Section: Installation / Application R-454B [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-03-05 &nbsp;&bull;&nbsp; Last updated: 2026-04-15</div>
+<div class="body"><h1 id="h_01JNKNEDCVYVW9E5PNRS17W3H3"><strong>Refrigerant Leak Sensor System</strong></h1><p> </p><h2 id="h_01KG8BZBPZ4MBFH2QQ9WQM4AV1">Sensor</h2><ol>
+<li data-list-item-id="ee2d69d53a8cf2871acd7466eb6250d9b">
+<h3 id="h_01KG8BZFSSQC2S0QX1EQC9Y801">Sensor Purpose</h3>
+<div><ul>
+<li data-list-item-id="e256102db7d43871f5fd5bad69c84553d">UL requirement for units using A2L refrigerant</li>
+<li data-list-item-id="e4e95f280c10dbe9423a33d4d2b42c003">Detect the leakage of the refrigerant</li>
+<li data-list-item-id="e1bf7e6ad773286bc95221cdc135e0824">Installed in the air handler unit (for split units)</li>
+</ul></div>
+<div> </div>
+</li>
+<li data-list-item-id="e543533b8dfb0b86408e6856b3209b5b7">
+<h3 id="h_01KG8BV0S0FWSK82ARDNZ0AJEB">Who manufactures the R-454B Leak Detection Sensor used</h3>
+<div><ul>
+<li data-list-item-id="ebba4100d28fab91415ab051b2b6ed503">Danfoss</li>
+<li data-list-item-id="e77579820ad4084c606b603d8999049fd">The sensors self-calibrate</li>
+<li data-list-item-id="ed68b08937a83445f64a31453be1ceb25">The sensor auto resets</li>
+<li data-list-item-id="e1beab43a672fdebbd9806dc02717a938">Sensors are calibrated to trip at 15% Lower Flammable Limit (LFL)</li>
+<li data-list-item-id="ec19081f3baeb5af0920a3124112098e7">The factory-provided sensor is only set up to detect R-454B</li>
+</ul></div>
+</li>
+</ol><p><br> </p><h2 id="h_01JNKPKG15ZJA7FC987AVFNPPN">Mitigation Action in the Event of a Leak</h2><p>When the system detects a leak, the following mitigation actions will be initiated until the refrigerant has not been detected for at least 5 minutes.</p><ul>
+<li data-list-item-id="eddb1c67483d30973b42937782030b07e">LDS Alarm LED is illuminated</li>
+<li data-list-item-id="edd80655e2823bc8299d930b7a7c8e133">Disable Compressor Operation</li>
+<li data-list-item-id="e8d801372a04bf77f4abc3980df9b8092">Disable Electric Heat</li>
+<li data-list-item-id="eb37256156da1fff6f4d73c50128ec099">Run the indoor supply fan to deliver a required minimum amount of circulation airflow</li>
+<li data-list-item-id="e43d1b2901f0fc54c76f48ac487dce945">Provide an output to energize Mechanical Room Ventilation (only binary output provision)</li>
+</ul><p>If the leak detection sensor has a fault, at the end of its life, or is disconnected, the unit will initiate mitigation actions. Disconnecting the sensor may verify mitigation actions.</p><p> </p><h2 id="h_01KH4HRQH3PKRFTJGJMV2A2Q78">Relay Board LDS Alarm LED Light and Location</h2><figure class="wysiwyg-image"><img style="aspect-ratio: 374/435;" src="../../attachments/34754994953229_43415838763277_image.png" width="374" height="435"></figure><h2 id="h_01JNKPZRYYKY651SZBSZ268467">Sensor Location</h2><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1153/665;" src="../../attachments/34754994953229_34756779886093_image.png" width="1153" height="665"></figure><p> </p><p> </p><h2 id="h_01JNKRW582PQ8MTNAZQFPRA667">Connection Type</h2><ul><li data-list-item-id="e3e296ef36e0c0c8b37acba9116b06c9a">The leak detection sensor is a 6-pin plug. 2-pin 24Vac Power, 2-pin Modbus (<strong>not currently used</strong>), and a 2-pin contact.<span style="background-color: rgb(255,255,255); color: rgb(0,0,0);"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none;"> </span></span>
+</li></ul><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 59.25%;"><img style="aspect-ratio: 654/836;" src="../../attachments/34754994953229_34756779888781_image.png" width="654" height="836"></figure><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 50%;"><img style="aspect-ratio: 544/450;" src="../../attachments/34754994953229_36133499948685_LDS_LED_status_table.jpg" width="544" height="450"></figure><p> </p><p> </p><h2 id="h_01JNKS4V80GBNETSMKFBXZG1X0">Factory-installed wiring</h2><ul><li data-list-item-id="e8b03f86091144b0d03504abca96b0b5d">Odyssey R-454B refrigerant air handlers are equipped with factory-installed leak detection sensor (LDS) and wired to relay board terminals (J12, J13). The refrigerant sensors are designed to detect the presence of refrigerant in the air handlers. When operating normally and not detecting refrigerant, the sensor binary output is closed, providing a 24 Vac signal to the relay board through terminals J12-3 and J13-3. If either sensor detects a refrigerant concentration above a predetermined threshold, the sensor output opens, removing the 24 Vac signal to the relay board input. This indicates an alarm state. During an alarm condition, the relay board initiates the following mitigation actions:<ul>
+<li data-list-item-id="e1a960800551b69a840d6a2e7cd6df425">Supply fan operates continuously to ensure proper airflow and ventilation.</li>
+<li data-list-item-id="e6d0b36ac74d7bacde377efc8c8d2d75f">Electric heat operation is disabled.</li>
+</ul>
+</li></ul><p> </p><h3 id="h_01KG8CNKPXNYNRZD50RMBAJCAT">Wiring Diagram</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 718/304;" src="../../attachments/34754994953229_34756888493453_image.png" width="718" height="304"></figure><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 740/305;" src="../../attachments/34754994953229_43176326530189_image.png" width="740" height="305"></figure><p> </p><h3 id="h_01KG8CP4T45CS9S5GT548X7Z93">Terminal Description</h3><p><strong>RB</strong> = Relay Board</p><p><strong>LDS</strong> = Leak Detection Sensor</p><p><strong>TB</strong> = Terminal Block</p><p><strong>UC</strong> = Symbio 700 Unit Controller</p><ul>
+<li data-list-item-id="eb449b2fb64b9664f1fbc15bc209d28f3">
+<strong>RB-J12-1</strong> to <strong>LDS1-1</strong> back to <strong>LDS1-2</strong> to <strong>RB-J12-4</strong> <strong>=</strong> 24VAC to power the sensor</li>
+<li data-list-item-id="e92395d328efa817e18d0936b9c160a33">
+<strong>RB-J12-2</strong> to <strong>LDS1-5</strong> back to <strong>LDS1-6</strong> to <strong>RB-J12-3 </strong>=<strong> </strong>24VAC No Alarm LED (0VAC triggers alarm LED on RB)</li>
+<li data-list-item-id="e99acd25972654d791d20d1edf86e5f8b">
+<strong>RB-J13-1</strong> to <strong>LDS2-1</strong> back to <strong>LDS2-2</strong> to <strong>RB-J13-4</strong> <strong>=</strong> 24VAC to power the sensor</li>
+<li data-list-item-id="e1573d907df71bdc3348a8751fcf323fa">
+<strong>RB-J13-2</strong> to <strong>LDS2-5</strong> back to <strong>LDS2-6</strong> to <strong>RB-J13-3 </strong>=<strong> </strong>24VAC No Alarm LED (0VAC triggers alarm LED on RB)</li>
+<li data-list-item-id="ed145edc15c14ceeb77fc20a885e05be3">
+<strong>TB-1</strong> to <strong>RB-J14-4 </strong>back to <strong>RB-J14-3</strong> to <strong>TB-2 </strong>= 24VAC No Alarm on the unit controller </li>
+</ul><div class="callout-info"><div class="callout-info-content"><p><strong>Note: </strong>When the sensor powers up and the LDS contacts close, J14 contacts close, indicating that the LDS is in its normal operating state. For UC‑J14 to close, both RB‑J12‑3 and RB‑J13‑3 must be supplied with 24 VAC.</p></div></div><p> </p><p>The relay board also provides additional hardware outputs that are important for system monitoring and integration. The following table details these outputs, along with their recommended wiring configurations.</p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 17%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 53%;">
+</colgroup>
+<thead><tr>
+<th>Relay Board Terminal</th>
+<th>Type</th>
+<th>Leak Detection System</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td rowspan="2"><p class="wysiwyg-text-align-center">J14-1, J14-2 [VENT]</p></td>
+<td rowspan="2"><p class="wysiwyg-text-align-center">N.O. Dry Contact, Binary Output</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>Dry contact binary output is open.</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Alarm</p></td>
+<td>Binary output closed. Can be used to signal an independent ventilation system to provide additional ventilation.</td>
+</tr>
+<tr>
+<td rowspan="2"><p class="wysiwyg-text-align-center">J14-3, J14-4 [ALARM]</p></td>
+<td rowspan="2"><p class="wysiwyg-text-align-center">N.O. Dry Contact, Binary Output</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>Dry contact binary output is closed indicating the refrigerant sensor is operating normal and not measuring a concentration of refrigerant above a specified threshold.</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Alarm</p></td>
+<td>Dry contact binary output is open indicating the refrigerant sensor detecting refrigerant above a threshold. After the refrigerant concentration reduces below a threshold, the alarm state will continue for 5 additional minutes. The Alarm state is also active if the refrigerant sensor fails. The alarm state remains active until the sensor is replaced.</td>
+</tr>
+<tr>
+<td rowspan="2"><p class="wysiwyg-text-align-center">J14-5 Y1o</p></td>
+<td rowspan="2"><p class="wysiwyg-text-align-center">N.O. 24 Vac, binary output</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>Binary output is open, 0 Vac at the output.</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Alarm</p></td>
+<td>Binary output is closed, providing 24 Vac. To be utilized as compressor disabling signal to Electromechanical condensing units when air handler Refrigerant Sensor is in alarm. The output is intended to drive an isolation relay coil to minimize VA consumption</td>
+</tr>
+<tr>
+<td rowspan="2"><p class="wysiwyg-text-align-center">J14-6 Y2o</p></td>
+<td rowspan="2"><p class="wysiwyg-text-align-center">N.O. 24 Vac, binary output</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>Binary output is open, 0 Vac at the output.</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Alarm</p></td>
+<td>Binary output is closed, providing 24 Vac. To be utilized as compressor disabling signal to Electromechanical condensing units when air handler Refrigerant Sensor is in alarm. The output is intended to drive an isolation relay coil to minimize VA consumption.</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Relay Board outputs</figcaption></figure><p> </p><p> </p><h2 id="h_01JNKTFTN9KRRBS7CEJXQPTPED">Replacement Positions</h2><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 72.46%;"><img style="aspect-ratio: 1001/468;" src="../../attachments/34754994953229_34757040122253_image.png" width="1001" height="468"></figure><p> </p><p> </p><h2 id="h_01JNKWJA20JG11Z55WYVYVMWMY">Alarm</h2><ul><li data-list-item-id="e943a97e2f51e6fc22150fe27d4621342">
+<span data-teams="true">Diagnostic: Refrigerant Concentration Sensor A </span><span data-teams="true"><strong>(With Symbio Condenser)</strong></span>
+</li></ul><div class="callout-danger"><div class="callout-danger-content"><p>If there is no <strong>24VAC</strong> between <strong>RB-J12-3 and RB-J12-4</strong> or between <strong>RB-J13-3 and </strong> <strong>RB-J13-4</strong>, the contact between <strong>RB-J14-4</strong> and <strong>RB-J14-3</strong> will not close, which will create a "Diagnostic: Refrigerant Sensor Concentration Sensor A" on the Symbio 700 unit controller.</p></div></div><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/34754994953229-Odyssey-Symbio-R-454B-Refrigerant-Leak-Sensor-Information-and-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/34754994953229-Odyssey-Symbio-R-454B-Refrigerant-Leak-Sensor-Information-and-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

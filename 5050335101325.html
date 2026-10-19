@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>*LCU Odyssey Symbio Low Ambient Control Info and Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/5050335101325--LCU-Odyssey-Symbio-Low-Ambient-Control-Info-and-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>*LCU Odyssey Symbio Low Ambient Control Info and Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Odyssey</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Accessories &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2022-03-24 &nbsp;&bull;&nbsp; Last updated: 2026-01-29</div>
+<div class="body"><p><strong>Odyssey Symbio</strong></p><p><strong>External Mount (Single or Dual Compressor, One 3 Phase Fan)</strong></p><p><strong>BAYLOAMS10:</strong> TTA060, 072, 090, 120, 150 and TWA060, 072, 090, 120</p><p>1 Controller, 1 Transducer (Additional transducer kit (BAYLOTR001) is needed for dual circuit units)</p><p>IOM (ACC-SVN194*-EN)</p><p><em>wiring diagram 1213-3356</em></p><p><strong> </strong></p><p><strong>Internal Mount (Dual Compressor, Dual 3 Phase Fans)</strong></p><p><strong>BAYLOAMS20:</strong> TTA180/240/300 and TWA180/240</p><p>2 Controllers, 2 Transducers</p><p>IOM (ACC-SVN190*-EN)</p><p><em>wiring diagram 1213-3356</em></p><p> </p><p>Wiring Diagram: </p><p><em><img src="../../attachments/5050335101325_41243992194189_mceclip0.png"></em></p><h3 id="h_01KABV80YE3658AZYM7NZY2WE8"><strong>Troubleshooting Guide:</strong></h3><figure class="wysiwyg-table wysiwyg-table-align-left" style="height: 1197px; width: 100%;"><table style="border-collapse: collapse; border-style: solid; border-width: 1px;">
+<thead><tr style="height: 22px;">
+<th style="border-style: solid; border-width: 1px; height: 22px; width: 19.3334%;"><strong>Problem</strong></th>
+<th style="border-style: solid; border-width: 1px; height: 22px; width: 36.1904%;"><strong>Possible Cause</strong></th>
+<th style="border-style: solid; border-width: 1px; height: 22px; width: 44.4761%;"><strong>Possible Solution</strong></th>
+</tr></thead>
+<tbody>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 222px; width: 19.3334%;" rowspan="3">No Fan Operation</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; width: 36.1904%;">No 24 volt control voltage</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; width: 44.4761%;">Check for 24 Vac between Y1 or Y2 and C terminals — it should read 24 volts.</td>
+</tr>
+<tr style="height: 67px;">
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 36.1904%;">No line voltage</td>
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 44.4761%;">Check voltage across brown, orange, and yellow motor leads. If no voltage is present, verify all wiring is correct.</td>
+</tr>
+<tr style="height: 111px;">
+<td style="border-style: solid; border-width: 1px; height: 111px; width: 36.1904%;">Bad fan motor or controller</td>
+<td style="border-style: solid; border-width: 1px; height: 111px; width: 44.4761%;">If fan does not start, motor is bad and should be replaced.<br>If motor does start, check controller settings. If motor still fails to start, replace controller.</td>
+</tr>
+<tr style="height: 205px;">
+<td style="border-style: solid; border-width: 1px; height: 249px; width: 19.3334%;" rowspan="2">Improper fan operation</td>
+<td style="border-style: solid; border-width: 1px; height: 205px; width: 36.1904%;">Heat pump jumper not configured correctly</td>
+<td style="border-style: solid; border-width: 1px; height: 205px; width: 44.4761%;">
+<p>Verify the heat pump jumper is configured to N.C.</p>
+<p><img src="../../attachments/5050335101325_41243966873101_mceclip1.png" width="150" height="147"></p>
+</td>
+</tr>
+<tr style="height: 44px;">
+<td style="border-style: solid; border-width: 1px; height: 44px; width: 36.1904%;">Control is not wired correctly</td>
+<td style="border-style: solid; border-width: 1px; height: 44px; width: 44.4761%;">See wiring diagrams. Ensure that the 24 Vac power supply is connected.</td>
+</tr>
+<tr style="height: 215px;">
+<td style="border-style: solid; border-width: 1px; height: 438px; width: 19.3334%;" rowspan="4">No fan modulation</td>
+<td style="border-style: solid; border-width: 1px; height: 215px; width: 36.1904%;">No need to modulate the fan</td>
+<td style="border-style: solid; border-width: 1px; height: 215px; width: 44.4761%;">
+<p><strong>Outdoor temperature is above 50 deg F or 10 deg C. </strong></p>
+<p>If modulation is needed below above this temperature, a 20K ohm or greater resistor can be installed to replace the outdoor sensor.</p>
+<p>If pressure is equal to or greater than the head pressure control setpoint, the fan will be operating at full speed.</p>
+</td>
+</tr>
+<tr style="height: 89px;">
+<td style="border-style: solid; border-width: 1px; height: 89px; width: 36.1904%;">No input pressure to control</td>
+<td style="border-style: solid; border-width: 1px; height: 89px; width: 44.4761%;">Check for proper transducer and Tee installation. Schrader valve depressor must depress Schrader valve enough to allow refrigerant into pressure transducer.</td>
+</tr>
+<tr style="height: 67px;">
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 36.1904%;">Heat pump inputs wired incorrectly into the controller</td>
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 44.4761%;">Check diagram and verify heat pump inputs are properly wired into the controller.</td>
+</tr>
+<tr style="height: 67px;">
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 36.1904%;">Miswired</td>
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 44.4761%;">Check that the 24 Vac signal and the transducer are wired up correctly into the controller.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 133px; width: 19.3334%;" rowspan="3">Erratic fan operation</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 36.1904%;">Control is not wired correctly</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 44.4761%;">See wiring diagrams.</td>
+</tr>
+<tr style="height: 89px;">
+<td style="border-style: solid; border-width: 1px; height: 89px; width: 36.1904%;">Pressure transducer problem</td>
+<td style="border-style: solid; border-width: 1px; height: 89px; width: 44.4761%;">Check for proper transducer and Tee installation. Schrader valve depressor must depress Schrader valve enough to allow refrigerant into pressure transducer.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 36.1904%;">Dirty or blocked condenser coil</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 44.4761%;">Clean condenser coil.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 66px; width: 19.3334%;" rowspan="2">The high pressure switch trips off</td>
+<td style="border-style: solid; border-width: 1px; height: 66px; width: 36.1904%;" rowspan="2">Improper head pressure setpoint setting</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 44.4761%;">See unit fails to start above.</td>
+</tr>
+<tr style="height: 44px;"><td style="border-style: solid; border-width: 1px; height: 44px; width: 44.4761%;">Check the setpoint and reduce it if needed.</td></tr>
+<tr style="height: 67px;">
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 19.3334%;">Reduced cooling capacity at low Ambient</td>
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 36.1904%;">Evaporative Defrost Control is active</td>
+<td style="border-style: solid; border-width: 1px; height: 67px; width: 44.4761%;">Disable EDC function in Symbio™ 700</td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KABXH94BVJDZEHCMRVS6RCRA">Temperature vs. Probe Resistance</h3><p><img src="../../attachments/5050335101325_41243992198413_image.png" width="254" height="301"></p><h3 id="h_01KABXJVDRXTDK537CPDDA0PF4">Pressure vs. Voltage</h3><p><img src="../../attachments/5050335101325_41243992199309_image.png" width="301" height="298"></p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/5050335101325--LCU-Odyssey-Symbio-Low-Ambient-Control-Info-and-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/5050335101325--LCU-Odyssey-Symbio-Low-Ambient-Control-Info-and-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
