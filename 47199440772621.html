@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Precedent 6-10T Eflex w/ ReliaTel Controls - No Condenser Fan Operation After Motor Replacement - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/47199440772621-Precedent-6-10T-Eflex-w-ReliaTel-Controls-No-Condenser-Fan-Operation-After-Motor-Replacement" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Precedent 6-10T Eflex w/ ReliaTel Controls - No Condenser Fan Operation After Motor Replacement</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span></div>
+<div class="meta">Section: Troubleshooting [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-07-07 &nbsp;&bull;&nbsp; Last updated: 2026-08-17</div>
+<div class="body"><p>In the Summer of 2025, the manufacturer (Regal) of the variable speed condenser fan motors for the 6-10T Legacy Eflex Precedent (Ultra High Efficiency) units discontinued the ECM module and motor used on these units (Regal 142R). It was replaced with the Regal Eon K which is the same motor/module that is used on the current Precedent units with Symbio 700 controls but programmed differently for operation with ReliaTel VSM module. </p><p>Reports from the field have indicated that the new motors may not operate when connected to the VSM harness like the old motor. It has been discovered that there may be an issue with the programming or wiring on the new ECM module that may be preventing the operation of the motor. </p><p>The current work around for this will be to reverse the blue and yellow wires between the ECM module and unit harness. </p><p>The original connection to the ECM module from the unit had the blue and yellow wires reversed intentionally:</p><figure class="wysiwyg-image"><img style="aspect-ratio: 997/346;" src="../../attachments/47199440772621_47199483061005_image.png" width="997" height="346"></figure><p>This is correct for the unit, but it has been found that a new Regal Eon K motor will not run when connected like this. Field and Lab testing has shown that lining up the wires blue to blue and yellow to yellow will allow the fan to operate. </p><p>This can be achieved by either cutting the connector out and splicing the wires together or de-pinning the PPM76 (motor side). If cutting the connector out, the spice needs be in a way that prevents accidental separation of the wires, LCU Tech Support recommends insulated quick connects and if the connection is exposed to moisture, heat shrink butt splices may be more favorable. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 997/459;" src="../../attachments/47199440772621_47567607162381_image.png" width="997" height="459"></figure><p class="wysiwyg-text-align-center">To de-pin the connector, a casing or barrel style pin removal tool will be needed. </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 61%;"><img style="aspect-ratio: 574/337;" src="../../attachments/47199440772621_47567607164685_image.png" width="574" height="337"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 584/285;" src="../../attachments/47199440772621_47567591830157_image.png" width="584" height="285"></figure><p class="wysiwyg-text-align-center">Insert the tool into the connector over the pin</p><figure class="wysiwyg-image"><img style="aspect-ratio: 4032/2191;" src="../../attachments/47199440772621_47567607171085_image.png" width="4032" height="2191"></figure><p class="wysiwyg-text-align-center">Once tool is pushed all the way in, gently tug on the wire to pull from back of connector.</p><p class="wysiwyg-text-align-center">Note: If the wire does not pull out easily, push the wire into the connector while also holding the tool in the connector, then gently pull the wire out of the connector.  </p><figure class="wysiwyg-image"><img style="aspect-ratio: 4032/1598;" src="../../attachments/47199440772621_47567591833997_image.png" width="4032" height="1598"></figure><p class="wysiwyg-text-align-center">Re-install wires as shown</p><figure class="wysiwyg-image"><img style="aspect-ratio: 4032/1981;" src="../../attachments/47199440772621_47567607173773_image.png" width="4032" height="1981"></figure><p> </p><p> </p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/47199440772621-Precedent-6-10T-Eflex-w-ReliaTel-Controls-No-Condenser-Fan-Operation-After-Motor-Replacement" target="_blank">https://support.trane.com/hc/en-us/articles/47199440772621-Precedent-6-10T-Eflex-w-ReliaTel-Controls-No-Condenser-Fan-Operation-After-Motor-Replacement</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

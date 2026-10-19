@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 - Guidelines And Best Practices for Updating Firmware - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/40747875478285-Symbio-700-Guidelines-And-Best-Practices-for-Updating-Firmware" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 - Guidelines And Best Practices for Updating Firmware</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Voyager</span><span class="badge equip">Odyssey</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Bulletins / Service Alerts</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Symbio 700 &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-10-30 &nbsp;&bull;&nbsp; Last updated: 2026-10-14</div>
+<div class="body"><h2 id="h_01K8XQ2VBRCRYWKDQTKK3ZKGKW">Overview</h2><p>The Symbio 700 platform supports multiple products including Odyssey, Precedent, Voyager 3 and Foundation, all supported by a single firmware.  As part of a continuous enhancements, Trane releases 1-2 firmware releases for the Symbio 700 per year.  The primary purpose of firmware updates are to introduce new features and resolve reported software-related issues.   Adhering to the recommended guidelines ensures that firmware updates are conducted only when essential and avoids updates that offer minimal benefit.</p><h2 id="h_01K8XQ2F11AZCS5B3D3WR72WVS">Updating Firmware</h2><p>Updating Symbio 700 Firmware requires a technician at the unit and utilizing Symbio Service and Installation App and a USB Flash Drive or Tracer TU.  The process of updating the controller can be 5 minutes or more once the transfer has started.  <span data-teams="true">Updating the Symbio 700 firmware is not required every time a new version is available, refer to the When to Update Firmware section below.</span></p><p><span data-teams="true"> F</span>or more information See: <a href="../General/39268961820685.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Firmware Update for Unit Controller Module</a></p><p> </p><h2 id="h_01K8XQ1VJTTME2292KNZW207KY">When to Update Firmware</h2><h3 id="h_01K8XV9W50DSMX8YKYXPCYWAKG"><strong>When Replacing a Failed Controller</strong></h3><p>Best practice is to update the firmware of the replacement controller prior to installation.  Replacement controllers may have been stored for an extended period and could contain outdated firmware.  Additionally, backups created with newer firmware versions are not compatible with controllers running older firmware and cannot be restored.</p><p>An example illustrating the necessity of firmware updates: Units utilizing A2L refrigerant require a minimum firmware version of V7.01.0016.</p><p> </p><h3 id="h_01K8XV8W1VGERQBHG1GH1YZEED"><strong>New Control Features and Enhancements</strong></h3><p>When a new firmware update is released, it often includes additional control features or improvements to existing control functionalities. These enhancements are designed to optimize the performance and operation of the equipment, potentially providing a better user experience for the customer. </p><p>An example of this is the ability to upgrade the license of a Symbio 700 from basic to advanced.  This feature was not released until V6 of the Symbio 700.</p><p> </p><h3 id="h_01K8XV8NYZKPX95T4KEKQGZNM1"><strong>Resolved Field-Reported Issues</strong></h3><p><span data-teams="true">Field-reported issues that have factory solutions are communicated through Service Alerts or Service Bulletins. In some cases, these corrective actions may require a firmware update. These corrected field reported issues can be viewed in the release notes, please refer to: </span><a href="../Precedent/43048825162637.html" target="_blank" rel="noopener noreferrer"><span data-teams="true">Symbio® 700 Customer Release Notes</span></a></p><p> </p><h3 id="h_01K8XV8ERG5CTRKDEB6R2YS3P5"><strong>Instructed by Technical Support</strong></h3><p><span style="color: black;">Technical Support may recommend upgrading the firmware during troubleshooting of a persistent issue.  Additionally, Technical Support may require the firmware to be updated prior to escalating a potential new field-reported issue.</span></p><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/40747875478285-Symbio-700-Guidelines-And-Best-Practices-for-Updating-Firmware" target="_blank">https://support.trane.com/hc/en-us/articles/40747875478285-Symbio-700-Guidelines-And-Best-Practices-for-Updating-Firmware</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

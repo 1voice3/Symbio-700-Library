@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Precedent with Symbio 700 - Ignition Controller Board Module Diagnostics - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12588925977101-Precedent-with-Symbio-700-Ignition-Controller-Board-Module-Diagnostics" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Precedent with Symbio 700 - Ignition Controller Board Module Diagnostics</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Gas Heat &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-26 &nbsp;&bull;&nbsp; Last updated: 2026-01-21</div>
+<div class="body"><p> </p><p><span class="wysiwyg-font-size-large"><strong>Symbio 700 Ignition Diagnostics LED 1</strong></span><span class="wysiwyg-font-size-large"></span></p><figure class="wysiwyg-table wysiwyg-table-align-left" style="height: 514px; width: 99.7143%;"><table style="border-collapse: collapse; border-style: solid; border-width: 1px;"><tbody>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP102717769 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>Steady OFF</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP89369358 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">No Power/Failure/ Internal Failure</span><span class="EOP SCXP89369358 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP173529758 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>Steady ON</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP252933823 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Normal – No Call for heat</span><span class="EOP SCXP252933823 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;">
+<span class="TextRun SCXP26424281 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>Slow Flash Rate</strong></span><span class="EOP SCXP26424281 BCX0">​</span>
+</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;"><span class="TextRun BCX0 SCXP69036518 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Normal, call for heat (¾ second on, ¼ second off)</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP265778365 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>1 Flash</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP40181916 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Loss of Communication</span><span class="EOP SCXP40181916 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP227598787 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>2 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;"><p data-ccp-props='{"335559683":0,"335559685":0,"335559737":0,"335562764":2,"335562765":1.07,"335562766":4,"335562767":0,"335562768":4,"335562769":0}' data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><span data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">System Lockout:  Failed to detect or sustain a flame. (failure to ignite, no spark, low/</span>​<span data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">no gas pressure, etc.)</span></p></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP212042180 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>3 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP240442404 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Pressure switch problem detected. (no vent air flow, bad CBM, closed at an initial call for heat</span><span class="TextRun SCXP240442404 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">). Auto reset.</span><span class="EOP SCXP240442404 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP242956511 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>4 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP82549336 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">High Limit switch protection device open (excessive heat in combustion chamber, low airflow</span><span class="TextRun SCXP82549336 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">). Auto reset.</span><span class="EOP SCXP82549336 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP82068942 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>5 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP245527505 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Flame sensed and gas valve </span><span class="TextRun Underlined SCXP245527505 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">not </span><span class="TextRun SCXP245527505 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">energized, or flame sensed and no call for heat.</span><span class="EOP SCXP245527505 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP84103968 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>6 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;">
+<span class="TextRun SCXP229860303 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Flame Rollout Switch open. (CBM failure, incorrect gas pressure, incorrect primary air). </span><span class="TextRun SCXP229860303 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Requires manual reset of the switch.</span><span class="EOP SCXP229860303 BCX0">​</span>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP193784752 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>7 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;"><span class="TextRun BCX0 SCXP52170546 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Weak Flame</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun BCX0 SCXP225355003 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>8 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;"><span class="TextRun BCX0 SCXP24139782 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Internal Error</span></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; width: 23.2858%;"><span class="TextRun SCXP162009132 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>9 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; width: 76.7142%;"><span class="TextRun BCX0 SCXP147478011 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Gas Valve On Error</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.2858%;"><span class="TextRun SCXP162009132 BCX0 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color=""><strong>10 Flashes</strong></span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 76.7142%;"><span class="TextRun BCX0 SCXP147478011 NormalTextRun" lang="EN-US" data-scheme-color="@000000,1," data-usefontface="false" data-contrast="none" data-darkreader-inline-color="">Low Temperature Limit (LoNOx units only)</span></td>
+</tr>
+</tbody></table></figure><p> </p><p class="wysiwyg-text-align-center"><img class="wysiwyg-image-resized" style="aspect-ratio: 421/325; width: 37.23%;" src="../../attachments/12588925977101_12589019697293_mceclip0.png" alt="mceclip0.png" width="421" height="325"></p><p>Reference the application guide below for diagnostics, available via direct data monitoring from the Modbus-controlled gas heat ignition module or via data monitoring.</p><p><strong>Application Guide</strong></p><ul><li data-list-item-id="eae6b4a2769e3b4c28925e9a4efcecd3c"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">Precedent - Symbio® 700 controller - Application Guide – Trane Commercial HVAC Help Center</a></li></ul><p><strong>Table of Contents</strong></p><ul><li data-list-item-id="e3ce71f207e6a80c426d9600f8da45ed6">Troubleshooting &gt; Diagnostic &gt; Staged Gas Heat</li></ul><p><strong>Stage Gas Heat Troubleshooting</strong></p><ul><li data-list-item-id="e1570b1f5dd27c43afb60ebe3b7df498c"><a href="../Precedent/40080574995981.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/40080574995981-Staged-Gas-Heat-Troubleshooting-for-Precedent-Large-Foundation-Units-with-Symbio-700-Controls</a></li></ul><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12588925977101-Precedent-with-Symbio-700-Ignition-Controller-Board-Module-Diagnostics" target="_blank">https://support.trane.com/hc/en-us/articles/12588925977101-Precedent-with-Symbio-700-Ignition-Controller-Board-Module-Diagnostics</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

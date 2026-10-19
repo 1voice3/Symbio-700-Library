@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Precedent Symbio Supply Fan ERM fault - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/35264421572493-Precedent-Symbio-Supply-Fan-ERM-fault" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Precedent Symbio Supply Fan ERM fault</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-03-24 &nbsp;&bull;&nbsp; Last updated: 2026-10-15</div>
+<div class="body"><p><strong>Supply Fan ERM fault</strong></p><p> </p><p><strong>Summary:</strong></p><p>Trane Precedent Symbio units utilize EBM Pabst supply fan motors. These motors in most cases are equipped with onboard electronics that can communicate back to the Symbio unit controller via Modbus connection. There are a few exceptions that utilize a Mitsubishi VFD to control the supply fan motor. Anytime a supply fan ERM fault is reported, that fault is being communicated by the motor or the Mitsubishi VFD back to the Symbio controller.</p><p> </p><p> </p><p class="wysiwyg-text-align-justify">A significant number of supply fan ERM faults stem from motor high voltage loss, often linked to connection issues. The photo below highlights the PPM/PPF151 and PPM/PPF161 black connectors. The white connectors are the Modbus harness. For supply fan ERM faults the focus should be on the high voltage connections. </p><p class="wysiwyg-text-align-justify"> </p><p> </p><figure class="image wysiwyg-image"><img style="aspect-ratio: 841/687;" src="../../attachments/35264421572493_35333872945293_image.png" width="841" height="687"></figure><p> </p><p>Photo of the harness connectors PPM/PPF51 PPM/PPF61 leaving the high voltage control panel.</p><p> </p><figure class="image wysiwyg-image"><img style="aspect-ratio: 522/646;" src="../../attachments/35264421572493_35332147954445_image.png" width="522" height="646"></figure><p> </p><p>Recommendation is to check all connections highlighted below. It may be necessary to cutout the molex connectors if the connectors are damaged and/or cannot make a good connection. In this case the wiring can be directly spliced using the appropriately rated connectors. If the molex connectors have to be cutout it is recommended to order replacement harnesses and installing the new harnesses when available. The pigtail assembly for the fan motor can be ordered so the entire motor does not have to be replaced. The part number for the pig tail assembly is listed below.</p><p> </p><p><strong>EBM Motor pigtail: WIR14430</strong></p><p> </p><p>Dual Fan Schematic</p><figure class="image wysiwyg-image"><img style="aspect-ratio: 450/408;" src="../../attachments/35264421572493_35343561897869_image.png" width="450" height="408"></figure><p> </p><p>Single Fan Schematic</p><p> </p><figure class="image wysiwyg-image"><img style="aspect-ratio: 456/334;" src="../../attachments/35264421572493_35343607324941_image.png" width="456" height="334"></figure><p>Mitsubishi VFD Schematic</p><p> </p><p> </p><figure style="width: 100%;" class="image wysiwyg-image image_resized wysiwyg-image-resized"><img style="aspect-ratio: 1361/608;" src="../../attachments/35264421572493_35343991912717_image.png" width="1361" height="608"></figure><p> </p><p> </p><p>A supply fan ERM fault can also be caused by a voltage imbalance greater than 2% phase to phase. This is less common but has been found in areas where incoming power issues are known to be more problematic.</p><figure class="image wysiwyg-image"><img style="aspect-ratio: 275/136;" src="../../attachments/35264421572493_37399165245709_image.png" width="275" height="136"></figure><figure class="image wysiwyg-image"><img style="aspect-ratio: 290/547;" src="../../attachments/35264421572493_37399165246861_image.png" width="290" height="547"></figure><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/35264421572493-Precedent-Symbio-Supply-Fan-ERM-fault" target="_blank">https://support.trane.com/hc/en-us/articles/35264421572493-Precedent-Symbio-Supply-Fan-ERM-fault</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

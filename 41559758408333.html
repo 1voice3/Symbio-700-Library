@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resolved - Service Alert: Voyager 3 &amp; Precedent - (Symbio 700) Nuisance Alarming for &quot;Invalid ID&quot; or &quot;Config Invalid&quot; Diagnostics on Modulating Gas Heat Units - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/41559758408333-Resolved-Service-Alert-Voyager-3-Precedent-Symbio-700-Nuisance-Alarming-for-Invalid-ID-or-Config-Invalid-Diagnostics-on-Modulating-Gas-Heat-Units" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Resolved - Service Alert: Voyager 3 &amp; Precedent - (Symbio 700) Nuisance Alarming for &quot;Invalid ID&quot; or &quot;Config Invalid&quot; Diagnostics on Modulating Gas Heat Units</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Voyager</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Bulletins / Service Alerts</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Resolved Voyager 3 Service Alerts &nbsp;&bull;&nbsp; Category: Field Service Alerts / Known Product Issues<br>
+Created: 2025-12-01 &nbsp;&bull;&nbsp; Last updated: 2026-03-17</div>
+<div class="body"><h2 id="h_01K7FE5FEETGKY19CEWNF6TEZX"><span data-darkreader-inline-color=""><strong>Service Alert Summary:</strong></span></h2><p><span data-darkreader-inline-color=""></span>Modulating gas heat units may produce multiple nuisance alarms reporting "Diagnostic: Modulating Gas Invalid ID Plug Manifold 1" and "Diagnostic: Gas Heat Lockout Manifold 1"<span data-darkreader-inline-color=""> after updating to Symbio 700 firmware version 7.02 </span><span data-darkreader-inline-color=""></span></p><p><a href="https://support.trane.com/hc/en-us/articles/18160875905421" target="_blank" rel="noopener noreferrer"><em><span data-darkreader-inline-color="">Info about Service Alerts</span></em></a></p><h2 id="01H6VF32QQ38MFS6G9WJFMEX64">
+<span data-darkreader-inline-color=""><strong>What are known Diagnostics or Symptoms:</strong></span><span data-darkreader-inline-color=""></span>
+</h2><p>The initial issue was identified as originating from the manner in which the Symbio 700 managed the routine reboots of the VB1285 Ignition Controller. The initial fix in v7.02 changed how Symbio 700 handled these alarms, but in some instances the alarms may come back. Further improvements were added to allow Symbio to wait for the controller to fully reboot and then validate the alarm before passing it to the event log. </p><p> </p><h4 id="h_01K7FDB5CSN01Q924997PWE0JG"><span data-darkreader-inline-color=""><strong>Product Family</strong></span></h4><p><span data-darkreader-inline-color="">Voyager 3 units built in Clarksville, TN</span></p><p><span data-darkreader-inline-color="">Precedent units built in Clarksville, TN &amp; Lynn Haven, FL</span></p><p> </p><h4 id="01H6VF41BC0BF6SPAZ9W5JYFA2"><span data-darkreader-inline-color=""><strong>Model Prefix(s) &amp; Configuration details</strong></span></h4><p><span data-darkreader-inline-color="">All units with modulating gas heat (model number digit 10 = B) w/ version 7.02 firmware or older. </span></p><h4 id="01H6VF8WYWZF9CG40XKCFVFN27"> </h4><h2 id="01H6VHDSSXZ6JE070FQA37ABSA">
+<span data-darkreader-inline-color=""><strong>What actions can I take now: </strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul>
+<li data-list-item-id="e5ceb0c5f21f4329b0654ceec8d63c498">Update Symbio 700 firmware to the latest version</li>
+<li data-list-item-id="ed43e1673bc22b1a37fd556a6fff09682"><a href="../General/23351688731405.html">Symbio™ 700 - Firmware Update for Unit Controller Module</a></li>
+</ul><h2 id="01H6VGPY6HEAJSAS38XG37KHWD">
+<span data-darkreader-inline-color=""><strong>Is there a related</strong></span><span data-darkreader-inline-color=""><strong> </strong></span><span data-darkreader-inline-color=""><strong><span class="wysiwyg-underline">published</span></strong></span><span data-darkreader-inline-color=""><strong> </strong></span><span data-darkreader-inline-color=""><strong>service bulletin for this issue?</strong> </span><em><span data-darkreader-inline-color=""> </span></em>
+</h2><ul><li class="ck-list-marker-italic" data-list-item-id="eb6318eee615495ec35c52b6c3af24531"><em><span data-darkreader-inline-color="">At this time, we do not expect any bulletin will be published. </span></em></li></ul><p> </p><h2 id="01H6VH8V3NRS5FRDQ9D5ZCADFT">
+<span data-darkreader-inline-color=""><strong>Are WMS(Warranty Management System) claims allowed for this issue?</strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul><li data-list-item-id="e5fe9ec1bcbf47d1520c47bbf0b845312"><span data-darkreader-inline-color="">Claims for this issue are currently not allowed.</span></li></ul><p> </p><h2 id="01H6VH91TPRRD16AG5XFDVCQ7F">
+<span data-darkreader-inline-color=""><strong>Does the above information indicate the final resolution?</strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul><li data-list-item-id="edb519274c4505d3d5ee25b430a170661"><span data-darkreader-inline-color="">Yes, final resolution has been confirmed per above.</span></li></ul><p> </p><p class="wysiwyg-text-align-center"><span style="color: #7D1905;"><em><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><strong>This document is confidential and proprietary Trane information.  Please do not distribute.</strong></span></em></span></p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/41559758408333-Resolved-Service-Alert-Voyager-3-Precedent-Symbio-700-Nuisance-Alarming-for-Invalid-ID-or-Config-Invalid-Diagnostics-on-Modulating-Gas-Heat-Units" target="_blank">https://support.trane.com/hc/en-us/articles/41559758408333-Resolved-Service-Alert-Voyager-3-Precedent-Symbio-700-Nuisance-Alarming-for-Invalid-ID-or-Config-Invalid-Diagnostics-on-Modulating-Gas-Heat-Units</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

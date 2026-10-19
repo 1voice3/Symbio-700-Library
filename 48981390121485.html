@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Precedent with Symbio 700 Controls Dehumidification: Thermostat with Humidistat - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/48981390121485-Precedent-with-Symbio-700-Controls-Dehumidification-Thermostat-with-Humidistat" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Precedent with Symbio 700 Controls Dehumidification: Thermostat with Humidistat</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Dehumidification</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Dehumidification / Hot Gas Reheat (HGRH) &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-09-17 &nbsp;&bull;&nbsp; Last updated: 2026-09-29</div>
+<div class="body"><h3 id="h_01M2RH9PFA98ZKWYQ67NJZFE3X"> </h3><h3 id="h_01M2TG1XA88SPE4KM3BJEJSMW8"><strong>Thermostat with Humidistat</strong></h3><h4 id="h_01M2RHB2HY8758W0RV38MDVRX2">Sequence of Operation</h4><h5 id="h_01M39T4P1AMK8EKEWW0Y4GE4Y8">Initiation</h5><p>When Humidistat input is used, dehumidification initiates when the Symbio 700 Humidistat input becomes active (24vac present on Customer Connection Module J3-2). A Y1 call is <span class="wysiwyg-underline">not</span> required to initiate dehumidification.</p><p>If there is no thermostat call for cooling, heating, or supply fan, the unit will be off. When the Humidistat input is active, the Symbio 700 controller will start the unit and provide dehumidification.</p><p>When dehumidification activates, compressors stage to full capacity, economizer cooling is disabled. The reheat valve will open targeting the max allowed position, then modulate to an adjustable Discharge Air Reheat Setpoint (70°F default). This setpoint is adjustable in the <a href="../General/46866756295437.html">Symbio Service &amp; Installation Mobile App</a> in SETTINGS&gt;REFRIGERATION&gt;DISCHARGE AIR REHEAT SETPOINT BAS and has an adjustable range between 65°F &amp; 80°F. </p><h5 id="h_01M39T68RH9P1D743JGNPRZKQS">Termination</h5><p>Any condition listed below will terminate dehumidification:</p><ul>
+<li data-list-item-id="e406443e37d605f2fcbd6a32665f831c4">Humidistat input opens</li>
+<li data-list-item-id="eadbeebc268da29364304414f4a8aaf67">Thermostat Y1 + Y2 call (dehumidification is allowed with a Y1 OR Y2 only call)</li>
+<li data-list-item-id="ec87450792949b849e71a9c9965464cef">Thermostat Heat Call</li>
+<li data-list-item-id="e3a32ca025eb561c2bb574a299f3248b5">Occupancy Input Closes and Unoccupied Dehumidification is disabled</li>
+<li data-list-item-id="e3a2d74ce39a65509d15e6c6869fb0599">Entering Evaporator Temperature below 30°F or failed Entering Evaporator Temperature Sensor</li>
+<li data-list-item-id="e1dc50045b23f8582eec6bcea3d3e2f7c">Outdoor Air Temperature below 40°F or above 100°F</li>
+<li data-list-item-id="e5998d9c5913aaa08e5837749a70b8861">Stepper Motor Module (SMM) communication failure</li>
+<li data-list-item-id="e0d8cc151264462ae4a75b5029a3b7a6d">Any emergency stop condition that stops the compressors or supply fan</li>
+</ul><h4 id="h_01M2RJDM62PNZ36MB7S4ZTTWZ4"> </h4><h4 id="h_01M3PX38BPHJAWC4GZYHQ16DZB">Wiring </h4><p>Thermostat wiring connects to the Symbio 700 on J21:</p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 74.93%;"><img style="aspect-ratio: 911/623;" src="../../attachments/48981390121485_48981374126093_image.png" width="911" height="623"></figure><p>Humidistat Wiring Connects to the Customer Connection Module on J3:</p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 54.46%;"><img style="aspect-ratio: 623/660;" src="../../attachments/48981390121485_48981390117005_image.png" width="623" height="660"></figure><h4 id="h_01M2RJE6C6B1TVQWPC0M87QN7E">Troubleshooting</h4><h5 id="h_01M2TAW56K43KH990WTCFZ2KJW">Unit will not enter dehumidification</h5><ul>
+<li data-list-item-id="ee1805d981661e322fe1d22bb7137fb3c">Is the OAT between 40°F and 100°F ?<ul><li data-list-item-id="eef04490cd6e984a492ac6f25d7700ebb">Once the OAT exceeds these values, there is a 5°F dead band to allow dehumidification to work again, OAT would have to be &gt;45°F or &lt;95°F to re-enable dehumidification</li></ul>
+</li>
+<li data-list-item-id="e1625bfded63b9534646046c2e877620c">Does the unit have Y1 + Y2 calls ?<ul><li data-list-item-id="e500c07fdfbc2429bcf216c6c708db19a">If the Y2 call drops, the dehumidification will begin per the normal sequence of operations</li></ul>
+</li>
+<li data-list-item-id="eeb3ddf91b087d2b9cfc7ea654ddbf715">Is the thermostat calling for Heat ?<ul><li data-list-item-id="ec640444db356d70662911fed744e2150">A call for heat will disable dehumidification instantly</li></ul>
+</li>
+<li data-list-item-id="e72c26df9319823c59f79dac37a841ced">Is 24vac present on Customer Connection Module J3-2 Humidistat Input</li>
+</ul><h5 id="h_01M2TAW9EGZ0AMY602XM0BDF5J">Unit overheating the space</h5><ul>
+<li data-list-item-id="e412333b46b1768252911b84ef8a749ef">Typically a thermostat will stop this from happening when the Y2 calls is added, but the Discharge Air Reheat Setpoint BAS (default 70°F) may be set too high for the space and is add too much heat during dehumidification. </li>
+<li data-list-item-id="e7dac2603fd9338dd16d4a4f1f661b3c0">If you have a single stage cooling unit (Standard Efficiency 3-5T) and only have a Y1 call wired to the unit, the same scenario above could be in play and there is not a Y2 call to terminate dehumidification. Adding a Y2 call to a single stage unit is a good idea for space temperature protection during dehumidification, but also the Y2 call is needed during economizer operation to allow the compressor to operate to supplement the outdoor air damper. </li>
+</ul><h5 id="h_01M2TFN6RPVTTHQ0V33SFDCF4Z">Unit overcooling the space</h5><ul><li data-list-item-id="e86f36069787bf4c212a533f4b1fb42fa">If the Discharge Air Reheat Setpoint BAS is set to the minimum of 65°F, it may be providing enough cooling to allow the space temperature to drop. </li></ul><p> </p><h4 id="h_01M3PW288QV2S0JX12W1HC4FCX">Symbio 700 Dehumidification Points</h4><p>Values in <span style="color: #BC5A10;">ORANGE</span> are adjustable </p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 21%;">
+<col style="width: 7%;">
+<col style="width: 7%;">
+<col style="width: 37%;">
+<col style="width: 17%;">
+</colgroup>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">BACnet Instance</p></td>
+<td><p class="wysiwyg-text-align-center">Point Name</p></td>
+<td><p class="wysiwyg-text-align-center">Default</p></td>
+<td>Range</td>
+<td>Use</td>
+<td><p class="wysiwyg-text-align-center">App/User Interface Location</p></td>
+</tr>
+<tr>
+<td>AI-10124</td>
+<td>Discharge Air Temperature Local</td>
+<td>--</td>
+<td> </td>
+<td>Local Discharge Air Temperature</td>
+<td>STATUS&gt;INDOOR</td>
+</tr>
+<tr>
+<td>AI-11166</td>
+<td>Evaporator Entering Refrigerant Temperature</td>
+<td>--</td>
+<td> </td>
+<td>Local Evaporator Entering Refrigerant Temperature (located on leaving side of TXV)</td>
+<td>STATUS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>AI-11164</td>
+<td>Reheat Valve 1 Step Status</td>
+<td>--</td>
+<td> </td>
+<td>Reheat Valve Steps (0 = Closed)</td>
+<td>STATUS&gt;REFRIGERATOIN</td>
+</tr>
+<tr>
+<td>AV-10134</td>
+<td><span style="color: #BC5A10;">Discharge Air Reheat Setpoint BAS</span></td>
+<td>70°F</td>
+<td>65°F-80°F</td>
+<td>DAT Target Setpoint while in reheat (controls HGRH valve Modulation)</td>
+<td>SETTINGS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>AV-11281</td>
+<td>Dehumidification Control Status</td>
+<td>0%</td>
+<td> </td>
+<td>HGRH Valve Position in %</td>
+<td>STATUS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>AV-11315</td>
+<td><span style="color: #BC5A10;">Reheat Purge Interval (minutes)</span></td>
+<td>120</td>
+<td>60-180</td>
+<td>Amount of continuous reheat operation before 3 min purge/compressor cool down sequence</td>
+<td>SETTINGS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>BI-11143</td>
+<td>Reheat Humidistat Input</td>
+<td>--</td>
+<td> </td>
+<td>Status of Customer Connection Module J3-2 Humidistat Input</td>
+<td>STATUS&gt;SYSTEM</td>
+</tr>
+<tr>
+<td>BI-11187</td>
+<td>Reheat Pumpout Solenoid Status</td>
+<td>--</td>
+<td> </td>
+<td>Status or Reheat Pumpout Solenoid Command, Solenoid is off during dehum, on during normal cooling</td>
+<td>STATUS&gt;SYSTEM</td>
+</tr>
+<tr>
+<td>BV-10106</td>
+<td><span style="color: #BC5A10;">Dehumidification Enable Command</span></td>
+<td>Auto</td>
+<td>Auto, Disabled</td>
+<td>Setting to Disabled will disable all dehumidification efforts. </td>
+<td>SETTINGS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>BV-11255</td>
+<td>Dehumidification Status</td>
+<td>Inactive</td>
+<td> </td>
+<td>Status of unit dehumidification control</td>
+<td>STATUS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>BV-11259</td>
+<td><span style="color: #BC5A10;">Occupied Dehumidification Enable BAS</span></td>
+<td>Enabled</td>
+<td>Enabled, Disabled</td>
+<td>Allows unit to dehumidify when the unit is occupied (J20-2 = Open). </td>
+<td>SETTINGS&gt;REFRIGERATION</td>
+</tr>
+<tr>
+<td>BV-11261</td>
+<td><span style="color: #BC5A10;">Unoccupied Dehumidification Enable BAS</span></td>
+<td>Enabled</td>
+<td>Enabled, Disabled</td>
+<td>Allows unit to dehumidify when the unit is unoccupied (J20-2 = Closed/24vac present)</td>
+<td>SETTINGS&gt;REFRIGERATION</td>
+</tr>
+</tbody>
+</table></figure><p>*Other dehumidification/reheat points are available in the mobile app, these points either do not affect thermostat with humidistat control, are feedback/active values or are not recommend to be changed without Tech Support direction. </p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/48981390121485-Precedent-with-Symbio-700-Controls-Dehumidification-Thermostat-with-Humidistat" target="_blank">https://support.trane.com/hc/en-us/articles/48981390121485-Precedent-with-Symbio-700-Controls-Dehumidification-Thermostat-with-Humidistat</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

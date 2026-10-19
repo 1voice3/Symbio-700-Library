@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 - Addressing Supply Fan 2 Using The On-Board Display - Modbus Device Service - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/33466225420813-Symbio-700-Addressing-Supply-Fan-2-Using-The-On-Board-Display-Modbus-Device-Service" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 - Addressing Supply Fan 2 Using The On-Board Display - Modbus Device Service</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-01-14 &nbsp;&bull;&nbsp; Last updated: 2026-07-30</div>
+<div class="body"><p><strong>Symbio 700 - Addressing Supply Fan 2 Using The On-Board Display - Modbus Device Service</strong></p><p> </p><p class="MsoNormal"><strong>Modbus Device Service:</strong></p><p class="MsoNormal">Symbio 700 provides the ability to apply a Modbus address to an end-device which is useful for field replacement of Modbus-controlled end devices. The service is available via the onboard display Service menu, Symbio 700 Service and Installation app and Tracer TU.</p><div class="callout-danger"><p><strong>Warning:</strong> You <strong>MUST</strong> have Firmware version 7.01.0014 or higher. Changing factory Modbus device address must only be performed by experienced service personnel. Re-addressing factory Modbus devices can result in a unit malfunction.</p></div><p> </p><p class="MsoNormal"><strong>Procedure for the local user on-board interface:</strong></p><ol>
+<li data-list-item-id="eb9e81f98a07ee4912763423eb4bf53a1">
+<span class="wysiwyg-underline">Power Down the Equipment</span><ul><li data-list-item-id="ee9485a8f69649e566d48e10e385fab8a">Remove power from the equipment.</li></ul>
+</li>
+<li data-list-item-id="ead2b0782a41ec9826c4ab6765d71302d">
+<span class="wysiwyg-underline">Connect Symbio 700 to Replacement End Device</span><ul>
+<li data-list-item-id="e172eca2b6f55b247b726c4223e731d96">
+<p>Connect Symbio 700 to the replacement end device which requires a Modbus address change. All other Modbus devices required to be disconnected from the Modbus communication bus. </p>
+<p>Other modbus devices that will need to be removed could include:</p>
+<ul>
+<li data-list-item-id="e56a1fafc9fee0f2a8c2747261631bd80">Supply Fan 1</li>
+<li data-list-item-id="ed42752a3cd74391c609a6037c214a0eb">Ignition Board</li>
+<li data-list-item-id="ed13121b4088527133074b3f27fba990c">R454B Leak Detection Sensor</li>
+</ul>
+</li>
+<li data-list-item-id="e3b009b14873cabdb42373b6bbc606a70">Technician must trip the Symbio 700 Equipment Shutdown input (J18) prior to applying power.</li>
+</ul>
+</li>
+<li data-list-item-id="e18ec8dd3842aa49a9cff72c645b6f8c0">
+<span class="wysiwyg-underline">Power Up the Equipment</span><ul><li data-list-item-id="eefb49ad51ce5139ce56f400c843db070">After checking connections, apply power to the equipment. The replacement end device should be powered and communicating with the Symbio 700.</li></ul>
+</li>
+<li data-list-item-id="e618850d700a9777efde88db0cfb70d47">
+<span class="wysiwyg-underline">Symbio 700 onboard display, Service Menu</span><ul>
+<li data-list-item-id="e576b25e2b86b2564f4300ad2c8c05883">Using the Symbio 700 local user on-board interface, navigate to the Service Menu and then to Modbus Device Service screen. Press ENTER to begin the Modbus address change process.</li>
+<li class="ck-list-marker-bold" data-list-item-id="ef8242b39ed93871c0f68acf26ee22260"><strong>Figure X1. Modbus Device Service menu.</strong></li>
+<li data-list-item-id="e08ce5ce094c45fb5062d9484e84db3a7"><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 75.92%;"><img style="aspect-ratio: 837/148;" src="../../attachments/33466225420813_33466706573453_image.png" width="837" height="148"></figure></li>
+</ul>
+</li>
+<li data-list-item-id="ea39210a8a68ba218ed9ae0999e5a2167">
+<span class="wysiwyg-underline">Select the Replacement Device</span><ul>
+<li data-list-item-id="ea2e08a3b93247b5c44d38ba792ee26c8">The Select Device screen will display a list of discovered Modbus devices communicating the Symbio 700 at power up.  </li>
+<li data-list-item-id="e2944b9b2bf3193ce075c2b72676717e8">Example, when replacing Precedent supply fan 2 drive, the replacement drive is programmed as “SupplyFanERM1 (3)”.</li>
+<li class="ck-list-marker-bold" data-list-item-id="ea165948c9440e9809870f5f3fb0ffc12"><strong>Figure X2. Selecting Device to be re-addressed.</strong></li>
+<li data-list-item-id="e6ba97dcf9a0ccaca766074bc29715ed1"><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 37.76%;"><img style="aspect-ratio: 390/145;" src="../../attachments/33466225420813_33467421980429_image.png" width="390" height="145"></figure></li>
+<li data-list-item-id="e27ec7003e04561b00b77e39650324cb9">If no Modbus devices are detected, “No Communicating Devices” is displayed. Restart the process at step 1 and check that the end device power and Modbus link connections.</li>
+</ul>
+</li>
+<li data-list-item-id="e1a7d4fd879236ecb25865097d127b51d">
+<span class="wysiwyg-underline">Assign new Modbus Address</span><ul>
+<li data-list-item-id="ecfcec408bc133a5b48ff905d7d5ef855">The screen will prompt you to Select New Device. Use the Up and Down buttons to select the device with the desired Modbus address and press Enter.</li>
+<li data-list-item-id="e6a4d9efd37c0d7fe10a08b37e7578825">Only valid addresses are allowed to be selected.</li>
+<li data-list-item-id="e636fb6d41d72ddb161a531bc63452625">When replacing Precedent supply fan 2 drive, at this step, select “SupplyFanERM2 (4)”. Press Enter to apply the setting to the replacement device.</li>
+<li class="ck-list-marker-bold" data-list-item-id="e933154caaa7b127435440c1a575c295d"><strong>Figure X3. Selecting New Device.</strong></li>
+<li data-list-item-id="ed977c0ca94b0b1a3a9637c0e33c59356"><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 35.62%;"><img style="aspect-ratio: 390/145;" src="../../attachments/33466225420813_33467421983885_image.png" width="390" height="145"></figure></li>
+</ul>
+</li>
+<li data-list-item-id="e457f3ce80fcbbb1a1343d6d150ea2bed">
+<span class="wysiwyg-underline">On board display confirmation Messages</span><ul>
+<li data-list-item-id="eca34d3e7f158a8aefc103d2a57039e50">“Updated” is displayed if the device was successfully addressed.</li>
+<li data-list-item-id="e744952adc1bd370b1c1866f773d35489">“Unsupported Target Device” is displayed if the device is unsupported.</li>
+<li data-list-item-id="eb8508342d1214e771f64bba3b97c0717">“Not Changed” is displayed if selected device address is the same the address being written.</li>
+</ul>
+</li>
+<li data-list-item-id="e379e1b469b427950b2b65f1283b55bc6"><span class="wysiwyg-underline">Cycle power to the Symbio 700</span></li>
+<li data-list-item-id="ef301a1ac8538d5df95dc395b7233439e">
+<span class="wysiwyg-underline">Verify end-device communication status</span><ul>
+<li data-list-item-id="e7e701c6072f6a42844d480b4e5cc24aa">Navigate to Service menu, Modbus Devices, Supply Fan 2 Communication Status</li>
+<li data-list-item-id="e29684ec3924da6be2aa747ef7ea7392f">Verify communication status is “Communicating”, if not communicating repeat steps 1-9.</li>
+<li class="ck-list-marker-bold" data-list-item-id="e959f940a22de3500c26f42bbfe062ca2"><strong>Figure X4. Verifying communication status.</strong></li>
+<li data-list-item-id="ea16ce0c100b269ecbce8687186f24b7c"><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 92.58%;"><img style="aspect-ratio: 1275/144;" src="../../attachments/33466225420813_33467421986189_image.png" width="1275" height="144"></figure></li>
+</ul>
+</li>
+<li data-list-item-id="e4dca9ac2f98024202ae8010cab9f5d5d">
+<span class="wysiwyg-underline">Power Down the Equipment</span><ul>
+<li data-list-item-id="ee8b09e44e2195e2595feee6ca4838be3">Remove power from the equipment.</li>
+<li data-list-item-id="eedcf3548b2c0767a2d4661f866f3d892">Reconnect all previously disconnected Modbus devices from Step 2.</li>
+<li data-list-item-id="e38acecc5cc90d995c844fac413118aa2">Return Symbio 700 Equipment Shutdown input (J18) to a normal state.</li>
+</ul>
+</li>
+<li data-list-item-id="e63857769df6cf7e0b3a735264d2823a0">
+<span class="wysiwyg-underline">Verify communication status of all Modbus end-devices</span><ul>
+<li data-list-item-id="ec87f4a410170caf3250c6f8c631dbe40">Navigate to Service menu, Modbus Devices</li>
+<li data-list-item-id="e68d35dcb69a87aca60a0acd14eac63e7">Verify communication status is “Communicating” for applicable devices, if not communicating check Modbus connections.<ol>
+<li data-list-item-id="ebd024369845a192b5a05796b4044c51a">Supply Fan 1 Communication Status</li>
+<li data-list-item-id="ef1fef42059da05fbadb84a8d87dc62eb">Supply Fan 2 Communication Status</li>
+<li data-list-item-id="eb6c854b7d4f3d75c8045e99aa68f6421">Gas Heat Ignition Module 1 Communication Status</li>
+<li data-list-item-id="e3309fd67925cc3a17ae3ee687855c814">Compressor 1 VFD Communication Status</li>
+<li data-list-item-id="e6070020c62019bd0a447fd2bc4deb4e7">Refrigerant Leak Sensor Communication Status Sensor A</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p><p class="MsoNoSpacing"> </p><p class="MsoNoSpacing"> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/33466225420813-Symbio-700-Addressing-Supply-Fan-2-Using-The-On-Board-Display-Modbus-Device-Service" target="_blank">https://support.trane.com/hc/en-us/articles/33466225420813-Symbio-700-Addressing-Supply-Fan-2-Using-The-On-Board-Display-Modbus-Device-Service</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

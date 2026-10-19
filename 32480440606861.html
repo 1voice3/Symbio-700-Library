@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A2L Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler with R-454B - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/32480440606861-A2L-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler-with-R-454B" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>A2L Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler with R-454B</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Odyssey &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2024-12-06 &nbsp;&bull;&nbsp; Last updated: 2026-10-16</div>
+<div class="body"><zd-tabs><div class="wysiwyg-disclosure wysiwyg-tabs">
+<details open="true"><summary>Equipment</summary><div class="wysiwyg-disclosure-content">
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><span class="wysiwyg-font-size-x-large">Overview</span></p>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">The system consists of an <strong>Odyssey A2L condenser equipped with Symbio 700 controls</strong> and an <strong>Odyssey A2L air handling unit (AHU) equipped with Symbio control boards</strong>. The AHU is configured with <strong>model number digit 15 = D</strong>, identifying the applicable unit configuration for this installation.</p>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">This equipment arrangement provides an integrated Odyssey A2L system with Modbus communication established between the condenser and AHU to enable coordinated control and system operation.</p>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+</div></details><details><summary>Wiring Info</summary><div class="wysiwyg-disclosure-content">
+<p><strong>How many wires do I need?</strong></p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">1 = Up to 7-conductor thermostat wire between the thermostat OR zone sensor and condenser</p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">1 = Up to 6-conductor control wire between the AHU and condenser</p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">2 = 2-conductor twisted, shielded, stranded communication wires between the AHU and condenser. </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Recommended Communication Wire </p>
+<ul><li data-list-item-id="ebbf65463be7320763c33017e39f62e14"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../General/34729881539469.html" target="_blank" rel="noopener noreferrer">Symbio Communication Wire – Trane Commercial HVAC Help Center</a></p></li></ul>
+</div></details><details><summary>Wiring Explanation</summary><div class="wysiwyg-disclosure-content">
+<h3 id="h_01M50C1YQZ9A9NH7MJEHMDCAKM"><span class="wysiwyg-font-size-large"><span style="box-sizing: border-box; font-size: large;">Cable Identification</span></span></h3>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 1600/900; width: 100%;" src="../../attachments/32480440606861_32485478394381_blobid0.png" alt="" width="1600" height="900"></p>
+<p> </p>
+<p> </p>
+<h3 id="h_01KMGNM1C0WK6E3M6RW0N1HTCM">AHU Wiring to Condenser - Cable #1 Modbus Communication</h3>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong style="box-sizing: border-box; font-weight: bolder;">Cable #1 </strong>is a Modbus communication link between Symbio 700 and the AHU VFD. It is required for Pairing B as the AHU uses a communicating VFD. This cable must be a 2-conductor, twisted, shielded, stranded cable intended for 2 wire communications. We recommend Trane Purple Comm wire (Windy City Wire Spec #0523003) or any 2 conductor comm wire. 3 Conductor comm wire is also acceptable for Cable #1.  <a style="background-color: transparent; box-sizing: border-box; color: #4f95b3;" href="../General/360055739011.html"><em style="box-sizing: border-box;"><span class="wysiwyg-underline">Symbio Communication Wire</span></em></a></p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">***<strong style="box-sizing: border-box; font-weight: bolder;">DO NOT USE THERMOSTAT, ETHERNET OR NON-COMMUNICATION RATED WIRE FOR COMMUNICATIONS***</strong></p>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">
+<strong>AHU Wiring to Condenser</strong><br><strong>Cable #1 Modbus Communication</strong>
+</th></tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>AHU</strong></p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to</strong></p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>Condenser</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td rowspan="3">1</td>
+<td>Relay Board</td>
+<td>J7-1</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J16-1</td>
+<td>Modbus + Communications for VFD</td>
+</tr>
+<tr>
+<td>Relay Board</td>
+<td>J7-2</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J16-2</td>
+<td>Modbus + Communications for VFD</td>
+</tr>
+<tr>
+<td>Relay Board</td>
+<td>J7-3</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J16-3</td>
+<td>Comm drain (shield) wire, taped to back at AHU, do not connect at Relay board</td>
+</tr>
+</tbody>
+</table></figure><p><img src="../../attachments/32480440606861_32551572321805_blobid2.png" alt="" width="1600" height="900"></p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<h3 id="h_01KMGNMA0G3CM94ZQDTWD5WA49">AHU Wiring to Condenser - Cable #2 Control Wiring</h3>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">AHU Wiring to Condenser<br>Cable #2 Control Wiring</th></tr></thead>
+<tbody>
+<tr>
+<td> </td>
+<td><p class="wysiwyg-text-align-center"><strong>AHU</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to </strong></p></td>
+<td><p class="wysiwyg-text-align-center"><strong>Condenser</strong></p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Relay Board</td>
+<td>J10-1</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J15-1</td>
+<td>24vac to power Relay Board</td>
+</tr>
+<tr>
+<td> </td>
+<td>Relay Board</td>
+<td>J10-2</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J15-2</td>
+<td>Comm/Neutral for Relay Board</td>
+</tr>
+<tr>
+<td> </td>
+<td>Relay Board</td>
+<td>J5-1</td>
+<td style="padding: 0px;"> </td>
+<td>Symbio 700</td>
+<td>J16-2</td>
+<td>Evap coil frostat, compressor shutdown</td>
+</tr>
+<tr>
+<td> </td>
+<td>Relay Board</td>
+<td>J5-4</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J18-1</td>
+<td>Fan interlock for electric heat operation</td>
+</tr>
+<tr>
+<td> </td>
+<td>Relay Board</td>
+<td>J14-3</td>
+<td style="padding: 0px;"> </td>
+<td>Terminal Block</td>
+<td>T2</td>
+<td>Refrigerant Sensor Alarm Contacts</td>
+</tr>
+<tr>
+<td> </td>
+<td>Relay Board</td>
+<td>J14-4</td>
+<td style="padding: 0px;"> </td>
+<td>Terminal Block</td>
+<td>T1</td>
+<td>24vac to Refrigerant Sensor Alarm Contacts</td>
+</tr>
+<tr>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+<td style="padding: 0px;"> </td>
+</tr>
+<tr>
+<td rowspan="2">N/A</td>
+<td>Relay Board</td>
+<td>J10-1</td>
+<td style="padding: 0px;"> </td>
+<td>Relay Board</td>
+<td>J4-1</td>
+<td>24vac to IMC link, power for Indoor OM</td>
+</tr>
+<tr>
+<td>Relay Board</td>
+<td>J10-2</td>
+<td style="padding: 0px;"> </td>
+<td>Relay Board</td>
+<td>J4-2</td>
+<td>24 neutral/common to IMC link, power for Indoor OM</td>
+</tr>
+</tbody>
+</table></figure><p><img src="../../attachments/32480440606861_32552501382669_blobid3.png" alt="" width="1600" height="900"></p>
+<p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<h3 id="h_01KMGNMX61822NKP899F3NH2DQ">AHU Wiring to Condenser - Cable #3 IMC Communications</h3>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong style="box-sizing: border-box; font-weight: bolder;">Cable #3 </strong>is an IMC communication link between Symbio 700 and the Indoor Option Module. It is required for electric heat operation and VVZT configuration. This cable must be a 2-conductor, twisted, shielded, stranded cable intended for 2 wire communications. We recommend Trane Purple Comm wire (Windy City Wire Spec #0523003) or any 2 conductor comm wire.  <a style="background-color: transparent; box-sizing: border-box; color: #4f95b3;" href="../General/360055739011.html"><em style="box-sizing: border-box;"><span class="wysiwyg-underline">Symbio Communication Wire</span></em></a></p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">***<strong style="box-sizing: border-box; font-weight: bolder;">DO NOT USE THERMOSTAT, ETHERNET OR NON-COMMUINCATION RATED WIRE FOR COMMUNICATIONS***</strong></p>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">AHU Wiring to Condenser<br>Cable #3 IMC Communication</th></tr></thead>
+<tbody>
+<tr>
+<td> </td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>AHU</strong></p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to</strong></p></td>
+<td colspan="2"><strong>Condenser</strong></td>
+<td> </td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td rowspan="3">3</td>
+<td>Relay Board</td>
+<td>J4-3</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J15-3</td>
+<td>IMC + Communications for Indoor OM</td>
+</tr>
+<tr>
+<td>Relay Board</td>
+<td>J4-4</td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J15-4</td>
+<td>IMC + Communications for Indoor OM</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td style="padding: 0px;"> </td>
+<td>Adapter Board</td>
+<td>J15-2</td>
+<td>Comm drain (shield) wire, taped back at AHU, do not connect at Relay Board</td>
+</tr>
+</tbody>
+</table></figure><p><img src="../../attachments/32480440606861_32551572338445_mceclip2.png" width="1008" height="564"></p>
+<p> </p>
+<p> </p>
+<h3 id="h_01M1C9BZ4BZA3RN1YTEXW2SM0P">Wiring Thermostat to Condenser - Cable #4A Thermostat Wiring</h3>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong style="box-sizing: border-box; font-weight: bolder;">Cable #4A</strong> is for conventional thermostat use or when the condenser is controlled by relays. Unit will only use Cable #4A or 4B, not both. </p>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">Condenser to Thermostat<br>Cable #4 Thermostat Wiring</th></tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td><p class="wysiwyg-text-align-center"><strong>Condenser</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to </strong></p></td>
+<td><p class="wysiwyg-text-align-center"><strong>Thermostat</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td rowspan="9">4</td>
+<td>Symbio 700</td>
+<td>J21-1 (24vac)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>R</td>
+<td>24vac</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-2 (Y1)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>Y1</td>
+<td>Cool 1 (Heat call on Heat Pump)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-3 (W1/O)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>W1 or O/B</td>
+<td>Heat 1 (reversing valve call on Heat Pump)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-4 (G)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>G</td>
+<td>Fan</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-5 (W2)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>W2</td>
+<td>Heat 2 (Aux heat on Heat Pump)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-6 (Y2)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>Y2</td>
+<td>Cool 2 (Heat call on Heat Pump)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-7(X2)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>Aux</td>
+<td>Emergency Heat on Heat Pump (will shut down compressors)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-8 (T)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>Pulldown</td>
+<td>Heat Anticipator/Pulldown (not commonly used)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J21-9 (Com)</td>
+<td style="padding: 0px;"> </td>
+<td>Thermostat</td>
+<td>Comm</td>
+<td>Common/Neutral for Thermostat</td>
+</tr>
+</tbody>
+</table></figure><p><img style="border-style: none; box-sizing: border-box; height: auto; max-width: 100%;" src="../../attachments/32480440606861_32480481620365_blobid2.png" alt="" width="227" height="366"></p>
+<p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<h3 id="h_01KMGNNEFQRHY1846WB8654FJS">Wiring Zone Sensor to Condenser - Cable #4B Thermostat Wiring</h3>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong style="box-sizing: border-box; font-weight: bolder;">Cable #4B</strong> is for zone sensor use and required when VVZT (SZVAV) operation is desired. Zone sensors are commonly used with BAS or can be standalone. Unit will only use Cable #4A or 4B, not both.</p>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">Condenser to Zone Sensor<br>Cable #4 Zone Sensor Wiring</th></tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>Condenser</strong></p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to</strong></p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>Zone Sensor</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td rowspan="7">4</td>
+<td>Symbio 700</td>
+<td>J19-1</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>1</td>
+<td>Zone Temp</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-2</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>2</td>
+<td>Common</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-3</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>3</td>
+<td>Cooling Setpoint</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-4</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>4</td>
+<td>Unit Mode &amp; Fan Speed (Fan Speed not supported on all units)</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-5</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>5</td>
+<td>Heating Setpoint</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-6</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>Ground</td>
+<td>Common/Neutral for 24vac</td>
+</tr>
+<tr>
+<td>Symbio 700</td>
+<td>J19-7</td>
+<td style="padding: 0px;"> </td>
+<td>Zone Sensor</td>
+<td>24vac</td>
+<td>24vac</td>
+</tr>
+</tbody>
+</table></figure><p><img style="border-style: none; box-sizing: border-box; height: auto; max-width: 100%;" src="../../attachments/32480440606861_32480440592653_mceclip4.png" width="271" height="338"></p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><span class="wysiwyg-font-size-medium"><span style="box-sizing: border-box; font-size: small;">*Zone sensor wiring shown for BAYSENS135, other mechanical zone sensors similar.</span></span> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<h3 id="h_01M1CA0WWREZ89Y2C60ZFFX278">Emergency Stop Wiring  - From Stop Devices to Symbio 700</h3>
+<figure class="wysiwyg-table" style="width: 100%;"><table style="margin-left: 0px; margin-right: auto;">
+<thead><tr><th colspan="7">Emergency Stop Wiring<br>From Stop Devices to Symbio 700</th></tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>AHU</strong></p></td>
+<td style="padding: 0px;"><p class="wysiwyg-text-align-center"><strong>to</strong></p></td>
+<td colspan="2"><p class="wysiwyg-text-align-center"><strong>Condenser</strong></p></td>
+<td><p class="wysiwyg-text-align-center"> </p></td>
+</tr>
+<tr>
+<td><strong>Cable</strong></td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td style="padding: 0px;"> </td>
+<td><strong>Board</strong></td>
+<td><strong>Terminal</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td rowspan="2">N/A</td>
+<td>Stop Device</td>
+<td>Common</td>
+<td style="padding: 0px;"> </td>
+<td>Symbio 700</td>
+<td>J18-1</td>
+<td>24vac Out to Stop Device(s)</td>
+</tr>
+<tr>
+<td>Stop Device</td>
+<td>Norm. Closed</td>
+<td style="padding: 0px;"> </td>
+<td>Symbio 700</td>
+<td>J18-2</td>
+<td>24vac Input from Stop Device(s)</td>
+</tr>
+</tbody>
+</table></figure><p><img src="../../attachments/32480440606861_46577899085837_image.png" width="612" height="464"></p>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">The wiring above reflects normally closed safeties. Typically, condensate overflow switches (or pan switches) are normally closed devices. If using normally open devices, they can be wired in parallel, and the Customer Connection Polarity does not need to be changed.</p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For more information see the links below:</p>
+<ul style="box-sizing: border-box; list-style: outside disc; margin: 20px 0px 20px 20px; padding: 0px 0px 0px 20px; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+  <li style="box-sizing: border-box;">
+    Trane Commercial Help Center -<span> </span><a style="box-sizing: border-box; background-color: transparent; color: #4f95b3; text-decoration: underline;" href="../General/360055257251.html" target="_blank">Symbio™ 700 - Emergency Stop Input</a>
+  </li>
+  <li style="box-sizing: border-box;">
+    Trane Commercial Help Center -<span> </span><a style="box-sizing: border-box; background-color: transparent; color: #4f95b3; text-decoration: underline;" href="../General/360060801931.html" target="_blank">Symbio 700 Demand Limit and Emergency Stop Polarity</a>
+  </li>
+</ul>
+</div></details><details><summary>Configuration</summary><div class="wysiwyg-disclosure-content">
+<h2 id="h_01KMGNP13Q7KXZVGA90MV544SF">Configuring the Symbio 700</h2>
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Odyssey condensers can be paired with many different Odyssey AHUs, 3rd party AHUs, and indoor coil assemblies. Due to this, Symbio 700 must be configured for the connected AHU, installed accessories, and controlling sensor/thermostat.</p>
+<p> </p>
+<p><strong>Here is an article on accessing and editing the Configuration through the Mobile Phone App:</strong></p>
+<ul><li data-list-item-id="ecce63fb9df32623f8ed56a6d19bdfe1d"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../Precedent/16561370756237.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Precedent or Odyssey - How to configure or edit configurations using the Mobile Phone App</a></p></li></ul>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For <strong>Variable Volume</strong> Zone Temperature (VVZT or formerly known as SZVAV) operation, set the configuration as follows:</p>
+<ul>
+<li data-list-item-id="e279724a25e8ba33463697586958ffa23"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>System Type</strong> = VVZT (requires zone sensor for actual VVZT operation, conventional thermostat will operate as CVZT)</p></li>
+<li data-list-item-id="ef777dfa88b2fbede81b2db22c08d6d08"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Efficiency =</strong> Standard B</p></li>
+<li data-list-item-id="e5d771cabd7c49f21360a74389dddb579"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Indoor Fan Type</strong> = Variable Speed (should set automatically)</p></li>
+<li data-list-item-id="e6c61e50d311ade463fb0794042214e85">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Space Controller</strong> = Conventional Thermostat, Single Setpoint Zone Sensor, or Dual Setpoint Zone Sensor </p>
+<ul><li data-list-item-id="e2f573706e8199e32f51292d1147ca2d4"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Zone Sensor will use DAT logic for compressor staging</p></li></ul>
+</li>
+<li data-list-item-id="ed0bd850edb51c659b1f02bfb9109f38a"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Frostat</strong> = Installed (should install automatically)</p></li>
+<li data-list-item-id="e496bab7fa34f0a4ab7b80e6fd044e511"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Discharge Temperature Sensor</strong> = Installed (should install automatically)</p></li>
+<li class="wysiwyg-list-bold" data-list-item-id="ec02bb8096631e7799f3e7756f9a32a5e">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Field installed electric heat </strong><em><strong>only</strong></em></p>
+<ul>
+<li class="wysiwyg-list-bold" data-list-item-id="ed921022040512363193fc6ba9bcb00d9">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>TTA condenser</strong></p>
+<ul>
+<li data-list-item-id="eff7e6a9341900fef6cf2413fb8adc6e0"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Primary Heating Source</strong> = Electric</p></li>
+<li data-list-item-id="e00548d37d3ca1b0d869e78710aa23756"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Primary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</p></li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="ec1cce485e105b1292488151243c0e17b">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>TWA condenser</strong></p>
+<ul>
+<li data-list-item-id="e8c03eb3f671c6ecfb7c2c665b84e4cf5"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Secondary Heating Source</strong> = Electric</p></li>
+<li data-list-item-id="ea88fdd513c355d8a99cd712895f580f4"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Secondary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p>
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">For <strong>Multispeed</strong> fan operation, set the configuration as follows:</p>
+<ul>
+<li data-list-item-id="e85c753702bbffe91f6e90c63459535f9"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>System Type</strong> = CVZT (thermostat or zone sensor)</p></li>
+<li data-list-item-id="e079ae393d5ef241d6d60830af0e2a49c"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Efficiency</strong> = Standard B</p></li>
+<li data-list-item-id="e6c30909f6a09530d5d2c2075f68a004b"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Indoor Fan Type</strong> = Multi Speed</p></li>
+<li data-list-item-id="e56e79ccf16faa8e02beb667fa27814b2"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Space Controller</strong> = Conventional Thermostat, Single Setpoint Zone Sensor, Dual Setpoint Zone Sensor</p></li>
+<li data-list-item-id="e41f3d10024a27e9e34206e2185f268c5"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Frostat</strong> = Installed</p></li>
+<li data-list-item-id="eb99c81c4a167cb5958332f357058a337">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Discharge Temperature Sensor</strong> = Installed or Not Installed</p>
+<ul>
+<li data-list-item-id="ee7d2a7376e88a12559c179289519b888"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Not required for operation, but it is already installed in the air handler. </p></li>
+<li data-list-item-id="e30a1d41d501b4761606bf32664770cbc"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Zone Sensor will use DAT logic for compressor staging.</p></li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="eab804e131c5b7be7a2aa55fd083ef99c">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Field installed electric heat </strong><em><strong>only</strong></em></p>
+<ul>
+<li class="wysiwyg-list-bold" data-list-item-id="e6436a436659f834aa9c857fe560ce3ec">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>TTA condenser</strong></p>
+<ul>
+<li data-list-item-id="e60ecfd9e72e367eef318764624edd9a8"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Primary Heating Source</strong> = Electric</p></li>
+<li data-list-item-id="e57240758616fc96b90d1ff59b48748ec"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Primary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</p></li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="eff890dcc20e8bb05a93a3f7c6e93ff3a">
+<p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>TWA condenser</strong></p>
+<ul>
+<li data-list-item-id="ec616812c8c6eba97ee26074cd69af9eb"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Secondary Heating Source</strong> = Electric</p></li>
+<li data-list-item-id="e894606937c80e1e0ccc8411250eb3df1"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong>Secondary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></details><details><summary>Quick Links</summary><div class="wysiwyg-disclosure-content">
+<p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Links</p>
+<ul>
+<li data-list-item-id="e89bf4502d5d045a061ce3f84b8d0207f"><p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../General/360060773292.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Where to download the Service &amp; Installation Mobile Phone App</a></p></li>
+<li data-list-item-id="e88474a57e1a6c2c519d36f6b932d7f3a"><p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../General/14059563735565.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Bluetooth Connection Instructions</a></p></li>
+<li data-list-item-id="e2e2491d11cffd7c41b2bbaa31956e65f"><p class="wysiwyg-text-align-left" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: Arial, ' Helvetica Neue' , Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../Precedent/16561370756237.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Precedent or Odyssey - How to configure or edit configurations using the Mobile Phone App</a></p></li>
+</ul>
+</div></details>
+</div></zd-tabs><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/32480440606861-A2L-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler-with-R-454B" target="_blank">https://support.trane.com/hc/en-us/articles/32480440606861-A2L-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler-with-R-454B</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

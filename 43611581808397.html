@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eflex Precedent with ReliaTel Controls 6-10T Variable Speed Compressor VFD Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/43611581808397-Eflex-Precedent-with-ReliaTel-Controls-6-10T-Variable-Speed-Compressor-VFD-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Eflex Precedent with ReliaTel Controls 6-10T Variable Speed Compressor VFD Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Cooling &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-02-18 &nbsp;&bull;&nbsp; Last updated: 2026-07-31</div>
+<div class="body"><h2 id="h_01KHRJSVPRQH1AMRHCAGB412QW">Overview</h2><p>6-10T Eflex Precedent units with ReliaTel controls utilized a Mitsubishi Variable Frequency Drive (VFD) mounted in the filter section of the unit for the control of the variable speed Copeland compressor. The operation of this VFD along with the condenser fan are both controlled by the ReliaTel Variable Speed Module (VSM). The VSM communicates to the ReliaTel Refrigeration Module (RTRM) through the same MBUS link that the RTRM uses for all the boards in the unit. </p><p>In the ReliaTel logic, the variable speed compressor is always Compressor 3, regardless of the amount of installed compressors or unit tonnage. </p><p>Condenser fans on all Eflex units that utilize ReliaTel controls are ECM motors using a PWM signal. The speed of the condenser fan motor is directly related to the Outdoor Air Temperature (OAT) vs. the running compressor speed. Due to the operation of the condenser fan, no low ambient kit is necessary for low ambient operation and a low ambient kit should never be fitted to the unit. </p><p>The link below is an internal Elibrary link for the most current version of the Mitsubishi manual for Eflex products. This manual covers both ReliaTel and Symbio 700 controls. </p><p><a href="https://elibrary.tranetechnologies.com/commercial/search?maxFacetValues=300&amp;n=&amp;term=publicationID_md%3ART-SVD008*&amp;f.isCurrentDisplay_md=Current">Troubleshooting Guide Packaged Rooftop Air Conditioners Precedent™ eFlex™ Variable Speed Compressor Inverter</a></p><p>Can't access the guide? Contact your local Trane Commercial Sales Office </p><div class="callout-info">
+  <div class="callout-info-content">
+    <p>
+      <strong>
+IMPORTANT:
+</strong>
+      It is never necessary to modify the parameters on a factory
+      VFD. Parameters are set based on the the compressor motor characteristics
+      and changing away from factory parameter can damage the compressor. If parameters must be set or updated due to VFD replacement, factory replacement parameters must be used without modification. 
+    </p>
+  </div>
+</div><p> </p><h3 id="h_01KHRK27SYTFETBQC7GM7723RN">How does the unit start, stop and control the VFD</h3><p>When the RTRM determines there is a need for compressor cooling, the VSM will energize the Compressor On Relay (COR) which closes VFD J4-SD to VFD J4-STF (Start, Forward Rotation). </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1054/802;" src="../../attachments/43611581808397_43612243792269_image.png" width="1054" height="802"></figure><p>At the same time the VSM is starting the VFD, the VSM is also sending the start-up speed command to start ramping up the compressor. This command is passed from VSM J2-5 to VFD J1-2. This is a 0-10vdc control signal. </p><p>ReliaTel will modulate the compressor speed based on the cooling load required. On startup, shutdown and intervals throughout operation, ReliaTel will ramp the compressor to a fixed speed for 60-90 seconds (depends on where the unit is in operation, ie starting/stopping normal operation) to force oil back to the compressor. If the compressor goes into this oil recovery during normal operation, the compressor speed will return to it's last normal control speed and then begin modulating to maintain the load. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1054/802;" src="../../attachments/43611581808397_43612243792909_image.png" width="1054" height="802"></figure><div class="callout-danger">
+  <div class="callout-danger-content">
+    <p>
+      At no time should the 0-10vdc signal to the VFD be bypassed
+      or disconnected for 3rd party control. ReliaTel has a very specific sequence
+      of operations to control the compressor speed and to ramp/run at defined
+      speeds at defined intervals for oil recovery and to keep the compressor
+      on the operating map as defined by Copeland. Bypassing the logic can
+      cause compressor and/or unit damage. ReliaTel does not ever ramp the
+      compressor to the full 10vdc. The compressor on 7.5/8.8/10T units is
+      the same compressor utilized at different speed ranges base on the configured
+      tonnage. 6T compressor is specific to 6T.
+    </p>
+  </div>
+</div><h3 id="h_01KHRQD9SZ6F7R5MHFFMBNWQ0V">How does the condenser fan start</h3><p>When the RTRM determines there is a need for compressor cooling, the VSM will begin sending the PWM (Pulse Width Modulation) signal to the fan motor. This signal alone is what starts the condenser fan motor, there is no relays or contactors involved. This signal can be measured at PPM-VSM using a voltmeter set to DC volts. The range for the condenser fan is ~2-17.5vdc. Below is the speed chart for the condenser fan on 6-10T Eflex with ReliaTel controls:</p><figure class="wysiwyg-table" style="width: 100%;"><table><tbody>
+<tr>
+<td rowspan="2">
+<p class="wysiwyg-text-align-center">OAT</p>
+<p class="wysiwyg-text-align-center">Condition</p>
+</td>
+<td rowspan="2">
+<p class="wysiwyg-text-align-center">VSPD Comp.</p>
+<p class="wysiwyg-text-align-center">Speed</p>
+</td>
+<td colspan="4"><p class="wysiwyg-text-align-center">6 Ton</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">RPM</p></td>
+<td><p class="wysiwyg-text-align-center">Cond Airflow</p></td>
+<td><p class="wysiwyg-text-align-center">Duty Cycle</p></td>
+<td><p class="wysiwyg-text-align-center">PWM Vdc</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&gt;95°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">1001</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">83%</p></td>
+<td><p class="wysiwyg-text-align-center">~14.525</p></td>
+</tr>
+<tr>
+<td rowspan="3"><p class="wysiwyg-text-align-center">45°F&lt;OAT&lt;90°F</p></td>
+<td><p class="wysiwyg-text-align-center">&lt;48Hz</p></td>
+<td><p class="wysiwyg-text-align-center">473</p></td>
+<td><p class="wysiwyg-text-align-center">40%</p></td>
+<td><p class="wysiwyg-text-align-center">31%</p></td>
+<td><p class="wysiwyg-text-align-center">~5.425</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">50Hz&lt;Hz&lt;70Hz</p></td>
+<td><p class="wysiwyg-text-align-center">733</p></td>
+<td><p class="wysiwyg-text-align-center">70%</p></td>
+<td><p class="wysiwyg-text-align-center">56%</p></td>
+<td><p class="wysiwyg-text-align-center">~9.8</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">&gt;72Hz</p></td>
+<td><p class="wysiwyg-text-align-center">1001</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">83%</p></td>
+<td><p class="wysiwyg-text-align-center">~14.525</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">25°F&lt;OAT&lt;40°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">312</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">16%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.8</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&lt;20°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">312</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">16%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.8</p></td>
+</tr>
+<tr>
+<td colspan="2"><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="4"><p class="wysiwyg-text-align-center">7.5 Ton</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&gt;95°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">1111</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">92%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.1</p></td>
+</tr>
+<tr>
+<td rowspan="3"><p class="wysiwyg-text-align-center">45°F&lt;OAT&lt;90°F</p></td>
+<td><p class="wysiwyg-text-align-center">&lt;48Hz</p></td>
+<td><p class="wysiwyg-text-align-center">465</p></td>
+<td><p class="wysiwyg-text-align-center">40%</p></td>
+<td><p class="wysiwyg-text-align-center">31%</p></td>
+<td><p class="wysiwyg-text-align-center">~5.425</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">50Hz&lt;Hz&lt;70Hz</p></td>
+<td><p class="wysiwyg-text-align-center">790</p></td>
+<td><p class="wysiwyg-text-align-center">70%</p></td>
+<td><p class="wysiwyg-text-align-center">61%</p></td>
+<td><p class="wysiwyg-text-align-center">~10.675</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">&gt;72Hz</p></td>
+<td><p class="wysiwyg-text-align-center">1111</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">92%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.1</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">25°F&lt;OAT&lt;40°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">300</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">15%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.625</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&lt;20°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">300</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">15%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.625</p></td>
+</tr>
+<tr>
+<td colspan="2"><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="4"><p class="wysiwyg-text-align-center">8.5 Ton</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&gt;95°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">1116</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">92%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.1</p></td>
+</tr>
+<tr>
+<td rowspan="3"><p class="wysiwyg-text-align-center">45°F&lt;OAT&lt;90°F</p></td>
+<td><p class="wysiwyg-text-align-center">&lt;48Hz</p></td>
+<td><p class="wysiwyg-text-align-center">532</p></td>
+<td><p class="wysiwyg-text-align-center">40%</p></td>
+<td><p class="wysiwyg-text-align-center">31%</p></td>
+<td><p class="wysiwyg-text-align-center">~5.425</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">50Hz&lt;Hz&lt;70Hz</p></td>
+<td><p class="wysiwyg-text-align-center">831</p></td>
+<td><p class="wysiwyg-text-align-center">70%</p></td>
+<td><p class="wysiwyg-text-align-center">61%</p></td>
+<td><p class="wysiwyg-text-align-center">~10.675</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">&gt;72Hz</p></td>
+<td><p class="wysiwyg-text-align-center">1130</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">92%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.1</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">25°F&lt;OAT&lt;40°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">352</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">15%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.625</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&lt;20°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">352</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">15%</p></td>
+<td><p class="wysiwyg-text-align-center">~2.625</p></td>
+</tr>
+<tr>
+<td colspan="2"><p class="wysiwyg-text-align-center"> </p></td>
+<td colspan="4"><p class="wysiwyg-text-align-center">10 Ton</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&gt;95°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">1130</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">94%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.45</p></td>
+</tr>
+<tr>
+<td rowspan="3"><p class="wysiwyg-text-align-center">45°F&lt;OAT&lt;90°F</p></td>
+<td><p class="wysiwyg-text-align-center">&lt;48Hz</p></td>
+<td><p class="wysiwyg-text-align-center">532</p></td>
+<td><p class="wysiwyg-text-align-center">40%</p></td>
+<td><p class="wysiwyg-text-align-center">37%</p></td>
+<td><p class="wysiwyg-text-align-center">~6.475</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">50Hz&lt;Hz&lt;70Hz</p></td>
+<td><p class="wysiwyg-text-align-center">831</p></td>
+<td><p class="wysiwyg-text-align-center">70%</p></td>
+<td><p class="wysiwyg-text-align-center">65%</p></td>
+<td><p class="wysiwyg-text-align-center">~11.375</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">&gt;72Hz</p></td>
+<td><p class="wysiwyg-text-align-center">1130</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">100%</p></td>
+<td><p class="wysiwyg-text-align-center">~16.45</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">25°F&lt;OAT&lt;40°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">352</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">20%</p></td>
+<td><p class="wysiwyg-text-align-center">~3.5</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">OAT&lt;20°F</p></td>
+<td><p class="wysiwyg-text-align-center">Min&lt;Hz&lt;Max</p></td>
+<td><p class="wysiwyg-text-align-center">352</p></td>
+<td><p class="wysiwyg-text-align-center">22%</p></td>
+<td><p class="wysiwyg-text-align-center">20%</p></td>
+<td><p class="wysiwyg-text-align-center">~3.5</p></td>
+</tr>
+</tbody></table></figure><p>PWM Vdc values are estimates, actual voltage may vary based on the unit entering voltage and meter accuracy. </p><p> </p><h2 id="h_01KHRRTTR5RYF7DG61B5WQBZ0Y">Troubleshooting</h2><h3 id="h_01KHRRVHV0KA2MBRBW949QXG81">Compressor VFD will not start</h3><p>There a couple of common scenarios where ReliaTel will not start the compressor. This could be due to no actual load request, BAS control, unit is unoccupied and failures. Common failures will be discussed and described below</p><h4 id="h_01KHRRYSQ9WX4EZV3CR68J3Q6Q"><strong>VSPD Compressor Drive Fault on BAS or TD5 Touchscreen</strong></h4><p>VSPD Compressor Drive Fault is a generic fault generated by the VSM module based on an alarm input from the VFD. This VSM input is monitored and if voltage is detected from the the VFD alarm point, the VSM treats this as a shutdown alarm and will stop all compressor and condenser fan operation. This is also a manual reset to clear. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1366/228;" src="../../attachments/43611581808397_43617984421005_image.png" width="1366" height="228"></figure><p> </p><h4 id="h_01KHRTJSCSFPET2J48KJ3KR196"><strong>Random Alarms for features the unit does not have or no/random compressor operation</strong></h4><p>6-10T Eflex is unique in how the unit is configured to know what size/tonnage the unit is. On the VSM, there are three inputs that can receive different 24vac inputs to tell the VSM/ReliaTel what the unit tonnage is. The difference is a configuration jumper in the wiring harness at the VSM and how the jumper is pinned out. It is crucial to the unit operation that this configuration is correct. Multiple unit operational issues have been observed when this configuration jumper is missing:</p><ul>
+<li data-list-item-id="ea39a87d374b7fede974c1cf24b690f45">No indoor fan operation on MZVAV configured units</li>
+<li data-list-item-id="ef36723d52bd1ccb11b2e3254c0d51b17">No condenser fan operation </li>
+<li data-list-item-id="ed6abc6fbe02e83de1d904ab86fc87b3b">High Pressure Trips</li>
+<li data-list-item-id="e760ec6950f1785e668a0e8b4c5ad3c25">Incorrect indoor fan operation</li>
+<li data-list-item-id="ec7e53bb8259cc27d332d1f33576678a4">Incorrect condenser fan operation</li>
+<li data-list-item-id="e7c1eb6bb2341b6180c51b26797839285">Poor unit performance</li>
+</ul><p>This jumper and the matrix is available on the wiring diagram of the unit:</p><figure class="wysiwyg-image"><img style="aspect-ratio: 846/492;" src="../../attachments/43611581808397_43617998330893_image.png" width="846" height="492"></figure><p>The configuration jumper is present on 6 - 8.5T units and the 10T unit has a specific harness with no config jumper.  All configuration jumpers have wires 100CV(BK) &amp; 100CZ(BK). The difference in the jumpers are the presence of 100CW(BK), 100CX(BK), 100CY(BK). </p><p>If the jumper is missing on a new unit and the unit <span class="wysiwyg-underline">is not</span> 10T, the corresponding 100DB(BK), 100DC(BK), 100DE(BK) can be cut and isolated to simulate the jumper. </p><p> </p><h4 id="h_01KHRTC5AA7VMFJ0VP7GVGCQW0"><strong>VFD Fault E.P24</strong></h4><p><img src="../../attachments/43611581808397_43617998333965_image.png" width="81" height="26"> = 24 VDC power fault</p><p>E.P24 fault points to an issue with the 24vdc generated from the VFD PC terminal being shorted. Disconnect the VFD PC terminal to verify the alarm clears. If it does, check associated wiring for damage. If it does not clear, the could indicate a failed VFD, contact Trane LCU Tech Support. </p><p> </p><h4 id="h_01KHRSHK4DBYPZQDZMHK4PQYQV"><strong>VFD Fault E.OV1, 2, 3 or E.OC1, 2, 3</strong></h4><p><img src="../../attachments/43611581808397_43617998341005_image.png" width="77" height="29"> = Regenerative overvoltage trip during acceleration</p><p><img src="../../attachments/43611581808397_43617984430861_image.png" width="79" height="29"> = Regenerative overvoltage trip during constant speed</p><p><img src="../../attachments/43611581808397_43617984437261_image.png" width="80" height="30"> = Regenerative overvoltage trip during deceleration or stop</p><p><img src="../../attachments/43611581808397_43617984439693_image.png" width="78" height="28"> = Overcurrent trip during acceleration</p><p><img src="../../attachments/43611581808397_43617998362381_image.png" width="78" height="29"> = Overcurrent trip during constant speed</p><p><img src="../../attachments/43611581808397_43617984455181_image.png" width="79" height="27"> = Overcurrent trip during deceleration or stop</p><p>All of these alarms are similar and can be generated due to incorrect parameter adjustments, compressor wiring/connections, failing compressor, failing VFD. </p><p>At no time should the parameters of the VFD be changed away from factory settings and any parameter settings made should follow the guide based on the unit unit size and compressor model. Changes to the VFD parameters settings can cause compressor damage, unit damage and poor unit performance. </p><p> </p><h4 id="h_01KHRSZG932PVEB1HP31JPVQSM"><strong>VFD Fault SA</strong></h4><p> <img src="../../attachments/43611581808397_43617984458893_image.png" width="48" height="22"> = Safety Stop</p><p>The SA fault occurs when the safety inputs on the VFD are open. VFD J1-S1 &amp; S2 receive 24vdc from VFD J1-PC through the High Pressure Cutout (HPC) &amp; Temperature Discharge Limit (TDL) or Discharge Temperature Limit (DTL). </p><p>24vac is provided to from VFD J1-PC to the HPC then to the TDL then is spliced to two wires, one returns to VFD S1 and is jumped over to S2 and the other is the safety/compressor proving input to the VSM on J2-17. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1338/259;" src="../../attachments/43611581808397_43617984460941_image.png" width="1338" height="259"></figure><h5 id="h_01KHRSNTS8YHM1VXJQC248070N">The SA fault can also cause compressor proving/high pressure faults on the BAS/TD5</h5><div class="callout-danger">
+  <div class="callout-danger-content">
+    <p>
+      If it is determined the VFD has failed, it can not be bypassed to run the compressor with a contactor. The compressor design on these units utilize a permanent magnet build and are not designed to accept line voltage. 
+
+      If megging a motor, it must be disconnected from the VFD or damage will occur to the VFD
+    </p>
+  </div>
+</div><h3 id="h_01KHRWYANWJ9TJ2VQKWGB06NCK">VFD Low Voltage Wiring</h3><p>The VFD utilizes connector bodies physically connected to the VFD to allow plugs to be connected at the factory to limit the amount of hand wiring required. In this article, there has been mention of the VFD terminals PC, SD, STF, ect terminals, the image below shows what this low voltage wiring should look like. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1357/859;" src="../../attachments/43611581808397_43620580797709_image.png" width="1357" height="859"></figure><p> </p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/43611581808397-Eflex-Precedent-with-ReliaTel-Controls-6-10T-Variable-Speed-Compressor-VFD-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/43611581808397-Eflex-Precedent-with-ReliaTel-Controls-6-10T-Variable-Speed-Compressor-VFD-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

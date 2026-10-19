@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Options Module Communication Errors in Tracer TU - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/34094366681101-Symbio-700-Options-Module-Communication-Errors-in-Tracer-TU" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Options Module Communication Errors in Tracer TU</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Voyager</span><span class="badge equip">Odyssey</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-02-06 &nbsp;&bull;&nbsp; Last updated: 2025-02-12</div>
+<div class="body"><p><strong>Symbio® 700 - Options Module Communication Errors in Tracer TU</strong></p>
+<p> </p>
+<p><strong>Summary:</strong></p>
+<p>The Options Modules used in Odyssey, Precedent, and Voyager III products are supplied from two different manufacturers and carry two different hardware part numbers. Below are the manufacturers and their corresponding hardware part numbers (as shown in Tracer TU):</p>
+<p>NXP – 13651736</p>
+<p>Renesas – 4003122</p>
+<p>Both boards are covered by the same part numbers</p>
+<ul>
+<li>X13651736001 for FA OM, Indoor OM</li>
+<li>X13651736002 for Customer OM</li>
+</ul>
+<p>The only way so far to tell them apart is to see the discovered hardware PN in TU or the placement of the serial number QR code on the boards themselves:</p>
+<p>Renesas Boards</p>
+<p><img src="../../attachments/34094366681101_34094366645901_blobid0.png" alt="" width="353" height="221"> <img src="../../attachments/34094366681101_34094383174541_mceclip0.png" width="181" height="220"></p>
+<p>NXP Boards</p>
+<p><img src="../../attachments/34094366681101_34094366650637_08caabcd267b140d7ffadbe9ef64dd54bb6fa1722f4bdb42ffa75310560ba398.png" alt="" width="373" height="200"> <img src="../../attachments/34094366681101_34094366655117_f2dd821f2d82f8eef14db6bc459574e3b1de855a8874232ce141ee063661b7c9.png" alt="" width="158" height="198"></p>
+<p> </p>
+<p>There are two known issues with the modules built by Renesas:</p>
+<p><strong>Issue #1</strong></p>
+<p>It has been found that older version 1 Symbio firmware will not communicate with the Renesas modules. The issue is that when Symbio sees the module and address, it expects to see a hardware part number consistent with the address it also sees. For example, if you have a module installed as address 75, Symbio will discover it and expect to see one of the two hardware part numbers. The issue is on version 1, it will see 4003122 and not know what it is as it is not part of the v1 firmware. The resolution is to upgrade the firmware to the latest version.</p>
+<p>With v1 firmware, you will this error in TU:</p>
+<p><img src="../../attachments/34094366681101_34094383184653_30d045dc3d0ccd9a18082fffc01ff5ff7d55d80d6b726a926e211316f98b27d1.png" alt="">  </p>
+<p>When you see this error in TU, you will also have comm errors for the Options Module and features configured to that OM.</p>
+<p> </p>
+<p>After upgrading to the latest firmware, you may still get an error in Tracer TU based on the TU version:</p>
+<p>Tracer TU v11.6 and older</p>
+<p><img src="../../attachments/34094366681101_34094383185293_5cf632d519cef5f150fd0d2ad4863aac6bddfe163b3768da6af32b14fd120556.png" alt=""></p>
+<p>This error has only been seen on the Renesas Options Modules, but the OM will communicate and function normally with no alarms in Symbio. </p>
+<p> </p>
+<p>Same Renesas OM and Symbio700 firmware 3.00.0012 on Tracer TU v11.7</p>
+<p><img src="../../attachments/34094366681101_34094366664333_204f5abfe81033ef85c1fb44fdad29c2f91a1baafc4e85a745b50a67dabbfc05.png" alt="" width="451" height="134"></p>
+<p> </p>
+<p> </p>
+<p><strong>Issue #2</strong></p>
+<p>It has been found that some Renesas boards did not get their hardware part number flashed to them correctly before they were shipped to their final destinations. Most were corrected in the factories, but some may still be found through parts counters.</p>
+<p>These boards will not communicate at all as the discovered hardware part number is incomplete on discovery and Symbio does not know what it is. The only resolution is to replace the board. The error message will display the incomplete part number as 40031.</p>
+<p> </p>
+<p><img src="../../attachments/34094366681101_34094366668941_14ee286085eb7842b86a87e0891b2b89684b439461ade27998ab0386a0f7a998.png" alt=""></p>
+<p> </p>
+<p>If you come across a module with this specific error message on a Renesas board, document the serial number on the QR code and report to Trane Tech Support.</p>
+<p> </p>
+<p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/34094366681101-Symbio-700-Options-Module-Communication-Errors-in-Tracer-TU" target="_blank">https://support.trane.com/hc/en-us/articles/34094366681101-Symbio-700-Options-Module-Communication-Errors-in-Tracer-TU</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

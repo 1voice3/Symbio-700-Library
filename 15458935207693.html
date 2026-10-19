@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 Precedent BACnet point configuration for BAS Integration - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/15458935207693-Symbio-700-Precedent-BACnet-point-configuration-for-BAS-Integration" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 Precedent BACnet point configuration for BAS Integration</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Dehumidification</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: BAS Integration &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-05-03 &nbsp;&bull;&nbsp; Last updated: 2026-09-08</div>
+<div class="body"><h1 id="h_01KGSTF0WQC9C3Y6CQ9BEFXFTV">Integration Points List BACnet®</h1><p>Symbio 700 requires an "Advanced License" to configure the controller for BAS control.</p><p> </p><h2 id="h_01KGST33TSJZTA7E23S8KMCF9N"><strong>Object Naming Conventions</strong></h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 88%;">
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Suffix</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Points with the Status suffix are defined as read-only. The status point reports the value being used by the controller.</td>
+</tr>
+<tr>
+<td><strong>Local</strong></td>
+<td>Points with the Local suffix are defined as read-only. The local point reports values associated with controller sensors, both wired and wireless. The local value may or may not be actively used by the controller, depending on the presence or absence of a communicated value (BAS). When both a local and communicated value exist, the communicated value is used.</td>
+</tr>
+<tr>
+<td><strong>Active</strong></td>
+<td>Points with the Active suffix are defined as read-only. The active point reports the value being input to the controller.</td>
+</tr>
+<tr>
+<td><strong>Setpoint</strong></td>
+<td>Points with the Setpoint suffix are defined as either read-only or read/write. For BACnet®, the binary input, analog input, and multi-state input points are all read-only. These setpoints report the value currently in use by the controller. The analog value, binary value, and multi-state value points are all read/write. These points are provided for use by the building automation system (BAS). When used, these points are written internally to the arbitration logic. This defines the interaction with hardwired points, editable software configuration points, and the relinquish default value/state. Refer to the Appendix for additional information.</td>
+</tr>
+<tr>
+<td><strong>Input</strong></td>
+<td>Points with the Input suffix are defined as read-only. These points normally reflect the status of a sensor input, either hardwired or communicating wirelessly (AirFi®). However, the input point reflects the arbitrated result of the controller sensor input and a communicated value, if present. When both a controller sensor and communicated value exist, the controller will use and report the communicated value.</td>
+</tr>
+<tr>
+<td><strong>Arbitrator</strong></td>
+<td>Points with the “Arbitrator” suffix are to be used as read-only. The arbitrator prioritizes inputs from communicating points, hardwired points and stored defaults points. The priority array of the arbitration point displays each of the values provided, including the active status, indicating which of the input sources is being used.</td>
+</tr>
+<tr>
+<td><strong>BAS</strong></td>
+<td>Points with the BAS suffix are defined as read/write. These points are provided for use by the building automation system (BAS). When used, these points are written to arbitration logic. This defines the interaction with hardwired points, editable software configuration points and the relinquished default value/state. </td>
+</tr>
+<tr>
+<td><strong>Command</strong></td>
+<td>Points with the Command suffix are defined as read/write. These points are written to change the default behavior of the controller. Once written, these point values may be persisted.</td>
+</tr>
+<tr>
+<td><strong>Request</strong></td>
+<td>Points with the Request suffix are defined as read/write. These points are written to request a change the operating behavior of the controller.</td>
+</tr>
+</tbody>
+</table></figure><p> </p><p> </p><p><em>For BAS, use the object value in <strong>bold blue color</strong></em></p><h2 id="h_01KGSZNVJ9FBWSXDFCFTWZJWK5">Points Configuration for Space Temperature (CVZT &amp; VVZT)</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 13%;">
+<col style="width: 19%;">
+<col style="width: 17%;">
+<col style="width: 8%;">
+<col style="width: 14%;">
+<col style="width: 18%;">
+</colgroup>
+<thead><tr>
+<th>Object ID</th>
+<th>Object Name</th>
+<th>Description</th>
+<th>Configuration Dependency</th>
+<th>Read/ Write</th>
+<th>Reliquish Default</th>
+<th>Heartbeat Interval (seconds)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-11100</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Arbitration Method Request</p></td>
+<td><p class="wysiwyg-text-align-center">Setting for unit to use "Enable External/BAS Control" or "Standalone Control" data prioritization</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Enable External/BAS Control</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>1 = Enable External/BAS Control</strong></span><strong> </strong></p>
+<p class="wysiwyg-text-align-center">2 = Standalone Control</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10104</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Supply Fan Configuration Command</p></td>
+<td><p class="wysiwyg-text-align-center">Used to command the supply fan configuration as either cycling or continuous</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Continuous</p></td>
+<td>
+<p class="wysiwyg-text-align-center">false = Cycling</p>
+<p class="wysiwyg-text-align-center">true = Continuous</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10109</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Filter Timer Reset</p></td>
+<td><p class="wysiwyg-text-align-center">Command the unit to reset the accumulated filter run hours.</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Accumulating</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>false = Accumulating</strong></span> </p>
+<p class="wysiwyg-text-align-center">true = Reset</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10110</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Reset Diagnostic</p></td>
+<td><p class="wysiwyg-text-align-center">Used to initiate a request to reset any controller diagnostics</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>false = Normal</strong></span><strong> </strong></p>
+<p class="wysiwyg-text-align-center">true = Reset</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-10104</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Heat Cool Mode Request</p></td>
+<td><p class="wysiwyg-text-align-center">Used to command the unit into a heat/cool mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor and System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Auto</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>1 = Auto </strong></span></p>
+<p class="wysiwyg-text-align-center">2 = Heat </p>
+<p class="wysiwyg-text-align-center">3 = Morning Warm-up </p>
+<p class="wysiwyg-text-align-center">4 = Cool </p>
+<p class="wysiwyg-text-align-center">5 = Night Purge </p>
+<p class="wysiwyg-text-align-center">6 = Pre Cool </p>
+<p class="wysiwyg-text-align-center">7 = Off </p>
+<p class="wysiwyg-text-align-center">8 = Test </p>
+<p class="wysiwyg-text-align-center">9 = Emergency Heat </p>
+<p class="wysiwyg-text-align-center">10 = Fan Only </p>
+<p class="wysiwyg-text-align-center">11 = Free Cool </p>
+<p class="wysiwyg-text-align-center">12 = Ice-Making</p>
+<p class="wysiwyg-text-align-center">13 = Max Heat</p>
+<p class="wysiwyg-text-align-center">14 = Economizer </p>
+<p class="wysiwyg-text-align-center">15 = Dehumidify </p>
+<p class="wysiwyg-text-align-center">16 = Calibrate</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-10106</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Occupancy Request</p></td>
+<td><p class="wysiwyg-text-align-center">Normally used by the BMS to command the unit into an occupancy mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor and System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Auto</p></td>
+<td>
+<p class="wysiwyg-text-align-center">1 = Occupied </p>
+<p class="wysiwyg-text-align-center">2 = Unoccupied</p>
+<p class="wysiwyg-text-align-center"> 3 = Occupied Bypass </p>
+<p class="wysiwyg-text-align-center">4 = Occupied Standby </p>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>5 = Auto</strong></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium" style="color: #2F3941;"><strong>*Note Below 6</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10106</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Arbitrator</p></td>
+<td><p class="wysiwyg-text-align-center">Indicates the space temp determined by arbitration</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">65535°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 200</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10114</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to send the space temperature value</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">0°F</span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">Range 40 - 200</span></p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">900</span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><em><strong>Full BAS Control</strong></em></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 2</strong></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note below 5</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10127</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">BAS-supplied space temperature setpoint value</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller Configured as Single Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">72.5°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 115</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10130</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Occupied Offset</p></td>
+<td><p class="wysiwyg-text-align-center">Difference between the occupied cool and heat setpts when a single setpoint is used</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller Configured As Single Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">2.5°F</p>
+<p class="wysiwyg-text-align-center">Range 1 - 10</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10123</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Unoccupied Cooling Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Used to define the cooling temp setpoint used for control in unoccupied mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">85°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10124</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Unoccupied Heating Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Used to define the heating temp setpoint used for control in unoccupied mode</p></td>
+<td><p class="wysiwyg-text-align-center">Heating Installed and Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">60°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10154</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Cooling Setpoint High Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Cooling Setpoint High Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor and System Type is Configured as VVZT or CVZT</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">90°F</p>
+<p class="wysiwyg-text-align-center">Range 45 - 95</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 3</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10155</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Cooling Setpoint Low Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Cooling Setpoint Low Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor and System Type is Configured as VVZT or CVZT</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">50°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 110</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 3</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10157</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Heating Setpoint High Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Heating Setpoint High Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor and System Type is Configured as VVZT or CVZT and Primary Heating is Configured</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">80°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 105</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 3</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10158</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Heating Setpoint Low Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Heating Setpoint Low Limit BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor and System Type is Configured as VVZT or CVZT and Primary Heating is Configured</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">50°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 105</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 3</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11140</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Discharge Air Cooling Setpoint (Target)</p></td>
+<td><p class="wysiwyg-text-align-center">Discharge Air Cooling Setpoint (Target)</p></td>
+<td><p class="wysiwyg-text-align-center">System Type Configured as VVZT and Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">55°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 80</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 4</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AI-10218</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Input</p></td>
+<td><p class="wysiwyg-text-align-center">Indicates the space temp from a wired sensor.</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Read</p></td>
+<td><p class="wysiwyg-text-align-center">Range 40 - 200</p></td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>Using Zone Sensor</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AI-11159</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Cooling Setpoint Input</p></td>
+<td><p class="wysiwyg-text-align-center">Indicates the (occupied) cooling setpoint from the connected wired space sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller Configured as Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Read</p></td>
+<td><p class="wysiwyg-text-align-center">Range 52 - 95</p></td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 5</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AI-11160</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Heating Setpoint Input</p></td>
+<td><p class="wysiwyg-text-align-center">Indicates the (occupied) heating setpoint from the connected wired space sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Heating Source Installed and Space Controller Configured as Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Read</p></td>
+<td><p class="wysiwyg-text-align-center">Range 49 - 92</p></td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 5</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AI-11161</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Setpoint Input</p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Setpoint from a connected wired sensor.</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller Configured as Single Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Read</p></td>
+<td><p class="wysiwyg-text-align-center">Range 45 - 95</p></td>
+<td><p class="wysiwyg-text-align-center">N/A</p></td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KGT6E4H51Y1PAWNN9J25AYDX">Notes</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1: </strong>The Space Temperature Arbitrator (STA) is the internal logic that the Symbio 700 uses to determine which temperature input to use to control the space. It acts as the “referee” between multiple possible temperature sources. (<strong>Wired Zone Sensor | Average of multiple space sensors | Space Temperature BAS</strong>) The controller will choose the highest‑priority valid temperature.</p></div>
+<div class="callout-info-content"><p><strong>Note 2: </strong>In the Symbio 700, AV-10114 specifies the maximum allowed time of 900 seconds (15 minutes) that the controller will wait for a new value before declaring a loss of communication and triggering the point alarm. To prevent the point from going into an Alarm State, the BAS must refresh a new temperature value to AV-10114 more frequently than the 900-second limit. Ensure MV-11100 (Arbitration Method Request) is set to "Enable External/BAS Control" (Value 1). If this is not enabled, the controller may ignore the heartbeat and stick to local standalone control.</p></div>
+<div class="callout-info-content"><p><strong>Note 3: </strong>If the site has local zone sensors with thumbwheels or digital displays, it uses AV-10154, AV-10155, AV-10157, and AV-10158 to "cap" the extent to which a tenant can raise the setpoint for cooling or heating. <span data-sfc-cp="" data-complete="true" aria-owns="action-menu-parent-container"><strong data-complete="true">Example:</strong> If you set this to 78°F, even if a tenant turns their local dial to 85°F, the unit will stop at 78°F.</span></p></div>
+<div class="callout-info-content"><p><strong>Note 4: </strong>Single Zone VAV operates in DX and economizer cooling modes of operation when configured for System Type: VVZT (variable speed indoor fan type). A valid space temperature and discharge air temperature sensor is required as input. If the discharge air temperature input becomes invalid, the control automatically reverts to Single Loop Space Temperature Control. </p></div>
+<div class="callout-info-content"><p>Single Zone VAV is a control method of space temperature control that operates the supply fan at the lowest speed allowed for the cooling capacity required to satisfy the load in the space. As cooling capacity increases, the supply fan speed will increase to a defined minimum speed for the operating cooling capacity and modulate accordingly until it reaches 100 percent of its allowed range of operation.</p></div>
+<div class="callout-info-content"><p><strong>Note 5: </strong>When using AV-10114 Space Temperature BAS, it uses AI-11159 and AI-11160 for the Space Temperature Cooling &amp; Heating Setpoint Input.</p></div>
+<div class="callout-info-content"><p><strong>Note 6:</strong> To send a multistate occupancy command such as MV‑10106 to the Symbio™ 700 controller, the Building Automation System must write a valid value to the Occupancy Request point. This point is commandable and does not include a heartbeat interval.</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="e4ccc7bb85d90171549acbda5a40aec4d"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><p><em>For BAS, use the object value in <strong>bold blue color</strong></em></p><h2 id="h_01KGTC4S2QKCPJJZ2GF0PC151A">Points Configuration for Discharge Air Control (VVDA)</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 13%;">
+<col style="width: 19%;">
+<col style="width: 21%;">
+<col style="width: 7%;">
+<col style="width: 14%;">
+<col style="width: 15%;">
+</colgroup>
+<thead><tr>
+<th>Object ID</th>
+<th>Object Name</th>
+<th>Description</th>
+<th>Configuration Dependency</th>
+<th>Read/ Write</th>
+<th>Reliquish Default</th>
+<th>Heartbeat Interval (seconds)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-11100</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Arbitration Method Request</p></td>
+<td><p class="wysiwyg-text-align-center">Setting for unit to use "Enable External/BAS Control" or "Standalone Control" data prioritization</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Enable External/BAS Control</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>1 = Enable External/BAS Control</strong></span><strong> </strong></p>
+<p class="wysiwyg-text-align-center">2 = Standalone Control</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10104</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Supply Fan Configuration Command</p></td>
+<td><p class="wysiwyg-text-align-center">Used to command the supply fan configuration as either cycling or continuous</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Continuous</p></td>
+<td>
+<p class="wysiwyg-text-align-center">false = Cycling</p>
+<p class="wysiwyg-text-align-center">true = Continuous</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10109</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Filter Timer Reset</p></td>
+<td><p class="wysiwyg-text-align-center">Command the unit to reset the accumulated filter run hours.</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Accumulating</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>false = Accumulating</strong></span> </p>
+<p class="wysiwyg-text-align-center">true = Reset</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10110</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Reset Diagnostic</p></td>
+<td><p class="wysiwyg-text-align-center">Used to initiate a request to reset any controller diagnostics</p></td>
+<td><p class="wysiwyg-text-align-center">Always</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Normal</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>false = Normal</strong></span><strong> </strong></p>
+<p class="wysiwyg-text-align-center">true = Reset</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-10104</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Heat Cool Mode Request</p></td>
+<td><p class="wysiwyg-text-align-center">Used to command the unit into a heat/cool mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor and System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Auto</p></td>
+<td>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>1 = Auto </strong></span></p>
+<p class="wysiwyg-text-align-center">2 = Heat </p>
+<p class="wysiwyg-text-align-center">3 = Morning Warm-up </p>
+<p class="wysiwyg-text-align-center">4 = Cool </p>
+<p class="wysiwyg-text-align-center">5 = Night Purge </p>
+<p class="wysiwyg-text-align-center">6 = Pre Cool </p>
+<p class="wysiwyg-text-align-center">7 = Off </p>
+<p class="wysiwyg-text-align-center">8 = Test </p>
+<p class="wysiwyg-text-align-center">9 = Emergency Heat </p>
+<p class="wysiwyg-text-align-center">10 = Fan Only </p>
+<p class="wysiwyg-text-align-center">11 = Free Cool </p>
+<p class="wysiwyg-text-align-center">12 = Ice-Making</p>
+<p class="wysiwyg-text-align-center">13 = Max Heat</p>
+<p class="wysiwyg-text-align-center">14 = Economizer </p>
+<p class="wysiwyg-text-align-center">15 = Dehumidify </p>
+<p class="wysiwyg-text-align-center">16 = Calibrate</p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>MV-10106</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Occupancy Request</p></td>
+<td><p class="wysiwyg-text-align-center">Normally used by the BMS to command the unit into an occupancy mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor and System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Auto</p></td>
+<td>
+<p class="wysiwyg-text-align-center">1 = Occupied </p>
+<p class="wysiwyg-text-align-center">2 = Unoccupied</p>
+<p class="wysiwyg-text-align-center"> 3 = Occupied Bypass </p>
+<p class="wysiwyg-text-align-center">4 = Occupied Standby </p>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>5 = Auto</strong></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium" style="color: #2F3941;"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10121</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Discharge Air Cooling Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the discharge air temp cooling setpoint value</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">55°F</p>
+<p class="wysiwyg-text-align-center">Range 40 - 80</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10122</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Discharge Air Heating Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the discharge air temperature heating setpoint value</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA and Primary Heat is Configured or Conventional Thermostat with modulating gas heat installed.</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">85°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 2</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10143</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Duct Static Pressure Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the duct static pressure setpoint value</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">1" W.C.</p>
+<p class="wysiwyg-text-align-center">Range 50 - 3.5</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10123</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Unoccupied Cooling Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Used to define the cooling temp setpoint used for control in unoccupied mode</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">85°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10124</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Unoccupied Heating Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Used to define the heating temp setpoint used for control in unoccupied mode</p></td>
+<td><p class="wysiwyg-text-align-center">Heating Installed and Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">60°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KH1RE81D560G8YJPQG4AKGV6">Note</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1:</strong> To send a multistate occupancy command such as MV‑10106 to the Symbio™ 700 controller, the Building Automation System must write a valid value to the Occupancy Request point. This point is commendable, but it does not include a heartbeat interval.</p></div>
+<div class="callout-info-content"><p><strong>Note 2: </strong>The Symbio 700 operates in a discharge air control mode delivering heating capacity per Discharge Air Heating Setpoint Active; this provides flexibility when 100 percent heat capacity is not desired.</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="e934d95878f669fa566f3a2a9fb5f961a"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="01G3H44NN2TFGHJH9EMAFF1SKF">Morning &amp; Daytime Warmup</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 11%;">
+<col style="width: 21%;">
+<col style="width: 25%;">
+<col style="width: 7%;">
+<col style="width: 10%;">
+<col style="width: 15%;">
+</colgroup>
+<thead><tr>
+<th>Object ID</th>
+<th>Object Name</th>
+<th>Description</th>
+<th>Configuration Dependency</th>
+<th>Read/ Write</th>
+<th>Reliquish Default</th>
+<th>Object States</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10112</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Morning Warmup Enable Command</p></td>
+<td><p class="wysiwyg-text-align-center">Normally used by the BMS to enable morning warmup</p></td>
+<td><p class="wysiwyg-text-align-center">Space Controller is Configured as Single Setpoint or Dual Setpoint Zone Sensor or System Type is configured as VVDA and Primary Heat is Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Disabled</p></td>
+<td>
+<p class="wysiwyg-text-align-center">false = Disabled</p>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong> true = Enabled</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10111</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Daytime Warmup Enable Command</p></td>
+<td><p class="wysiwyg-text-align-center">Used to enable daytime warmup</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA and Primary Heat is Configured.</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Disabled</p></td>
+<td>
+<p class="wysiwyg-text-align-center">false = Disabled </p>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong>true = Enabled</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10141</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Morning Warmup Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Defines the space temp below which MWU is enabled</p></td>
+<td><p class="wysiwyg-text-align-center">Primary Heating Source is Configured and Space Controller is Configured as Single or Dual Setpoint Zone Sensor</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">70°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10149</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Daytime Warmup Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Defines the space temp below which daytime warmup will be enabled</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA and Primary Heat is Configured.</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">68°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 90</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 2</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10122</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Discharge Air Heating Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the discharge air temperature heating setpoint value</p></td>
+<td><p class="wysiwyg-text-align-center">System Type is Configured as VVDA and Primary Heat is Configured or Conventional Thermostat with modulating gas heat installed.</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">100°F</p>
+<p class="wysiwyg-text-align-center">Range 50 - 158</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 3</strong></span></p>
+</td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KH1REMTDA0QDH12RE6NFTERA">Notes</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1:</strong> Morning Warm-up is an optional feature when heat is configured and can be Enabled or Disabled. Morning Warm-up is a mode often used during building unoccupied periods and optimal start applications to rapidly increase the space temperature, as efficiently as possible, before building occupancy. The outdoor air damper minimum position setpoint will be overridden to 0 percent, ventilation air is not provided during Morning Warm-up.</p></div>
+<div class="callout-info-content"><p>On a transition from Unoccupied to Occupied or Occupied-Standby, and with a valid space temperature 1.5° F below the Morning Warm-up Setpoint, morning warm-up operation initiates. Heat Cool Mode Status reports Maximum Heat if the heat type requires full airflow and VAV Box Relay binary output will energize.</p></div>
+<div class="callout-info-content"><p><strong>Note 2</strong>: Daytime Warm-up is a feature of VVDA units that can be Enabled, or Disabled. Daytime Warm-up is available with any heat type installed. Daytime Warm-up is a mode used during building occupied periods to recover a critical zone that is too cold. Ventilation air is provided while in Daytime Warm-up mode. </p></div>
+<div class="callout-info-content"><p>When the Heat Cool Mode Request is Cool (the unit is providing cooling), if a valid space temperature is 3°F below the adjustable Daytime Warm-up Setpoint, daytime Warm-up operation initiates. The unit will operate in a discharge air control mode delivering heating capacity per Discharge Air Heating Setpoint Active. The supply fan operates at max speed on Constant Volume Units.</p></div>
+<div class="callout-info-content"><p><strong>Note 3: </strong>The Symbi 700 operates in a discharge air control mode delivering heating capacity per Discharge Air Heating Setpoint Active; this provides flexibility when 100 percent heat capacity is not desired.</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="ec24c04be928287f470c7b02777530311"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="h_01KH1SGG2VHSC4QAB4NEQB4G27">Economizer</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 13%;">
+<col style="width: 19%;">
+<col style="width: 26%;">
+<col style="width: 8%;">
+<col style="width: 10%;">
+<col style="width: 13%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Heartbeat Interval (seconds)</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11132</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Min Fan Capacity</p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Min Fan Capacity</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-100% and Indoor Fan Type is Configured as Variable Speed or Multi Speed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">25%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 100</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11131</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Mid Fan Capacit</p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Mid Fan Capacity</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-50% Motorized Damper or 0-100% and Indoor Fan Type is Configured as Variable Speed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">15%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 100</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11130</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Full Fan Capacity</p></td>
+<td><p class="wysiwyg-text-align-center">Design Minimum OA Damper Position at Full Fan Capacity</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-100%</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">10%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 100</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10144</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Economizer Minimum Position Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the ecominizer minimum position setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-50% Motorized Damper or 0-100%</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">25%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 50</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 2</strong></span></p>
+</td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KH1T4SYFYE86SPT1JX8AS1DZ">Notes</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1: </strong>The outdoor air damper minimum position is modulated to provide outdoor air based on supply fan speed. When the supply fan increases speed, the outdoor air damper minimum position is reduced to prevent over ventilation. When the supply fan decreases speed the outdoor air damper minimum position is increased to maintain design outdoor air requirements. There are three user editable design minimum settings to linearize damper position with the fan curve during Occupied and Occupied Bypass modes of operation.</p></div>
+<div class="callout-info-content"><p><strong>Note 2: </strong>Available only when supply fan compensation is disabled, this function provides a fixed damper position for minimum outdoor air requirements. The damper is controlled to a position determined by Economizer Minimum Position Setpoint.</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="e4a8a13ce0a882f1e820bc40146c7600d"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="h_01KH20KHV13N084FNXY94EMNJN">Demand Controlled Ventilation</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 12%;">
+<col style="width: 23%;">
+<col style="width: 21%;">
+<col style="width: 7%;">
+<col style="width: 11%;">
+<col style="width: 15%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Heartbeat Interval (seconds)</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10175</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space CO2 High Limit</p></td>
+<td><p class="wysiwyg-text-align-center">Used to define the CO2 high limit, for ventilation purposes</p></td>
+<td><p class="wysiwyg-text-align-center">Demand Controlled Ventilation is Configured as Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">1100 PPM</p>
+<p class="wysiwyg-text-align-center">Range 1000 - 2000</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10176</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Space CO2 Low Limit</p></td>
+<td><p class="wysiwyg-text-align-center">Normally provided by the BMS to define the CO2 low limit</p></td>
+<td><p class="wysiwyg-text-align-center">Demand Controlled Ventilation is Configured as Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">400 PPM</p>
+<p class="wysiwyg-text-align-center">Range 300 - 1900</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KH21AMKG76Y8EAQNFNK5EHA0">Notes</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1: </strong>Demand controlled ventilation reduces energy consumption by reducing the outdoor air damper below design minimum ventilation based on space CO2. When Demand Controlled Ventilation is configured and Supply Fan Compensation is enabled, DCV resets the outdoor air damper minimum position based on space CO2 and supply fan speed. Decreasing CO2 levels will decrease damper position below the Design Minimum toward the DCV minimum damper position setpoint. Increasing CO2 level will increase damper position toward design minimum setpoint. DCV requires a valid space CO2 value from a building management system or wired sensor. If Space CO2 value is invalid or Supply Fan Compensation is disabled, the Symbio™ 700 will revert to Outdoor Air Minimum Position Control.</p></div>
+<div class="callout-info-content"><p><strong>Outdoor Air Damper Controlling Setpoints: </strong></p></div>
+<div class="callout-info-content"><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 51%;">
+<col style="width: 49%;">
+</colgroup>
+<tbody>
+<tr>
+<td>
+<p>Design Minimum OA Damper Position at Full Fan Capacity </p>
+<p>(AV-11130) Writable</p>
+</td>
+<td>
+<p>Design Minimum OA Damper Position at Mid Fan Capacity </p>
+<p>(AV-11131) Writable</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Design Minimum OA Damper Position at Min Fan Capacity </p>
+<p>(AV-11132) Writable</p>
+</td>
+<td>
+<p>DCV Minimum OA Damper Position at Full Fan Capacity </p>
+<p>(AV-11133) Writable</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DCV Minimum OA Damper Position at Mid Fan Capacity </p>
+<p>(AV-11134) Writable</p>
+</td>
+<td>
+<p>DCV Minimum OA Damper Position at Min Fan Capacity </p>
+<p>(AV-11135) Writable</p>
+</td>
+</tr>
+</tbody>
+</table></figure></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="e281aa0b5aca02bc91b12c83b81192699"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="h_01KH75WMQRX8X76SKJTFS486T8">0 to 50 percent Motorized Damper</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 12%;">
+<col style="width: 23%;">
+<col style="width: 22%;">
+<col style="width: 8%;">
+<col style="width: 10%;">
+<col style="width: 14%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Heartbeat Interval (seconds)</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11286</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Motorized Damper Position Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Motorized Damper Position Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-50% Motorized Damper</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">10%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 50</p>
+</td>
+<td><p class="wysiwyg-text-align-center">0</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10144</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Economizer Minimum Position Setpoint BAS</p></td>
+<td><p class="wysiwyg-text-align-center">Used to request the ecominizer minimum position setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Outside Air is Configured as 0-50% Motorized Damper or 0-100%</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">25%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 50</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 1</strong></span></p>
+</td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center"><strong>AI-11148</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Remote Minimum Position</p></td>
+<td><p class="wysiwyg-text-align-center">Hardwired remote minimum position for OA damper control.</p></td>
+<td><p class="wysiwyg-text-align-center">Remote Minimum Position is Configured as Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Read</p></td>
+<td><p class="wysiwyg-text-align-center">N/A</p></td>
+<td>
+<p class="wysiwyg-text-align-center">N/A</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium"><strong>*Note Below 2</strong></span></p>
+</td>
+</tr>
+</tbody>
+</table></figure><h3 id="h_01KH78QBC1YWTM503CVJD0W21E">Notes</h3><div class="callout-info">
+<div class="callout-info-content">
+      <p>
+        <strong>Note 1: </strong>To use the Economizer Minimum Position Setpoint
+        BAS, the Supply Fan Compensation point must be disabled (BV-11119).
+      </p>
+    </div>
+<div class="callout-info-content"><p><strong>Note 2: </strong>With an installed Customer Connection Module and Remote Minimum Position is configured in the Symbio™ 700, a wired potentiometer can be used to adjust the outdoor air damper minimum position setpoint in the range of 0 to 50 percent (0 to 270 ohms). The setting is reported via Remote Minimum Position. If Remote Minimum Position input and Demand Controlled Ventilation is installed, the Remote Minimum Position provides the minimum damper position setpoint at full fan capacity. Tables in the application guide provide details of when the Remote Minimum Position input is utilized in minimum ventilation control. </p></div>
+<div class="callout-info-content"><p>When Remote Minimum Position is installed with Demand Controlled Ventilation, the Remote Minimum Position input is used in place of Design Minimum OA Damper Position at Full Fan Capacity setpoint. See the tables in the application guide for more details.</p></div>
+<p> </p>
+<div class="callout-info-content"><p><strong>Control Method</strong></p></div>
+<div class="callout-info-content"><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 26%;">
+<col style="width: 28%;">
+<col style="width: 19%;">
+<col style="width: 27%;">
+</colgroup>
+<thead><tr>
+<th>Supply Fan Compensation</th>
+<th>Remote Minimum Position</th>
+<th>Occupancy Status</th>
+<th>Outdoor Air Damper Controlling Setpoints</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">Enabled</p></td>
+<td><p class="wysiwyg-text-align-center">Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Any</p></td>
+<td><p class="wysiwyg-text-align-center">Remote Minimum Position</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Enabled</p></td>
+<td><p class="wysiwyg-text-align-center">Not Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Any</p></td>
+<td><p class="wysiwyg-text-align-center">Motorized Damper Position Setpoint</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Disabled</p></td>
+<td><p class="wysiwyg-text-align-center">Installed or Not Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Any</p></td>
+<td><p class="wysiwyg-text-align-center">Economizer Minimum Position Setpoint BAS</p></td>
+</tr>
+</tbody>
+</table></figure></div>
+</div><p><strong>For more information, reference the Application Guide </strong></p><p><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide </a></p><p> </p><p> </p><h2 id="h_01KH24552X9GMW1ZAS1HN8HZDN">Relief Damper Control - Power Exhaust</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 13%;">
+<col style="width: 21%;">
+<col style="width: 23%;">
+<col style="width: 8%;">
+<col style="width: 10%;">
+<col style="width: 13%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Heartbeat Interval (seconds)</p></th>
+</tr></thead>
+<tbody><tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-10168</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Relief Enable Position Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">The OA damper position above which the Relief sequence is enabled</p></td>
+<td><p class="wysiwyg-text-align-center">Space Pressure Control is Configured</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">25%</p>
+<p class="wysiwyg-text-align-center">Range 0 - 100</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-small">*Note Below1</span></p>
+</td>
+</tr></tbody>
+</table></figure><h3 id="h_01KH24EVVH0DM0YNZZKJ5MXJEY">Note</h3><div class="callout-info"><div class="callout-info-content">
+<p><strong>Note 1: </strong>Symbio™ 700 has a Space Pressure Control configuration options for Not Installed for Relief Fan Only. When configured for Relief Fan Only, the relief fan output energizes when the outdoor air damper position is greater than or equal to the Relief Enable Position Setpoint Status. Relief Fan Output Status point will report On. The relief fan output de-energizes with the outdoor air damper is less than or equal to the Relief Enable Position Setpoint Status – 10 percent or when the outdoor air damper is closed. Relief Fan Output Status point will report Off.</p>
+<p> </p>
+</div></div><p> </p><h2 id="h_01KH257WQC7AR07W7TYDCTX5RB">Dehumidification - Hot Gas Reheat</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 17%;">
+<col style="width: 20%;">
+<col style="width: 21%;">
+<col style="width: 8%;">
+<col style="width: 10%;">
+<col style="width: 13%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Object States</p></th>
+</tr></thead>
+<tbody><tr>
+<td><p class="wysiwyg-text-align-center"><strong>BV-10106</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Dehumidification Enable Command</p></td>
+<td><p class="wysiwyg-text-align-center">Normally used by the BMS to disable unit dehumidification</p></td>
+<td><p class="wysiwyg-text-align-center">Hot Gas Reheat is Configured as Installed</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td><p class="wysiwyg-text-align-center">Auto</p></td>
+<td>
+<p class="wysiwyg-text-align-center">false = Disabled</p>
+<p class="wysiwyg-text-align-center"><span style="color: #096ECC;"><strong> true = Auto</strong></span></p>
+</td>
+</tr></tbody>
+</table></figure><h3 id="h_01KH25W0HVDZASHM1CSQH780GK">Notes</h3><p> </p><div class="callout-info">
+<div class="callout-info-content"><p>Dehumidification control is a mode of Cooling when hot gas reheat is configured. Symbio™ 700 supports three configurable dehumidification control options: Dew Point (default), Relative Humidity, or Humidistat control for occupied and unoccupied operation.</p></div>
+<div class="callout-info-content"><p><strong>The following Symbio 700 points are provided for dehumidification control.</strong> </p></div>
+<div class="callout-info-content"><ul>
+<li data-list-item-id="ed380d98c5d29a3e6763d3f6dfd34872c">Unoccupied Dehumidification Enable BAS (BV-11261), the default setting is Enabled for unoccupied dehumidification to operate based on the configured dehumidification control option. This setting is editable and when set to Disabled will disable dehumidification during unoccupied mode. </li>
+<li data-list-item-id="e1eb10bdb157c0121078bff23cda65a45">Dehumidification Status (BV-11255), binary status value that reports dehumidification control is Active or Inactive. </li>
+<li data-list-item-id="e2e6ad0e66f7f7efe267d2b15a6184013">Dehumidification Control Status (AV-11281) reports the hot gas reheat valve status. </li>
+<li data-list-item-id="e619a89c66e0f0f3ddbe4b81f5d18b4f1">Dehumidification Disable Space Temperature Setpoint (AV-11398), is for CVZT/VVZTcooling only units without heat installed or VVDA units with a space temperature. If space temperature falls below this setpoint (default setting is 68°F), dehumidification disables.</li>
+</ul></div>
+<p> </p>
+<div class="callout-info-content"><h4 id="h_01KH269EPC9QPHWP0QHKTCM6TE">Dew Point</h4></div>
+<div class="callout-info-content"><p>Symbio 700 references Space Temperature Active and Space Humidity Active to calculate Space Dew Point. Likewise, Outdoor Air Temperature Active and Outdoor Air Humidity Active are referenced to calculate Outdoor Air Dew Point.</p></div>
+<div class="callout-info-content"><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 51%;">
+<col style="width: 49%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Instance</p></th>
+<th><p class="wysiwyg-text-align-center">Name</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11178</p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10116</p></td>
+<td><p class="wysiwyg-text-align-center">Space Humidity Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10226</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dew Point</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11338</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dew Point Setpoint Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-10228</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dew Point Unoccupied Setpoint Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11113</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dehumidification Setpoint Offset BAS - Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10118</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air Temperature Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10120</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air Humidity Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10117</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air Dew Point</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11341</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air Dew Point Setpoint BAS – Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11321</p></td>
+<td><p class="wysiwyg-text-align-center">Dew Point Setpoint Offset</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11342</p></td>
+<td><p class="wysiwyg-text-align-center">Unoccupied Dehumidification Timer</p></td>
+</tr>
+</tbody>
+</table></figure></div>
+<p> </p>
+<div class="callout-info-content"><h4 id="h_01KH26A5ZWDMRKQAAFVKMN1GFK">Relative Humidity</h4></div>
+<div class="callout-info-content"><p>Occupied dehumidification control initiates when the Space Humidity Active is greater than the Space Dehumidification Setpoint BAS - Active. Occupied dehumidification terminates when Space Humidity Active is less than Space Dehumidification Setpoint BAS - Active minus Space Dehumidification Setpoint Offset BAS - Active.</p></div>
+<div class="callout-info-content"><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 51%;">
+<col style="width: 49%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Instance</p></th>
+<th><p class="wysiwyg-text-align-center">Name</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11178</p></td>
+<td><p class="wysiwyg-text-align-center">Space Temperature Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AI-10116</p></td>
+<td><p class="wysiwyg-text-align-center">Space Humidity Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11136</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dehumidification Setpoint BAS - Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-10214</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dehumidification Unoccupied Setpoint Active</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">AV-11113</p></td>
+<td><p class="wysiwyg-text-align-center">Space Dehumidification Setpoint Offset BAS - Active</p></td>
+</tr>
+</tbody>
+</table></figure></div>
+<p> </p>
+<div class="callout-info-content"><h4 id="h_01KH26BVES72GC64N0DV6RY6MB">Humidistat</h4></div>
+<div class="callout-info-content"><p>Dehumidification operation initiates when Customer Options Module, Humidistat binary input is active. When Humidistat is used for Dehumidification control, compressors stage to 100% cooling capacity. Dehumidification operation terminates when Customer Options Module, Humidistat binary input is inactive. Reheat Humidistat Input (BI-11143) reports the status of the hardware input. If a Space Relative Humidity sensor is installed, the Humidistat input will be ignored.</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="eecdd95ac2c9b2f0a359690ff45471f8f"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="h_01KH24H93XEPBNDDCGYKA10CZJ">Heat Pump Heating Lockout</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 11%;">
+<col style="width: 12%;">
+<col style="width: 23%;">
+<col style="width: 24%;">
+<col style="width: 8%;">
+<col style="width: 11%;">
+<col style="width: 11%;">
+</colgroup>
+<thead><tr>
+<th><p class="wysiwyg-text-align-center">Object ID</p></th>
+<th><p class="wysiwyg-text-align-center">Object Name</p></th>
+<th><p class="wysiwyg-text-align-center">Description</p></th>
+<th><p class="wysiwyg-text-align-center">Configuration Dependency</p></th>
+<th><p class="wysiwyg-text-align-center">Read/ Write</p></th>
+<th><p class="wysiwyg-text-align-center">Reliquish Default</p></th>
+<th><p class="wysiwyg-text-align-center">Heartbeat Interval (seconds)</p></th>
+</tr></thead>
+<tbody><tr>
+<td><p class="wysiwyg-text-align-center"><strong>AV-11274</strong></p></td>
+<td><p class="wysiwyg-text-align-center">Heat Pump Heating Lockout Setpoint</p></td>
+<td><p class="wysiwyg-text-align-center">Setpoint at which to disable heat pump heating based on outdoor air temperature.</p></td>
+<td><p class="wysiwyg-text-align-center">Heat Pump Systems</p></td>
+<td><p class="wysiwyg-text-align-center">Write</p></td>
+<td>
+<p class="wysiwyg-text-align-center">0°F</p>
+<p class="wysiwyg-text-align-center">Range (e) - 45</p>
+</td>
+<td>
+<p class="wysiwyg-text-align-center">0</p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-small">*Note Below1</span></p>
+</td>
+</tr></tbody>
+</table></figure><h3 id="h_01KH24Y6QS24324M4F0RDN49RT">Note</h3><div class="callout-info">
+<div class="callout-info-content"><p><strong>Note 1:</strong> The Heat pump heating lockout function provides the user with the ability to disable heat pump compressor heating when the outdoor temperature falls below the Heat Pump Heating Lockout Setpoint (AV-11274). This feature is enabled by default but can be disabled by setting the Heat Pump Heating Lockout Setpoint Enable (BV-11253) to Disabled. This feature also disables when outdoor air temperature is invalid.</p></div>
+<div class="callout-info-content"><p><strong>(e)</strong>  For 410A units, low limit for Heat Pump Heating Lockout Setpoint is -18°F | For 454B units, low limit for Heat Pump Heating Lockout Setpoint is -8°F</p></div>
+</div><p><strong>For more information, reference the Application Guide</strong></p><ul><li data-list-item-id="e2b03f94baf41c0165df91c37032b76f0"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/15455235169677-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><h2 id="h_01KH6NB0V9Y74T2QJKKA3DCBNH">VVAD/MZVAV Supply Air Temperature Reset</h2><p>Discharge Air Cooling and Heating Reset (Follow the instructions on the link provided below)</p><ul><li data-list-item-id="ee883e307ff3604ef118bee3380c256ee"><a href="../General/42311787937421.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/42311787937421-VVDA-MZVAV-Supply-Air-Temperature-Reset</a></li></ul><p> </p><p> </p><h2 id="h_01KH47PZH44SYEZFRK0TCE19H6">Occupancy Status Definitions</h2><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 19%;">
+<col style="width: 81%;">
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Occupied</strong></td>
+<td>The controller operates in an occupied mode providing temperature and ventilation control to the occupied heating and cooling setpoints.</td>
+</tr>
+<tr>
+<td><strong>Unoccupied</strong></td>
+<td>The control is typically shut down and does not provide temperature control to the normal occupied setpoints. No ventilation is provided. Temperature control is determined by energy conservation and building protection thresholds.</td>
+</tr>
+<tr>
+<td><strong>Occupied Bypass</strong></td>
+<td>The control is temporarily in an Occupied state for a specified period and will automatically return to unoccupied operation when the bypass timer expires. The Occupied Bypass Timer is user-adjustable; setting the timer to 0 minutes effectively disables Timed Override function at the equipment controller. </td>
+</tr>
+<tr>
+<td><strong>Occupied Standby</strong></td>
+<td>Space temperature control units in an Occupied Standby state control to occupied heating and cooling standby temperature setpoints. Standby does not apply to controllers configured for discharge air control (such as VVDA), which will translate Standby into an Occupied status.</td>
+</tr>
+</tbody>
+</table></figure><p> </p><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/15458935207693-Symbio-700-Precedent-BACnet-point-configuration-for-BAS-Integration" target="_blank">https://support.trane.com/hc/en-us/articles/15458935207693-Symbio-700-Precedent-BACnet-point-configuration-for-BAS-Integration</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

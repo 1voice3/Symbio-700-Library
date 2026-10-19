@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Compressor Proving Circuit(s) Troubleshooting for Odyssey - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/39347684774541-Symbio-700-Compressor-Proving-Circuit-s-Troubleshooting-for-Odyssey" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Compressor Proving Circuit(s) Troubleshooting for Odyssey</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-09-05 &nbsp;&bull;&nbsp; Last updated: 2026-06-30</div>
+<div class="body"><p><strong>Summary:</strong></p><p>This compressor circuit troubleshooting guide applies to the Odyssey with the Symbio 700 unit controller. The following images illustrate the circuit route for the auxiliary and safety components to the contactor, ensuring the compressor circuit is correctly connected and closed.</p><p class="wysiwyg-text-align-center"> </p><h1 id="h_01K89DP1KWM7Q9M2CBVNPFN79A"><strong>Compressor Proving Troubleshooting</strong></h1><p> </p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized" style="margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 78%;">
+</colgroup>
+<thead><tr>
+<th>Abbreviation</th>
+<th>Abbreviation Name</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>UC</strong></td>
+<td><strong>Unit Controller (Symbio 700)</strong></td>
+</tr>
+<tr>
+<td><strong>AB</strong></td>
+<td><strong>Adapter Board</strong></td>
+</tr>
+<tr>
+<td><strong>HPC</strong></td>
+<td><strong>High-Pressure Cutout</strong></td>
+</tr>
+<tr>
+<td><strong>DTL</strong></td>
+<td><strong>Discharge Temperature Limit </strong></td>
+</tr>
+<tr>
+<td><strong>CC</strong></td>
+<td><strong>Contactor</strong></td>
+</tr>
+<tr>
+<td><strong>TNS</strong></td>
+<td><strong>Transformer</strong></td>
+</tr>
+</tbody>
+</table></figure><p> </p><h2 id="h_01KNMRERH1ZGWVFWHCNYAYN5ZE"><strong>Adapter Board Reversion</strong></h2><p>You can find the REV number on the top right-hand side og the adapter board.</p><h4 class="wysiwyg-text-align-center" id="h_01KNMSYHSMKEGF1K610DKMWEPC">
+<strong>Rev E, </strong>before the 5th week of 2026</h4><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 50%;"><img style="aspect-ratio: 772/660;" src="../../attachments/39347684774541_44933084691853_image.png" width="772" height="660"></figure><p class="wysiwyg-text-align-center"><strong>No test pins</strong></p><h4 class="wysiwyg-text-align-center" id="h_01KNMSYC50JZ5BFNYNBWY2R61P"> </h4><h4 class="wysiwyg-text-align-center" id="h_01KNMSYC50YH3ZFN8KW7XKF1FZ">
+<strong>Rev F </strong>after the 5th week of 2026</h4><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 50%;"><img style="aspect-ratio: 643/671;" src="../../attachments/39347684774541_44933084696461_image.png" width="643" height="671"></figure><p class="wysiwyg-text-align-center"><strong>Revision F board has test pins.</strong></p><p> </p><h2 id="h_01K89DSQMPSDV0619S0YNNWKWB"><strong>Compressor 1 Run Command - 24VAC</strong></h2><p> </p><ul><li data-list-item-id="eaf8d0f500aef4f1f3429127288e94656">
+<h3 id="h_01K89DX0X4VVM3QEC23VP3J3GX">Does UC-P8-4 have 24VAC?</h3>
+<ul>
+<li data-list-item-id="e21d0aeb6ece65093bde0936d031702b4">Verify that <strong>UC-P8-4</strong> (<span style="color: #000000;"><strong>O</strong></span> wire) to chassis ground has 24VAC (There should always be 24VAC when the unit is powered on). That is the 24VAC input.</li>
+<li data-list-item-id="e484b8e42c990c22cd15a8fadeaabf7aa">If the contactor does not pull in and LED 5 is on for stage two of cooling, you have 5 seconds to verify the 24Vac output from the unit controller (<strong>UC-P8-5</strong> <span style="color: #000000;">(<strong>Y</strong></span><strong> </strong>wire)) or the circuit.</li>
+</ul>
+</li></ul><p> </p><ul><li data-list-item-id="eb063f0ba4b6fcc658f7e07ab2139d2b8">
+<h3 id="h_01K89EC0FJ81QJ5D768APJRJ0S">Is there no 24VAC on UC-P8-4?</h3>
+<ul>
+<li data-list-item-id="e792dcc6bb048f64b419e5b80d07369ef">Verify that the Adapter Board <strong>AB-J20-4</strong> (<strong>O</strong> wire) is powered by 24VAC. If no voltage is present, backtrack to the connector below.</li>
+<li data-list-item-id="e8ec6841b6caa6a59f6f6b8bc0ea58993">
+<strong>AB-J5-1</strong> (<strong>BK</strong> wire), then to </li>
+<li data-list-item-id="e696edb1d5dbc19084f2c4b1b4e24c66b">
+<strong>PPM61/PPF61-1</strong> (<strong>BK</strong> wire), then to</li>
+<li data-list-item-id="e0b9cfc4f782fc94cbb9319c32f9ec456">
+<strong>TNS1 </strong>(Transformer)</li>
+</ul>
+</li></ul><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01K8P51DB7FVBG7FF4W6R8Z3T4"><strong>Compressor 1 Run Command - Resistance </strong></h2><ul><li data-list-item-id="e94c8fdefedc058175a5584f69a21f2db">
+<h3 id="h_01K8P54CZ87ZDMVJBKBKSZ108E">What is the resistance between UC-P8-5 and AB-J7-1?</h3>
+<ul>
+<li data-list-item-id="e7d0e2d88b81a15f5fb45237bfe550ef1">Place a meter on resistance (<strong>Ω)</strong>. One lead on <strong>UC-P8-5</strong> (<strong>Y</strong> wire) and the other lead on <strong>AB-J7-1 </strong>(<strong>BK</strong> wire). The resistance should not exceed 0.6 ohms.</li>
+<li data-list-item-id="e3cb842d5478fdde63722f9e403b813e4">If the resistance is higher than 0.6 ohms, a pin or plug is not fully seated, or a safety sensor has high resistance.</li>
+<li data-list-item-id="e40084e6081ef046197920db013f03796">If there is no resistance (O/L), backtrace the connectors below. One lead on <strong>UC-P8-5 </strong>(<strong>Y</strong> wire) to<ul>
+<li data-list-item-id="e58b65a8130b4718fe8f0865691aa8ae6">
+<strong>AB-J13-4 = </strong>(<strong>O</strong> wire)</li>
+<li data-list-item-id="ef052fb96b50118f59bb691f8985a3691">
+<strong>DTL1 = </strong>(Wires)</li>
+<li data-list-item-id="eb0383ff1c8201ac35a1970e4ac3ba84d">
+<strong>AB-J13-3 = </strong>(<strong>BL</strong> wire)</li>
+<li data-list-item-id="e06bb2a07dcacad687ec897c5458d5e6f">
+<strong>AB-J13-2  = </strong>(<strong>R</strong> wire)</li>
+<li data-list-item-id="e773cf73cf0214ddb83c768486293f269">
+<strong>HCP1 = </strong>(Wires)</li>
+<li data-list-item-id="ed68d3bf51cb60a209aa2bb0e53194073">
+<strong>AB-J13-1 = </strong>(<strong>BK</strong> wire)</li>
+<li data-list-item-id="e087d35191644b8f38d825ad298557858">
+<strong>AB-J20-5 = </strong>(<strong>Y </strong>wire)</li>
+</ul>
+</li>
+</ul>
+</li></ul><p><strong>Revision E without test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 558/419;" src="../../attachments/39347684774541_44560030478477_image.png" width="558" height="419"></figure><ul><li data-list-item-id="e469f4fad513406666ca4d3200afbbb09">
+<h3 id="h_01K8P5X16VNS8628R8CM70KX9C">What is the resistance between AB-J7-1 and AB-J7-2?</h3>
+<ul>
+<li data-list-item-id="e2a92d64ebd9d49ca2378daabcce9f17d">Verify <strong>AB-J7-1 </strong>(<strong>BK</strong> wire) and <strong>AB-J7-2 </strong>(<strong>R</strong> wire). There should be 5 to 12 ohms of resistance because you are going through the contactor coil.</li>
+<li data-list-item-id="e178a0caf28c258a43afd4a4e2cd817de">If there is no resistance (O/L), backtrace the connectors below.<ul>
+<li data-list-item-id="e481cc945ef5bdffe0eced1927817fc37">
+<strong>PPM23</strong> = (<strong>BK</strong> wire)</li>
+<li data-list-item-id="e972626789564eb19990461a8b91f173b">
+<strong>PPF23 to CC1</strong> = (<strong>BK</strong> wire one)</li>
+<li data-list-item-id="ece5a6468f698da010b36c35bc73f8328">
+<strong>CC1 to PPF23 </strong>= (<strong>BK</strong> wire Two)</li>
+<li data-list-item-id="e5bf74e26319b53929c42939828225ad0">
+<strong>PPM23</strong> - (<strong>R</strong> wire)</li>
+</ul>
+</li>
+</ul>
+</li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 963/397;" src="../../attachments/39347684774541_44560077606285_image.png" width="963" height="397"></figure><p> </p><p><strong>Revision F with test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 1088/682;" src="../../attachments/39347684774541_44933064693261_image.png" width="1088" height="682"></figure><figure class="wysiwyg-image"><img></figure><p class="wysiwyg-text-align-center"><strong>Path: J20-4 &gt; UC-J8-4 &gt; UC-P8-5 &gt; J20-5 &gt; Test Pin COMP 1 &gt; J13-1 &gt; BK HPC1 &gt; R HPC1 &gt; J13-2 &gt; Test Pin NET J13_2 &gt; J13-3 &gt; BL DLT1 &gt; O DLT1 &gt; J13-4 &gt; Test Pin HPC_1 &gt; J7-1 &gt; BK CC1 &gt; R CC1 &gt; J7-2</strong></p><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01K97PRR68XNCTRFKYBZD7S9V6">
+<strong>Compressor 1 - Auxiliary</strong> </h2><ul><li class="wysiwyg-list-bold" data-list-item-id="ef73f5fea3eb80f98ab6462e7598a28d5">
+<h3 id="h_01K97T27YE5T0N5DM39K68G4ES"><strong>Does AB-J5-1 have 24VAC?</strong></h3>
+<ul>
+<li data-list-item-id="eb9d62ea9f97a3fea1b75f682dfcc2224">With the unit powered up, there should be 24 VAC from <strong>AB-J5-1</strong> to the <strong>AB-J22-1</strong> on <strong>CC1 AUX1</strong>.</li>
+<li data-list-item-id="e9ccfb985712726424c5344e181611b60">Once the Contactor (<strong>CC1</strong>) closes, the auxiliary closes, and it sends 24VAC to <strong>AB--J22-2</strong>, then to <strong>AB-J20-3</strong>, then to <strong>UC-P8-3</strong> (<strong>BL</strong> wire).</li>
+</ul>
+</li></ul><p> </p><ul><li class="wysiwyg-list-bold" data-list-item-id="ed7cca82c77702394925af22cdd397ebc">
+<h3 id="h_01KMGK8PKZXY041XK3DACFM5Q3"><strong>Resistance Test</strong></h3>
+<ul><li data-list-item-id="ecce7232c5bb8d227bcaba7eb5e4284f1">With the unit off, place a meter on resistance (<strong>Ω)</strong>. One lead on <strong>UC-P8-3</strong> (<strong>BL</strong> wire) and the other lead on <strong>AB-J5-1</strong> (<strong>BK</strong> wire), and close the contactor. The resistance should not exceed 0.6 ohms.</li></ul>
+</li></ul><p><strong>Revision E without test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 709/574;" src="../../attachments/39347684774541_44560077607949_image.png" width="709" height="574"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 641/292;" src="../../attachments/39347684774541_44560030489997_image.png" width="641" height="292"></figure><p> </p><p> </p><p><strong>Revision F with test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 1058/639;" src="../../attachments/39347684774541_44933084700941_image.png" width="1058" height="639"></figure><p class="wysiwyg-text-align-center"><strong>Path = J5-1 &gt; J22-1 &gt; BK AUX &gt; R AUX &gt; J22-2 &gt; Test Pin COMP1 PROV &gt;J20-3 &gt; UC-J8-3</strong></p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><hr><p> </p><p> </p><h2 id="h_01KMGE0ZFWK6S2CHB5T6YB23RK"><strong>Compressor 2 Run Command - 24VAC</strong></h2><p> </p><ul><li data-list-item-id="e8ec3043fc07c3a7899bba29f990c6eb4">
+<h3 id="h_01KMGE0ZFWBZY5DE824STF51H8">Does UC-P9-4 have 24VAC?</h3>
+<ul>
+<li data-list-item-id="e3ec4fa4c0daaa70c595a490ccd0299b6">Verify that <strong>UC-P9-4</strong> (<strong>Y/BK</strong>  wire) to chassis ground has 24VAC (There should always be 24VAC when the unit is powered on). That is the 24VAC input.</li>
+<li data-list-item-id="ee019012cba00e051ce68c935e2fd82f9">If the contactor does not pull in and LED 15 is on for stage two of cooling, you have 5 seconds to verify the 24Vac output from the unit controller (<strong>UC-P9-5</strong> <span style="color: #000000;">(<strong>BR/BK</strong></span><strong> </strong>wire)) or the circuit.</li>
+</ul>
+</li></ul><p> </p><ul><li data-list-item-id="ede30ac7a6e4963c36f9d5086f30bea53">
+<h3 id="h_01KMGE0ZFW0JBMJ265P9HQSYDT">Is there no 24VAC on UC-P9-4?</h3>
+<ul>
+<li data-list-item-id="eb2eafaf4bc52142d0c56bcce3169d2ca">Verify that the Adapter Board <strong>AB-J20-10</strong> (<strong>Y/BK</strong> wire) is powered by 24VAC. If no voltage is present, backtrack to the connector below.</li>
+<li data-list-item-id="e5992157af308e9cdc551e932e319b607">
+<strong>AB-J5-1</strong> (<strong>BK</strong> wire), then to </li>
+<li data-list-item-id="ebf4abd5c755c44d40960ba252c39866f">
+<strong>PPM61/PPF61-1</strong> (<strong>BK</strong> wire), then to</li>
+<li data-list-item-id="e5b606b71e4cec8eb61557fabcaeebb28">
+<strong>TNS1 </strong>(Transformer)</li>
+</ul>
+</li></ul><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01KMGK0KQY9BD098MX1M108F5V"><strong>Compressor 2 Run Command - Resistance </strong></h2><ul><li data-list-item-id="e2d5d89731396c75850148c1045a30926">
+<h3 id="h_01KMGK0KQZ4KW4MNR7MQVT1R84">What is the resistance between UC-P9-5 and AB-J7-3?</h3>
+<ul>
+<li data-list-item-id="efb2cdc69c8bc18eda0b5c3fa29cf6ea7">Place a meter on resistance (<strong>Ω)</strong>. One lead on <strong>UC-P9-5</strong> (<span style="color: #000000;"><strong>BR/BK</strong></span> wire) and the other lead on <strong>AB-J7-3 </strong>(<strong>BL</strong> wire). The resistance should not exceed 0.6 ohms.</li>
+<li data-list-item-id="e419a8106710eb9f14aea0abbafa8f82e">If the resistance is higher than 0.6 ohms, a pin or plug is not fully seated, or a safety sensor has high resistance.</li>
+<li data-list-item-id="e463cd626185c5dfbd73a9fbca3a4f305">If there is no resistance (O/L), backtrace the connectors below. One lead on <strong>UC-P9-5 </strong>(<span style="color: #000000;"><strong>BR/BK</strong></span> wire) to<ul>
+<li data-list-item-id="e0f9fa2e9476cc3ef7bb54452472ee3e6">
+<strong>AB-J11-4 = </strong>(<strong>O</strong> wire)</li>
+<li data-list-item-id="e84dc9eca513209ad29e9886ccf9069df">
+<strong>DTL1 = </strong>(Wires)</li>
+<li data-list-item-id="e93961bf723b09eac9b6aa76e68d2253a">
+<strong>AB-J11-3 = </strong>(<strong>BL</strong> wire)</li>
+<li data-list-item-id="e31c839f48b9d6a728b199f265dc2fe13">
+<strong>AB-J11-2  = </strong>(<strong>R</strong> wire)</li>
+<li data-list-item-id="ea25f3a4cceafd02887ed7fb6fd74ff20">
+<strong>HCP1 = </strong>(Wires)</li>
+<li data-list-item-id="e91b0865585cc731054f33e0d40e1b7b6">
+<strong>AB-J11-1 = </strong>(<strong>BK</strong> wire)</li>
+<li data-list-item-id="e7e8bbc84de1f70967eae7182f8efca2b">
+<strong>AB-J20-11 = </strong>(<strong>Y </strong>wire)</li>
+</ul>
+</li>
+</ul>
+</li></ul><p><strong>Revision E without test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 671/520;" src="../../attachments/39347684774541_44560030491277_image.png" width="671" height="520"></figure><ul><li data-list-item-id="e0e5f3033e5fde335e80798e948de28a9">
+<h3 id="h_01KMGK0KQZQHGAB1HTJAMBNVHV">What is the resistance between AB-J7-3 and AB-J7-4?</h3>
+<ul>
+<li data-list-item-id="ea3662655df611a9525d3c90a7f292743">Verify <strong>AB-J7-3 </strong>(<strong>BL</strong> wire) and <strong>AB-J7-4 </strong>(<strong>O</strong> wire). There should be 5 to 12 ohms of resistance because you are going through the contactor coil.</li>
+<li data-list-item-id="ec28476148658cd5eb20c659eea3dfe0b">If there is no resistance (O/L), backtrace the connectors below.<ul>
+<li data-list-item-id="e4bef84acd4301f3021bdb87b34a8d4a4">
+<strong>PPM24</strong> = (<strong>BL</strong> wire)</li>
+<li data-list-item-id="ecca6e8ac60ef4b49af35b6f44a39f39e">
+<strong>PPF24 to CC2</strong> = (<strong>BK</strong> wire one)</li>
+<li data-list-item-id="e8dc4c6275475ebdfe3749f452e07da00">
+<strong>CC2 to PPF24 </strong>= (<strong>BK</strong> wire Two)</li>
+<li data-list-item-id="e1e836437dfbc4a1eb80279b8e0ad4b4f">
+<strong>PPM23</strong> - (<strong>O</strong> wire)</li>
+</ul>
+</li>
+</ul>
+</li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 825/468;" src="../../attachments/39347684774541_44560077611789_image.png" width="825" height="468"></figure><p><strong>Revision F with test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 1105/654;" src="../../attachments/39347684774541_44933084703245_image.png" width="1105" height="654"></figure><p class="wysiwyg-text-align-center"><strong>Path: J20-10 &gt; UC-J9-4 &gt; UC-J9-5 &gt; J20-11 &gt; J11-1 &gt; BK HPC2 &gt; R HPC2 &gt; J11-2 &gt; Test Pin NET J11_2 &gt; J11-3 &gt; BL DTL2 &gt; O DLT2 &gt; J11-4 &gt;Test Pin HPC_2 &gt; J7-3 &gt; BL CC2 &gt; O CC2 &gt; J7-4</strong></p><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01KMGQ5Y7V0KSW3A03YPA83AF3">
+<strong>Compressor 2 - Auxiliary</strong> </h2><ul><li class="wysiwyg-list-bold" data-list-item-id="e965165dc4895ed307131ff2f08a9361d">
+<h3 id="h_01KMGQ5Y7VR21HVR4E72NJ5RJN"><strong>Does AB-J5-1 have 24VAC?</strong></h3>
+<ul>
+<li data-list-item-id="eae894c1cbbb45acb465390f55133924b">With the unit powered up, there should be 24 VAC from <strong>AB-J5-1</strong> to the <strong>AB-J22-1</strong> on <strong>CC1 AUX1</strong>.</li>
+<li data-list-item-id="ed125b5cc90035916f6d6ac12128c0894">Once the Contactor (<strong>CC1</strong>) closes, the auxiliary closes, and it sends 24VAC to <strong>AB--J22-2</strong>, then to <strong>AB-J20-3</strong>, then to <strong>UC-P8-3</strong> (<strong>BL</strong> wire).</li>
+</ul>
+</li></ul><p> </p><ul><li class="wysiwyg-list-bold" data-list-item-id="e7196eb70503220bedfaf181c98934f02">
+<h3 id="h_01KMGKPAPN5E57TFEX865PS8HF"><strong>Resistance Test</strong></h3>
+<ul><li data-list-item-id="eb2285c4c5b0d11fd52277ca07a5cb97f">With the unit off, place a meter on resistance (<strong>Ω)</strong>. One lead on <strong>UC-P9-3</strong> (<strong>O/BK</strong> wire) and the other lead on <strong>AB-J5-1</strong> (<strong>BK</strong> wire), and close the contactor. The resistance should not exceed 0.6 ohms.</li></ul>
+</li></ul><p><strong>Revision E without test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 768/605;" src="../../attachments/39347684774541_44560077612685_image.png" width="768" height="605"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 706/447;" src="../../attachments/39347684774541_44560030498829_image.png" width="706" height="447"></figure><p><strong>Revision F with test pins</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 1121/701;" src="../../attachments/39347684774541_44933084709133_image.png" width="1121" height="701"></figure><p class="wysiwyg-text-align-center"><strong>Path = J5-1 &gt; J22-3 &gt; BL AUX &gt; O AUX &gt; J22-4 &gt; Test Pin COMP2 PROV &gt; J20-9 &gt; UC-J9-3</strong></p><p> </p><p> </p><hr><p> </p><p> </p><h1 id="h_01K9QC5NK0SBS1G3TMAZDCWQ0Q"><strong>Relay Contact Resistance Test</strong></h1><p> </p><div class="callout-danger"><div class="callout-danger-content">
+<p><span class="callout-title"><em class="fa-solid fa-circle-exclamation"></em> Alert </span></p>
+<p>Please contact Technical Support and share the information gathered concerning the high resistance observed on the relays for further instructions.</p>
+</div></div><p> </p><h3 id="h_01K9QC664E1XKYQKZZJJF0MKB5"><strong>Symbio 700 UC P8 CC1 Relay contact resistance check steps</strong></h3><ol>
+<li data-list-item-id="ebda62867ae2c12f8224b73770a2c6495">Unplug the <strong>UC-J8</strong> harness from the Red <strong>P8</strong> connection on the board. Pay attention to which pins the Orange (<strong>UC-P8-4</strong>) and Yellow (<strong>UC-P8-5</strong>) wires are connected to.</li>
+<li data-list-item-id="ed77234d7b2373a6669fc8c5a9f1abe78">Connect to the Symbio 700 UC board with the cell phone app and go to the <strong>Tools</strong> &gt; <strong>Service Test Mode</strong> page.</li>
+<li data-list-item-id="ee2e369c9e2a7e0e60c7eee9227dc8436">Click on Cool 2 to energize the compressor relay output on the Symbio 700 UC. LED 5 on the Symbio 700 UC board should be ON.</li>
+<li data-list-item-id="e193966b28eb93fa04e0333f74ac27c48">Check the relay contact resistance across the (<strong>UC-P8-4</strong>) and (<strong>UC-P8-5</strong>). You will only have about 5 seconds to check this before getting a proving fault. <strong>The resistance should be less than 10 ohms.</strong>
+</li>
+<li data-list-item-id="e80ae7d3f247d7be49b293fceec391bec">Repeat this process several times to see if the relay contact ohm reading changes. If the ohm reading exceeds 10 ohms, the Symbio 700 UC board will need to be replaced.</li>
+</ol><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="height: auto; width: 312.594px;"><img style="aspect-ratio: 3024/4032;" src="../../attachments/360055248371_39023444760077_P8.jpg" width="3024" height="4032"></figure><p> </p><p><img style="height: auto;" src="../../attachments/360055248371_31369962357773_mceclip5.png" width="609" height="229"></p><p> </p><p> </p><p> </p><h3 id="h_01K9QC6CW4RVZSCFYPDNTHZN61"><strong>Symbio 700 UC P9 CC2 Relay contact resistance check steps</strong></h3><ol>
+<li data-list-item-id="e57e43ff6f5354a5e3d75593be7fe2275">Unplug the <strong>UC-J9</strong> harness from the White <strong>UC-P9</strong> connection on the board. Pay attention to which pins the Y/BK (<strong>UC-P9-4</strong>) and BR/BK  (<strong>UC-P9-5 </strong>) wires are connected to.</li>
+<li data-list-item-id="e06f51174edef51fcf11d81cbb09c0b78">Connect to the Symbio 700 UC board with the cell phone app and go to the <strong>Tools</strong> &gt; <strong>Service Test Mode</strong> page.</li>
+<li data-list-item-id="ea0e16ff052cd1f8d37a01428ed9d70e0">Click on Cool 1 to energize the compressor relay output on the Symbio 700 UC. LED 15 on the Symbio 700 UC board should be ON.</li>
+<li data-list-item-id="e8294c719f94627db75bfba4d841577c0">Check the relay contact resistance across the  (<strong>UC-P9-4</strong>) and (<strong>UC-P9-5</strong>). You will only have about 5 seconds to check this before getting a proving fault. <strong>The resistance should be less than 10 ohms.</strong>
+</li>
+<li data-list-item-id="e4211f80887f088714e1d186ae47c584c">Repeat this process several times to see if the relay contact ohm reading changes. If the ohm reading exceeds 10 ohms, the Symbio 700 UC board will need to be replaced.</li>
+</ol><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="height: auto; width: 312.594px;"><img style="aspect-ratio: 3024/4032;" src="../../attachments/360055248371_39023430046093_P9.jpg" width="3024" height="4032"></figure><p> </p><p><img style="height: auto;" src="../../attachments/360055248371_31369975260429_mceclip4.png" width="633" height="234"></p><p> </p><p> </p><hr><p> </p><p> </p><h1 id="h_01K9QCCZZ98B2CJABQD5JP5H82"><strong id="comp_proving">Compressor Proving Alarms</strong></h1><p> </p><h3 id="h_01K9QCDWJ0WY1F6SAC3PZ9RXDG">Possible Alarms:</h3><p><strong>Alarm</strong> - <strong>Compressor Proving Trip Diagnostic – 15-minute lockout</strong></p><ul><li data-list-item-id="e9607d9e6ef76d340514f26dae8f8e7bc">The HPC or DTL opens while the compressor is running (after the circuit has proved), and the Compressor Contactor loses its 24 VAC, causing the Aux Switch to open</li></ul><p> </p><p><strong>Alarm</strong> - <strong>Compressor Proving Lockout Diagnostic – INSTANT UNIT LOCKOUT!</strong></p><ul><li data-list-item-id="e1b2e7bce24725d21e4c15c87b277316c">The Symbio Board calls for the Compressor Contactor, and the Contactor doesn’t pull in within 7 seconds.</li></ul><p><strong>Possible causes:</strong></p><p>The HPC and or the DTL are open.</p><p>Contactor Coil open.</p><p>Wiring error.</p><p> </p><p><strong>Alarm -</strong> <strong>Compressor Proving Lockout Diagnostic – INSTANT UNIT LOCKOUT!</strong></p><ul><li data-list-item-id="e06d6d05e78c4f0ecd612c2840bb2b744">The Symbio Board calls for the Compressor Contactor; it pulls in and drops back out after 7 seconds.</li></ul><p><strong>Possible causes:</strong></p><p>No 24 VAC at the black wire on the Aux Switch</p><p>Bad Aux Switch.</p><p>Aux Switch is not on the contactor correctly.</p><p> </p><p><strong>Alarm -</strong> <strong>Compressor Contactor Fail Diagnostic – INSTANT UNIT LOCKOUT!</strong></p><ul><li data-list-item-id="ebdc97a7a5d442b7d0e9c9ab4b4037824">The Compressor Contactor Aux Switch closes before it is supposed to</li></ul><p><strong>Possible causes:</strong></p><p>The technician manually pushes in the contactor.</p><p>The contactor welded shut.</p><p> </p><div class="callout-info">
+<p><strong>💡 Note:</strong></p>
+<ul><li data-list-item-id="eda1ffa88a4b10bd09e93092b4b84b07d">A good way to determine whether the pressure switches or the board/wiring are the issue is to unplug the line voltage from the compressor in question and isolate it. Have the Symbio 700 Board turn on the circuit. If the circuit operates normally with the compressor line voltage unwired, you may have a refrigeration issue. If you still get a proving diagnostic, you may have a board/wiring issue.</li></ul>
+</div><p> </p><hr><p> </p><div class="callout-danger"><div class="callout-danger-content">
+<p><strong>Complete troubleshooting</strong> as outlined above first before replacing any parts. </p>
+<p>For <strong>confirmed</strong> Symbio 700 <strong>relay failures</strong>, replace the Symbio 700 and Adapter board using the kits listed below, see the matrix for kit number vs. product. </p>
+</div></div><p> </p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 23%;">
+<col style="width: 30%;">
+<col style="width: 47%;">
+</colgroup>
+<thead><tr>
+<th>Product</th>
+<th>Symbio 700 License Type</th>
+<th><strong>Kit Part #</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td rowspan="2"><p class="wysiwyg-text-align-center">Odyssey </p></td>
+<td><p class="wysiwyg-text-align-center">Advanced</p></td>
+<td><p class="wysiwyg-text-align-center">KIT20882 (Incl. MOD04044 &amp; MOD04172)</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Basic</p></td>
+<td><p class="wysiwyg-text-align-center">KIT20883 (Incl. MOD04045 &amp; MOD04172)</p></td>
+</tr>
+</tbody>
+</table></figure><p><span class="wysiwyg-font-size-medium"><strong>*</strong>Advanced. License is <strong>not applicable</strong> to <strong>Foundation Products</strong></span></p><p> </p><p>Revision F Odyssey Adapter Board with Relay Protection and Test Pins.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 1080/1293;" src="../../attachments/360054828372_44646153765645_image.png" width="1080" height="1293"></figure><p> </p><hr><p> </p><p class="wysiwyg-text-align-center"> </p><p><strong>For Precedent and Foundation units</strong> - <a href="../Precedent/360055248371.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/360055248371-Symbio-700-Compressor-Proving-Circuit-s-Troubleshooting-for-Precedent-and-Large-Foundation</a></p><p> </p><p> </p><hr><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/39347684774541-Symbio-700-Compressor-Proving-Circuit-s-Troubleshooting-for-Odyssey" target="_blank">https://support.trane.com/hc/en-us/articles/39347684774541-Symbio-700-Compressor-Proving-Circuit-s-Troubleshooting-for-Odyssey</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

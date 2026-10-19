@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setting Airflow on Precedent with Symbio 700 Controls - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/39030256000397-Setting-Airflow-on-Precedent-with-Symbio-700-Controls" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Setting Airflow on Precedent with Symbio 700 Controls</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Supply Fan &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-08-22 &nbsp;&bull;&nbsp; Last updated: 2026-07-15</div>
+<div class="body"><p><span class="wysiwyg-font-size-large"><strong>Overview</strong></span></p><p>Precedent with Symbio 700 Controls utilize direct drive supply fan motors. These motors are controlled directly by Symbio 700 either through Modbus on B0 through D1 Cabinets and hardwired PWM signal on High Efficiency A0 cabinets. Standard Efficiency A0 cabinets utilize a 5 tap fan motor with low and high speed relays on the Symbio 700. </p><p>Cabinet size can be found on Precedent units with Symbio 700 by checking the last two digits of the model number:</p><figure class="wysiwyg-image"><img style="aspect-ratio: 342/49;" src="../../attachments/39030256000397_39126835065741_image.png" width="342" height="49"></figure><p><span class="wysiwyg-font-size-large"><strong>Point Description for units with Modbus or hardwired control signal</strong></span></p><p>Symbio 700 utilizes four different points for supply fan control and balancing. These points can be accessed a few different ways. </p><ul>
+<li data-list-item-id="ee6cbec6d0e88459de1f162a6d6b02381">Through the Symbio App in SETTINGS&gt;INDOOR</li>
+<li data-list-item-id="e3aa80dd80903bb75fb774d74df19b745">Through the Onboard Display in SETTINGS&gt;INDOOR</li>
+<li data-list-item-id="eb15830c2218ec6793c941fdb41c18abc">Through BAS using the instance numbers or point names shown below </li>
+</ul><p> </p><ul>
+<li data-list-item-id="e06a35bcc949b401cbb45c80034390682">
+<span style="color: #C72809;"><strong>AV-11163 Supply Fan Speed Status</strong></span> = Software Command from Symbio 700<ul>
+<li data-list-item-id="ef366258ac47e15e4f218758c163e5f43">This is a status point and can not be written to<ul><li data-list-item-id="eee4747e9a6fcfbe9672c6cfc186512a0">This point is visible in:<ul>
+<li data-list-item-id="e76e7bc9ef55942061f2e63bd4a11c38f">App, HOME page</li>
+<li data-list-item-id="e156db74193ec66517d979f48da0dd9da">On-Board Display in HOME or in STATUS&gt;INDOOR</li>
+</ul>
+</li></ul>
+</li>
+<li data-list-item-id="e8674f74d7120d1ef9ebe21f76e8f65c5">This point has a default factory minimum based on the unit System Type, this value can not be adjusted lower than the default factory minimum.<ul>
+<li data-list-item-id="ec88e94fac014ea500cdd07ce96aa1801">66% for CVZT units</li>
+<li data-list-item-id="e9664cee9c0d6c6f6ef5edcb20570c300">50% for VVZT/VVDA units</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-list-item-id="e660d6c5bbb0b92926996b6c0472ec1de">
+<span style="color: #C72809;"><strong>AV-11174 Supply Fan Maximum Speed Setpoint</strong></span> = Multiplier for adjusting actual output to fan motor<ul>
+<li class="ck-list-marker-bold" data-list-item-id="e84a7c8efdca576fd063e4c047bc44390">
+<strong><span class="wysiwyg-underline">This point is what TAB would use to set the airflow on the unit</span></strong><ul><li data-list-item-id="e58089530a4d88b0a85dea79f8f7ae0a8">This point is visible in:<ul>
+<li data-list-item-id="e693b90d53efe2e8dd196aa49e6ca475c">App, SETTINGS&gt;INDOOR</li>
+<li data-list-item-id="e1ea6081c46bdbb15247310c4ae6c316f">On-Board Display in SETTINGS&gt;INDOOR</li>
+</ul>
+</li></ul>
+</li>
+<li data-list-item-id="ebc63902f8debad12162e182f8197ed11">This point would be equal to an adjustable sheave on a belt drive system, adjustments here change the actual final speed of the fan through all speed ranges.</li>
+<li data-list-item-id="e8a10685a689d1c3f1b7a3ee0d0e3468d">This point affects fan speed through the entire range, not just maximum speed. Increasing this value will also increase the speed of the fan at lower speeds and is reflected in the Supply Fan Speed <span class="wysiwyg-underline">Command</span> Status, not in Supply Fan Speed Status.</li>
+<li data-list-item-id="e08994818d07f6ec5743bda7f990116f9">
+<span data-teams="true">The Supply Fan Maximum Speed Setpoint comes from the factory with the intention of being set close to 400 CFM/Ton which is in the middle of the units designed airflow range. </span><ul><li data-list-item-id="efa8ff7f245520f169346cc50836bc38d">For more information on factory max speed setpoints with EBM Papst ERM motor: <a href="../General/17596518837901.html">Setting Supply Fan Maximum Speed Setpoint - ERM-Drive Fan Type</a>
+</li></ul>
+</li>
+</ul>
+</li>
+<li data-list-item-id="ec081bc16ab12f64429f438f2afd6be1d">
+<span style="color: #C72809;"><strong>AV-11173 Supply Fan Minimum Speed Setpoint</strong></span> = Multiplier for increasing the minimum software output<ul>
+<li data-list-item-id="e59d0c80c53f09444e096dad2d8926b61">The name of the point is a little misleading, it does affect the min speed, but will not lower the default min values that Symbio enforces based on the unit System Type (CVZT min is 66%, VVZT/VVDA Min is 50%). <span class="wysiwyg-underline">Changes to this point actually add to the factory minimum value for the Supply Fan Speed Status.</span>
+</li>
+<li data-list-item-id="ebecfe796c7fc39df1b97aa0c6c676aa4">This point can be written to to raise the default min speed setpoints<ul><li data-list-item-id="eb477ab58fa85917a4a503ed3c3563c47">This point is visible in:<ul>
+<li data-list-item-id="e1720e8884c5a83b2ce56eb482a2800f3">App, SETTINGS&gt;INDOOR</li>
+<li data-list-item-id="ed4b99e5726cad5d28c3bd0433225f0e0">On-Board Display in SETTINGS&gt;INDOOR</li>
+</ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li data-list-item-id="e0aeded90a490612df7889b2491f4af99">
+<span style="color: #C72809;"><strong>AI-11106 Supply Fan Speed Command Status</strong></span> = Actual command to motor in percentage of the motors max RPM or torque.<ul>
+<li data-list-item-id="e850e2a59166ff66beb1ec37ee6670b22">For EBM Papst ERM motor this is the percentage of the motors max RPM</li>
+<li data-list-item-id="e306894c5f9216e6ed6c4cc6ae1a7e44c">For A0 Variable Speed Fan this is the percentage of the motors max torque</li>
+<li data-list-item-id="e7eebc0b94695c9fa330a906c59fc44be">This is a status point and it can not be written to<ul><li data-list-item-id="eec9ebdad57e9ae2e7eb728a99dddcb45">This point is visible in:<ul>
+<li data-list-item-id="e06de74a5c05531cbc67a706d25e67da7">App, STATUS&gt;INDOOR</li>
+<li data-list-item-id="ec00998220bed6be886a44d689caf5283">On-Board Display in STATUS&gt;INDOOR</li>
+</ul>
+</li></ul>
+</li>
+</ul>
+</li>
+</ul><p><span class="wysiwyg-font-size-large"><strong>Airflow adjustment for units with communicating indoor fans (through Modbus) or hardwired control signal (A0 VVZT/VVDA units)</strong></span></p><p>When performing TAB, CVZT/VVZT units should be put into Service Test Mode and the highest stage of cooling or highest stage of heating to push the Supply Fan Speed Status to 100%. On VVDA units, all VAV boxes should be driven to their max airflow position or wide open and the unit put into service test mode for cooling or heating, after a 6 min time delay, Supply Fan Speed Status will ramp to 100%.</p><p><strong>Note: VVDA units that are already integrated into the BAS should already drive the VAV boxes based on the unit mode changing to MAX HEAT and the VAV BOX COMMAND changing to ON/TRUE. </strong></p><p> </p><p>With Supply Fan Speed Status reporting 100%, measure airflow using preferred method (flow hood, duct traverse, etc). Adjust Supply Fan Maximum Speed setpoint up or down base on measurements. </p><p><strong>Example:</strong></p><p>10T VVZT unit B0 Cabinet</p><ul>
+<li data-list-item-id="ed2ad6a6b4144a8b8fa4b5bc75b20cbdf">Supply Fan Speed Status = 100%</li>
+<li data-list-item-id="ebeffa0f24f4105aa771c3b8fd963c09a">Supply Fan Min Speed Setpoint = 0% (default)</li>
+<li data-list-item-id="e24ee8691bbd4a0935bbaff8613d0298c">Supply Fan Max Speed Setpoint = 71% (based on unit size/tonnage)</li>
+<li data-list-item-id="ecd395a72d7169e6b5a2a53dbc2f2ff71">Supply Fan Speed Command Status = 71% (100% x .71 = 71%), = 1313.5 RPM</li>
+</ul><p>Supply airflow is low and the Supply Fan Max Setpoint is raised to 78%</p><ul>
+<li data-list-item-id="ebd688865942d8e1c5e39d2cc6b704c73">Supply Fan Speed Status = 100%</li>
+<li data-list-item-id="eeb5fb2170419bf3e67452cac675e120f">Supply Fan Min Speed Setpoint = 0% (default)</li>
+<li data-list-item-id="e5f2144b2a8a9f2baafd925fb3c2a7b1c">Supply Fan Max Speed Setpoint = 78% (adjusted)</li>
+<li data-list-item-id="ee4c944e08d07c3e4644dd0dff977bd1d">Supply Fan Speed Command Status = 78% (100% x .78 = 78%) = 1443 RPM</li>
+</ul><p>*Notice that the Supply Fan Speed Status did not change, only the Supply Fan Speed Command Status changes which is the final speed of the fan.</p><div class="callout-danger"><div class="callout-danger-content"><p><strong>**Note, the fan motors used in many of our unit are the same regardless of size/tonnage. How they are set at the factory is targeted to the unit size. Be careful setting the Supply Fan Maximum Speed Setpoint too high, this can cause issues where the fan can go into current limiting as it is trying to move more air than it is designed for and poor cooling performance. </strong></p></div></div><p>If there is a requirement for a specific minimum airflow with CVZT/VVZT units, set test mode to:</p><ul>
+<li data-list-item-id="e49b70b1ed9dc9923ef696217076ab58f">Fan On for units with no economizer or 0-50% motorized damper</li>
+<li data-list-item-id="e84003ec6f7b83222ec970b55e120c1b5">Ventilation Low Fan Speed for units with 0-100% economizer</li>
+</ul><p> </p><p>Measure airflow using preferred method (flow hood, duct traverse, etc). </p><ul>
+<li data-list-item-id="e7a1a1f35de4d3ce7d877068214dd1d00">If airflow is low, adjusting Supply Fan Minimum Speed Setpoint in small increments up until the desired minimum airflow is achieved. This will increase the minimum value of Supply Fan Speed Status.</li>
+<li data-list-item-id="e0396bf58aa91e9e27b81bafc3f2fb394">If airflow is high, the only recourse would be to lower the Supply Fan Speed Maximum Setpoint as the default Supply Fan Speed Status values cannot be lowered below the default values. </li>
+</ul><p> </p><p><span class="wysiwyg-font-size-large"><strong>Airflow adjustment for units with 5 Tap multispeed motor</strong></span></p><p>Airflow adjustments on these units are made at the motor harness itself and not through Symbio 700. Symbio uses two fan relays on the Symbio 700 board to start the fan and to ramp the fan to full speed. These are 24vac signals connected directly to the indoor fan motor. </p><p>The motor has 5 speed taps that these 24vac signals connect to. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 983/413;" src="../../attachments/39030256000397_39129612589197_image.png" width="983" height="413"></figure><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/39030256000397-Setting-Airflow-on-Precedent-with-Symbio-700-Controls" target="_blank">https://support.trane.com/hc/en-us/articles/39030256000397-Setting-Airflow-on-Precedent-with-Symbio-700-Controls</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

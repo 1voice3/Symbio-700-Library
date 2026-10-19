@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3-25T Precedent with Symbio 700 Controls Variable Speed Compressor VFD Troubleshooting - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/43755431514765-3-25T-Precedent-with-Symbio-700-Controls-Variable-Speed-Compressor-VFD-Troubleshooting" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>3-25T Precedent with Symbio 700 Controls Variable Speed Compressor VFD Troubleshooting</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Dehumidification</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Cooling &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-02-23 &nbsp;&bull;&nbsp; Last updated: 2026-08-13</div>
+<div class="body"><h2 id="h_01KHRJSVPRQH1AMRHCAGB412QW">Overview</h2><p>3-25T Eflex Precedent units with Symbio 700 controls utilize a Mitsubishi Variable Frequency Drive (VFD) mounted on the leaving side of the evaporator for the control of the variable speed Copeland compressor. The operation of this VFD along with the condenser fan(s) are both controlled directly by the Symbio 700. The VFD communicates directly to the Symbio 700 using Modbus and the condenser fans are controlled by a 0-10vdc signal that originates on the P12 connector of the Symbio 700</p><p>Condenser fans on all Eflex units that utilize Symbio 700 controls are ECM motors with a remoted mounted ECM module. The speed of the condenser fan motor is directly related to the Outdoor Air Temperature (OAT) vs. the running compressor speed. Due to the operation of the condenser fans, no low ambient kit is necessary for low ambient operation and a low ambient kit should never be fitted to the unit. </p><p>The link below is an internal Elibrary link for the most current version of the Mitsubishi manual for Eflex products. This manual covers both ReliaTel and Symbio 700 controls. </p><p><a href="https://elibrary.tranetechnologies.com/commercial/search?maxFacetValues=300&amp;n=&amp;term=publicationID_md%3ART-SVD008*&amp;f.isCurrentDisplay_md=Current">Troubleshooting Guide Packaged Rooftop Air Conditioners Precedent™ eFlex™ Variable Speed Compressor Inverter</a></p><p>Can't access the guide? Contact your local Trane Commercial Sales Office </p><div class="callout-info">
+  <div class="callout-info-content">
+    <p>
+      <strong>
+IMPORTANT:
+</strong>
+      It is never necessary to modify the parameters on a factory
+      VFD. Parameters are set based on the the compressor motor characteristics
+      and changing away from factory parameters can damage the compressor. If
+      parameters must be set or updated due to VFD replacement, factory replacement
+      parameters must be used without modification.
+    </p>
+  </div>
+</div><p> </p><h3 id="h_01KHRK27SYTFETBQC7GM7723RN">How does the unit start, stop and control the VFD</h3><h4 id="h_01KJ64XH8F26E0FA6T8VZVFAJ0"><strong>Starting</strong></h4><p>When Symbio 700 determines there is a need for compressor cooling, Symbio communicates a start signal and speed signal to the VFD to start and ramp up the compressor. On compressor startup, the variable speed compressor increases to 2700 RPM for 120 seconds before transitioning to modulating control.</p><h4 id="h_01KJ6520047SG01V9SV2FFKMJ8"><strong>Single Compressor Operation</strong></h4><p>A unit with a single variable speed compressor will startup per the startup sequence. The compressor speed will modulate to satisfy the discharge air cooling setpoint defined for VVZT or VVDA cooling between the defined minimum and maximum compressor speeds based on operating conditions. The variable speed compressor will cycle off according to the shutdown sequence defined below.</p><h4 id="h_01KJ654P2CBWZ7KWZFKB8PB6PG"><strong>Dual Compressor Operation</strong></h4><p>Ultra-high efficiency, 17.5 to 25-ton units have an additional fixed speed compressor. The variable speed compressor follows the startup sequence. If the variable speed compressor reaches its maximum defined speed (stage 1) and the algorithm control identifies an additional cooling capacity demand, the fixed speed compressor will be energized (stage 2). The variable speed compressor will revert to its defined minimum speed and continue to increase speed with an increasing demand for cooling. As the demand for cooling decreases, the variable speed compressor speed will reduce until it reaches its minimum defined speed. Algorithm control determines when to de-energize the fixed speed compressor and ramp the variable speed compressor to its maximum defined speed as an initial stage 1 state. As cooling demand continues to decrease the variable speed compressor speed will reduce until it reaches a minimum defined speed. The variable speed compressor will cycle off according to the shutdown sequence defined below.</p><h4 id="h_01KJ65BGGS9A1YVSKBHG5NRNFG"><strong>Dehumidification Operation</strong></h4><p>During dehumidification mode of operation, with or without the reheat valve open, 3-to-10-ton units, the variable speed compressor operates at full capacity. Variable speed compressor, 12.5-to-25-ton units, operate at two fixed speeds: at a defined part-load capacity and full-capacity. The variable speed compressor is staged up, including the fixed speed compressor, to ensure the evaporator coil temperature is achieving dewpoint.</p><h4 id="h_01KJ65DGW6DK66H08XB1B26MMS"><strong>Oil Management</strong></h4><p>Oil management aids oil distribution in the refrigerant system. If the variable speed compressor operates less than 1800 RPM for 19 continuous minutes, the compressor speed will increase to 3600 RPM for 60 seconds. The compressor then returns to normal control. When the compressor speed exceeds 2000 RPM, the 19-minute timer resets.</p><h4 id="h_01KJ667BRA4J59T0BMYW8H5KN7"><strong>Shutdown Sequence</strong></h4><p>When the variable speed compressor is no longer requested, the compressor speed is increased to 2700 RPM for 60 seconds before the speed is reduced to 0 percent, off. If the variable speed compressor was operating at or above 2700 RPM for a minimum of 60 seconds at time of off command, the compressor will immediately ramp down to 0 percent, off.</p><p> </p><div class="callout-danger">
+  <div class="callout-danger-content">
+    <p>
+      At no time should the communication or control of the VFD be altered in any way to remove control from Symbio 700, doing so could result in compressor failure. 
+    </p>
+  </div>
+</div><p> </p><h3 id="h_01KJ67XA447FJWXNFDDTWYBV8W">How does the condenser fan start</h3><p>When Symbio 700 starts the compressor(s), the condenser fan will start based off the signal on Symbio 700 P12. Any voltage greater that 1vdc will start the motor.  This signal varies based on the running speed/capacity of the compressor(s) and the OAT. On units with dual condenser fans, both fan run at the same speed and run together. </p><h2 id="h_01KNMKWD5KXS3H9P5K9TE73TTN">Condenser Fan Troubleshooting</h2><p>The condenser fans on all Eflex units are variable speed ECM motors. They are different from most ECM configurations since the module is remote mounted, but this is the only difference. Troubleshooting for these motors is limited due to the nature of the ECM. </p><ol>
+<li data-list-item-id="e5298581d23b1adf9868db437f0c59e26">Check all electrical connections to ECM module, motor and Symbio 700</li>
+<li data-list-item-id="e6c7809f64a641e2ae51b01b963d8ae14">With the compressor running, measure the voltage on Symbio 700 P12, it should be between 1.6 - 10.0vdc (varies based on the speed of the compressor and OAT). </li>
+</ol><p>The module and motor are replaced as a set and on dual condenser fan units, there are two parts numbers for ODF1 and ODF2. The wiring harnesses on the motor side of the module are backwards from each other to prevent the motors and module from being crossed. The motors and modules are run as a set at the manufacturer and should not be separated. </p><p> </p><h2 id="h_01KHRRTTR5RYF7DG61B5WQBZ0Y">VFD Troubleshooting</h2><p>Since the VFD communicates, alarms that may keep the VFD from operating can be seen on the VFD keypad and are also available on the Symbio 700 Onboard display, Symbio Mobile App and through a BAS. Below is a list of common VFD faults and what they will display as on the Symbio 700</p><h4 id="h_01KHRSZG932PVEB1HP31JPVQSM"><strong>VFD Fault SA</strong></h4><p> <img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11.00%;" src="../../attachments/43755431514765_44911134420621_image.png" width="296" height="124"> = Safety Stop</p><p>The SA fault occurs when the safety inputs on the VFD are open. VFD J1-S1 &amp; S2 receive 24vdc from VFD J1-PC through the High Pressure Cutout (HPC) &amp; Discharge Temperature Limit (DTL) switches. </p><p>The VFD has two safety circuits connected that both have the ability to shut the variable speed compressor down. The 1st circuit (labeled STO CIRCUIT on drawings) has HPC1 and DTL1 wired in series and feeds the VFD safety input S1. The 2nd circuit has a standalone HPC3 that wires back to VFD safety input S2. The 2nd HPC (HPC3 is required by UL for the VFD shutdown. </p><p>HPC1/DTL1 (STO CIRCUIT)<br><img src="../../attachments/43755431514765_44909911177741_image.png" width="1189" height="604"></p><p>HPC3 Circuit</p><figure class="wysiwyg-image"><img style="aspect-ratio: 1045/525;" src="../../attachments/43755431514765_44909911180429_image.png" width="1045" height="525"></figure><p>Both HPC circuits have a 1k Ω resistor to from the HPC circuit to VFD SD. This resistor provides a small amount of load on the S1 and S2 inputs to allow the VFD to reliably trip during a high pressure or high discharge temperature event. </p><p> </p><h4 id="h_01KHRTC5AA7VMFJ0VP7GVGCQW0"><strong>VFD Fault E.P24</strong></h4><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11.00%;" src="../../attachments/43755431514765_44911174219661_image.png" width="296" height="124"> = 24 VDC power fault</p><p>E.P24 fault points to an issue with the 24vdc generated from the VFD PC terminal being shorted. Disconnect the VFD PC terminal to verify the alarm clears. If it does, check associated wiring for damage. If it does not clear, the could indicate a failed VFD, contact Trane LCU Tech Support. </p><p>Check wiring associated with VFD PC to the HPC circuits and coming back from the HPC circuits for shorts to ground.</p><p> </p><h4 id="h_01KHRSHK4DBYPZQDZMHK4PQYQV"><strong>VFD Fault E.OV1, 2, 3 or E.OC1, 2, 3</strong></h4><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11.00%;" src="../../attachments/43755431514765_44911174220941_image.png" width="296" height="124"> = Regenerative overvoltage trip during acceleration</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11.0%;" src="../../attachments/43755431514765_44911174224269_image.png" width="296" height="124"> = Regenerative overvoltage trip during constant speed</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11%;" src="../../attachments/43755431514765_44911134428685_image.png" width="296" height="124"> = Regenerative overvoltage trip during deceleration or stop</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11%;" src="../../attachments/43755431514765_44911134429325_image.png" width="296" height="124"> = Overcurrent trip during acceleration</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11%;" src="../../attachments/43755431514765_44911134429709_image.png" width="296" height="124"> = Overcurrent trip during constant speed</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 296/124; width: 11%;" src="../../attachments/43755431514765_44911174226445_image.png" width="296" height="124"> = Overcurrent trip during deceleration or stop</p><p>All of these alarms are similar and can be generated due to incorrect parameter adjustments, compressor wiring/connections, failing compressor, failing VFD. </p><p>At no time should the parameters of the VFD be changed away from factory settings and any parameter settings made should follow the guide based on the unit unit size and compressor model. Changes to the VFD parameters settings can cause compressor damage, unit damage and poor unit performance. </p><p> </p><h4 id="h_01KNMR6Z4NDZ4Y9NJ16APRTVQE"><strong>VFD Fault E.SER</strong></h4><p><img class="wysiwyg-image-resized" style="aspect-ratio: 289/117; width: 11%;" src="../../attachments/43755431514765_44911174226829_image.png" width="289" height="117"> = Communication Fault (inverter)</p><p>E.SER can happen when the VFD stops communication to Symbio 700. Most commonly, this happens when the VFD is replaced and the VFD communication parameters are not set correctly. </p><p>This can also produce a "VFD Not in Auto" alarm on Symbio 700</p><p>Check the following parameters (Symbio 700 units only)</p><figure class="wysiwyg-table" style="width: 100%;"><table><tbody>
+<tr>
+<td>Parameter</td>
+<td>Description</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>549</td>
+<td>Protocol Selection</td>
+<td>1 = (Modbus RTU)</td>
+</tr>
+<tr>
+<td>331</td>
+<td>RS-485 Comm Station Number (Address)</td>
+<td>10</td>
+</tr>
+<tr>
+<td>332</td>
+<td>Comm Speed (Baud Rate)</td>
+<td>1152 =  (115200 Baud)</td>
+</tr>
+<tr>
+<td>333</td>
+<td>RS-485 Comm Stop Bit Length/Data Length</td>
+<td>0 = (1 &amp; 8)</td>
+</tr>
+<tr>
+<td>334</td>
+<td>RS-485 Comm Parity </td>
+<td>2 = (Even)</td>
+</tr>
+<tr>
+<td>539</td>
+<td>Modbus RTU Comm Check Time Interval (seconds)</td>
+<td>150 = (15.0 Sec)</td>
+</tr>
+<tr>
+<td>337</td>
+<td>RS-485 Comm Wait Time (milli seconds)</td>
+<td>10</td>
+</tr>
+</tbody></table></figure><p> </p><p> </p><p> </p><div class="callout-danger">
+  <div class="callout-danger-content">
+    <p>
+      If it is determined the VFD has failed, it can not be bypassed to run the compressor with a contactor. The compressor design on these units utilize a permanent magnet build and are not designed to accept line voltage. 
+
+      If megging a motor, it must be disconnected from the VFD or damage will occur to the VFD
+    </p>
+  </div>
+</div><h3 id="h_01KHRWYANWJ9TJ2VQKWGB06NCK"> </h3></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/43755431514765-3-25T-Precedent-with-Symbio-700-Controls-Variable-Speed-Compressor-VFD-Troubleshooting" target="_blank">https://support.trane.com/hc/en-us/articles/43755431514765-3-25T-Precedent-with-Symbio-700-Controls-Variable-Speed-Compressor-VFD-Troubleshooting</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

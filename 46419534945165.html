@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resolved Service Alert: Symbio 700 - Precedent Dual Compressor Heat Pump SOV Not Shifting when Running Compressor 2 in Cooling - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/46419534945165-Resolved-Service-Alert-Symbio-700-Precedent-Dual-Compressor-Heat-Pump-SOV-Not-Shifting-when-Running-Compressor-2-in-Cooling" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Resolved Service Alert: Symbio 700 - Precedent Dual Compressor Heat Pump SOV Not Shifting when Running Compressor 2 in Cooling</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Bulletins / Service Alerts</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Resolved Precedent Service Alerts &nbsp;&bull;&nbsp; Category: Field Service Alerts / Known Product Issues<br>
+Created: 2026-06-05 &nbsp;&bull;&nbsp; Last updated: 2026-10-02</div>
+<div class="body"><p> </p><h2 id="h_01M1C882YEYASD5MRYCNRVCBWF"><span data-darkreader-inline-color=""><strong>Service Alert Summary:</strong></span></h2><p><span data-darkreader-inline-color=""></span><span data-darkreader-inline-color="">Field is reporting SOV is bypassing due to not fully shifting when running Compressor 2 in cooling on dual compressor heat pump with running version 8 or lower firmware and controlled by thermostat. </span><span data-darkreader-inline-color="">In version 7.02, the compressor staging sequence was changed to start Compressor1 on the cooling call to generated enough differential pressure across the SOV to force it to completely shift. Subsequent cooling cycles will start Compressor 2 as the SOV is supposed to stay energized. </span><span data-darkreader-inline-color="">It has been found that with W1/O and G energized together, the unit Heat Cool Mode switches to FAN ONLY causing the SOV to drop from Symbio 700 when the cooling cycles ends, this would require Compressor 1 to start again on the next cooling cycle and it does not per sequence. </span><span data-darkreader-inline-color=""></span></p><p><a href="https://support.trane.com/hc/en-us/articles/18160875905421" target="_blank" rel="noopener noreferrer"><em><span data-darkreader-inline-color="">Info about Service Alerts</span></em></a></p><h2 id="01H6VF32QQ38MFS6G9WJFMEX64">
+<span data-darkreader-inline-color=""><strong>What are known Diagnostics or Symptoms:</strong></span><span data-darkreader-inline-color=""></span>
+</h2><p><span data-darkreader-inline-color="">Poor cooling operation while running Compressor 2</span></p><p><span data-darkreader-inline-color="">Potential overheating compressor</span></p><p> </p><h4 id="h_01K7FDB5CSN01Q924997PWE0JG"><span data-darkreader-inline-color=""><strong>Product Family</strong></span></h4><p><span data-darkreader-inline-color="">Precedent </span></p><h4 id="01H6VF41BC0BF6SPAZ9W5JYFA2"><span data-darkreader-inline-color=""><strong>Model Prefix(s) &amp; Configuration details</strong></span></h4><ul>
+<li data-list-item-id="e94e0c517395c634019cb06ac2720d4ee"><span data-darkreader-inline-color="">WS/HJ072-300</span></li>
+<li data-list-item-id="e109149c438a8d7b60069e8cac33ea243"><span data-darkreader-inline-color="">DS/HJ072-300</span></li>
+<li data-list-item-id="e577dedd2a7831249f6f4f2ad173160e0"><span data-darkreader-inline-color="">WS/HK072-300</span></li>
+<li data-list-item-id="e1f256d4b6afbaec1c6c610f6e682acf0"><span data-darkreader-inline-color="">DS/HK072-300</span></li>
+</ul><h4 id="01H6VF8WYWZF9CG40XKCFVFN27"><span data-darkreader-inline-color=""><strong>Ship Date range </strong></span></h4><p><span data-darkreader-inline-color="">All, applies to Symbio 700 firmware v8 or lower</span></p><h4 id="01H6VF8WYW5H91D7F4NC6VQ4GC"><span data-darkreader-inline-color=""><strong>Serial range</strong> </span></h4><p><span data-darkreader-inline-color="">All, applies to Symbio 700 firmware v8 or lower</span></p><p> </p><h2 id="01H6VHDSSXZ6JE070FQA37ABSA">
+<span data-darkreader-inline-color=""><strong>What actions can I take now: </strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul><li data-list-item-id="e9db2181e3748ad01cfbd2a7a23774245">Issue was resolved in V9.00.0007 firmware, update firmware to the latest available version → <a href="../General/34091748625421.html">Symbio™ 700 - Firmware Update for Unit Controller Module</a>
+</li></ul><h2 id="01H6VGPY6HEAJSAS38XG37KHWD">
+<span data-darkreader-inline-color=""><strong>Is there a related</strong></span><span data-darkreader-inline-color=""><strong> </strong></span><span data-darkreader-inline-color=""><strong><span class="wysiwyg-underline">published</span></strong></span><span data-darkreader-inline-color=""><strong> </strong></span><span data-darkreader-inline-color=""><strong>service bulletin for this issue?</strong> </span>
+</h2><ul><li class="ck-list-marker-italic" data-list-item-id="eb6318eee615495ec35c52b6c3af24531"><em><span data-darkreader-inline-color="">At this time, we do not expect any bulletin will be published. </span></em></li></ul><h2 id="01H6VH8V3NRS5FRDQ9D5ZCADFT">
+<span data-darkreader-inline-color=""><strong>Are WMS(Warranty Management System) claims allowed for this issue?</strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul><li data-list-item-id="eeeaf75353dae1103519d1f812f6df4c2"><span data-darkreader-inline-color="">Warranty / Concession claims may be allowed. </span></li></ul><h2 id="01H6VH91TPRRD16AG5XFDVCQ7F">
+<span data-darkreader-inline-color=""><strong>Does the above information indicate the final resolution?</strong></span><span data-darkreader-inline-color=""></span>
+</h2><ul><li data-list-item-id="e6728d4fa14ee9e010c6a3efb3d6701c3"><span data-darkreader-inline-color="">No, final resolution has not been confirmed.</span></li></ul><h2 id="01H6VMR7H5MMXXEZWG6XX1J1Z7"><span data-darkreader-inline-color=""><strong>Internal Admin Use/Info only:</strong> </span></h2><p><span data-darkreader-inline-color="">Logged Defect #</span><span data-teams="true">373431</span></p><p><span data-teams="true">Zendesk Problem Ticket #</span><a href="https://tranesupport.zendesk.com/agent/tickets/3184039"><span data-teams="true">3184039</span></a></p><p class="wysiwyg-text-align-center"><span style="color: #C72809;"><em><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><strong>This document is confidential and proprietary Trane information.  Please do not distribute.</strong></span></em></span></p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/46419534945165-Resolved-Service-Alert-Symbio-700-Precedent-Dual-Compressor-Heat-Pump-SOV-Not-Shifting-when-Running-Compressor-2-in-Cooling" target="_blank">https://support.trane.com/hc/en-us/articles/46419534945165-Resolved-Service-Alert-Symbio-700-Precedent-Dual-Compressor-Heat-Pump-SOV-Not-Shifting-when-Running-Compressor-2-in-Cooling</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
