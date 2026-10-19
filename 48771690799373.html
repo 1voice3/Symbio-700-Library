@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voyager 3 w/Symbio 700 - Dehumidification/Hot Gas Reheat Control - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/48771690799373-Voyager-3-w-Symbio-700-Dehumidification-Hot-Gas-Reheat-Control" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Voyager 3 w/Symbio 700 - Dehumidification/Hot Gas Reheat Control</h1>
+<div class="badges"><span class="badge equip">Voyager</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Dehumidification</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2026-09-09 &nbsp;&bull;&nbsp; Last updated: 2026-10-02</div>
+<div class="body"><p> </p><ul style="list-style-type: disc;"><li class="wysiwyg-list-bold" data-list-item-id="ebb8a79bd52eb5d718889cb1cb2731733"><h2 id="h_01M235N5SYZJH27EZPJ8FK6TFX"><strong>Configurations and Control Enable Types</strong></h2></li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 1155/802;" src="../../attachments/48771690799373_48781229955597_image.png" width="1155" height="802"></figure><ul><li data-list-item-id="e342ae3a560424f93e9617405dd49dfbf"><h4 id="h_01M236E0Y9BDRQP81WX8VWXP0Q">
+<strong>Dew Point</strong> - Symbio 700 references Space Temperature Active and Space Humidity Active to calculate Space Dew Point. Likewise, Outdoor Air Temperature Active and Outdoor Air Humidity Active are referenced to calculate Outdoor Air Dew Point. This option is the least common method of control.</h4></li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 825/373;" src="../../attachments/48771690799373_48771690777741_image.png" width="825" height="373"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 852/422;" src="../../attachments/48771690799373_48771690779405_image.png" width="852" height="422"></figure><ul><li data-list-item-id="eee87ec6820c976bfc159bc2db76054fe"><h4 id="h_01M236FERE4NZT2JT24MXZVYMB">
+<strong>Relative Humidity - </strong>Occupied dehumidification control initiates when the Space Humidity Active is greater than the Space Dehumidification Setpoint BAS - Active. Occupied dehumidification terminates when Space Humidity Active is less than Space Dehumidification Setpoint BAS - Active minus Space Dehumidification Setpoint Offset BAS - Active. This option is the most common selection for Dehumidification control.</h4></li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 857/187;" src="../../attachments/48771690799373_48771733011085_image.png" width="857" height="187"></figure><ul class="wysiwyg-indent1">
+<li data-list-item-id="e04d57216ceba3f470b6acd60136c4494"><h4 id="h_01M236MMQCDQDNP5TJ0YYKZP2T">
+<strong>Humidistat</strong> - Dehumidification operation initiates when Customer Options Module, Humidistat binary input is active. When Humidistat is used for Dehumidification control, compressors stage to 100% cooling capacity. Dehumidification operation terminates when Customer Options Module, Humidistat binary input is inactive. Reheat Humidistat Input (BI-11143) reports the status of the hardware input. If a Space Relative Humidity sensor is installed, the Humidistat input will be ignored. This is the most simple control option for and Enable/Disable decision.</h4></li>
+<li class="wysiwyg-list-bold" data-list-item-id="e8c430edd564e458b15ab499e8f34b2c0">
+<h2 id="h_01M2395ZTD7M5672HYDPE8TK4G"><strong>Sequence of Operation</strong></h2>
+<ul><li data-list-item-id="e79e4f40ce2b79ff43ba0e1b82b978cb4"><h4 id="h_01M2395ZTD3MTV5T6F2HVGS3MV">
+<strong>CVZT/VVZT Units - </strong>Symbio™ 700 adds compressor cooling stages when dehumidification is requested. Hot gas reheat is added to offset the<br>additional cooling and modulates to maintain space comfort. The snips below are from the Voyager 3 with Symbio 700 control Application Guide, it can be found here <a href="../Voyager/17791473940237.html" target="_blank" rel="noopener noreferrer">Voyager 3 w/Symbio 700 Control Application Guide.</a>
+</h4></li></ul>
+</li>
+</ul><figure class="wysiwyg-image"><img style="aspect-ratio: 996/100;" src="../../attachments/48771690799373_48771733013389_image.png" width="996" height="100"></figure><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 746/794;" src="../../attachments/48771690799373_48771690781069_image.png" width="746" height="794"></figure><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 722/788;" src="../../attachments/48771690799373_48771733020173_image.png" width="722" height="788"></figure><p> </p><ul><li data-list-item-id="e67225320b71d1c992607b8e73419f975">
+<h4 id="h_01M238BGF9XY547Z3MHBH67EQQ">
+<strong>Zone Sensor Control - </strong>For zone sensor control it is recommended to have at least 4 degrees of differential between the Occupied Cooling Setpoint and the Occupied Heating setpoint (If using the "Occupied Offset" make sure it is at least 2 degrees). The Dehumidification control is terminated once the Space temperature begins to approach the Occupied Heating Setpoint. For units with "No Heat" the dehumidification will not terminate until the Space temp reaches 60 degrees, as indicated in the snips below</h4>
+<p> </p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 882/725;" src="../../attachments/48771690799373_48771733020941_image.png" width="882" height="725"></figure>
+</li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 719/705;" src="../../attachments/48771690799373_48771733021581_image.png" width="719" height="705"></figure><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 699/369;" src="../../attachments/48771690799373_48771733023245_image.png" width="699" height="369"></figure><ul><li class="wysiwyg-list-bold" data-list-item-id="e785b5ab37dd57f54d4677bfc0d76ea95"><h4 id="h_01M238TVS5R4YDYRMWYRWJE22D"><strong>VVDA Units - </strong></h4></li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 707/677;" src="../../attachments/48771690799373_48771733024269_image.png" width="707" height="677"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 690/622;" src="../../attachments/48771690799373_48771733025421_image.png" width="690" height="622"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 681/178;" src="../../attachments/48771690799373_48771733025805_image.png" width="681" height="178"></figure><ul><li class="wysiwyg-list-bold" data-list-item-id="e56d93219b5e9820538ee15f98ee8cf9b"><h4 id="h_01M238Z9KGQY6TYFWSV0Y0NY3Q"><strong>Purge and Pumpout Solenoid Information </strong></h4></li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 720/331;" src="../../attachments/48771690799373_48771733026445_image.png" width="720" height="331"></figure></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/48771690799373-Voyager-3-w-Symbio-700-Dehumidification-Hot-Gas-Reheat-Control" target="_blank">https://support.trane.com/hc/en-us/articles/48771690799373-Voyager-3-w-Symbio-700-Dehumidification-Hot-Gas-Reheat-Control</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

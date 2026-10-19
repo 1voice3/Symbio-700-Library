@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Large Commercial Symbio R-454B Refrigerant Leak Sensor Information - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/44230274928781-Large-Commercial-Symbio-R-454B-Refrigerant-Leak-Sensor-Information" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Large Commercial Symbio R-454B Refrigerant Leak Sensor Information</h1>
+<div class="badges"><span class="badge equip">Voyager</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2026-03-12 &nbsp;&bull;&nbsp; Last updated: 2026-03-17</div>
+<div class="body"><section><div><div>
+<p><span class="wysiwyg-font-size-large"><strong>Refrigerant Leak Sensor System</strong></span></p>
+<ul>
+<li data-list-item-id="e2e88bce8a89afc5602ed3725f451dd27">UL requirement for units using A2L refrigerant</li>
+<li data-list-item-id="e8956d2d2d8e5df7cbee0f49e860edfc6">Detect the leakage of the refrigerant</li>
+<li data-list-item-id="e6c5a2e8a10333029a47a1f6e72e28846">Sensor is provided by Danfoss</li>
+<li data-list-item-id="e6429968ea46f06187487cfe16295e376">The sensors self-calibrate</li>
+<li data-list-item-id="efafb7f87bc11d2cff6a1f884ae225e1a">The sensor auto resets</li>
+<li data-list-item-id="ed7436af81b303bbcced261b25aa2d578">Sensors are calibrated to trip at 15% Lower Flammable Limit (LFL)</li>
+<li data-list-item-id="e9d9b39435ff9b0d98722f5c928bddbea">The factory-provided sensor is only set up to detect R-454B</li>
+</ul>
+<h2 id="h_01JNKPKG15ZJA7FC987AVFNPPN"><span class="wysiwyg-font-size-large"><strong>Mitigation Action in the Event of a Leak</strong></span></h2>
+<p>When the system detects a leak, the following mitigation actions will be initiated until the refrigerant is no longer detected for at least 5 minutes.</p>
+<p><strong>Leak Detection - Heat Mode</strong> - All types of heat (including External heat) will continue to be enabled. This is not a change from normal control for heating. Heating is allowed because surface<br>temperatures will not exceed the ignition point with air flow. If heat were to be shut off, in cold climates, this could become problematic in other building areas, i.e.,<br>pipes freezing, etc.</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1500/406;" src="../../attachments/44230274928781_44269574684813_image.png" width="1500" height="406"></figure><p><strong>Leak Detection - Cool Mode</strong> - Compressor Operation being disabled is a change from normal control for cooling. There is a stipulation in UL requirement that the unit could continue to cool; however, location of a potential leak is unknown therefore compressors will be disabled.</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1510/387;" src="../../attachments/44230274928781_44269533309837_image.png" width="1510" height="387"></figure><p><strong>Leak Detection - Off Mode</strong> - Symbio 800 controls do not have a time delay between the VAV box relay energizing and the Supply Fan turning on. Although VAV boxes are typically closed while in “Off” or “Unoccupied” mode, the supply fan will ramp up and the unit will stay in duct pressure control, as it does in normal control, to minimum speed. If the boxes do not open fast enough and pressure builds based on supply fan running, the unit will trip on high static duct pressure.</p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1749/372;" src="../../attachments/44230274928781_44269533311885_image.png" width="1749" height="372"></figure><p><strong>Note: </strong>If the leak detection sensor has a fault, at the end of its life, or is disconnected, the unit will initiate mitigation actions. Disconnecting the sensor may verify mitigation actions.</p>
+<h2 id="h_01JNKPZRYYKY651SZBSZ268467">Location</h2>
+<figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 19.98%;">
+<col style="width: 31.85%;">
+<col style="width: 27.81%;">
+<col style="width: 20.36%;">
+</colgroup>
+<tbody>
+<tr>
+<td>Unit Type</td>
+<td>Number of Sensors</td>
+<td>Sensor Location</td>
+<td>Descriptor</td>
+</tr>
+<tr>
+<td>Voyager 3</td>
+<td>1</td>
+<td>Evaporator Fan Section</td>
+<td>5LDS1</td>
+</tr>
+<tr>
+<td>IPAK 1</td>
+<td>1 </td>
+<td>Evaporator Fan Section</td>
+<td>5LDS1</td>
+</tr>
+<tr>
+<td>IPAK 2</td>
+<td>1/ 2 - 1 Standard and 2 if unit is ordered with a Blank Section (Digit 24=A-F).</td>
+<td>Evaporator Fan Section and Blank Section</td>
+<td>5LDS1, 3LDS1</td>
+</tr>
+<tr>
+<td>IPAK 3</td>
+<td>1</td>
+<td>Evaporator Fan Section</td>
+<td>5LDS1</td>
+</tr>
+</tbody>
+</table></figure><h2 id="h_01JNKRW582PQ8MTNAZQFPRA667">Connection Description and Troubleshooting</h2>
+<p>The leak detection sensor is a 6-pin plug: a 2-pin Modbus and a 2-pin contact. </p>
+</div></div></section><p><img class="wysiwyg-image-resized" style="aspect-ratio: 654/836; width: 80.38%;" src="../../attachments/34754994953229_34756779888781_image.png" width="654" height="836"></p><section><div><div>
+<div><div>
+<p>Pins<strong>:</strong> 1 and 2 = 24Vac</p>
+<p>Pins<strong>: </strong>3 and 4 = Modbus (check for pulsating vdc reading)</p>
+<p>Verify and check all harness connections.  Techs have reported that the Interface Seal between A2l Sensor and 6 pin harness connection is difficult to snap in place.</p>
+<p>IPAK Only - Verify that A2L has been <a href="https://support.trane.com/hc/en-us/articles/36662876914701">addressed</a>.    </p>
+<p>Factory-installed wiring</p>
+</div></div>
+<p><strong>V3 wiring</strong></p>
+</div></div></section><p><img class="wysiwyg-image-resized" style="aspect-ratio: 774/319; width: 96.38%;" src="../../attachments/34762317776653_34762361122445_image.png" width="774" height="319"></p><section><div><div>
+<p><strong>IPAK wiring</strong> </p>
+<p> IPAK 1 and 3 will only have 1 sensor.  Note: It is possible to have up to four but that would only be offered with certain design specials.</p>
+<p> </p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 936/593;" src="../../attachments/44230274928781_44279354722317_image.png" width="936" height="593"></figure><p> </p>
+<h2 id="h_01JNM3QGWWX8M0ESG76X5E5HCR">A2L Sensor &amp; Failure Handling</h2>
+<p>The A2L sensor is required for refrigerant detection. Symbio units detects sensor failures and implements mitigation actions for the duration of the failure. The system reverts to normal operation once all failure states are cleared.</p>
+<ul>
+<li data-list-item-id="ee8411cca03f39e9e4499c5e8b416c21e">End-of-life indication or fault</li>
+<li data-list-item-id="e864d952e7b877ccd075bfa103c0a9c00">The sensor is unpowered</li>
+<li data-list-item-id="eb97fbf4ae83017964072cae72dda8bcb">Sensor wiring fault or misapplication</li>
+<li data-list-item-id="e1b27c617d7d3964cdd67cb3ef24d1ab9">Sensor disconnected</li>
+<li data-list-item-id="ea4109e559560864a03a19cc7ae9b9f20">Communication loss</li>
+</ul>
+<h2 id="h_01JNKTFTN9KRRBS7CEJXQPTPED">Replacement</h2>
+<ul>
+<li data-list-item-id="e7eb9a64366ec985ea2a1deafd3464afd">Replacement A2L sensors are supplied pre-programmed at Modbus address 50 (V3).</li>
+<li data-list-item-id="e891326fbe8980a7ded86dd5f03e2d1f4">Replacement IntelliPak A2L must be addressed after installation.  <a href="https://support.trane.com/hc/en-us/articles/36662876914701">Symbio 800 - Modbus Device Addressing</a>
+</li>
+</ul>
+</div></div></section><p><img class="wysiwyg-image-resized" style="aspect-ratio: 1001/468; height: auto; width: 704.474px;" src="../../attachments/34762317776653_34762389713165_image.png" width="1001" height="468"></p><section><div><div>
+<h2 id="h_01JNM3VZZ4RNRCCXSWZN7D7VND">Alarms</h2>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1440/521;" src="../../attachments/44230274928781_44266662336653_image.png" width="1440" height="521"></figure><p><span class="wysiwyg-font-size-large"><strong>BACnet Points Available</strong></span></p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1453/496;" src="../../attachments/44230274928781_44266662338829_image.png" width="1453" height="496"></figure><p> </p>
+<p><strong>WARNING:</strong></p>
+<p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p>
+</div></div></section></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/44230274928781-Large-Commercial-Symbio-R-454B-Refrigerant-Leak-Sensor-Information" target="_blank">https://support.trane.com/hc/en-us/articles/44230274928781-Large-Commercial-Symbio-R-454B-Refrigerant-Leak-Sensor-Information</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

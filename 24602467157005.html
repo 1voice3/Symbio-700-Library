@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voyager 3 w/Symbio 700 Controls Exhaust Fan will not Energize in Service Test. - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/24602467157005-Voyager-3-w-Symbio-700-Controls-Exhaust-Fan-will-not-Energize-in-Service-Test" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Voyager 3 w/Symbio 700 Controls Exhaust Fan will not Energize in Service Test.</h1>
+<div class="badges"><span class="badge equip">Voyager</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2024-03-01 &nbsp;&bull;&nbsp; Last updated: 2026-07-30</div>
+<div class="body"><p>The Large Commercial Technical Support Team has experienced a number of calls from technicians regarding the issue of the Exhaust Fan not energizing during the "Fan On Econ Open" step of test mode.  In the majority of these cases the unit is configured with Statitrac (Exh Fan with Space Pressure Pressure control) and with Symbio 700 control the Space pressure control scheme is active during the Service Test Requests. Below is a snip explaining Relief/Exhaust Fan On/Off Requests and how they are generated, but in short, the Space Pressure must be above the Active Space Pressure Setpoint + Deadband <strong>AND</strong> the Outdoor Air Damper position must be greater than the "Exhaust Enable Position Setpoint" (default is 25%) in order for the exhaust fan to be commanded "On".  <strong>So in Service Test mode it may be required to temporarily adjust the "Space Static Pressure Setpoint BAS" (Settings&gt;System) to a value low enough to enable the Exhaust Fan Relay and dampers depending on what the active Space pressure is at the time of testing.</strong>  There is also a link for the Voyager 3 w/Symbio Application guide below if needed.</p><p> </p><h3 id="h_01KRF1XDTRM3GDV4S0A3VR3SKV">Relief Fan Control</h3><p><strong>Relief Fan Turn ON Control</strong></p><p>When the Space Pressure rises above the deadband and</p><p>(a)  the <em>Relief Enable Position Setpoint</em> is set to 0%</p><p>-or-</p><p>(b) the <em>Relief Enable Position Setpoint</em> is greater than 0%, the OA Damper position is greater than the <em>Relief Enable Position Setpoint</em>, and the integration of iwc-seconds above the deadband reaches a predefined value: </p><ol>
+<li data-list-item-id="e89d02125f3c3f25d28be9d65ed29ad91">A request is sent to the Relief Fan Control and Proof of Operation function to energize the Relief Fan output. The Space Pressure Control function ill send a value of 0%, if not already for the Relief Enable Position Setpoint to allow the relief fan contacts to energize. </li>
+<li data-list-item-id="ea507d4a2599d8ee6b389ce5d5642371b">The Space Pressure control algorithm then provide control of the relief damper, which is already open to its minimum position and then will continue to open up to 100% when the pressure is above the deadband and closing toward the min position when the pressure is below the deadband. </li>
+</ol><div class="callout-info">
+  <div class="callout-info-content">
+    <p>
+      <strong>
+Note:
+</strong>
+      The relief damper will be held at the Relief Air Damper Minimum Position any time the unit is powered up and the relief fan is running to ensure that the relief fan does not run against a closed damper
+    </p>
+  </div>
+</div><p><strong>Relief Fan Turn OFF Control</strong></p><p>An "off" request is sent to the Relief Fan control when any of the following conditions occur: </p><ol>
+<li data-list-item-id="ee928584cefcfc4caa4d2f9d1e90bbb90">The relief damper is at minimum position for 30 continuous minutes.</li>
+<li data-list-item-id="ebf1e8fe05f6bbbc1f30b6c200e834027">Integration of the space pressure error determines that the relief fan is not required.</li>
+<li data-list-item-id="edfaf868f677f2a18e7c0055d23e3d1ff">The supply fan is not active. </li>
+</ol><p> </p><p><a href="../Voyager/17791473940237.html">Voyager 3 w/ Symbio 700 Controls Application Guide</a></p><p> </p><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 1rem; margin-top: 0px; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><strong style="box-sizing: border-box; font-size: 14px; font-weight: bolder;">WARNING:</strong></p><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 0px; margin-top: 0px; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/24602467157005-Voyager-3-w-Symbio-700-Controls-Exhaust-Fan-will-not-Energize-in-Service-Test" target="_blank">https://support.trane.com/hc/en-us/articles/24602467157005-Voyager-3-w-Symbio-700-Controls-Exhaust-Fan-will-not-Energize-in-Service-Test</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

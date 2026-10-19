@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voyager 3 Process of connecting a BAYSENS800 to an Symbio 700 Controller - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/18840928694029-Voyager-3-Process-of-connecting-a-BAYSENS800-to-an-Symbio-700-Controller" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Voyager 3 Process of connecting a BAYSENS800 to an Symbio 700 Controller</h1>
+<div class="badges"><span class="badge equip">Voyager</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2023-08-24 &nbsp;&bull;&nbsp; Last updated: 2026-07-15</div>
+<div class="body"><section class="article-info"><div class="article-content">
+<div class="article-body">
+<p><strong>Overview:</strong></p>
+<p>The BAYSENS924 will not work on the Symbio 700 you need a X13791009001 (BAYSENS800)</p>
+<p>The BAYSENS800 is NOT Compatible with VAV/VVDA configured systems and units (VVZT only).</p>
+<p>You also need a BACnet-enabled Symbio 700 UC. </p>
+<p>If the Voyager 3 wasn't ordered with a BACnet-enabled Symbio 700 UC (Digit 26 of the Model number ="0"), </p>
+<p><em>Model Number Digit 26 = A or B (Advanced Controller with BACnet)</em>, the only way to get it in the field at this time is to replace the Symbio 700 with a version that has BACnet enabled (MOD03103)</p>
+<p><em>In the BAYSENS800 - Set temp sensor to internal.</em></p>
+<p> </p>
+<p class="wysiwyg-text-align-center"><strong><img style="height: auto;" src="../../attachments/18840928694029_18840951320845_mceclip0.png" alt="mceclip0.png"></strong></p>
+<p> </p>
+<h2 id="h_01KGQ7Q0XS7ZVYV3YCPZ90VG0V">Symbio 700 Configuration</h2>
+<p><strong>BAYSENS800 Setup in the Phone App:</strong></p>
+<ul>
+<li data-list-item-id="eb6fb7bdb70ef81c06900c21c067bfe0a">Verify the unit has an Advanced UC module</li>
+<li data-list-item-id="ebe78b8edb6eeadec269b30ca5346fa79">Set Symbio 700 UC rotary dials to 001</li>
+</ul>
+<p>On the Phone App go to <strong>Settings &lt;</strong> <strong>System</strong> and set <strong>Arbitration Method Request</strong> to <strong>Enable External BAS Control</strong></p>
+<p>In <strong>Settings &lt;</strong> <strong>View Configuration &lt;</strong> <strong>Edit</strong> set <strong>Space Controller</strong> Type to <strong>Single Setpoint Zone Sensor</strong></p>
+<ul><li data-list-item-id="e6987a0a218505ef28ece3509700d969f">Verify <strong>SYSTEM TYPE</strong> IS <strong>CVZT</strong> or <strong>VVZT</strong> (BAYSENS800 is not compatible with VVDA)</li></ul>
+<p>In <strong>Tools &lt; Protocol Configuration &lt; Protocol</strong><strong> </strong>set to <strong>BACnet MS/TP - 76800</strong>, then <strong>SAVE</strong></p>
+<p> </p>
+<p class="wysiwyg-text-align-center"><img style="height: auto;" src="../../attachments/18840928694029_18840967489293_mceclip0.png" alt="mceclip0.png"></p>
+<p> </p>
+<h3 id="h_01KGQ7F2P97AY5KJM2CR8TJX2W">Communication Wire</h3>
+<p>Use the correct communication wire to ensure reliable communication between the zone sensor and the HVAC equipment. (<strong>C-(13), D-(14)</strong><strong> </strong>to<strong> </strong><strong>J17-1, J17-2</strong><strong> </strong>and <strong>E-(15)</strong><strong> </strong>to <strong>J21-9 (Shield wire)</strong>)</p>
+<p> </p>
+<ul>
+<li class="wysiwyg-list-bold" data-list-item-id="e1d8aec0e3f6180e298ac5117ad83c394"><strong>Suggested Supplier: Windy City Wire:</strong></li>
+<li data-list-item-id="e52c5a4ef854f5981a321c7c25fae328b">Plenum rated P/N: 043005AL</li>
+<li data-list-item-id="e7f41e5145ec0efd54aa468fc6b78e533">Non-plenum rated P/N: 108760</li>
+</ul>
+<p> </p>
+<ul>
+<li class="wysiwyg-list-bold" data-list-item-id="e0117580de78264654cbeca014dcbeaa0"><strong>Other wire may be used if it conforms to the following physical characteristics:</strong></li>
+<li data-list-item-id="eccd559e5a83aa3c5e6def198de4f5fa7">Twisted pair (2-conductor) plus shield.</li>
+<li data-list-item-id="e9f2e0e67f2707d1cba062082032571c5">Characteristic Impedance: 100 and 130 ohms.</li>
+<li data-list-item-id="efcd7c1027f56b3e12004117bce7a6842">Distributed capacitance between conductors: &lt; 100 pF/m.</li>
+<li data-list-item-id="e53b0099b1078a4501d8b674e6f73a8fb">Distributed capacitance between conductor and shield:<br>&lt; 200 pF/m.</li>
+<li data-list-item-id="ebf905232ea9daa752c266599aa2d910b">Foil or braided shield is acceptable.</li>
+<li data-list-item-id="e15a6253b0faa7cf68953eef3241fd63d">Wire diameter: 22 to 18 AWG.</li>
+</ul>
+<p> </p>
+<h2 id="h_01K39HCQH804AAA81B4T6BZFQS">BAYSENS800 Configuration</h2>
+<p> </p>
+<p><strong>To enter configurations</strong></p>
+<p><img style="height: auto;" src="../../attachments/18840928694029_44016546520973_image.png" width="209" height="369"></p>
+<p><strong>Password</strong> to enter configuration mode <strong>4017</strong></p>
+<p> </p>
+<p><strong>BAYSENS800 Sensor (old firmware version with 2 network pages):</strong></p>
+<ul>
+<li data-list-item-id="e7541e141668f9d2029c9462cb131face">Set the temp sensor to internal</li>
+<li data-list-item-id="e78c8b7d226df43ffd5a66871a8ee095d">Sensor Address = 2</li>
+<li data-list-item-id="e64a03fc2df91ae4eb5a55ef6039f4f42">Unit address = 1</li>
+<li data-list-item-id="e0199fbc42f0b4eabecaaed8c85ac6e94">Baud rate = 76,800</li>
+<li data-list-item-id="e36267df925c32df33d5a2b89311b2cff">Password to enter configuration mode 4017</li>
+</ul>
+<p> </p>
+<p><strong>BAYSENS800 Sensor (new firmware version with 3 network pages):</strong></p>
+<ul>
+<li data-list-item-id="e7470959e8c813de5e22eced750a1c34b">Set the temp sensor to internal<br><br>See Figure 4 below:</li>
+<li data-list-item-id="e0ef78a2f92ae93d733055feee4e32514">Network Page 1<ul>
+<li data-list-item-id="e4be34838dc7357b137e9b18616a6c33f">Sensor Address = 2</li>
+<li data-list-item-id="e3ca6ff2b20cfa5f7021e2b146d92b8b0">baud rate = 76800</li>
+</ul>
+</li>
+<li data-list-item-id="e6d8c2ae93c084a9d8af840fc15ab374e">Network Page 2<ul><li data-list-item-id="e6d25f3ff3de4bc3ec6169d487085a58a">Sensor device ID set to 0000002</li></ul>
+</li>
+<li data-list-item-id="e80c70ed4859d86ae2bb6c90e9d44cfa3">Network Page 3<ul><li data-list-item-id="ea148eea59ed97fb61e0b12a77fcd2a50">Unit device ID set to 0000001</li></ul>
+</li>
+</ul>
+<p>Make sure to hit the next button (right arrow) to save changes<br><br><img style="height: auto;" src="../../attachments/18840928694029_44016546523405_image.png" width="258" height="879"></p>
+<p> </p>
+<p><strong>WARNING:</strong></p>
+<p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p>
+</div>
+<div class="article-attachments"></div>
+</div></section></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/18840928694029-Voyager-3-Process-of-connecting-a-BAYSENS800-to-an-Symbio-700-Controller" target="_blank">https://support.trane.com/hc/en-us/articles/18840928694029-Voyager-3-Process-of-connecting-a-BAYSENS800-to-an-Symbio-700-Controller</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
