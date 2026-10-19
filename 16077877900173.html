@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IntelliPak/RAUK Symbio 800 – BACnet Out-of-Service control scheme - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/16077877900173-IntelliPak-RAUK-Symbio-800-BACnet-Out-of-Service-control-scheme" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>IntelliPak/RAUK Symbio 800 – BACnet Out-of-Service control scheme</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Applies to all Symbio 800 Controlled Units &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2023-05-24 &nbsp;&bull;&nbsp; Last updated: 2026-06-18</div>
+<div class="body"><p>On Reliatel and IntelliPak Legacy (IntelliPak 1 and 2) units with BACnet, the out-of-service functionality was used to add and remove BAS points from the arbitration scheme. This implementation was unique to Trane and did not meet the BACnet standard’s intent for “Out-of-Service”.  The BACnet standard’s intent was to use “Out-of-Service” as a troubleshooting and servicing feature.  This is and will NOT be the case on the newer Symbio controlled units. </p>
+<p>On the newer Symbio 700/800 controllers when placing a point out-of-service it will continue to be used in the arbitration scheme and use the fixed value assigned by the technician.  “Out-of-Service” should not be used to clear point faults in the controller as the Symbio 700/800 controllers rely on point faulting to determine validity of the point.  If a point is placed “Out-of-Service” to eliminate a point fault,  the controller will think the point is valid and continue to use the out-of-service value assigned by the technician indefinitely.  The Symbio 700/800 controllers use an entirely different style of arbitration that does not rely on the out-of-service feature.</p>
+<p>On Symbio 800 controllers, technicians can delete BACnet points from the interface if it will not be used for unit operation.  This will remove the point from the arbitration scheme and places it into a “Recycle Bin”.  The intent for this feature is to remove unnecessary BACnet points from the interface to make it easier for 3<sup>rd</sup> party integrators to understand our equipment.</p>
+<p><strong>Instructions on how to Delete and Recycle Points</strong></p>
+<p>Deleting and recycling points can be done with TU.  The instructions below show steps for accomplishing both processes with Symbio UI after direct connecting to the controller and typing <strong><a class="jive-link-external-small" href="https://hub.tranetechnologies.com/external-link.jspa?url=http%3A%2F%2F198.80.18.1" target="_blank" rel="nofollow noopener">http://198.80.18.1</a></strong> into the web browser. </p>
+<p><strong> </strong></p>
+<p><strong>Deleting Points</strong></p>
+<p>Deleting points is convenient for removing unwanted data from the controller communication</p>
+<p>interface. The point is not permanently deleted; rather the point is simply moved to <strong>Recycled</strong></p>
+<p><strong>Points</strong>.</p>
+<p>All point overrides, priority array owners, and status are reset to factory settings.</p>
+<p>To delete a point:</p>
+<ol>
+<li>Click <strong>Points </strong>in left navigation pane.</li>
+<li>Navigate to Analog, Binary, or Multistate points and select the point(s) using check box left of</li>
+</ol>
+<p>name.</p>
+<ol start="3">
+<li>Select <strong>Actions </strong>pull-down menu, then <strong>Delete </strong>&gt; <strong>Yes – Delete </strong>to confirm the action. <strong>No – Cancel</strong>
+</li>
+</ol>
+<p>to cancel action.</p>
+<p><strong>Recycled Points</strong></p>
+<p>Points that have been deleted from the controller interface are moved to Recycled Points. In this</p>
+<p>location the points can be restored to the controller interface and used once again to communicate</p>
+<p>data via BACnet®, MODBUS® or LonTalk®.</p>
+<p>To view recycled points and restore points:</p>
+<ol>
+<li>Click <strong>Points </strong>in left navigation pane.</li>
+<li>Click <strong>Recycled Points </strong>to view all deleted points.</li>
+<li>To resort a point, click the box left of the point name, then click <strong>Restore</strong>.</li>
+</ol>
+<p><strong>Please see attachment for Deleting and Recycling Points with TU. The Screen snips from the Preso is below.</strong></p>
+<p><strong><img src="../../attachments/16077877900173_39608119669389_mceclip0.png"></strong></p>
+<p><strong><img src="../../attachments/16077877900173_39608119672845_mceclip1.png"></strong></p>
+<p> </p>
+<p> </p>
+<p><strong>WARNING:</strong></p>
+<p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p>
+<p> </p>
+<p> </p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/16077877900173_20569954038285_Deleting_and_Restoring_Points_-_TU.pptx" download>Deleting and Restoring Points - TU.pptx (451 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/16077877900173-IntelliPak-RAUK-Symbio-800-BACnet-Out-of-Service-control-scheme" target="_blank">https://support.trane.com/hc/en-us/articles/16077877900173-IntelliPak-RAUK-Symbio-800-BACnet-Out-of-Service-control-scheme</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

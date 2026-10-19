@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dehumidification - Hot Gas Reheat - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12116860692109-Dehumidification-Hot-Gas-Reheat" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Dehumidification - Hot Gas Reheat</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Dehumidification</span></div>
+<div class="meta">Section: Dehumidification / Hot Gas Reheat (HGRH) &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-10 &nbsp;&bull;&nbsp; Last updated: 2026-10-07</div>
+<div class="body"><p> </p>
+<p><strong><span class="NormalTextRun SCXW90948240 BCX9" data-ccp-parastyle="heading 2">Dehumidification </span><span class="NormalTextRun SCXW90948240 BCX9" data-ccp-parastyle="heading 2">– Hot Gas Reheat</span></strong></p>
+<p>Dehumidification control is a mode of Cooling when hot gas reheat is configured with a modulating<br>reheat valve. Symbio™ 700 supports two configurable dehumidification methods: Dew Point (default) or<br>Relative Humidity control for occupied and unoccupied operations. All unit types require a valid space<br>relative humidity, space temperature, discharge air temperature sensor, and Evaporator Entering<br>Refrigerant Temperature for dehumidification operation. Dew Point control additionally requires outdoor<br>air temperature and relative humidity.</p>
+<p><br>Dehumidification is allowed when the outdoor air temperature is between 40°F and 100°F, but it is disabled<br>outside this range. Dehumidification can be enabled and disabled directly via the Occupied<br>Dehumidification Enable and Unoccupied Dehumidification Enable points (UC700 J20-1 and UC700 J20-2).</p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Dew Pont- Initiation</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Occupied dehumidification Dew Point control initiates when the following conditions exist:</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":770,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="auto">Space Dew Point is greater than the Space Dew Point Setpoint and</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":770,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="auto">Outdoor Air Dew Point is greater than the Outdoor Air Dew Point Setpoint</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<p><span data-contrast="auto">Unoccupied dehumidification Dew Point control initiates when: </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="3" data-aria-level="1">
+<span data-contrast="auto">Space Dew Point is greater than the Space Dew Point Unoccupied Setpoint and </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="4" data-aria-level="1">
+<span data-contrast="auto">Outdoor Air Dew Point is greater than the Outdoor Air Dew Point Setpoint and</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="auto">[Space has been unoccupied for less than Unoccupied Dehumidification Timer and relative humidity is greater than 65% or </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="auto">Space has been unoccupied for greater than or equal to Unoccupied Dehumidification Timer]</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<p><span data-contrast="auto"><span class="TextRun SCXW11884384 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW11884384 BCX9">The Unoccupied Dehumidification Timer defaults to </span><span class="NormalTextRun SCXW11884384 BCX9">12 hours</span><span class="NormalTextRun SCXW11884384 BCX9">. S</span><span class="NormalTextRun SCXW11884384 BCX9">etting </span><span class="NormalTextRun SCXW11884384 BCX9">the</span><span class="NormalTextRun SCXW11884384 BCX9"> time</span><span class="NormalTextRun SCXW11884384 BCX9">r</span><span class="NormalTextRun SCXW11884384 BCX9"> to 0 </span><span class="NormalTextRun SCXW11884384 BCX9">effectively disables </span><span class="NormalTextRun SCXW11884384 BCX9">the timer </span><span class="NormalTextRun SCXW11884384 BCX9">and</span><span class="NormalTextRun SCXW11884384 BCX9">, </span><span class="NormalTextRun SCXW11884384 BCX9"></span><span class="NormalTextRun SCXW11884384 BCX9">u</span><span class="NormalTextRun SCXW11884384 BCX9">noccupied </span><span class="NormalTextRun SCXW11884384 BCX9">d</span><span class="NormalTextRun SCXW11884384 BCX9">ehumidification </span><span class="NormalTextRun SCXW11884384 BCX9">initiates </span><span class="NormalTextRun SCXW11884384 BCX9">only according to</span><span class="NormalTextRun SCXW11884384 BCX9"> Space and Outdoor Dew Point.</span></span><span class="EOP SCXW11884384 BCX9" data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></span></p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Relative Humidity- Initiation</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Occupied dehumidification control initiates when the Space Humidity is greater than the Space Dehumidification Setpoint. Unoccupied dehumidification control initiates when the Space Humidity is greater than the Space Dehumidification Unoccupied Setpoint.</span></p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Humidistat — Initiation</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">The Humidistat binary input on the Customer Options Module is active. If a Space Humidity sensor is installed</span><span data-contrast="auto">, the Humidistat input will be ignored.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p><strong><span data-contrast="auto">Operation – CVZT/VVZT</span></strong><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'></span></p>
+<p><span data-contrast="auto">CVZT and VVZT units, the supply fan operates at the minimum speed defined for the compressor stage. Compressors are increasingly staged to 100% capacity. Space temperature is managed by modulating the hot gas reheat valve. The reheat valve will not open until the space temperature is below the space cooling setpoint minus 1.5°F and modulates to the reheat discharge air temperature setpoint calculated by the Symbio™ 700 to maintain space temperature control.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Anytime during occupied modes of operation, if the space temperature falls 3°F below the cooling setpoint and the reheat valve is at the maximum position for 5 minutes, dehumidification control terminates.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p><span data-contrast="auto">During unoccupied dehumidification, the reheat valve modules hold the space temperature at a fixed 73°F. If the space temperature falls below 60°F and the reheat valve is at the maximum position for 5 minutes, dehumidification control terminates.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p><strong><span data-contrast="auto">Operation – VVDA</span></strong><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'></span></p>
+<p><span data-contrast="auto">Variable Volume Discharge Air units continue to modulate the supply fan to maintain duct static pressure control. Compressors will stage to </span><span data-contrast="none">achieve a calculated evaporator dew point temperature</span><span data-contrast="auto">. The reheat valve modulates to control discharge air temperature to the Discharge Air Cooling Setpoint Status setpoint.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p><span data-contrast="auto"><span class="TextRun SCXW206037990 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW206037990 BCX9">Unoccupied dehumidification, if the space temperature is greater than the unoccupied cooling setpoint, the </span><span class="NormalTextRun SCXW206037990 BCX9"></span><span class="NormalTextRun SCXW206037990 BCX9">control will satisfy the sensible cooling demand first. If the space has a dehumidification demand, </span><span class="NormalTextRun SCXW206037990 BCX9"></span><span class="NormalTextRun SCXW206037990 BCX9">compressors will stage to </span></span><span class="TextRun SCXW206037990 BCX9" lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW206037990 BCX9">achieve a calculated evaporator dew point</span><span class="NormalTextRun SCXW206037990 BCX9"> temperature, </span><span class="NormalTextRun SCXW206037990 BCX9"></span></span><span class="TextRun SCXW206037990 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW206037990 BCX9">and discharge air </span><span class="NormalTextRun SCXW206037990 BCX9">temperature </span><span class="NormalTextRun SCXW206037990 BCX9"></span><span class="NormalTextRun SCXW206037990 BCX9">will be reheated to a fixed 70</span><span class="NormalTextRun SCXW206037990 BCX9">°F</span><span class="NormalTextRun SCXW206037990 BCX9"> until the </span><span class="NormalTextRun SCXW206037990 BCX9"></span><span class="NormalTextRun SCXW206037990 BCX9">dehumidification demand terminates.</span></span></span></p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Dew Point - Termination</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Occupied dehumidification Dew Point control terminates when:</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="auto">Calculated Space Dew Point is less than the Space Dew Point Setpoint minus the Dew Point Setpoint Offset</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<p><span data-contrast="auto">      or </span><span data-ccp-props='{"201341983":0,"335559685":720,"335559739":160,"335559740":259}'></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="auto">Outdoor Air Dew Point is less than the Outdoor Air Dew Point Setpoint minus the Dew Point Setpoint Offset</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<p><span data-contrast="auto">Unoccupied dehumidification Dew Point control terminates when: </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="auto">Space Dew Point is less than the Space Dew Point Unoccupied Setpoint – Dew Point Setpoint Offset or </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="auto">Outdoor Air Dew Point is less than the Outdoor Air Dew Point Setpoint – Dew Point Setpoint Offset or</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' aria-setsize="-1" data-aria-posinset="3" data-aria-level="1">
+<span data-contrast="auto">[Space has been unoccupied for less than Unoccupied Dehumidification Timer and Space Relative Humidity is less than 65% minus Space Dehumidification Setpoint Offset]</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span>
+</li>
+</ul>
+<p aria-level="3"><strong><span data-contrast="auto">Relative Humidity - Termination</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Occupied modes of operation, Space Dehumidification control terminates when the Space Humidity is less than the Space Dehumidification Setpoint minus the Space Dehumidification Setpoint Offset. In unoccupied mode, Space Unoccupied Dehumidification control terminates when the Space Humidity is less than the Space Dehumidification Unoccupied Setpoint minus the Space Dehumidification Setpoint Offset.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Humidistat — Termination</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">The Humidistat binary input on the Customer Options Module is inactive.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p aria-level="3"><strong><span data-contrast="auto">Dehumidification Purge Cycle</span></strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">During dehumidification, a 3-minute compressor cooling purge cycle initiates according to the Reheat Purge Interval (120 minutes adjustable). The modulating hot gas reheat valve moves to a fixed position and compressors go to full capacity.</span></p>
+<p> </p>
+<p aria-level="2"><strong>Dehumidification – Humidistat Input</strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Utilizing a Humidistat, dehumidification becomes active when the Humidistat input is active. Dehumidification terminates when the Humidistat is no longer active.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p> </p>
+<p aria-level="2"><strong>Dehumidification– Thermostat Control</strong><span data-ccp-props='{"134245418":true,"201341983":0,"335559738":40,"335559739":0,"335559740":259}'></span></p>
+<p><span data-contrast="auto">Dehumidification control can be initiated utilizing a Space Humidity input or a Humidistat input. If Space Humidity input is used for control, dehumidification initiates when Space Humidity exceeds the Space Dehumidification Setpoint. Dehumidification terminates when Space Humidity is less than Space Dehumidification Setpoint minus the Space Dehumidification Setpoint Offset.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p><span class="TextRun SCXW20662713 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW20662713 BCX9">Utilizing a Humidistat, dehumidification becomes active when the </span><span class="NormalTextRun SCXW20662713 BCX9">Humidistat </span><span class="NormalTextRun SCXW20662713 BCX9">input</span><span class="NormalTextRun SCXW20662713 BCX9"> is active</span><span class="NormalTextRun SCXW20662713 BCX9"> and </span><span class="NormalTextRun SCXW20662713 BCX9">a </span><span class="NormalTextRun SCXW20662713 BCX9">Y1 </span><span class="NormalTextRun SCXW20662713 BCX9">call</span><span class="NormalTextRun SCXW20662713 BCX9">. </span><span class="NormalTextRun SCXW20662713 BCX9">A</span><span class="NormalTextRun SCXW20662713 BCX9">ll compressor outputs </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW20662713 BCX9">energiz</span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW20662713 BCX9">e</span><span class="NormalTextRun SCXW20662713 BCX9"> and economizer cooling is disabled</span><span class="NormalTextRun SCXW20662713 BCX9">. T</span><span class="NormalTextRun SCXW20662713 BCX9">he</span><span class="NormalTextRun SCXW20662713 BCX9"> reheat valve will open and modulat</span><span class="NormalTextRun SCXW20662713 BCX9">e</span><span class="NormalTextRun SCXW20662713 BCX9">s</span><span class="NormalTextRun SCXW20662713 BCX9"> to </span><span class="NormalTextRun SCXW20662713 BCX9">the Discharge Air Reheat Setpoint </span><span class="NormalTextRun SCXW20662713 BCX9">(default </span><span class="NormalTextRun SCXW20662713 BCX9">70°F). </span><span class="NormalTextRun SCXW20662713 BCX9"></span><span class="NormalTextRun SCXW20662713 BCX9">Dehumidification terminates when the Humidistat input is </span><span class="NormalTextRun SCXW20662713 BCX9">no longer </span><span class="NormalTextRun SCXW20662713 BCX9">active</span><span class="NormalTextRun SCXW20662713 BCX9"> or with any Y2 call</span><span class="NormalTextRun SCXW20662713 BCX9"> or call for heat</span><span class="NormalTextRun SCXW20662713 BCX9">.</span></span><span class="EOP SCXW20662713 BCX9" data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></p>
+<p class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 14px; text-align: center; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><img style="box-sizing: border-box; vertical-align: middle; border-style: none; font-size: 14px; height: auto; max-width: 100%;" src="../../attachments/12116860692109_27190184431373_mceclip0.png"></p>
+<p class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 14px; text-align: center; color: #000000; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; background-color: #ffffff;">Click the e-library symbol for the latest version</p>
+<p class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 14px; text-align: center; color: #000000; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; background-color: #ffffff;"><a style="box-sizing: border-box; color: #0645ad; text-decoration: none; background-color: transparent; font-size: 14px;" href="https://elibrary.tranetechnologies.com/commercial/search?maxFacetValues=300&amp;n=&amp;term=publicationID_md%3AACC-APG002*&amp;f.isCurrentDisplay_md=Current&amp;f.publicationLanguageDisplay_md=English+%5Ben%5D&amp;viewPDF=true" target="_blank" rel="noopener noreferrer"><img style="box-sizing: border-box; vertical-align: middle; border-style: none; font-size: 14px; height: auto; max-width: 100%;" src="../../attachments/12103145325837_27087515957389_mceclip0.png"></a></p>
+<p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12116860692109-Dehumidification-Hot-Gas-Reheat" target="_blank">https://support.trane.com/hc/en-us/articles/12116860692109-Dehumidification-Hot-Gas-Reheat</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

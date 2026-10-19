@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interconnecting wiring for Symbio Condenser (Cooling or Heat Pump) with Legacy CV Air Handler (Pairing 1) - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055518991-Interconnecting-wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-with-Legacy-CV-Air-Handler-Pairing-1" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Interconnecting wiring for Symbio Condenser (Cooling or Heat Pump) with Legacy CV Air Handler (Pairing 1)</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Wiring &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-15 &nbsp;&bull;&nbsp; Last updated: 2026-10-11</div>
+<div class="body"><p> </p>
+<p><strong>Wire the thermostat to the Symbio 700 J21 except for R and C, wire thermostat R to Symbio Adapter Board J15-1, wire thermostat C to Symbio Adapter Board J15-2</strong>.</p>
+<p><strong>Note: A Zone Sensor will not control Electric Heat.</strong></p>
+<p><strong>Note: A Symbio Heat Pump Condenser does not have a 24 volt output for heat, if paired with a Legacy Air Handler you won't have a heat call in defrost.</strong></p>
+<p> </p>
+<p><strong>Connections between Condenser and Air Handler</strong></p>
+<ol>
+<li>
+<strong>Thermostat Wire – 3 Wires w/o electric heat, 5 wires with electric heat.</strong>
+<ul>
+<li>Symbio Condenser Adapter Board J15-1 to LTB2-R in the air handler.</li>
+<li>Symbio Condenser Adapter Board J15-2 to LTB2-B1 in the air handler.</li>
+<li>Symbio Condenser Adapter Board J18-1 to LTB2-G in the air handler.</li>
+<li>Symbio Condenser UC J21-3 to Air Handler LTB2-W1.</li>
+<li>Symbio Condenser UC J21-5 to Air Handler LTB2-W2.</li>
+</ul>
+</li>
+</ol>
+<p> </p>
+<p>If the Air Handler has Electric Heat, be sure to configure the Symbio 700 UC for<strong> Primary Heating Source (Cooling Only), or Secondary Heating Source (Heat Pump) – Not Installed  </strong>or you will get a Diagnostic for Indoor Options Module Comm Fail (The Symbio 700 will still turn the Indoor Fan on with a W1 call)</p>
+<p> </p>
+<p>If using the EDC (Evaporator Defrost Control) thermostat in the legacy air handler:</p>
+<ul>
+<li>If not already done make wiring changes to the EDC switch as indicated on the Air Handler wiring diagram for Reliatel Controls.</li>
+<li>Using the Phone App go to Tools, Service, Customer Connection Polarity and change Demand Limit Input to <strong>Reversed</strong>.</li>
+<li>In Settings, Edit Configuration set Demand Management to Demand Limit and in Settings, Refrigeration set Cooling Demand Limit Capacity Enable Setpoint to 0%.</li>
+</ul>
+<p> </p>
+<p><img src="../../attachments/360055098252_360095555791_mceclip0.png" alt="mceclip0.png"></p>
+<p> </p>
+<p><span class="wysiwyg-color-red"><strong>WARNING:</strong></span></p>
+<p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p>
+<p> </p>
+<p>.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055518991-Interconnecting-wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-with-Legacy-CV-Air-Handler-Pairing-1" target="_blank">https://support.trane.com/hc/en-us/articles/360055518991-Interconnecting-wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-with-Legacy-CV-Air-Handler-Pairing-1</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

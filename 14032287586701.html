@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Multi-Zone VAV Standalone Operation - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/14032287586701-Symbio-700-Multi-Zone-VAV-Standalone-Operation" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Multi-Zone VAV Standalone Operation</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Installation/Startup [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-03-15 &nbsp;&bull;&nbsp; Last updated: 2026-06-18</div>
+<div class="body"><h1 id="h_01KFK9CQ2JH9CHG1292KM8PJ65"><strong>Multi-Zone VAV Standalone Operation</strong></h1><p>Variable Volume Discharge Air (VVDA) control uses available cooling capacity to deliver the required temperature at the discharge of the unit. In cooling modes, the control uses cooling sources to deliver air temperature as required by the Discharge Air Cooling Setpoint.</p><p> </p><h2 id="h_01KFKD173HZ6TMY2MG9QSCA22R"><strong>Terminal Reference</strong></h2><figure class="wysiwyg-table wysiwyg-table-align-left" style="height: 110px; width: 100%;"><table style="border-collapse: collapse; border-style: solid; border-width: 1px;"><tbody>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 16.1429%;"><strong>Module</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.9999%;"><strong>Terminal Reference</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 27.5714%;"><strong>Description</strong></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 32.2858%;"> </td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; width: 16.1429%;"><span class="wysiwyg-font-size-medium">Symbio 700 UC</span></td>
+<td style="border-style: solid; border-width: 1px; width: 23.9999%;">J18</td>
+<td style="border-style: solid; border-width: 1px; width: 27.5714%;">Equipment Shutdown Input</td>
+<td style="border-style: solid; border-width: 1px; width: 32.2858%;">
+<p>OPEN = Run (Default)</p>
+<p>CLOSED = Shutdown</p>
+</td>
+</tr>
+<tr style="height: 22px;">
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 16.1429%;"><span class="wysiwyg-font-size-medium">Symbio 700 UC</span></td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 23.9999%;">J20</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 27.5714%;">Occupancy Switch (Input)</td>
+<td style="border-style: solid; border-width: 1px; height: 22px; width: 32.2858%;">
+<p>OPEN = Occupied (Default)</p>
+<p>CLOSED = Unoccupied</p>
+</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px; width: 16.1429%;"><span class="wysiwyg-font-size-medium">Adapter Board </span></td>
+<td style="border-style: solid; border-width: 1px; width: 23.9999%;">J2</td>
+<td style="border-style: solid; border-width: 1px; width: 27.5714%;">
+<p>VAV Box Relay Output:</p>
+<p>VHR Relay provided, <em>see unit schematic</em></p>
+</td>
+<td style="border-style: solid; border-width: 1px; width: 32.2858%;">
+<p>OPEN = VAV boxes normal (Default)</p>
+<p>CLOSED = Drive VAV boxes open</p>
+</td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;">Symbio 700 UC</td>
+<td style="border-style: solid; border-width: 1px;">
+<p>J19-1</p>
+<p>J19-2</p>
+</td>
+<td style="border-style: solid; border-width: 1px;">Zone Temperature Sensor</td>
+<td style="border-style: solid; border-width: 1px;">Space Temperature Active</td>
+</tr>
+</tbody></table></figure><p> </p><p> </p><h2 id="h_01KFKD1NKJMF7TYJ7AGJG17X8E"><strong>Configuration</strong></h2><p>Verify or set:</p><ul>
+<li data-list-item-id="ee978b90a7a450951a0254aa741d22163">Go to Settings &gt; View Configuration to verify &gt; or Edit (Upper right-hand corner) to configure</li>
+<li data-list-item-id="eb1df6b9bf6a56558e470d5a64966a7f1">Configure system type for &gt; VVDA</li>
+<li data-list-item-id="e21225c79f48d90eb36bb29177a89f22a">Configure Indoor fan Type for &gt; Variable Speed</li>
+<li data-list-item-id="ef4865c6930f08e3e90f55ada10bca907">Select Save (Upper right-hand corner)</li>
+<li data-list-item-id="ead8c9d2098d7ea603ee88f8a33436d5e"><p class="wysiwyg-text-align-left">Go back to the main configuration page </p></li>
+</ul><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 63.45%;"><img style="aspect-ratio: 740/672;" src="../../attachments/14032287586701_42924115509773_image.png" width="740" height="672"></figure><p> </p><ul>
+<li data-list-item-id="e504f53b4e95822f8f7999e8aa9880c60"><p class="wysiwyg-text-align-left">System &gt; Arbitration Method Request &gt; Configure for Standalone Control</p></li>
+<li data-list-item-id="edc022bfea87a26e2160c45875065a674"><p class="wysiwyg-text-align-left">Indoor &gt; Duct Static Pressure Deadband BAS &gt; 0.20 In (H<sub>2</sub>O)</p></li>
+<li data-list-item-id="e59c83b2f19c39b9efd3329b6c9e250e0"><p class="wysiwyg-text-align-left">Indoor &gt; Duct Static Pressure Setpoint BAS &gt; 1.00 In (H<sub>2</sub>O)</p></li>
+<li data-list-item-id="ef687005abd27477f0be90653b6cb93d7"><p class="wysiwyg-text-align-left">Indoor &gt; Duct Static Pressure Setpoint High Limit Setpoint BAS 3.50 In (H<sub>2</sub>O)</p></li>
+<li data-list-item-id="e5c17c724d5f01f4b8fa9a740e52ef73f"><p class="wysiwyg-text-align-left">Refrigeration &gt; Discharge Air Cooling Setpoint BAS &gt; 55.0 °F</p></li>
+</ul><figure class="wysiwyg-image"><img style="aspect-ratio: 1099/699;" src="../../attachments/14032287586701_42924085707917_image.png" width="1099" height="699"></figure><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-center">           </p><h2 id="h_01KFKD3CBC3V7Z25WYY1CHEQN3"><strong>VAV Box Relay Output</strong></h2><ul><li data-list-item-id="e6d3e5babf074bac1719e8ffd26c8bc30"><p class="wysiwyg-text-align-left">This binary output is provided by the controller to be optionally wired to VAV units in a Multi Zone-VAV system to coordinate system changeover to full airflow heating. Reference VHR relay wired to Relay Board connection J2 and VHR wiring terminal block on unit schematics. The binary output is de-energized when the controller is operating in cooling modes. The binary output energizes when the heat type installed requires full airflow. See Maximum Heat for more details.</p></li></ul><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-center">VHR Relay provided, <em>see unit schematic</em></p><p class="wysiwyg-text-align-center"><img src="../../attachments/14032287586701_14045901875725_mceclip0.png" width="463" height="608"></p><p class="wysiwyg-text-align-center"> </p><p> </p><h2 id="h_01KFKD67VEP4PHXMKVR9BQQD89"><strong>Sequence of Operation</strong></h2><p class="wysiwyg-text-align-left"> </p><h3 id="h_01KFKD7155P7RCD4GD8JBW4CCJ"><strong>VVDA Control</strong></h3><ul>
+<li data-list-item-id="e11f5e5fbb315896bd44b6582e3cebcff"><p class="wysiwyg-text-align-left">Variable Volume Discharge Air (VVDA) control uses available heating and cooling capacity to deliver the required temperature at the discharge of the unit. A discharge air temperature sensor is required for operation.</p></li>
+<li data-list-item-id="e23ec0edc7b1982a97fc939493a8f6c61"><p class="wysiwyg-text-align-left">In cooling modes, the control uses cooling sources to deliver air temperature as required by the Discharge Air Cooling Setpoint. In heating modes, the control uses heat sources to deliver air temperature as required by the Discharge Air Heating Setpoint. Primary heat is never used in conjunction with mechanical cooling.</p></li>
+<li data-list-item-id="e0688ff8a90a053c050ed1f0f8841603f"><p class="wysiwyg-text-align-left">Symbio™ 700 operates in Discharge Air Temperature Control in all heat, cool, and occupancy modes of operation. The typical operating mode is Cooling delivering conditioned air to multiple zones of a building. These units have duct work to supply VAV terminal units. The VAV units modulate to control space comfort.</p></li>
+<li data-list-item-id="e480d97e68c71e560bc66f69dd1389c7c"><p class="wysiwyg-text-align-left">VVDA units also change over to provide heat (when installed). A building automation system or the VAV Box Relay Output can be used when the heat source requires full airflow. See Heat Types for more information. A valid space temperature input must be provided to perform heating modes such as Daytime Warm Up and Morning Warm Up (when enabled).</p></li>
+</ul><p> </p><h3 id="h_01KFKDCWRSC32M15WCTNYKGYE8"><strong>Duct Static Pressure Control</strong></h3><ul><li data-list-item-id="ee17c15c3fba401386eca66a4a045032c"><p class="wysiwyg-text-align-left">Multi Zone-VAV equipment have variable speed supply fans and are often used in Variable Air Volume (VAV) systems consisting of ductwork serving multiple building zones and VAV boxes that control space comfort independent of the rooftop air handler. VAV boxes modulate air volume by a damper that opens and closes to maintain space comfort. In response, duct static pressure increases and decreases. The controller will modulate supply fan speed to maintain Duct Static Pressure relative to the Duct Static Pressure Setpoint.</p></li></ul><p class="wysiwyg-text-align-left"> </p><h3 id="h_01KFKDF2C2QT1F36EEFN2TJREQ"><strong>Duct Static Pressure High Limit</strong></h3><ul><li data-list-item-id="ef1fa57c65bdcc3db7ec0df4203198839">The controller operates the supply fan to maintain duct static pressure below the Duct Static Pressure High Limit setpoint. In the event that duct static pressure approaches the high limit setpoint, the controller will reduce and limit the supply fan speed.</li></ul><p> </p><h3 id="h_01KFKDGEAP31P9GZYEB0TSY8QT"><strong>Unoccupied Cooling</strong></h3><ul><li data-list-item-id="e146afbbeb9cc5dd4d4018e34970b6433">Unoccupied Cooling mode is used when the building is unoccupied and the space conditions are exceeding temperature limits. The unit is normally off in unoccupied mode. If a valid space temperature input rises above the Unoccupied Cooling Setpoint, unit operation starts unoccupied cooling to manage space temperature. The controller operates in Discharge Air Control with ventilation disabled while DX or economizer cooling capacity increases to satisfy the Discharge Air Cooling Setpoint. VVDA System Type operate the supply fan under duct static pressure control. Cooling continues until space temperature is 4°F less than the Unoccupied Cooling Setpoint, the unit will then cycle off.</li></ul><p> </p><h3 id="h_01KFKDH76556K3ST9TV7AJ9RW9"><strong>Unoccupied Heating</strong></h3><ul><li data-list-item-id="e90377727feb2d1251e445b17b44ceb42">When the unit is in unoccupied mode and the valid space temperature input falls below the Unoccupied Heating Setpoint, unit operation starts unoccupied heating to manage space temperature. The controller operates in Discharge Air Control with ventilation disabled while heating capacity increases to satisfy the Discharge Air Heating Setpoint. The supply fan operates according to heat type installed, see Heat Types for more information. Heating continues until space temperature is 4°F greater than the Unoccupied Heating Setpoint, the unit will then cycle off.</li></ul><p> </p><h3 id="h_01KFKDMK7494VDK67Z773E8NWF"><strong>Maximum Heat</strong></h3><ul><li data-list-item-id="ec3a57f568ecaf8c58c4e551c485d0ad3">Maximum Heat is a full airflow mode of heating operation with the supply fan operating at maximum speed. The controller does not provide maximum heat; instead, the controller provides heat capacity per the Operating Mode and unit typ</li></ul><p> </p><h3 id="h_01KFKDMVP85NRPJW3GYK6F5596"><strong>Morning Warm Up</strong></h3><p class="wysiwyg-text-align-left">Click the link below</p><ul><li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="ef665085e959b77eed3e968417b751758"><a href="../Precedent/12116225076621.html" target="_blank" rel="noopener noreferrer"><span style="color: #3333FF;">https://tranesupport.zendesk.com/hc/en-us/articles/12116225076621-MZVAV-Morning-Warm-Up</span></a></li></ul><p class="wysiwyg-text-align-left"> </p><h3 id="h_01KFKDN8CQEAHCDTPCD2VNWGBV"><span style="color: #000000;"><strong>Daytime Warm Up</strong></span></h3><p class="wysiwyg-text-align-left"><span style="color: #000000;">Click the link below</span></p><ul><li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="e9069c0c7971bbb412f10a0d102db8ac0"><a href="../Precedent/12116581851789.html" target="_self"><span style="color: #6666FF;">https://tranesupport.zendesk.com/hc/en-us/articles/12116581851789-MZVAV-Daytime-Warm-Up</span></a></li></ul><p class="wysiwyg-text-align-left"> </p><h3 id="h_01KFKDPCTG0KNXM7YFNXBCRDFG"><span style="color: #000000;"><strong>Enabling MWU and DWU</strong></span></h3><ol>
+<li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="e11d1aec03d5ebdbcf4082dacb2e3419a"><span style="color: #000000;">Go to Settings to configure VAV setpoints</span></li>
+<li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="e463a4bc9b5f5f28cb780bde3d52794a5"><span style="color: #000000;">Heat &gt; Enable Morning Warm Up</span></li>
+<li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="e288d0f94685bd38ff53171eca5c5fb29"><span style="color: #000000;">Heat &gt; Enable Daytime Warm Up</span></li>
+</ol><p class="wysiwyg-text-align-left"> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 32.43%;"><img style="aspect-ratio: 318/661;" src="../../attachments/14032287586701_42924085709965_image.png" width="318" height="661"></figure><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left"> </p><h2 id="h_01KFKDPNDAW7WSBABNCF4YCCTF"><strong>Notes</strong></h2><ul>
+<li class="ck-list-marker-color" data-list-item-id="ebba958b6f2f429867ad75442bb457b50"><span style="color: #000000;">Unless a 10KΩ @ 77° sensor is installed on the Symbio 700 UC J19-1 and J19-2 the unit will only operate in the discharge air cooling mode.</span></li>
+<li data-list-item-id="e8042ce00f5701dc1a4b24268662644cf">Morning Warm Up occurs when the unit transitions from unoccupied mode to occupied mode and the zone temperature is at least 1.5F lower than the Morning Warmup setpoint.</li>
+<li data-list-item-id="eac4ce3179aeb59731cca47a61310088c">When the Heat Cool Mode Request is Cool (the unit is providing cooling), if a valid space temperature is 3°F below the adjustable Daytime Warm-up Setpoint, the Daytime Warm-up operation initiates.</li>
+<li data-list-item-id="e66eb9dee55752f2aac04471123f0c861">Staged heat capacity – Full airflow control (100%</li>
+</ul><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left"> </p><h2 id="h_01KFKDQ7PTHKFK35Z59C0VH2MZ"><span style="color: #000000;"><strong>Service Test Mode</strong></span></h2><ul>
+<li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="ee1ca36802541783891a6129a155f185c"><span style="color: #000000;">Heat will not be allowed to come on until the unit has been in test mode for at least 6 minutes (adjustable 1-10 minutes, 1-minute increments) and the indoor fan is at 100%.</span></li>
+<li class="wysiwyg-text-align-left ck-list-marker-color" data-list-item-id="e1108309d3f8c89b37f1075a6a1560a2f"><span style="color: #000000;">1-hour time duration</span></li>
+</ul><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left"> </p><h2 id="h_01KFKDQNPW39KPQ60MYR201K58"><strong>Schedules</strong></h2><div tabindex="0" role="button" aria-label="2 minutes, 3 seconds date. If we were connected to a symbio"><span style="color: #C72809;"><strong>Important</strong></span></div><ul><li data-list-item-id="e53ab7bd0428f20fa2d7c2b45e0a07e25">
+<div tabindex="0" role="button" aria-label="2 minutes, 3 seconds date. If we were connected to a symbio">Symbio 700 scheduling via the mobile app is limited to a maximum of 3 months and must be refreshed once that period ends.</div>
+<div tabindex="0" role="button" aria-label="2 minutes, 3 seconds date. If we were connected to a symbio"> </div>
+</li></ul><figure class="wysiwyg-media"><div data-oembed-url="https://www.youtube.com/watch?v=vo6FzE1svnY"></div></figure><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/14032287586701-Symbio-700-Multi-Zone-VAV-Standalone-Operation" target="_blank">https://support.trane.com/hc/en-us/articles/14032287586701-Symbio-700-Multi-Zone-VAV-Standalone-Operation</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

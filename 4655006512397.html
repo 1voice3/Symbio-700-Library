@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LCU Smoke Detector Wiring and Installation Questions - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/4655006512397-LCU-Smoke-Detector-Wiring-and-Installation-Questions" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>LCU Smoke Detector Wiring and Installation Questions</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Smoke Detector [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2022-03-08 &nbsp;&bull;&nbsp; Last updated: 2026-10-15</div>
+<div class="body"><h2 id="h_01M50NH231W8E3891810GNB7RR">Where in the unit can I mount a field installed smoke detector?</h2><ul>
+<li data-list-item-id="e1b312ec17b610cad1027e57980233dee">Technical Support does not recommend or support mounting field installed smoke detectors in the unit as it affects the unit UL rating. Field installed smoke detectors should be installed in the supply/return ducts connected to the unit and wired back to the unit E-Stop terminals:</li>
+<li data-list-item-id="ece3fde57689a75392ee5a52352bbda68">ReliaTel equipment at LTB-5 &amp; 6 ( <a href="https://support.trane.com/hc/en-us/articles/360037491412" target="_self">Where do I wire my field installed smoke detector?</a> )</li>
+<li data-list-item-id="e9945717b932c4d2f6f3ea35de299a6c8">Symbio700 equipment at J18-1 &amp; 2 ( <a href="../General/360055257251.html">Symbio™ 700 - Emergency Stop or Equipment Shutdown Input</a> )</li>
+</ul><h2 id="h_01M50NH6GGRTSN3604ENGVBD60">Common Smoke Detector Questions</h2><zd-accordion class="wysiwyg-disclosure"><details><summary>Do factory installed smoke detectors communicate?</summary><div class="wysiwyg-disclosure-content"><ul><li data-list-item-id="ee3dfc7a86111031185fc70b14e177739">No, factory installed detectors do not communicate.</li></ul></div></details><details><summary>Where does the fire alarm company wire to the factory mounted return/supply smoke detector?</summary><div class="wysiwyg-disclosure-content"><ul>
+<li data-list-item-id="e7598e98abf5d0d58c14638d389b5b064">In the factory supply/return detector, terminals 6 &amp; 17 are used for the alarm notification back to the unit controls (RTOM on ReliaTel units and FAOM/IOM on Symbio units) and should NOT be used by the fire alarm company. Doing so usually creates an alarm at the unit and shuts it down.</li>
+<li data-list-item-id="eb2eeb805a76f0c083c3eef17a211084b">The detector has another set of SPDT (7 = NC, 8 = NO, 18 = C) contacts for alarm notification and a set of NO (13 = NO, 14 = C) contacts for fire alarm control panel connection, see attachment at the bottom of this article for the smoke detector wiring diagram.</li>
+<li data-list-item-id="eed0f7defa18817ef91fa38b324effcbd">For more information about the factory installed supply/return smoke detectors, please contact the manufacturer: Air Products &amp; Controls, 888-332-2241</li>
+</ul></div></details><details><summary>Where does the fire alarm company wire to the factory mounted plenum smoke detector?</summary><div class="wysiwyg-disclosure-content"><ul><li data-list-item-id="e724ece66900ab7d5fde9929e48c8a76d">Please contact the manufacturer: Air Products &amp; Controls, 888-332-2241</li></ul></div></details><details><summary>We need to power the factory installed smoke detector from a separate source to avoid nuisance alarms at the fire panel during unit maintenance, how do we do this?</summary><div class="wysiwyg-disclosure-content"><ul>
+<li data-list-item-id="e9bb7a8820e99cb6f7545fa17d8d513e0">Technical Support does not recommend doing this as it requires cutting the factory harness, requires wiring modifications at the detector and may affect the UL listing of the unit.</li>
+<li data-list-item-id="eac8fc63ea92279296e50d1050b844b2a">Factory detectors do not communicate and would not produce a communications or trouble fault at the panel if powered down.</li>
+<li data-list-item-id="ef89ac7d602c8d459a6855b64f827a49d">The FACP should be monitoring the status of the dry contacts only, these will not change when powering the smoke detector down unless otherwise noted in the installation instructions.</li>
+<li data-list-item-id="e501965e204fcb4bf73aaf42aa21d67b3">If this still does not meet the requirements for the project, install field mounted detectors in the ductwork. </li>
+</ul></div></details><details><summary>What is the part number for the kit to field install the factory smoke detectors?</summary><div class="wysiwyg-disclosure-content"><ul>
+<li data-list-item-id="ec4d9cdf4a165106f236c304a144c40f9">We do not offer a kit to install smoke detectors in units that were not built with them.</li>
+<li data-list-item-id="e1fc77ae578948db5891fe70b48d5f545">In this scenario, a field mounted detector should be used mounted in the duct work and wired back to the unit emergency stop.</li>
+</ul></div></details></zd-accordion><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/4655006512397_4654931773581_SL-2000_instruction_manual.pdf" download>SL-2000 instruction manual.pdf (1102 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/4655006512397-LCU-Smoke-Detector-Wiring-and-Installation-Questions" target="_blank">https://support.trane.com/hc/en-us/articles/4655006512397-LCU-Smoke-Detector-Wiring-and-Installation-Questions</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

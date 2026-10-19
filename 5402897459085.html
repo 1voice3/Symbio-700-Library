@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interconnecting Wiring for Symbio Condenser (Cooling or Heat Pump) to Trane Controller with Wet or Powered Outputs - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/5402897459085-Interconnecting-Wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-to-Trane-Controller-with-Wet-or-Powered-Outputs" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Interconnecting Wiring for Symbio Condenser (Cooling or Heat Pump) to Trane Controller with Wet or Powered Outputs</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Wiring &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2022-04-08 &nbsp;&bull;&nbsp; Last updated: 2026-10-07</div>
+<div class="body"><p> </p>
+<p>Many of Trane's programmable controllers use wet or 24vac powered outputs. When pairing one of these controllers with a Symbio700 controller utilizing conventional thermostat control, it is necessary to install pilot relays between the BO of the programmable controller and the thermostat input of the Symbio700. Below are wiring diagrams for UC600/XM70/XM90 and MP581/EX2 (MP581 shown, MP580 is the same, but the termination board is different. Unit may use AHU terminal block or spade connectors on MP580 termination board). Not shown is wiring for UPCM, but is the same situation. </p>
+<p> </p>
+<p>**For wiring to a UC400, XM32, or PCM go to <a href="https://support.trane.com/hc/en-us/articles/5180824384397" target="_self">Interconnecting Wiring for Symbio Condenser (Cooling or Heat Pump) to UC400</a></p>
+<p>**For wiring to FCU/BC unit with CTSI (also uses wet outputs) go to: <a href="https://support.trane.com/hc/en-us/articles/5181750620301" target="_self">Interconnecting Wiring for Symbio Condenser (Single Stage Cooling) to Blower/Fan Coil Unit w/ CTSI Board</a></p>
+<p> </p>
+<p>Programming notes:</p>
+<ul>
+<li>Symbio700 does not enforce a minimum time between compressors when staging. It is recommended that a 3 min time delay be added to the program between stages.</li>
+<li>Symbio700 does enforce a 3 min minimum off and 3 min minimum run. </li>
+<li>Reversing valve is energized in cooling</li>
+</ul>
+<p> </p>
+<p><strong>UC600/XM70/XM90</strong></p>
+<p><img src="../../attachments/5402897459085_24475419557901_2_Stage_TTA_with_UC600.png" alt="2 Stage TTA with UC600.png"></p>
+<p> </p>
+<p><strong>MP581/EX2</strong></p>
+<p><img src="../../attachments/5402897459085_5403256418829_mceclip1.png" alt="mceclip1.png"></p>
+<p> </p>
+<p>Be aware that if using test mode on the Symbio controller, that the indoor fan must be running prior to starting test mode. </p>
+<p> </p>
+<p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/5402897459085_5403554804877_2_Stage_TTA-TWA_to_MP581-EX2.png" download>2 Stage TTA-TWA to MP581-EX2.png (57 KB)</a><a href="../../attachments/5402897459085_15481859447693_2_Stage_TTA-TWA_to_UC600-XM70-XM90.png" download>2 Stage TTA-TWA to UC600-XM70-XM90.png (58 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/5402897459085-Interconnecting-Wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-to-Trane-Controller-with-Wet-or-Powered-Outputs" target="_blank">https://support.trane.com/hc/en-us/articles/5402897459085-Interconnecting-Wiring-for-Symbio-Condenser-Cooling-or-Heat-Pump-to-Trane-Controller-with-Wet-or-Powered-Outputs</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foundation - Symbio® 700 controller - Application Guide - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/32701592535693-Foundation-Symbio-700-controller-Application-Guide" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Foundation - Symbio® 700 controller - Application Guide</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Foundation &nbsp;&bull;&nbsp; Category: Equipment Literature | Apps Guides<br>
+Created: 2024-12-13 &nbsp;&bull;&nbsp; Last updated: 2026-07-23</div>
+<div class="body"><h1 id="h_01KMR2FGNC1E7GH1EWPG2PRSYC">Foundation -  Application Guide</h1><p> </p><figure class="wysiwyg-image wysiwyg-image-block-align-left wysiwyg-image-resized" style="width: 37.93%;"><img style="aspect-ratio: 362/421;" src="../../attachments/32701592535693_32701563059981_image.png" width="362" height="421"></figure><p> </p><p><span style="background-color: rgb(255,255,255); color: rgb(0,0,0);"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none;">Click the e-library symbol for the latest version</span></span></p><figure class="wysiwyg-image wysiwyg-image-block-align-left"><a href="https://elibrary.tranetechnologies.com/commercial/search?maxFacetValues=12&amp;n=&amp;term=publicationID_md%3AACC-APG004*&amp;f.isCurrentDisplay_md=Current&amp;f.publicationLanguageDisplay_md=English+%5Ben%5D&amp;viewPDF=true" target="_blank" rel="noopener noreferrer"><img style="aspect-ratio: 117/47;" src="../../attachments/12555594090381_23091869070861_e-library_Image.PNG" width="117" height="47"></a></figure><p>Or <strong>download</strong> at the end of the warning sign.</p><p> </p><h2 id="h_01KMR2HEJFFNY7RANPD5M1TNJ0">Introduction</h2><p>The Symbio™ 700 installed on Foundation™ rooftop units is a factory-installed and programmed controller, providing digital control and protection of the equipment.</p><p>The Symbio 700 offers multiple equipment configuration options regardless of controller model. The Foundation rooftop unit can be configured as the following system types:</p><ul>
+<li data-list-item-id="e5bd1b5945c76b6d86dfcc7b1a3af35fd">Conventional Thermostat Control (T-Stat) - Heating and cooling operation for space comfort managed by conventional thermostat inputs.</li>
+<li data-list-item-id="ec366587d38d0438114412f38c90758eb">Enhanced Thermostat Controls - cooling operation for space comfort managed by conventional thermostats and discharge air temperature.</li>
+<li data-list-item-id="ea105934aacf3e63a17246d05792d6113">Constant Volume Zone Temperature Control (CVZT) - Multi-speed supply fan control to manage space comfort.</li>
+<li data-list-item-id="e3439796f1a9bc78e2afc101fd73656f8">Variable Volume Zone Temperature Control (VVZT) - The modulating supply fan speed modulates with heating or cooling capacity to maintain space comfort.</li>
+</ul><p>These configurations can be used with standard cooling systems.</p><p>Symbio 700 for Foundation provides Standard Controller functionality for advanced troubleshooting, secure remote connectivity via Trane Connect, and for access to the Symbio Service and Installation mobile app via a Bluetooth connection. </p><p> </p><p>The Symbio 700 configuration for Foundation equipment does not support:</p><ul>
+<li data-list-item-id="ea561efc211033a8107bd9bd240dbdb3c">BACnet® MSTP/IP</li>
+<li data-list-item-id="ecce901c6a1cb3f1775ed4f0a19da2e1b">Modbus™ TCP/IP</li>
+<li data-list-item-id="ea5a33b760dcc38a46864912270b86875">Air-Fi® communications</li>
+<li data-list-item-id="e49f737d644d65ab8670b561d085ba87b">Air-Fi® communications</li>
+<li data-list-item-id="ed78afae403b1ea11e71b1509bd90f203">Custom TGP2 programming</li>
+<li data-list-item-id="e109bf0dd569a46c5c1d4a964bd31f5af">XM30/XM332 expansion modules</li>
+<li data-list-item-id="e110cb5e991fbe766152fc87141e039f0">Upgrades to an advanced controller</li>
+</ul><p> </p><p>This guide provides information about the configuration, control capabilities and troubleshooting of the Foundation system with Symbio 700 controller.</p><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/32701592535693_32701569563661_ACC-APG004A-EN_09142024.pdf" download>ACC-APG004A-EN_09142024.pdf (1072 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/32701592535693-Foundation-Symbio-700-controller-Application-Guide" target="_blank">https://support.trane.com/hc/en-us/articles/32701592535693-Foundation-Symbio-700-controller-Application-Guide</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

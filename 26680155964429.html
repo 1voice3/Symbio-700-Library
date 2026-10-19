@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio® 700 - How to Configure a Fresh Air Options Module - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/26680155964429-Symbio-700-How-to-Configure-a-Fresh-Air-Options-Module" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio® 700 - How to Configure a Fresh Air Options Module</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Dehumidification</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Modules / Sensors / Switches &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2024-05-13 &nbsp;&bull;&nbsp; Last updated: 2026-07-29</div>
+<div class="body"><p><span style="color: #FF0000;"></span></p><p> </p><h1 id="h_01K83PVCWYDGR4F1MYJV0GHYFV">Configuration</h1><h2 id="h_01K83PVQEGS1ZJ55SXWJR37YZK">0-100% Economizer</h2><ul>
+<li data-list-item-id="e276cd2243a433cb21df85bb20bdb460a">
+<h3 id="h_01K83FYGF30RC9E32CCRX6SKF1">Dry Bulb</h3>
+<ul>
+<li data-list-item-id="e3658dec8b9ccf9ffbe25c4c5508bd93a">
+<strong>Outside Air</strong> = 0 to 100% Economizer</li>
+<li data-list-item-id="ea03c775d6ff8487acbdd4be691104603">
+<strong>Remote Minimum Position</strong> = Not Installed</li>
+<li data-list-item-id="ee806922247166dc0417e59877b8308e6">
+<strong>Economizer Type</strong> = Dry Bulb</li>
+</ul>
+</li>
+<li data-list-item-id="e207717d3662f33cbc2dfa0bff291679f">Required Sensor (factory-installed outdoor temperature sensor)</li>
+</ul><p> </p><ul>
+<li data-list-item-id="e8d8268530f4bbac6a2ce7b32d36792f1">
+<h3 id="h_01K83PY2ZEVS7AWCEFVS1KMJMJ">Differential Dry Bulb</h3>
+<ul>
+<li data-list-item-id="e340c4984496cb502cf79088c1ccbd0b2">
+<strong>Outside Air</strong> = 0 to 100% Economizer</li>
+<li data-list-item-id="e67ad2d601e0632d8f04b89542f87d043">
+<strong>Remote Minimum Position</strong> = Not Installed</li>
+<li data-list-item-id="e71bbf896986354252165019213cab7b6">
+<strong>Economizer Type</strong> = Differential Dry Bulb</li>
+</ul>
+</li>
+<li data-list-item-id="eaa5be5a51c0085dddcf1f5cd83c4eae7">Required Sensor (factory-installed outdoor Temperature and field-installed (FAOM-P9) return air temperature sensor) (Kit #FIADFDB001*)</li>
+</ul><p> </p><ul>
+<li data-list-item-id="ec368e05cbc7e1bb806199345c5983a9e">
+<h3 id="h_01K83Q0C3P38F1F9W1YJZF4K4G">Reference Enthalpy</h3>
+<ul>
+<li data-list-item-id="e4e477d811c9039bb3dcd8942afee54b9">
+<strong>Outside Air</strong> = 0 to 100% Economizer</li>
+<li data-list-item-id="eb3f408d4b3da090d54c3d0d3e16b0a21">
+<strong>Remote Minimum Position</strong> = Not Installed</li>
+<li data-list-item-id="e8152c246d66031d1b5badb388a860d4c">
+<strong>Economizer Type</strong> = Reference Enthalpy</li>
+</ul>
+</li>
+<li data-list-item-id="ec55f49cc7edc508d61550c3799984905">Required Sensor (factory-installed outdoor Temperature and field-installed (FAOM-P9) outdoor air humidity sensor) (Kit #FIAENTH001*<strong>)</strong>
+</li>
+</ul><p> </p><ul>
+<li data-list-item-id="e39fd4c6ecad909489107eee0897851c2">
+<h3 id="h_01K83Q22XRMQKHHRTGGZPJG59K">Comparative Enthalpy</h3>
+<ul>
+<li data-list-item-id="e2bb724cf054c2f155c8030f2b7fe4a33">
+<strong>Outside Air</strong> = 0 to 100% Economizer</li>
+<li data-list-item-id="e8f1811eef14f3f1fd2d2675ab99eda7b">
+<strong>Remote Minimum Position</strong> = Not Installed</li>
+<li data-list-item-id="eefb97d794f807fc16014edb8427c9c82">
+<strong>Economizer Type</strong> = Comparative Enthalpy</li>
+</ul>
+</li>
+<li data-list-item-id="e58efe23d6e2d944fb3c8629b1273a51f">Required Sensor (factory-installed outdoor Temperature, field-installed (FAOM-P9) outdoor air humidity sensor, return temperature humidity, and return air temperature sensors) (Kit #FIAENTH002*)</li>
+</ul><p> </p><div class="callout-info"><div class="callout-info-content"><ul><li class="wysiwyg-list-bold" data-list-item-id="e7d1be485a7aa94725d2858957b2102b5">
+<strong>Note:  </strong><ul>
+<li data-list-item-id="e521f0542a6ca76c255c4d4171516b437">Must have an <strong>Economizer</strong> connected to the blue connector FAOM-P11 (OA DAMPER OUT - pin 3 Blue wire/FEEDBACK - pin 2 Red wire/COMMON - pin 4 Orange wire) and black connector to FAOM-P8 (24 VAC OUT). </li>
+<li data-list-item-id="e79c1d03ee04b10f5d4dde11c63d74fda">When adding a field-installed economizer to a unit shipped from the factory as a multi-speed (CVZT) and that does not have dehumidification, a discharge air sensor kit is required.</li>
+</ul>
+</li></ul></div></div><p> </p><h4 id="h_01KHVE77GXP81A0EBVAHDR1WVP">Using the Mobile Phone App</h4><p><span style="background-color: #ffffff; color: #000000;">From the </span><strong>Home </strong><span style="background-color: #ffffff; color: #000000;">screen, go to </span><strong>Settings</strong> &gt;<span style="background-color: #ffffff; color: #000000;"> </span><strong>View Configuration</strong> &gt; <strong>Edit</strong> &gt;<span style="background-color: #ffffff; color: #000000;"> </span>Proceed <span style="background-color: #ffffff; color: #000000;">and change <strong>Outside Air</strong>, <strong>Remote Minimum Position</strong>, and <strong>Economizer Type:</strong></span></p><p class="wysiwyg-text-align-center"></p><p class="wysiwyg-text-align-center"> </p><p> </p><h4 id="h_01KHV5C5ZAY4HWCMPQ4RDE634M">Using the Symbio 700 Onboard menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="ef1e6a93ac9270edc211198dc9ef0226f">Press <strong>Home</strong>.</li>
+<li data-list-item-id="e1441b00ce8e378af5f3f2da292e575ca">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="e211b51440b3664e2afaa318e860c642f">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec6d488f2474a215f2f72d29b667470ba">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="ee54193c9e9c3fa6c3201b3ec6f4b4ade">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e6b24e03e611b014ddd2229eb7a85257e">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="e42cc022692b71a7e9b351b11454a0e9f">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec799f5faf9f14ac7e1f180aeed386091">Press the Down Arrow, then select <strong>Outside Air</strong>.</li>
+<li data-list-item-id="e5aaed86354064a42c01e7a88b1d84afe">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec8e0bfd7f129c506d4c16a93a4d3e827">Press the <strong>Down Arrow</strong>, and select <strong>0 to 100% Economizer</strong>.</li>
+<li data-list-item-id="ed675ae6f805ec14f1e55a0e1d6d7d906">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e26d1549ed26f726477dae170c5d883f5">Press the <strong>Down Arrow</strong>, then verify that the<strong> Remote Minimum Position </strong>is<strong> Not Installed</strong>. (Go to Step 16)</li>
+<li data-list-item-id="ec21e5e9e73cb18fa559d8c12c88c6007">Or Press the <strong>Check</strong>.</li>
+<li data-list-item-id="eb9e600411c3747d48a332f793013d02d">And select <strong>Not Installed</strong>.</li>
+<li data-list-item-id="effd32eebac748ce17aeb87447a909a65">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e0d274aaedb606f8f96c979a06bf94e0a">Press the Down Arrow, then select <strong>Economizer Type </strong>to (<strong>Dry Bulb, Differential Dry Bulb, Reference Enthalpy, </strong>or<strong> Comparative Enthalpy</strong>).</li>
+<li data-list-item-id="eec9d562898156324c8b3feeb0cc785ce">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e2ab4bd4bef4bebc4de132db51b071475">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="e4cb793e9858f666ad7fb4d5ffec14fde">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e4109fe273779e2d63c6e10d7a4708ac9">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e4842b4e786df421e47895356f9e0abd4">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e81b62ba62dee42dabe811a89502a9235">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p> </p><p> </p><h2 id="h_01JKDTSDED57K9J6GGD9W0PKJD">Power Exhaust (Relief Fan)</h2><ul><li data-list-item-id="e0c3128aef31bddc45048971af8b1c741">
+<h3 id="h_01K83Q71K4VVP7JG1EPFDKPCE9">Relief Fan</h3>
+<ul><li data-list-item-id="e0239343a48206eefc4d9d70490ec478c">
+<strong>Space Pressure Control</strong> = Relief Fan Only</li></ul>
+</li></ul><p> </p><div class="callout-info"><div class="callout-info-content"><ul><li class="wysiwyg-list-bold" data-list-item-id="e12e1c35b45589d86e543317aec2a977c">
+<strong>Note:  </strong><ul><li data-list-item-id="e5018ef719fa70e1c6758f8263135e00e">Must have a <strong>Power Exhaust</strong> connected to the brown connector FAOM-P6 (EXHAUST RUN OUT/COMMON).</li></ul>
+</li></ul></div></div><p> </p><h4 id="h_01KHVE7HEH0EXT83SFP1TQ5MJ4">Using the Mobile Phone App</h4><p>From the <strong>Home</strong> screen, go to &gt; <strong>Settings</strong> &gt; <strong>View Configuration</strong> &gt; <strong>Edit</strong> &gt; <strong>Proceed</strong> and change <strong>Space Pressure Control</strong> to <strong>Relief Fan Only:</strong></p><p class="wysiwyg-text-align-center"></p><h4 id="h_01KHVHCN2HAJP9K7B7TRMP6QB2">Using the Symbio 700 Onboard menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="ee57dec0576234276685899f4b59e1f97">Press <strong>Home</strong>.</li>
+<li data-list-item-id="ea107c6d46a03ad459d0400a9a7c066c5">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="ef0be4c7717f92145d6dffa01660dd723">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ea90abc311bf9e4496634cc328396c614">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="edde09f2bafae17b5773b559d2ee51c88">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e0ced515f7a571ba1c14e1edecfa7eb2c">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="ef5d837bb424f3cb3e7a2620a93b81373">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e2c5f424fa7878728a9bce14767cf1f40">Press the Down Arrow, then select <strong>Space Pressure Control</strong>.</li>
+<li data-list-item-id="e828a45594b7f3a7ebdfe0d20836d5e6e">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="eca52cc36017692c7a5f8bdc7fb332104">Press the <strong>Down Arrow</strong>, and select<strong> Relief Fan Only</strong>.</li>
+<li data-list-item-id="e558158f663c42e7de75a1f947a2d13b7">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e552e08d4c333f67f6d85e47211cc9007">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="eebe8d2d16f3968a526ab68d6b9bc493e">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec397574ad99eff8da3d371db81b08a31">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e1a284c49c4410e7c0cc95918e7d3b457">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec1de6625a531dd6c7c607b380734d2e8">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p> </p><p> </p><h2 id="h_01JKDVQ58P4WS26MC4RWWATWF0">Motorized Damper</h2><ul><li data-list-item-id="ee759480b316fdf450dc0ad37759962e4">
+<h3 id="h_01K83ZYT8ANA29SXXNNGHP6YD1">0-50% Motorized Damper</h3>
+<ul><li data-list-item-id="e17f073c7cba394d9218bbb2efb0de39b">
+<strong>Outside Air</strong> = 0 to 50% Motorized Damper</li></ul>
+</li></ul><p> </p><div class="callout-info"><div class="callout-info-content"><ul><li class="wysiwyg-list-bold" data-list-item-id="e10ed2a7aa2d5110352d56056f1aa8d07">
+<strong>Note:  </strong><ul><li data-list-item-id="e4012fa1a35f48d68ee6f22cd3d5b4d66">Must have a <strong>Motorized Damper</strong> connected to the blue connector FAOM-P11 (OA DAMPER OUT/FEEDBACK/COMMON) and black connector FAOM-P8 (24 VAC OUT).</li></ul>
+</li></ul></div></div><p> </p><h4 id="h_01KHVE84MN25Q5FDNTM603XXZD">Using the Mobile Phone App</h4><p><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; box-sizing: border-box; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">From the <strong>Home</strong> screen, go to <strong>Settings</strong> &gt; <strong>View Configuration</strong> &gt; <strong>Edit</strong> &gt; <strong>Proceed</strong> and change <strong>Outside Air</strong> to <strong>0-50% Motorized Damper:</strong></span></span></p><p class="wysiwyg-text-align-center"></p><h4 id="h_01KHVHCN2HBKQDCECHV0831DEH">Using the Symbio 700 On-board menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="ec063aef451bea6d74b114c1245e69e27">Press <strong>Home</strong>.</li>
+<li data-list-item-id="e4f63aed5fcc0d5cb57d17b0963165afc">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="e3796010da2d4f539899b294288e92e48">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ebed5de8976283e48625c1435e5438ee8">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="eb9c4b42efd3ee7a3c3e7eb04a07da0c0">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e7f28ab5ecb70beb53ed39a7aafcf5201">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="e535be0ce64533259c5773bdc674cc0fc">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e2574ab175cd801116f9948f2d8b160d9">Press the Down Arrow, then select <strong>Outside Air</strong>.</li>
+<li data-list-item-id="e13d627b5d59a3286560a0b3ef0345286">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec955f593756030c2be1b0848b866f87b">Press the <strong>Down Arrow</strong> and select<strong> 0-50% Motorized Damper</strong>.</li>
+<li data-list-item-id="e4efa4d6177359094eefabe83b4288ce9">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e0c2c5d363a873435c9cf1e341138511b">Press the <strong>Down Arrow</strong>, then verify that the<strong> Remote Minimum Position </strong>is<strong> Not Installed</strong>.</li>
+<li data-list-item-id="ed0e4892ff14ed7d7956977f1fa1e74ff">Press the <strong>Down Arrow, then</strong> verify that the<strong> Space Pressure Control </strong>is<strong> Not Installed</strong>.</li>
+<li data-list-item-id="e7db52bae0857266bc06dc465c41f3c34">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="ea832b8c00de37f45541ae29512ee45fd">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e09f7f2f7970aa3edcefd161ae73a14e5">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e71f6b764ba09738cc379a651fc7a6a9c">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="edc472d2a5c9832119bcc94f54f25b7ff">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left"> </p><h2 id="h_01JFQT3XSMFQQHKY25JCF5JYFK">Accessory</h2><ul><li data-list-item-id="e2de32778075d5a3641aab27514d4e4fd">
+<h3 id="h_01K83QM7AKF2XPFJGZRPSVHH3R">Clogged Filter Switch</h3>
+<ul><li data-list-item-id="eb6db3c6f1a6316d17be7643e5bf20c85">
+<strong>Clogged Filter</strong> = Installed</li></ul>
+</li></ul><p> </p><div class="callout-info"><div class="callout-info-content"><ul><li class="wysiwyg-list-bold" data-list-item-id="eb773d4cc91a8289cbf600a0e7dbafe1a">
+<strong>Note:  </strong><ul><li data-list-item-id="e2d69a2c3ee91495f9a6c06dbe2f00503">Must have a <strong>Clogged Filter</strong> connected to the white connector FAOM-P15 (24 VAC OUT/CLOGGED FILTER SWITCH IN).</li></ul>
+</li></ul></div></div><p> </p><h4 id="h_01KHVE810KWV571A4BR2NNV111">Using the Mobile Phone App</h4><p class="wysiwyg-text-align-left"><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">From the </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Home</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> screen &gt; </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Settings</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> &gt; </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">View Configuration</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> &gt; </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Edit</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> &gt; </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Proceed</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> and change </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Clogged Filter</strong><span style="background-color: #ffffff; color: #000000;"><span style="-webkit-text-stroke-width: 0px; display: inline !important; float: none; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> to </span></span><strong style="-webkit-text-stroke-width: 0px; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bolder; letter-spacing: normal; orphans: 2; text-align: left; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;">Installed:</strong></p><p class="wysiwyg-text-align-center"></p><h4 id="h_01KHVHCN2HEBRQ085MV1Q9G1D9">Using the Symbio 700 On-board menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="e9fdaea0cf11c2dc5d64a07b1b6f922af">Press <strong>Home</strong>.</li>
+<li data-list-item-id="e5e9a6ec80bf683ad3a5ddbc2c7c6fd30">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="e3b21137df6073205349375820cab6892">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e2f0971fb65e70c0bf029b929947ec21b">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="ee97bd24106d402ff33409c27eb28d7e3">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e847a7409337c617b0c1ed282f9e2d01b">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="e83dc4ac9bb1080afb6be283b7d949cc1">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e994c76cc61e79c8f80c1259d0428e4ee">Press the Down Arrow, then select <strong>Clogged Filter.</strong>
+</li>
+<li data-list-item-id="e515a6043be6d7489153e0556ecc4c8b4">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ec86d6f0d27780794741d32efa3b1ba54">Press the <strong>Down Arrow</strong> and select<strong> Installed</strong>.</li>
+<li data-list-item-id="e99b2538b1df5c744acf4bcd6b1ad73ca">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ea445c165147cd7070f3d7d211d755180">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="ecdefea8830a26486a9ffffb0d4d8e701">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ef137199d1e214cd59d5a5d27b2ff5fc5">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e5ca0e77906506fce6230986c687c76b5">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e81dc05d6b16b88c820c5c4ac89362bb0">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h2 id="h_01K83QYXK2TQ5AWCBK3XWFKXHE">** Return Air Smoke Detector</h2><ul>
+<li data-list-item-id="ed18daebf9f1ae1ddb479dffd1dc4f002">The return air smoke detector is a <strong>factory-installed</strong> option only.</li>
+<li data-list-item-id="ecbf6cd461800eafc0453bd07b07fed51">External smoke detector wire up to UC-J18 on the Symbio Unit Controller.<ul><li data-list-item-id="e313cece3c71e58add2dec16b2be52b9f"><a href="../General/360055257251.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Emergency Stop Input – Trane Commercial HVAC Help Center</a></li></ul>
+</li>
+</ul><p> </p><p> </p><h1 id="h_01K844XQNWW4QSECHSQW6EXYPB">Not Communicating Troubleshooting</h1><ul><li data-list-item-id="ef4f183ea606589fcbdc5ee5a302f9138"><a href="../General/40352273906189.html" target="_blank" rel="noopener noreferrer">Symbio® 700 Fresh Air Options Module (FAOM) Not Communicating – Trane Commercial HVAC Help Center</a></li></ul><p> </p><hr><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/26680155964429-Symbio-700-How-to-Configure-a-Fresh-Air-Options-Module" target="_blank">https://support.trane.com/hc/en-us/articles/26680155964429-Symbio-700-How-to-Configure-a-Fresh-Air-Options-Module</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

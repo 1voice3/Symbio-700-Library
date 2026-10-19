@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio Condenser (Cooling Only) with Reliatel SZVAV Air Handler (TR150 VFD) - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360061187352-Symbio-Condenser-Cooling-Only-with-Reliatel-SZVAV-Air-Handler-TR150-VFD" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio Condenser (Cooling Only) with Reliatel SZVAV Air Handler (TR150 VFD)</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Wiring &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-05-21 &nbsp;&bull;&nbsp; Last updated: 2026-06-08</div>
+<div class="body"><p> </p><p><strong>Overview:</strong></p><p>These two units are not intended to be paired together. If (by accident) they end up together here is a suggestion to make it work.</p><p> </p><p><strong>Thermostat Connections:</strong></p><p> </p><p>Wire the thermostat to the Symbio 700 J21 except for R and C, wire thermostat R to Symbio Adapter Board J15-1, wire thermostat C to Symbio Adapter Board J15-2.</p><p>Remove and isolate wires from VFD terminals 12, 18, 27, 53 &amp; 55 and from Fan Run Relay terminals 2 &amp; 4.</p><p> </p><p><strong>Connections between Condenser and Air Handler</strong></p><p><strong>Thermostat Wire – 4 Wires w/o electric heat, 6 Wires with electric heat</strong></p><ul>
+<li data-list-item-id="ea7e3ef17f464ce2a9646355408e5d7f2">Symbio Condenser Adapter Board J15-1 to Air Handler LTB2-R.</li>
+<li data-list-item-id="e72627122f3033a006e7890c7beba608f">Symbio Condenser Adapter Board J15-2 to Air Handler LTB2-B1.</li>
+<li data-list-item-id="e206ec3e7d8b468d68fcf674a210b9bd6">Symbio Condenser Adapter Board J18-1 to Air Handler LTB2-G.</li>
+<li data-list-item-id="e0a1bce9887235677fe02e4b397d14283">Symbio Condenser Adapter Board J16-3 to Air Handler VFD terminal 61.</li>
+<li data-list-item-id="e9424cbd49b3e9f17127ea1edc42c9cad">Symbio Condenser UC J21-3 to Air Handler LTB2-W1</li>
+<li data-list-item-id="e016cee1a00cf2cc853bd4b8222a19b2c">Symbio Condenser UC J21-5 to Air Handler LTB2-W2</li>
+</ul><p><strong>Shielded Twisted Pair – Ground shield at Air Handler</strong></p><ul><li data-list-item-id="e9f93d5c07aec0680c6f70dd4df134d96">Condenser Adapter Board J16-1 to VFD Terminal 68, J16-2 to VFD Terminal 69.</li></ul><p> </p><p><strong>Symbio Configuration</strong></p><ul>
+<li data-list-item-id="ef023388bd49341f9492c0c8c270d5519">System Type: CVZT</li>
+<li data-list-item-id="e28d01f96f9da2ef6c4e6b9c6fa0c0586">Indoor Fan Type: Multi Speed</li>
+</ul><p> </p><p><strong>VFD Re-programming (TR-150)</strong></p><ul>
+<li data-list-item-id="e84bfb36bddec385d9468dcf389263b4b">3-15 Reference 1 Source – [11] Local Bus Reference</li>
+<li data-list-item-id="e5d1163c3fb38b438fc8def8a482ff8f5">5-10 Terminal 18 Digital Input – [0] No Operation</li>
+<li data-list-item-id="e3b7172dc2942776c84382fb748a9f6c0">5-12 Terminal 27 Digital Input – [0] No Operation</li>
+<li data-list-item-id="eb7c44c48ad47a11316c05bbaf349ff04">8-01 Control Site – [2] Control Word Only</li>
+<li data-list-item-id="e1c311420521572737582d081cae7e128">8-02 Control Source – [1] FC Port</li>
+<li data-list-item-id="ef23ec63f55b63eeb23fce1ca017645fd">8-03 Control Timeout Time – 15.0 sec</li>
+<li data-list-item-id="ef741f05093af2198a944da5253c71e4c">8-04 Control Timeout Function – [2] Stop</li>
+<li data-list-item-id="e2b4dffd89426508d83d1d6527845613e">8-30 Protocol – [2] Modbus RTU</li>
+<li data-list-item-id="ebb4001db0714305273c436614b60abdb">8-31 Address – 2</li>
+<li data-list-item-id="eb91726a6cbd9d843d8de47e9a717925d">8-32 Baud Rate – [7] 115200 Baud</li>
+<li data-list-item-id="e81b7fe5ce116fbd7ed7dbd2732c452ea">8-33 Parity / Stop Bits – [0] Even Parity, 1 Stop Bit</li>
+<li data-list-item-id="e47757f2a6c865f189daf33c1bfd71fda">8-35 Minimum Response Delay - .005 sec 5ms</li>
+<li data-list-item-id="e64f82dcf5f5d230422f008732e24ba73">8-36 Maximum Response Delay – .01 sec 100ms</li>
+</ul><p> </p><p><strong>Repurpose Fan Run Relay to become a Fan Interlock for Electric Heat</strong></p><ul>
+<li data-list-item-id="e5c0f5361f8582c0eba7f47c05b875f92">Move Brown electric heat control wire from LTB2-J to FR terminal 4.</li>
+<li data-list-item-id="ea056a4514765b3ced9f6091816ca3620">Add a field wire from LTB2-J to FR terminal 2.</li>
+</ul><p> </p><p><strong><img src="../../attachments/360061187352_360096200472_mceclip0.png" alt="mceclip0.png"></strong></p><p> </p><p><strong>If using the EDC (Evaporator Defrost Control) thermostat in the legacy air handler.</strong></p><ul>
+<li data-list-item-id="e8bff50a5796bb8cabaf9bccb884b0cfd">Run a thermostat wire from LTB1-CD to UC J16-2.</li>
+<li data-list-item-id="e5e1fcac0e4c6d228b36133ee87b0d37b">Using the Phone App go to Tools, Service, Customer Connection Polarity and change Demand Limit Input to Reversed.</li>
+<li data-list-item-id="e816010a0ee35e4c393be43f68ae4bbb8">In Edit Configuration, set Demand Management to Demand Limit and in Settings, Refrigeration set Cooling Demand Limit Capacity Enable Setpoint to 0%</li>
+</ul><p> </p><p><strong><img src="../../attachments/360061187352_360096152771_mceclip1.png" alt="mceclip1.png"></strong></p><p> </p><p><strong>Note: You will always have the following alarms, but the unit will still operate (as a multi-speed)</strong></p><ul>
+<li data-list-item-id="e1312dfd0483617809fdee33c7b69b3c5">Indoor Options Module Communication Status</li>
+<li data-list-item-id="e46951e221c9e8319d12baaef5e704d21">Diagnostic: Unit Communications Failure</li>
+<li data-list-item-id="ec2704ed49887db0a9852329f67681005">Frostat Input<br> </li>
+</ul><p><strong>Optional</strong></p><p>To get rid of the Indoor Options Module Communication Status, Unit Communications Failure and Frostat Alarms you could replace the RTOM with a BAYMODU001 Symbio Options Board kit.</p><p>The Symbio Options Board has two mounting holes that line up with the RTOM mounting holes but be aware, the Symbio Options Board is 5.5” x 6.75” make sure there is room in the control box.<br>If you chose to go this route, the following additional wires would have to be added.</p><p> </p><p><strong>Thermostat Wire – 2 Wires</strong></p><ul><li data-list-item-id="ef0b4aa23f2e62f243f32e524460a1779">Symbio Condenser Adapter Board J15-1 &amp; 2, splice to Symbio Options Board P5-1 &amp; 2.</li></ul><p><strong>Shielded Twisted Pair (ground shield in air handler)</strong></p><ul><li data-list-item-id="e9ea22c05087c15dfc8773700674c5d3d">Symbio Condenser Adapter Board J15-3 &amp; 4, splice to Symbio Options Board P5-3 &amp; 4</li></ul><p> </p><p><img src="../../attachments/360061187352_360096152791_mceclip2.png" alt="mceclip2.png"></p><p>Be sure to set the Symbio Options Board address to 75.</p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360061187352-Symbio-Condenser-Cooling-Only-with-Reliatel-SZVAV-Air-Handler-TR150-VFD" target="_blank">https://support.trane.com/hc/en-us/articles/360061187352-Symbio-Condenser-Cooling-Only-with-Reliatel-SZVAV-Air-Handler-TR150-VFD</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

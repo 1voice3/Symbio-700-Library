@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How do you setup data logs using Tracer TU? - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/31863277395213-How-do-you-setup-data-logs-using-Tracer-TU" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>How do you setup data logs using Tracer TU?</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Trane Creative Solutions (Modifications) &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2024-11-13 &nbsp;&bull;&nbsp; Last updated: 2026-03-17</div>
+<div class="body"><p><strong>Purpose</strong></p>
+<p>The purpose of this article is to walk through how to create and retrieve data / trend logs using Tracer TU.</p>
+<p><strong>Overview</strong></p>
+<p>Data Logging, also referred to as trending, records in real-time the value of a data point in the system and the time at which the value was recorded.</p>
+<p>Trends can be captured on UC400, UC600, Symbio 700, and Symbio 800.</p>
+<p>The steps for setting up trend data is the same for each controller type. <strong>Data storage is a continuous window where only the most recent data is stored. Data older is discarded to make room for the newest data. </strong>The more data collected/higher collection frequency will reduce the amount of data stored on a controller.</p>
+<p><strong>UC400/600</strong>: Data will be lost if power is cycled to the UC prior to someone downloading the data to a PC.</p>
+<p><strong>Symbio 700/800: </strong>Data is saved to on board memory and can be recovered after power is cycled.</p>
+<p><strong>Setup</strong></p>
+<ol>
+<li>Click on the “Graph” tab on the right side of the screen<img src="../../attachments/28839525975181_28839522353549_1.PNG" alt="1.PNG">
+</li>
+</ol>
+<p class="wysiwyg-indent2">2. Click the “Data Log Setup” tab<img src="../../attachments/28839525975181_28839522357517_2.PNG" alt="2.PNG">3. Click on the “Add New” button<img src="../../attachments/28839525975181_28839525922957_3.PNG" alt="3.PNG"></p>
+<p class="wysiwyg-indent2">4. Fill out the following page as needed:<img src="../../attachments/28839525975181_28839525925901_mceclip0.png"></p>
+<p>Here is a brief description of the fields.</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Datalog Name:
+<ul>
+<li>Choose a name that is not the same as the referenced selection. It will give you an error if you try to name it the same as the point you are referencing.</li>
+</ul>
+</li>
+<li>Reference Selection:
+<ul>
+<li>Choose the point you are trying to log</li>
+</ul>
+</li>
+<li>This can be “Triggered” or “Scheduled”</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Triggered is if you want to have this start logging if a point changes to a certain condition. This is typically used to catch a units operating condition when a binary value changes state or an analog value goes above or below a certain value.</li>
+<li>Scheduled can track the unit's operation at all times or for specific times (see figure).<img src="../../attachments/28839525975181_28839522374157_4.PNG" alt="4.PNG">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="wysiwyg-text-align-center"><strong>Figure. </strong>Scheduled Data Log Screen</p>
+<p> </p>
+<p class="wysiwyg-indent8">4. This chooses how many samples to keep in memory. There is a limit on the memory, so it is important to get only as many samples as needed. Also, even more important is the “collection frequency.” In the example, we are looking at a compressor running status based on a freeze trip. Only one second is used, because it was noticed that compressors could still be running after a “Compressor Lockout” existed. Items such as setpoints don’t change often, so they can be set at a 1+ minute frequency. Water and air temperatures are more critical to most trends and a 5 second or less collection frequency may be desired to catch exactly what the state of the unit is in. If days of trends are required, the duration can be increased to capture a longer period of data.</p>
+<p class="wysiwyg-indent8">5. This chooses the point to enable the logging. In this case I am waiting until Freeze Avoidance Lockout 1 is enabled and then collecting data.</p>
+<p class="wysiwyg-indent8">6. Typically post trigger on delay time is set to 0, because it is most important to see what is going on as soon as a trigger is initiated. It’s okay in this instance with stopping the trend once the trigger is false here. The 2 minutes of trends will capture the necessary info, and it is important to allow restart, as to if this happens to the unit more than once before the trends are able to be pulled.</p>
+<p class="wysiwyg-indent8">7. This goes along with BOX 5 as to what value will trigger the response. In the case of a binary value, true or false. In the case of an analog value &gt; Greater than, or &lt;Less than.</p>
+<p> </p>
+<p class="wysiwyg-indent2">5. Complete setting up the rest of the trends desired.</p>
+<p class="wysiwyg-indent2">6. <strong>Be sure that all data logs are enabled!</strong> They do not record data otherwise.</p>
+<p class="wysiwyg-indent5"><img src="../../attachments/28839525975181_28839525940493_5.PNG" alt="5.PNG"></p>
+<p class="wysiwyg-indent1">7. Select Send to Device when complete.</p>
+<p><strong>Retrieve Data Logs</strong></p>
+<p>Data log files can be retrieved after an event has occurred that requires review of the files.</p>
+<p class="wysiwyg-indent2">1. Select Tools, Retrieve Data Logs<img src="../../attachments/28839525975181_28839525944845_6.PNG" alt="6.PNG"></p>
+<p class="wysiwyg-indent2">2. Select all the points using the check boxes. Each selection saves as an individual .csv file. </p>
+<p class="wysiwyg-indent2">3. (Optional) change the file path that the files are saved (ie: desktop)<img src="../../attachments/28839525975181_28839522379533_7.PNG" alt="7.PNG"></p>
+<p class="wysiwyg-indent2">4. Select the retrieve button</p>
+<p class="wysiwyg-indent2">5. The data files will now be saved in the specified folder.</p>
+<p><strong>WARNING:</strong></p>
+<p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/31863277395213-How-do-you-setup-data-logs-using-Tracer-TU" target="_blank">https://support.trane.com/hc/en-us/articles/31863277395213-How-do-you-setup-data-logs-using-Tracer-TU</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
