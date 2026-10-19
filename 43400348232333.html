@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700™ Unit Auto/Stop - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/43400348232333-Symbio-700-Unit-Auto-Stop" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700™ Unit Auto/Stop</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: General &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-02-10 &nbsp;&bull;&nbsp; Last updated: 2026-08-18</div>
+<div class="body"><h2 id="h_01KH4HTFE576PDYKCZE3XSFW4S">Unit Auto</h2><p> </p><p><strong> Connect to your Symbio Service and Installation App.</strong></p><ul>
+<li data-list-item-id="e12f0422c22c079c16df2fef20876f792">Navigate to the <strong>TOOLS</strong> section of the phone app</li>
+<li data-list-item-id="eaca5b16cc9f9aecbc82b33571ebb1153">Below Tools, there it will be the first selection as Unit Auto/Stop with a toggle feature to the right indicating its current position</li>
+</ul><p> </p><p>Refer to the image below for the unit being in <strong>Auto mode</strong>:</p><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 30.06%;"><img style="aspect-ratio: 1080/2340;" src="../../attachments/43400341728653_43400333005325_1000012597.jpg" alt="1000012597.jpg" width="1080" height="2340"></figure><p> </p><p> </p><h2 id="h_01KH4J299JR5W5NMWDJ1XQY1TF">Unit Stop</h2><p>The Unit Stop feature allows for immediate shutdown of all devices in the equipment when initiated. When a Unit Stop request is received, the following actions are taken:</p><ul>
+<li data-list-item-id="e6ecee09703fc3af12ec534f3f3708539">All equipment control binary outputs are de-energized<ul>
+<li data-list-item-id="e72b7a47535d38a3f65b13ecb5d15f7c9">Indoor fan</li>
+<li data-list-item-id="ead7574b77339a2c7d9fa368fe4e8d4c5">Compressors</li>
+<li data-list-item-id="e633bf078d8866d09a0ab59f525d19afb">Condenser fans</li>
+<li data-list-item-id="e78ddec8c16c9fcb60c024d0729d77c82">Unloader solenoids</li>
+<li data-list-item-id="e17b84078b0b5e78ac0c6e5c18d8bf1f4">Heat stages</li>
+</ul>
+</li>
+<li data-list-item-id="e0d84cb9fec413138e71a0f3b681404ac">All equipment control analog outputs are set to their minimum/off command values.</li>
+<li data-list-item-id="e241284b266e3745028595ddddef4a29e">All communicating devices, such as supply fans, are commanded to their off state.</li>
+<li data-list-item-id="e717c671d35690c53a9a8f4db7f7be035">All control algorithms are initialized to their normal startup values and held until the stop request is released.</li>
+</ul><p> </p><p>To change the unit to <strong>stop mode</strong>, click on the Toggle that says Auto in grey, and the image below will appear:</p><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 30.19%;"><img style="aspect-ratio: 1080/2340;" src="../../attachments/43400341728653_43400333006733_unit_auto_stop.jpeg" alt="unit auto stop.jpeg" width="1080" height="2340"></figure><p> </p><p>Click <strong>Proceed</strong> to stop the equipment. </p><p>NOTE: This will prevent the equipment from functioning in test mode or during normal operation. </p><p> </p><p>Refer to the image below to determine if your unit is in <strong>Stop</strong> mode:</p><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 30.09%;"><img style="aspect-ratio: 1080/2340;" src="../../attachments/43400341728653_43400341726221_1000012601.jpg" alt="1000012601.jpg" width="1080" height="2340"></figure><p> </p><p>When the toggle is to the right and in blue, the unit is in <strong>Stop</strong> mode. </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/43400348232333-Symbio-700-Unit-Auto-Stop" target="_blank">https://support.trane.com/hc/en-us/articles/43400348232333-Symbio-700-Unit-Auto-Stop</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

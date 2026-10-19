@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio® 700 Customer Connection Module (CCM) not communicating - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/41096330052621-Symbio-700-Customer-Connection-Module-CCM-not-communicating" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio® 700 Customer Connection Module (CCM) not communicating</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Modules / Sensors / Switches &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-11-12 &nbsp;&bull;&nbsp; Last updated: 2026-04-17</div>
+<div class="body"><h1 id="h_01K81QAGX8J70SSY4PAPJAPVKX"><strong>Troubleshoot</strong></h1><p> </p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized" style="margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 78%;">
+</colgroup>
+<thead><tr>
+<th>Abbreviation</th>
+<th>Abbreviation Name</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>AB</strong></td>
+<td><strong>Adapter Board</strong></td>
+</tr>
+<tr>
+<td><strong>TNS</strong></td>
+<td><strong>Transformer</strong></td>
+</tr>
+<tr>
+<td><strong>CCM</strong></td>
+<td><strong>Customer Connection Module</strong></td>
+</tr>
+</tbody>
+</table></figure><p> </p><h2 id="h_01K81S1G40RQF2BZMABEJ61GTJ">Does the CCM Module have power?</h2><ul><li data-list-item-id="eb5bc7640799c50f67b0abc1849dc75cd">Verify that LED 8 is solid green in the middle of the module, and LEDs 5 &amp; 6, located under the P4 connector, are lightly flickering. </li></ul><figure class="wysiwyg-image"><img style="aspect-ratio: 456/339;" src="../../attachments/360060596791_43418673939981_image.png" width="456" height="339"></figure><p> </p><ul>
+<li data-list-item-id="ee735b864a4fe170a3f3ec8389c19847f">Verify CCM-P5 has 24VAC between <strong>Red</strong> and <strong>Black</strong>
+</li>
+<li data-list-item-id="ef4916c262a69fe0c1ee6f36c74c7ba76">Verify CCM-P5 has 3.2 - 3.9 VDC between<strong> Blue</strong> and <strong>Orange</strong>
+</li>
+</ul><figure class="wysiwyg-image"><img style="aspect-ratio: 444/362;" src="../../attachments/41096330052621_45184506893453_image.png" width="444" height="362"></figure><p> </p><ul>
+<li data-list-item-id="e4c163c082b6734ae2ea0d309ee78d955">If CCM-P5 does not have VAC or VDC, verify that AB-J19 has 24VAC between <strong>Red</strong> and <strong>Black</strong> and/or AB-J19 has 3.2-3.9VDC between <strong>Blue</strong> and <strong>Orange</strong>.<strong> </strong>
+</li>
+<li data-list-item-id="e847e2e61bf7b1c515926ff115a07c7aa">If there is no power on AB-J19, verify that AB-J8 is powered between the <strong>Blue</strong> and <strong>Orange</strong> wires.</li>
+<li data-list-item-id="eb8e529bae423506556b35bd17de355cb">If there is no power on AB-J8, verify PPF72/PPM72 between the<strong> Blue</strong> and <strong>Orange</strong> wires.</li>
+<li data-list-item-id="e40dbbd742eb90396c667fc05956bfb91">If there is no power on PPF72/PPM72, verify PPF2/PPM2 between the<strong> Blue</strong> and <strong>Orange</strong> wires.</li>
+<li data-list-item-id="e3fbb6f8dcc5f0c66d954f45fc6eaecdb">If there is no power on PPF2/PPM2, verify TNS2.</li>
+</ul><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 65%;"><img style="aspect-ratio: 806/439;" src="../../attachments/41096330052621_45184506894989_image.png" width="806" height="439"></figure><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 40%;"><img style="aspect-ratio: 330/441;" src="../../attachments/41096330052621_45184506896653_image.png" width="330" height="441"></figure><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 40%;"><img style="aspect-ratio: 698/749;" src="../../attachments/41096330052621_45184506897933_image.png" width="698" height="749"></figure><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01K81K18ZDG97MXTW0V5CAZ9VV">Does the Factory-Installed module have the address plug?</h2><figure class="wysiwyg-image"><img style="aspect-ratio: 417/455;" src="../../attachments/41096330052621_45184539019533_image.png" width="417" height="455"></figure><ul>
+<li data-list-item-id="e794c3bbc378f37c03a22654f38675ed0">The Customer Connection Module, when factory-installed, includes an address plug pre-installed on J11. The factory plug is already configured for address 78. </li>
+<li data-list-item-id="e34fdff909cc42167d9d5f4f763059035">The rotary dials should be set to 00.</li>
+<li data-list-item-id="edb11ea964a6d1e5b12f069771f465376">If the Customer Connection Module says <strong>"Not Communicating"</strong> on the mobile phone app under <strong>Tools</strong> &gt; <strong>Service, </strong>try the steps below.</li>
+<li data-list-item-id="e0040a9e2e89c49ff37e4382da7641c38">If the address plug is securely connected and you have verified the address on the plug, remove the plug and set the rotary dials to 78 (SW1 to 7 and SW2 to 8).</li>
+<li data-list-item-id="e180efb5cb6878275d56984ffb96b16f6">Cycle power to the unit or reset the IMC link through the mobile phone app. Go to <strong>Tools</strong> &gt; <strong>Service</strong> &gt; scroll down to <strong>IMC LINK RESET</strong>.</li>
+</ul><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01K81K18ZD5EME387BKKPDNMJN">Is the Field-Installed module addressed?</h2><figure class="wysiwyg-image"><img style="aspect-ratio: 232/375;" src="../../attachments/41096330052621_45184506902413_image.png" width="232" height="375"></figure><ul>
+<li data-list-item-id="e3550089218ddc2a023ca5c6bddbed7b4">The field-installed Customer Connection Module must be addressed to address 78 on the provided rotary dials.</li>
+<li data-list-item-id="e159f3c74eafb9c2ca16d410b4438a592">SW1 is addressed to 7</li>
+<li data-list-item-id="e7f7b82869c58d29db8c7d057ea0c826e">SW2 is addressed to 8 </li>
+<li data-list-item-id="e360aa0bd3e83904c8970356538d67e74">To verify the communication status, go to <strong>Tools</strong> &gt; <strong>Service</strong> on your mobile phone app.</li>
+</ul><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01KKYQGTJWW97H1PW2RE4RMF5X">Is the CCM configured?</h2><ul>
+<li data-list-item-id="ef74e2104e07c07bb200296ce88d5ed55">To verify the communication status, go to <strong>Tools</strong> &gt; <strong>Service</strong> in your mobile phone app.</li>
+<li data-list-item-id="ec7325dee8680b5ed8dc26f0a33444558">When it says <strong>Communicating,</strong> there should be no active alarms for the Customer Connection Module.</li>
+<li data-list-item-id="e092a0f1fae91d0e7ed6cd1614b302ce6">When it says <strong>'Communicating - Not Configured,'</strong> it means the<strong> Customer Connection Module </strong>is<strong> communicating, </strong>but there is<strong> no configuration associated with it</strong>. This will show two active alarms.</li>
+<li data-list-item-id="e42861bef8400cd5a945bc8a702679016">You must configure the CCM under <strong>Settings </strong>&gt; <strong>View Configurations</strong>&gt; <strong>Edit</strong>.</li>
+</ul><p> </p><p><strong>Please click the link below to view the configurations.</strong></p><ul><li data-list-item-id="ea410953283a3e7030fad9a980f56d9e4"><a href="../General/44710307874829.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/44710307874829-Symbio-700-How-to-Configure-a-Customer-Connection-Module</a></li></ul><p> </p><ul><li data-list-item-id="ea77b54fb506a38189e1750e7bdb51ad3">When the <strong>Customer Connection Module</strong> is not communicating with the Symbio 700 and the unit does not have one, the Symbio 700 configuration is incorrect. <ul><li data-list-item-id="e5d7c8910a7812a52a3fb5c80a78bdbbf">These points must be verified (Should be set to not installed).<ul>
+<li data-list-item-id="e6d18ee1cc372481f74cef9c1fbc97b30">Remote Minimum Position</li>
+<li data-list-item-id="e30230fa1f023f4e1851697020b565751">External Auto/Stop</li>
+<li data-list-item-id="ef98922bf51b7cbe956d926c36caced4f">Ventilation Override</li>
+<li data-list-item-id="e6484d655934c465f79fb00941da59e3c">Alarm Indicator</li>
+<li data-list-item-id="e015e4696bf3a186ff78f03e4d490729c">Humidistat</li>
+</ul>
+</li></ul>
+</li></ul><p> </p><p> </p><hr><p> </p><p> </p><h2 id="h_01KKYQHKV376RQBNXKAYHVGH5Z">Alarms</h2><ul>
+<li data-list-item-id="e4760806f03a46cf562a8c9bed26f2485">Customer Connection Module Communication Status</li>
+<li data-list-item-id="e12d07941061abeba0218eca8bad66435">Diagnostic: Unit Communication Failure</li>
+</ul><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 75%;"><img style="aspect-ratio: 932/398;" src="../../attachments/41096330052621_45184539022989_image.png" width="932" height="398"></figure><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/41096330052621-Symbio-700-Customer-Connection-Module-CCM-not-communicating" target="_blank">https://support.trane.com/hc/en-us/articles/41096330052621-Symbio-700-Customer-Connection-Module-CCM-not-communicating</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

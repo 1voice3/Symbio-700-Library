@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 - Enhanced Thermostat Control - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/42134410215693-Symbio-700-Enhanced-Thermostat-Control" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 - Enhanced Thermostat Control</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span></div>
+<div class="meta">Section: Electrical / Controls &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-12-22 &nbsp;&bull;&nbsp; Last updated: 2026-06-02</div>
+<div class="body"><p>Symbio 700 firmware version v7 added a new feature to better operate Symbio 700 controlled units with thermostat control. A new point, Thermostat Control Method (can be found in the app under SETTINGS&gt;SYSTEM), that can be set to Conventional or Enhanced Thermostat Control. This feature only applies to cooling stages, heat pump heating and staged gas or electric heating stage by the normal 2-stage conventional thermostat control. </p><p><br>Enhanced Thermostat Control is a feature available for equipment with three or more stages of compressor cooling and Discharge Air Sensor installed. This capability utilizes all available compressor stages in cooling modes of operation when the Symbio™ 700 is configured for Conventional Thermostat control. Heat pump heating modes of operation will stage compressors as defined for conventional thermostat control.</p><p><br>The Thermostat Control Method Request is set to Enhanced by default for units using R-454B refrigerant and can be enabled on R-410A units. However, if a discharge air temperature sensor is not installed or the unit is only capable of 2-stage cooling, then control will automatically revert to conventional 2-stage cooling Conventional Thermostat Control. If Enhanced Thermostat Control is not desired, Thermostat Control Method Request can be set to Conventional, and then Symbio 700 controller will revert operation to 2-stage Conventional Thermostat Control. The Thermostat Control Method Status point indicates the control method being utilized for compressor cooling, Enhanced or Conventional.</p><p><br>In the Enhanced Thermostat Control mode, when a Y1 call is received, the first stage of cooling is initiated, and the discharge air temperature is controlled to the setpoint specified by Discharge Air Cooling Setpoint Y1 (default is 60°F, which can also be adjusted). Additional stages of cooling are added as required to maintain the setpoint. The supply fan operates at a minimum speed necessary for the active compressor stage.</p><p><br>When a Y2 call is received, the discharge air temperature is controlled to the setpoint specified by Discharge Air Cooling Setpoint Y2 (default is 50°F, which can also be adjusted). Additional stages of cooling are added as required to maintain the setpoint. The supply fan operates at a minimum speed necessary for the active compressor stage. If the Y2 call is closed for 15 minutes, the supply fan will increase to its maximum speed.<br>When the Y2 call is removed, the supply fan will continue to operate at maximum speed for 15 minutes before reverting to the minimum speed required for the compressor stage. When the Y1 call is opened, the compressors will stage down and eventually cycle off.</p><p><br>A Y1 call and economizer cooling is enabled, the economizer damper will modulate to provide discharge air temperature per the Economizer Discharge Air Setpoint. If a Y2 call is added, the economizer damper will open 100%, supply fan will operate at maximum speed, and compressors are staged per Discharge Air Cooling Setpoint Y2.</p><p><br>In summary, Enhanced Thermostat Control is provided when the equipment meets the following criteria: the unit has 3 or more stages of compressor cooling, the Thermostat Control Method Request is set to Enhanced, and a discharge air temperature sensor is installed. If any of these criteria are not met, the control system will default to conventional 2-stage compressor cooling.</p><p><img src="../../attachments/42134392109069_42134401892237_image.png" width="982" height="634"><br> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/42134410215693-Symbio-700-Enhanced-Thermostat-Control" target="_blank">https://support.trane.com/hc/en-us/articles/42134410215693-Symbio-700-Enhanced-Thermostat-Control</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

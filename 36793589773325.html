@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to troubleshoot Symbio 700 Space Static Pressure Input Trip &amp; Space Pressure Calibration Limit Diagnostics - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/36793589773325-How-to-troubleshoot-Symbio-700-Space-Static-Pressure-Input-Trip-Space-Pressure-Calibration-Limit-Diagnostics" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>How to troubleshoot Symbio 700 Space Static Pressure Input Trip &amp; Space Pressure Calibration Limit Diagnostics</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2025-05-21 &nbsp;&bull;&nbsp; Last updated: 2026-08-07</div>
+<div class="body"><p><strong>Issue:</strong></p><p>Space Static Pressure Input Trip &amp; Space Pressure Calibration Limit</p><p><strong>Resolution:</strong></p><p> These diagnostics are related to units with the Statitrac option.</p><p>The <strong>Space Static Pressure Input Trip diagnostic</strong> occurs when the voltage output from the transducer is outside the range for normal building pressures. Normal pressures range from -.67 IWC to .67 IWC.  During normal operation if the voltage dips below 0.04 VDC or rises above 0.75 VDC the diagnostic will be generated.</p><p><br><strong>Note:</strong> The sensor is capable of responding to pressures from -.75IWC to 9 IWC, but the controls can only read values in the range of -.67 IWC to .67 IWC as valid for space pressure.<br><br>The <strong>Space Pressure Calibration Limit diagnostic</strong> can be generated if the calibration solenoid is not functioning properly. For one second every minute, the calibration solenoid is energized to zero out the transducer. It connects the high port and the low port to outside air static reference. The controls expect to see 0.53 VDC @ 0.00 IWC during this time. Any difference from this value is used as an error amount and used to adjust the sensor reading for the next minute. If the calibration solenoid is not functioning, the controls will not receive the correct error signal and will interpret the sensor reading as zero pressure. In these cases, if power is cycled to the unit, the sensor will read correctly for one minute and then read decline to 0.00 IWC before giving the diagnostic.<br><br>Items to check include:</p><ol type="1">
+<li>Wiring</li>
+<li>Pneumatic Tubing Connections</li>
+<li>Sensor</li>
+<li>Calibration Solenoid</li>
+<li>Control Module Fresh Air Options Module (FOM)</li>
+</ol><p><strong>Step #1 Wiring Errors</strong></p><p>The space pressure transducer connects to the Symbio Fresh Air Options Module (FOM) at pins P1-3 (+5 VDC), P1-2 (signal from transducer), P1-1 (common). Verify that the wiring is correct, all the plugs are connected, and the voltages are present at the transducer. Refer to the unit schematics for more information. </p><p><strong>Step #2 Pneumatic Tubing</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 927/576;" src="../../attachments/36793589773325_36793589761037_image.png" width="927" height="576"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 1009/1222;" src="../../attachments/36793589773325_36793589761933_image.png" width="1009" height="1222"></figure><p>Refer to above diagram for proper tubing connections for the transducer. Verify that factory installed tubing is correct and there are no air leaks. Also verify that outside air static pressure reference is properly installed. If the outside air static pressure reference is not properly installed, rainwater can enter the tubing. If this is the case, correct the installation and dry out the pneumatic tubing. The customer installed tubing should be connected as shown in the above diagram. If not installed, the sensor will see a large negative pressure when the supply fan is energized and report an error. The customer installed tubing should also be checked for kinks and obstructions. If all appears to be correct, continue to the next step.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 585/306;" src="../../attachments/36793589773325_36793589762701_image.png" width="585" height="306"></figure><p><strong>Step #3 Sensor Checkout</strong></p><p>-.75 to 9 IWC Transducer</p><p>Verify the correct sensor is installed by connecting a tube from the LO Port to Hi Port. Check DCV on the Fresh Air Option Module (FOM) P1-1 to 2. You should read 0.53 VDC.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 1099/141;" src="../../attachments/36793589773325_36793604952973_image.png" width="1099" height="141"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 1094/727;" src="../../attachments/36793589773325_36793604953613_image.png" width="1094" height="727"></figure><p>Tee a manometer/magnehelic into both the high and low ports on the transducer (do it right at the transducer). Verify that the DC voltage read at P1-1 to 2 on the FOM module corresponds to the pressure indicated on the manometer using the chart above. If it does not and Steps 1 and 2 have been performed, replace the transducer. If the voltage corresponds to the pressure, proceed to the next step.</p><p><strong>Step #4 Calibration Solenoid Checkout</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 975/138;" src="../../attachments/36793589773325_36793589766029_image.png" width="975" height="138"></figure><p>The calibration solenoid is energized for one second every minute. During calibration, the FOM should see 0.53 VDC @ 0.00 IWC at pins P1-1 to 2. The coil voltage is approximately 26VDC and is supplied from the FOM at pins P12-1 and 4. If a squeeze bulb is connected to the Normally Closed (NC) port and pressurized, it should be relieved for one second every minute. If not, verify that the FOM is supplying the 26 VDC every minute. If not, replace the FOM. If the FOM is supplying the correct voltage but the solenoid does not function, replace the calibration solenoid. If the solenoid checks out, proceed to the next step.</p><p><strong>Step #5 Control Module</strong></p><p>If all the previous steps have been performed, the diagnostic remains, and no errors are found, replace the FOM.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 1026/775;" src="../../attachments/36793589773325_36793604956813_image.png" width="1026" height="775"></figure></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/36793589773325-How-to-troubleshoot-Symbio-700-Space-Static-Pressure-Input-Trip-Space-Pressure-Calibration-Limit-Diagnostics" target="_blank">https://support.trane.com/hc/en-us/articles/36793589773325-How-to-troubleshoot-Symbio-700-Space-Static-Pressure-Input-Trip-Space-Pressure-Calibration-Limit-Diagnostics</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

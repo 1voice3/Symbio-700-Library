@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testing and Commissioning Symbio 700 Controlled Units Using Arbitrator Points - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/44716553916557-Testing-and-Commissioning-Symbio-700-Controlled-Units-Using-Arbitrator-Points" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Testing and Commissioning Symbio 700 Controlled Units Using Arbitrator Points</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span></div>
+<div class="meta">Section: V3 w/Symbio 700 controls &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2026-03-30 &nbsp;&bull;&nbsp; Last updated: 2026-09-23</div>
+<div class="body"><h2 id="h_01KN0BPZ8DXRCCAXMHSQZQWHTW">Overview</h2><p>It is common practice for testing and commissioning to simulate various inputs to validate unit operation. In the past on ReliaTel controlled units, the BAS could put the BAS input point In Service (Out of Service = False) and then write a value to these points for testing and when complete, put those point out of service (out of service = True). Symbio 700 utilizes these BAS input points differently and they should not be used for commissioning. They do not have a priority array and can't be "released" once written to. If you have used them, you will see that the points will go into fault after 15 min (same on ReliaTel), but you can't put them out of service as it will affect how the arbitrator works. If yours are in alarm, do not put them out of service, leave them in alarm and reach out to Tech Support. Team Viewer connection to laptop and USB cable connected to Symbio 700 (Tracer TU not required). </p><p>Instead of using the BAS input points, use the matching arbitrator points instead. On previous controls, the arbitration point used to determine the active values were not exposed, but with Symbio 700 they are and provides a simple method to provide testing values for sensors and the ability to easily put the unit back in normal/auto control. </p><p> </p><p>Symbio 700 can take sensor input values from up to 3 sources and will use the arbitrator point to determine which sensor value will be in control.</p><h2 id="h_01KN0BX8Q0KEQAHP213Y6CA9GP">Arbitrator Operation</h2><p>The arbitrator manages the applicable inputs from the unit to determine what value to use. The output of the arbitrator determines the active value the unit will control to. </p><h3 id="h_01KN0BQ4XEJ0TCB2X1TCA2QZKA">Example using Space Temperature</h3><p>The unit has a hardwired zone temperature sensor, AirFi zone sensor and BAS is providing a value. The points the arbitrator will see are:</p><ul>
+<li data-list-item-id="e641d18e945adb2e972afa3cd469b590a">AI-10218 Space Temperature Input (local hardwired value on S700 J19-1 &amp; 2)</li>
+<li data-list-item-id="edc08ae245751679332f3ff0fb3cbc553">AI-11154 Space Temperature Air-Fi (wireless zone sensor)</li>
+<li data-list-item-id="ebeba97e076e0916a12793d4b4ffedc67">AV-10114 Space Temperature BAS (BAS provided value)</li>
+</ul><p>All three of the points will write to the arbitrator AV-10106 Space Temperature Arbitrator and each writes at a different BACnet priority:</p><figure class="wysiwyg-image"><img style="aspect-ratio: 386/99;" src="../../attachments/44716553916557_44716616439053_image.png" width="386" height="99"></figure><ul><li data-list-item-id="eb3cc7241bdf9ab5677dcbe37436d64c4">AV-11178 Space Temperature Active = 76</li></ul><p>As with any BACnet priority array, the lower the number, the higher priority. In this example, the unit would follow the BAS value @ priority 12. If the BAS value were to go into fault for any reason, the arbitrator would automatically release the BACnet write leaving the next value in the priority array in control. This is why we should not put the BAS points out of service (Out of Service = True), this stops the point from alarming and the arbitrator from removing it when necessary. </p><p> </p><h2 id="h_01KN0BQB3WMPAZVHR2GE9ZMFG9">Commissioning Using the Arbitrator</h2><p>With how the arbitrator point functions, it is easy to write the testing value to the arbitrator and then release when complete. It is recommended to use a priority higher than 12 for testing to prevent the normal values from overwriting the testing value. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 369/102;" src="../../attachments/44716553916557_44716839274509_image.png" width="369" height="102"></figure><p>It is also <span class="wysiwyg-underline">not</span> necessary for the tech to have access to Tracer TU, using this method, the BAS vendor can complete testing without the assistance of a Trane Tech. The BAS tech would need the ability to write to the arbitrator at a priority higher than what the unit is utilizing (example, if they can only write at priority 13, this is fine if there is no value being provided by the BAS) and be able to also release that write when complete. </p><p> </p><h2 id="h_01KN0BQF54J7WWDH9J33VCSJBH">Arbitrator Points in Symbio 700</h2><figure class="wysiwyg-image"><img style="aspect-ratio: 895/222;" src="../../attachments/44716553916557_44716553905933_image.png" width="895" height="222"></figure></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/44716553916557-Testing-and-Commissioning-Symbio-700-Controlled-Units-Using-Arbitrator-Points" target="_blank">https://support.trane.com/hc/en-us/articles/44716553916557-Testing-and-Commissioning-Symbio-700-Controlled-Units-Using-Arbitrator-Points</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

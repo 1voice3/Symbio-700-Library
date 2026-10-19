@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - When Restoring From Backup Retain the Destinations Device’s Communication Setting and Unit Tag Information Is Not an Option. - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/34094194547597-Symbio-700-When-Restoring-From-Backup-Retain-the-Destinations-Device-s-Communication-Setting-and-Unit-Tag-Information-Is-Not-an-Option" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - When Restoring From Backup Retain the Destinations Device’s Communication Setting and Unit Tag Information Is Not an Option.</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-02-06 &nbsp;&bull;&nbsp; Last updated: 2025-02-12</div>
+<div class="body"><p> </p>
+<p> </p>
+<p>Issue:</p>
+<p>When using a backup of a Symbio 700 controller to restore to a device it is not possible to select  Retain the destinations device's communication setting and unit tag Information.</p>
+<p> </p>
+<p>Most Trane Controllers have this feature built into them that allows the controller to save this data and then restore this data back to the controller after the backup is restored.  This is not a function of Tracer TU but a function of the Controller.</p>
+<p> </p>
+<p><img src="../../attachments/34094194547597_34094194541197_mceclip0.png"></p>
+<p> </p>
+<p>The Symbio 700 does not have this feature and thus a backup should not be restored when remotely connected to the controller.  Restoring the backup to the controller will cause the communication parameters from the copied device to be used by the controller and communications with the device may not be possible after a remote restore is done.</p>
+<p><img src="../../attachments/extra_34094194547597_img.png"?name=image.png" width="699" height="499"></p>
+<p> </p>
+<p>It is recommend to only restore a backup on site when plugged in directly to the Symbio 700.  Before restoring it is also recommend to copy the device communication settings (protocol settings) prior to restoring a backup so that they can manually be put back after a restore.</p>
+<p> </p>
+<p>This was a design decision for this unit.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/34094194547597-Symbio-700-When-Restoring-From-Backup-Retain-the-Destinations-Device-s-Communication-Setting-and-Unit-Tag-Information-Is-Not-an-Option" target="_blank">https://support.trane.com/hc/en-us/articles/34094194547597-Symbio-700-When-Restoring-From-Backup-Retain-the-Destinations-Device-s-Communication-Setting-and-Unit-Tag-Information-Is-Not-an-Option</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

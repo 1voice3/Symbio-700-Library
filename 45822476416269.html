@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio® 700 Stepper Motor Controller (SMC) Not Communicating - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/45822476416269-Symbio-700-Stepper-Motor-Controller-SMC-Not-Communicating" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio® 700 Stepper Motor Controller (SMC) Not Communicating</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Modules / Sensors / Switches &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-05-13 &nbsp;&bull;&nbsp; Last updated: 2026-10-15</div>
+<div class="body"><h1 id="h_01K81QAGX8J70SSY4PAPJAPVKX"><strong>Troubleshoot</strong></h1><p> </p><h2 id="h_01K81S1G40RQF2BZMABEJ61GTJ">Does the SMC Module have power?</h2><ul><li data-list-item-id="e10f28a8f89c04ef4da8e148e1831667c">Verify that the LEDs are powered up. (LED4, LED5, and LED6)</li></ul><p> </p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 75%;"><img style="aspect-ratio: 767/572;" src="../../attachments/45822476416269_45851936396429_image.png" width="767" height="572"></figure><p> </p><ul>
+<li data-list-item-id="ee735b864a4fe170a3f3ec8389c19847f">Verify SMC-P1 has 24VAC between <strong>Red</strong> and <strong>Black</strong>
+</li>
+<li data-list-item-id="ef4916c262a69fe0c1ee6f36c74c7ba76">Verify SMC-P1 has 3.2 - 3.9 VDC between<strong> Blue</strong> and <strong>Orange</strong>
+</li>
+</ul><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 452/496;" src="../../attachments/45822476416269_45822476412301_image.png" width="452" height="496"></figure><p> </p><ul>
+<li data-list-item-id="eda1e9fd17db3ee076efa015600b6fe93">If <strong>SMC-P1</strong> does not have VAC or VDC, go to the adapter board above the Symbio Unit Controller Module. Verify that <strong>AB-J3</strong> has 24VAC between <strong>Red</strong> and <strong>Black</strong> and has 3.2-3.9VDC between <strong>Blue</strong> and <strong>Orange</strong>.<strong> </strong>
+</li>
+<li data-list-item-id="e372e231af795db21bfbb9d9d7e963cbc">If AB-J3 is not receiving voltage, verify VAC from AB-J15 (<strong>Yellow &amp; Brown</strong>) and VDC from AB-J18 (<strong>Blue &amp; Orange</strong>).</li>
+</ul><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 629/706;" src="../../attachments/45822476416269_45825469790221_image.png" width="629" height="706"></figure><p> </p><ul><li data-list-item-id="e50f5f7b9b1ca5674e5bef64a3f63cfbf">If AB-J15 (<strong>Yellow &amp; Brown</strong>) is not receiving VAC verify PPF72/PPM72 and PPF3/PPM3</li></ul><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 365/830;" src="../../attachments/45822476416269_45825469791373_image.png" width="365" height="830"></figure><p> </p><ul><li data-list-item-id="eb2f7510f49483b86816155e8b0df5ba0">If AB-J18 (<strong>Blue &amp; Orange</strong>) is not receiving VDC, verify UC-P3.</li></ul><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 375/554;" src="../../attachments/45822476416269_45826190483085_image.png" width="375" height="554"></figure><p> </p><hr><p> </p><h2 id="h_01K81K18ZDG97MXTW0V5CAZ9VV">Does the Factory-Installed module have the address plug?</h2><p> </p><figure class="wysiwyg-image wysiwyg-image-align-left"><img style="aspect-ratio: 352/527;" src="../../attachments/45822476416269_45827359531661_image.png" width="352" height="527"></figure><ul>
+<li data-list-item-id="e794c3bbc378f37c03a22654f38675ed0">The Stepper Motor Controller is factory-installed and includes an address plug pre-installed on J9. The factory plug is already configured for address 79.</li>
+<li data-list-item-id="e34fdff909cc42167d9d5f4f763059035">The rotary dials should be set to 00.</li>
+<li data-list-item-id="edb11ea964a6d1e5b12f069771f465376">If the Stepper Motor Controller says <strong>"Not Communicating"</strong> on the mobile phone app under <strong>Tools</strong> &gt; <strong>Service, </strong>try the steps below. </li>
+<li data-list-item-id="eca94360d00decb6b102b2e44c860434c">If the address plug is securely connected and you have verified the address on the plug, remove the plug and set the rotary dials to 79 (SW1 to 7 and SW2 to 9). </li>
+<li data-list-item-id="e180efb5cb6878275d56984ffb96b16f6">Cycle power to the unit or reset the IMC link through the mobile phone app. </li>
+<li data-list-item-id="e55268a276d9b98d56ab0040809972dba">Go to <strong>Tools</strong> &gt; <strong>Service</strong> &gt; scroll down to <strong>IMC LINK RESET</strong>.</li>
+</ul><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><hr><p> </p><h2 id="h_01K81QG2P3AM15E4CVJ16GRMGZ">Is the UC module configured?</h2><ul>
+<li data-list-item-id="e3550089218ddc2a023ca5c6bddbed7b4">To verify the communication status, go to <strong>Tools</strong> &gt; <strong>Service</strong> in your mobile phone app.</li>
+<li data-list-item-id="ec7325dee8680b5ed8dc26f0a33444558">When it says <strong>Communicating,</strong> there should be no active alarms for the Stepper Motor Controller.</li>
+<li data-list-item-id="e092a0f1fae91d0e7ed6cd1614b302ce6">When it says <strong>'Communicating - Not Configured,'</strong> it means the<strong> Stepper Motor Controller </strong>is<strong> communicating, </strong>but there is<strong> no configuration associated with it</strong>. This will show active alarms.</li>
+<li data-list-item-id="e42861bef8400cd5a945bc8a702679016">You must configure the SMC under <strong>Settings </strong>&gt; <strong>View Configurations</strong>&gt; <strong>Edit</strong>.</li>
+</ul><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 600/367;" src="../../attachments/45822476416269_45890113213837_image.png" width="600" height="367"></figure><p> </p><hr><p> </p><h1 id="h_01K81RZ1703T42E91ZBBNMT37Q">Configurations</h1><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 986/476;" src="../../attachments/45822476416269_45890489648909_image.png" width="986" height="476"></figure><p> </p><hr><p> </p><h1 id="h_01K7M8C785HR7ZKDKZBF945EP5">Alarms</h1><ul>
+<li data-list-item-id="ed530deafc2c06324221119426d75e322">Diagnostic: Unit Communication Failure</li>
+<li data-list-item-id="e12d07941061abeba0218eca8bad66435">Stepper Motor Communication Status</li>
+</ul><figure class="wysiwyg-image"><img style="aspect-ratio: 772/277;" src="../../attachments/45822476416269_45890113215757_image.png" width="772" height="277"></figure><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/45822476416269-Symbio-700-Stepper-Motor-Controller-SMC-Not-Communicating" target="_blank">https://support.trane.com/hc/en-us/articles/45822476416269-Symbio-700-Stepper-Motor-Controller-SMC-Not-Communicating</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

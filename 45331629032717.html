@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 No 24VAC Power on Thermostat Terminals - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/45331629032717-Symbio-700-No-24VAC-Power-on-Thermostat-Terminals" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 No 24VAC Power on Thermostat Terminals</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2026-04-23 &nbsp;&bull;&nbsp; Last updated: 2026-04-23</div>
+<div class="body"><p>A common issue experienced in the field is after connecting a thermostat, there is no power on Symbio 700 J21-1, but if the thermostat is disconnected, the power comes back. </p><p> </p><p>Symbio 700 uses a circuit protection device to protect itself again wiring issues in the field. The following terminals are protected by this device (PTC RT3):</p><ul>
+<li data-list-item-id="ea74e7402d93f8c494a1dfa2b42efb2e1">J18-1 Emergency Stop Contact Common 24vac</li>
+<li data-list-item-id="e75b361adfc55036ff7ff4c9b05e94495">J19-7 Zone Sensor Power</li>
+<li data-list-item-id="e07f945c00e9c35f84e12b5b1ab513c53">J20-1 Occupancy Input Contact Common 24vac</li>
+<li data-list-item-id="e9784331dc2c865aad69db441d8c26a9f">J21-1 Thermostat Power</li>
+</ul><p>The combined amperage of all these terminals is rated for 1.1amps @ 23°C (73.4°F). The circuit protection device employed is a PTC Resettable Fuse. This component is temperature-dependent; as the operating environment temperature increases, the trip rating decreases. However, within the control panel, the PTC fuse was chosen to function reliably under the ambient conditions in which the units may be installed. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 1557/600;" src="../../attachments/45331629032717_45331629029517_PTC_protection.png" width="1557" height="600"></figure><p> </p><p>Typical device connections that cause this PTC to open are smoke detectors getting power from one of the terminals and/or shorted wiring. These terminals are intended for powering a zone sensor, thermostat or common power for emergency stop or occupancy contacts. </p><p>Repeat tripping of this PTC will damage it and could cause the solder that holds it to the board to release it. </p><p> </p><p><span class="wysiwyg-font-size-large"><strong>Troubleshooting</strong></span></p><p>Start by disconnecting all 24vac connections to these points and then checking the terminal to ground, if the 24vac is present, one of the devices is to blame and should be checked for shorts or damaged wiring. </p><p>If the power does not come back to the terminals after all the 24vac connections are removed, contact Tech Support with the "Get Support" button at the top of the page, contact your local Trane Commercial Sales Office (CSO), contact the Independent Wholesale Distributor (IWD) the unit was purchased from or Trane Parts Center the unit was purchased from. </p><p> </p><p>If power is present and the thermostat powers up with no issues, but later the 24vac goes out when the thermostat calls, this points to a shorted wire for whatever the thermostat was calling for. Checking wiring for damage. </p><p>Example: Thermostat powers up and runs cooling and fan with no issue, but when calling for heat W1, the power drops. Check the W1 wire for damage allowing it to short to ground or the thermostat common wire. </p><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/45331629032717-Symbio-700-No-24VAC-Power-on-Thermostat-Terminals" target="_blank">https://support.trane.com/hc/en-us/articles/45331629032717-Symbio-700-No-24VAC-Power-on-Thermostat-Terminals</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VVDA/MZVAV Supply Air Temperature Reset - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/42311787937421-VVDA-MZVAV-Supply-Air-Temperature-Reset" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>VVDA/MZVAV Supply Air Temperature Reset</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Sequence of Operation [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-12-30 &nbsp;&bull;&nbsp; Last updated: 2026-03-17</div>
+<div class="body"><p>Discharge Air Reset is a method to save energy by resetting the discharge air temperature setpoint as heating and cooling building loads change. When enabled, the controller can independently reset the Discharge Air Heating Setpoint Active and/or Discharge Air Cooling Setpoint Active based on Zone (space temperature), Outdoor Air temperature or Return Air Temperature. The new target setpoints are reported as Discharge Air Setpoint Heating Status and Discharge Air Cooling Setpoint Status. </p><p> </p><h2 id="h_01KDRGYAB9GE6F74B9X7MSV7AR">Discharge Air Cooling Reset</h2><p>The following user adjustable points are used to calculate the Discharge Air Cooling Setpoint reset.</p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized" style="border-style: solid; border-width: 1px;">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 16%;">
+<col style="width: 26%;">
+<col style="width: 23%;">
+</colgroup>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>Point Name</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>BAS Instance</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>App Location*</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>Default Value</strong></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Cooling Reset Type</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">MV-11111</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">Outdoor Air</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Cooling Reset Start Temp</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11150</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">90°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Cooling Reset End Temp</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11151</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">70°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Cooling Reset Amount</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11152</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">10°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Cooling Setpoint BAS</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-10121</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;REFRIGERATION</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">55°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Cooling Setpoint BAS -  Active</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11190</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">STATUS (Use Search Function)</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">55°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Cooling Setpoint Status</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11356</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">STATUS (Use Search Function)</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">Result of Reset Calc.</span></p></td>
+</tr>
+</tbody>
+</table></figure><p>*<span class="wysiwyg-font-size-small">The Symbio App only changes default values, if a BAS is writing to these points, the BAS will have control.</span></p><p>Using Discharge Air Cooling Reset Values above, the active Discharge Air Cooling Setpoint BAS (55°F) will be reset 10°F over the range of outdoor air temperature of 90°F (Cooling Reset Start Temperature) to 70°F (Cooling Reset End Temperature). When outdoor air temperature is greater than 90°F, no reset is applied. When outdoor air temperature is 80°F, Discharge Air Cooling Setpoint – Active will be reset 5°F. As a result, discharge air temperature will be controlled to Discharge Air Cooling Setpoint Status of 60°F. When outdoor air temperature is 69°F, discharge air temperature will be controlled to Discharge Air Cooling Setpoint Status of 65°F. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 2069/1435;" src="../../attachments/42311778190349_42311778187149_image.png" width="2069" height="1435"></figure><p> </p><h2 id="h_01KDRGYFQZ1XBC3P1ZESXWEY5A">Discharge Air Heating Reset </h2><p>The following user adjustable points are used to calculate the Discharge Air Heating Setpoint reset.</p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized" style="border-style: solid; border-width: 1px; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 16%;">
+<col style="width: 26%;">
+<col style="width: 23%;">
+</colgroup>
+<tbody>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>Point Name</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>BAS Instance</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>App Location*</strong></p></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><strong>Default Value</strong></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Heating Reset Type</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">MV-11136</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">Outdoor Air</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Heating Reset Start Temp</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11241</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">30°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Heating Reset End Temp</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11242</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">50°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Heating Reset Amount</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11343</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;SYSTEM</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">10°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Heating Setpoint BAS</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11191</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">SETTINGS&gt;HEATING</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">100°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Heating Setpoint BAS -  Active</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11191</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">STATUS (Use Search Function)</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">100°F</span></p></td>
+</tr>
+<tr>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">Discharge Air Heating Setpoint Status</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">AV-11129</span></p></td>
+<td style="border-style: solid; border-width: 1px;"><span class="wysiwyg-font-size-medium">STATUS (Use Search Function)</span></td>
+<td style="border-style: solid; border-width: 1px;"><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">Result of Reset Calc.</span></p></td>
+</tr>
+</tbody>
+</table></figure><p>*<span class="wysiwyg-font-size-small">The Symbio App only changes default values, if a BAS is writing to these points, the BAS will have control.</span></p><p>Using Discharge Air Cooling Reset Values above, the active Discharge Air Heating Setpoint BAS (100°F) will be reset 10°F over the range of outdoor air temperature of 30°F (Heating Reset Start Temperature) to 50°F (Heating Reset End Temperature). When outdoor air temperature is less than 30°F, no reset is applied. When outdoor air temperature is 40°F, Discharge Air Heating Setpoint – Active will be reset 5°F. As a result, discharge air temperature will be controlled to Discharge Air Heating Setpoint Status of 95°F. When outdoor air temperature is<br>55°F, discharge air temperature will be controlled to Discharge Air Heating Setpoint Status of 90°F.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 2070/1439;" src="../../attachments/42311778190349_42311834685837_image.png" width="2070" height="1439"></figure></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/42311787937421-VVDA-MZVAV-Supply-Air-Temperature-Reset" target="_blank">https://support.trane.com/hc/en-us/articles/42311787937421-VVDA-MZVAV-Supply-Air-Temperature-Reset</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio® 700 - How to Configure an Indoor Options Module - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/40533026555789-Symbio-700-How-to-Configure-an-Indoor-Options-Module" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio® 700 - How to Configure an Indoor Options Module</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Modules / Sensors / Switches &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-10-22 &nbsp;&bull;&nbsp; Last updated: 2026-03-30</div>
+<div class="body"><h1 id="h_01K83PVCWYDGR4F1MYJV0GHYFV">Configuration</h1><h2 id="h_01K4TM2W5T5P1WKZJQV7P7N2A9">Electric Heat</h2><ul><li data-list-item-id="e5ac7dbf8a14049a63b0e9a828632115a">
+<h3 id="h_01KHV5BYXRZX8YW1GTQ2CECMMT">Cooling Only Units</h3>
+<ul>
+<li data-list-item-id="e28a4ba39f3be1f5f98e281ba8ee8b22f">
+<strong>Primary Heating Source</strong> = Electric</li>
+<li data-list-item-id="e21f1980604571310dbcd579109cfa64e">
+<strong>Primary Heating Type</strong> = Stage</li>
+<li data-list-item-id="e4d246ec02b9fe27d3d2f7af707665a5b">
+<strong>Primary Heating Stages</strong> = 1 or 2</li>
+</ul>
+</li></ul><p> </p><ul><li data-list-item-id="e24f9fb3f2f8cf1bcf1d23d0a19c784df">
+<h3 id="h_01K8669011P7BR6EWW00GY64YC">Heat Pump Units</h3>
+<ul>
+<li data-list-item-id="e9f918bccd63d4c7f46b42667796d22e3">
+<strong>Primary Heating Source</strong> = Heat Pump</li>
+<li data-list-item-id="ebcac2cd7d9521fe6c57ffbd6d0a649ec">
+<strong>Primary Heating Type</strong> = Stage</li>
+<li data-list-item-id="e3f728b6d6e5c43d6f9127d09a501fe7a">
+<strong>Primary Heating Stages</strong> = Full</li>
+<li data-list-item-id="e4809109864571232c67248cb99e4ac58">
+<strong>Secondary Heating Source</strong> = Electric</li>
+<li data-list-item-id="edeb0a4a32379a50affebd5ee2ad0fbc8">
+<strong>Secondary</strong> <strong>Heating Type</strong> = Staged</li>
+<li data-list-item-id="e18392da9921621c619151a39bb1c6d51">
+<strong>Secondary</strong> <strong>Heating Stages</strong> = 1 or 2</li>
+</ul>
+</li></ul><p> </p><h4 id="h_01KHV5C5Z95WGY54Q1WG0YJN59">Using the Mobile Phone App</h4><ol>
+<li data-list-item-id="e2bcebb1324846363fc64d7203b1b6fc6">Connect to the Symbio™ 700 board through <strong>Bluetooth</strong>.</li>
+<li data-list-item-id="e63e635f7f2239993fef8740c76888978">Select the <strong>Settings</strong> menu.</li>
+<li data-list-item-id="e21ec85a6554ff20577ed10bde07f2df1">Select <strong>View Configuration</strong>.</li>
+<li data-list-item-id="ea794e5b8fc23317df2e262d856304b44">Select <strong>Edit</strong> at the top right of the screen.</li>
+<li data-list-item-id="e40af88b346f43368cbce4d17d944ee53">Select <strong>Proceed</strong> to stop the equipment operation.</li>
+<li data-list-item-id="ebb591ba00804c4e3dc554a100b36934b">Scroll down to <strong>Primary Heating Source</strong> or <strong>Secondary Heating Source</strong>.</li>
+<li data-list-item-id="e80c2f84032f550e9040a7593420d872b">Tap <strong>Not Installed</strong>.</li>
+<li data-list-item-id="e695e9b8ca13932cd5e59895599a9cad9">Select <strong>Electric</strong>.</li>
+<li data-list-item-id="e50cb086c438ae744313406b16c5bf6d8">Select <strong>Save</strong>.</li>
+<li data-list-item-id="ea12691a62e45530ba8b78dd1d0b2b320">Scroll down to <strong>Primary Heating Type</strong> or <strong>Secondary Heating Type</strong>.</li>
+<li data-list-item-id="e063f0e41c088eb26655bba334316d84d">Confirm this is set to <strong>Staged</strong>.</li>
+<li data-list-item-id="e438684907609f10d9b24e7413f953592">Scroll down to <strong>Primary Heating Stages </strong>or<strong> Secondary Heating Stages</strong> and tap (1 or 2) <strong>--Select One--</strong>.</li>
+<li data-list-item-id="e5341b0df8fdb16beb997e3f7781cfafd">Choose the correct number of stages.</li>
+<li data-list-item-id="efe00d2bd4ee2e3387c246e71408b04f2">Select <strong>Save</strong>.</li>
+<li data-list-item-id="e14578146804535197612f1b2c0d4ece2">Select <strong>Save</strong> again in the top-right corner to save all configurations.</li>
+</ol><p> </p><h4 id="h_01KHV5C5ZAY4HWCMPQ4RDE634M">Using the Symbio 700 Onboard menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="e200f98ea13d2d9539a59dcaf60d5ba36">Press <strong>Home</strong>.</li>
+<li data-list-item-id="eccb37b3707c98bd881ffc4827d4a02c2">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="e4351896e4954d5e961e69763e0362b1b">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e9e171d2207f726cb0598ba9d9d78b65b">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="ea39bdc280611f00475816e6ba564a568">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ee7307f1dbf5be58463ec3b8f41076bc4">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="e45476a90dedf5472bb4bd6997ce5dee6">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e73e51c68e86d06a9538d45b48d590a7a">Press the Down Arrow and select <strong>Primary Heating Source</strong> or <strong>Secondary Heating Source</strong>.</li>
+<li data-list-item-id="e0394c0756fee8eb7127f2dc9c1b13ba4">Press the <strong>Check</strong>
+</li>
+<li data-list-item-id="e5229736b3f5fc2ed7d0f7b48688f629b">Press the <strong>Down Arrow</strong> and select <strong>Electric</strong>.</li>
+<li data-list-item-id="ec6642c889fed65d40524512a8c990ce9">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e1e2c833420d9d390df88716656e3440b">For <strong>Primary Heating Type</strong> or <strong>Secondary Heating Source</strong>, press <strong>Check</strong>, then select <strong>Staged</strong>.</li>
+<li data-list-item-id="e3803b0938289a284ddff318d9ff67787">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e2a7f7c9b0a8bcfa5c7e98e1bf1e31b81">For <strong>Primary Heating Stages</strong> or <strong>Secondary Heating Source</strong>, press the <strong>Check</strong>.</li>
+<li data-list-item-id="e6e5fef9105f49029c8c369cfcbf9f792">Press the <strong>Down Arrow</strong> to select <strong>1 (stage of electric heat)</strong> or <strong>2 (two stages of electric heat)</strong> and then press the Check.</li>
+<li data-list-item-id="ef71f51d4cd66c4d5878427bb1224b473">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="e9c7edc200060eee564201a1a2cd57eef">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e44f33d9bc5b7d4cc3025455f82efd9d0">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e8298cdd24897f52cda1ce742629e997b">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e6ce3342397e00cc7135f10c4850a8ebc">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p> </p><div class="callout-info"><div class="callout-info-content"><p><strong>Note: </strong>Must have electric heat connected to <strong>IOM-P6</strong> (ELECTRIC HEAT STAGE 1) and/or <strong>IOM-P7</strong> (ELECTRIC HEAT STAGE 2)</p></div></div><p> </p><p> </p><h2 id="h_01K86FW3EZFF5W266N1QVT9MGA">Condensate Overflow</h2><ul><li data-list-item-id="ec656ad7c080fdc560b193fb4aebd7595">
+<strong>Condensate Overflow Switch</strong> - Installed</li></ul><p> </p><h4 id="h_01KHV8EYDZ9WJD7KAP83ZGMSCJ">Using the Mobile Phone App</h4><ol>
+<li data-list-item-id="e3a7c12fea7d1b51074d0588aa59d4172">Connect to the Symbio™ 700 board through <strong>Bluetooth</strong>.</li>
+<li data-list-item-id="eefa7880171b6ab6b0d7c1ae78c18eaef">Select the <strong>Settings</strong> menu.</li>
+<li data-list-item-id="e6b70a91893e13c60a7f4ab98b80a1fb4">Select <strong>View Configuration</strong>.</li>
+<li data-list-item-id="e636d2090f1baad1c2a802205f8ac5f16">Select <strong>Edit</strong> at the top right of the screen.</li>
+<li data-list-item-id="ebbec1221aafdc4ac65c5ce8fc7da6a27">Select <strong>Proceed</strong> to stop the equipment operation.</li>
+<li data-list-item-id="e2596aafe2d355a17cfdbe4011acd3051">Scroll down to <strong>Condensate Overflow Switch</strong>.</li>
+<li data-list-item-id="e5690505aaab2b1367c8e3ce66808d3ed">Tap <strong>Not Installed</strong>.</li>
+<li data-list-item-id="e01aea6f44de2e1ad1e48de19ec49f876">Select <strong>Install</strong>.</li>
+<li data-list-item-id="e0b4a229ef4cf943ee42e55995707a0cb">Select <strong>Save</strong>.</li>
+<li data-list-item-id="e961a3bc48c64c7bc4368ad5f861f49e5">Select <strong>Save</strong> again in the top-right corner to save all configurations.</li>
+</ol><p> </p><h4 id="h_01KHV8EYDZB727VM4VS8E0T35J">Using the Symbio 700 Onboard menu and keypad</h4><figure class="wysiwyg-image wysiwyg-image-block-align-left"><img style="aspect-ratio: 326/146;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></figure><ol>
+<li data-list-item-id="e296644026727fc63a8ee3642d7b464cd">Press <strong>Home</strong>.</li>
+<li data-list-item-id="ea5283d6ec5c8ab9b0bc39a50f64b191b">Press the <strong>Down Arrow</strong> and select <strong>Utilities</strong>.</li>
+<li data-list-item-id="ea84fed85af05290f91768c7039d29e36">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e192f71992ed18743a5a942b3e0534131">Press the <strong>Down Arrow</strong> and select <strong>Unit Config</strong>.</li>
+<li data-list-item-id="ecac9473406861861d77c8f292912dfb5">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ef5385bd2c16472e333b7612aeb3e6405">Press the <strong>Down Arrow</strong> and select <strong>Edit Unit Config</strong>.</li>
+<li data-list-item-id="e7d37b87de5eebd11e6682d13e0494ee0">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e51f80d94ba82edda00ad2f74c0beffda">Press the Down Arrow and select <strong>Condensate Overflow Switch</strong>.</li>
+<li data-list-item-id="e8801373ed1b49f19dee6cf9c6176712b">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e7e97b64fa0573897e9b959cd25d5e083">Press the <strong>Down Arrow</strong> and select<strong> Installed</strong>.</li>
+<li data-list-item-id="e1c44bba9af0f64f289a9eaf3b335947e">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ea7b251ec6b1860c517800285ee3c81c2">Press the <strong>Down or Up Arrow </strong>until you find <strong>Save Config</strong>.</li>
+<li data-list-item-id="ead57c87e0ce81fac1324ae83ff8e5957">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ed4961bad3c12b69a40a91b5e73b026e1">Press the <strong>Down Arrow </strong>to change <strong>No</strong> to <strong>Yes</strong>.</li>
+<li data-list-item-id="e7a4b4c1bc570d96c31bf2b7a6583b817">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e88837ddaca999c531699c9043adcb8be">It will say <strong>Edit Unit Config Updating</strong>.</li>
+</ol><p> </p><div class="callout-info"><div class="callout-info-content"><p><strong>Note: </strong>Must have a condensate overflow switch connected to <strong>IOM-P15 </strong>(CONDENSATE OVERFLOW)</p></div></div><p> </p><hr><p> </p><h2 id="h_01K83QYXK2TQ5AWCBK3XWFKXHE">** Supply Air Smoke Detector</h2><ul>
+<li data-list-item-id="e705779483a45bc85107d42aa5439f7e5">The Supply air smoke detector is a <strong>factory-installed</strong> option only.</li>
+<li data-list-item-id="e000e080543ca1b3f39bdf666b0bd8ff7">External smoke detector wire up to UC-J18 on the Symbio Unit Controller.<ul><li data-list-item-id="ef77a8bdbbd72f9e111bcbf5c008bb3f2"><a href="../General/360055257251.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Emergency Stop Input – Trane Commercial HVAC Help Center</a></li></ul>
+</li>
+</ul><p> </p><h2 id="h_01K86NWSXRV8Y11CE0Z304DQ1V">** STATIC PRESSURE TRANSDUCER</h2><ul><li data-list-item-id="e6834b9482d464ebe5afed322d9e08a9b">The Static Pressure Transducer is a <strong>factory-installed</strong> component on Multi-Zone VAV units.</li></ul><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/40533026555789-Symbio-700-How-to-Configure-an-Indoor-Options-Module" target="_blank">https://support.trane.com/hc/en-us/articles/40533026555789-Symbio-700-How-to-Configure-an-Indoor-Options-Module</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

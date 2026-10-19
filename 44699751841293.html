@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Relocating Duct Static Pressure Transducer on MZVAV/TrueVAV/VVDA Rooftop Units - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/44699751841293-Relocating-Duct-Static-Pressure-Transducer-on-MZVAV-TrueVAV-VVDA-Rooftop-Units" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Relocating Duct Static Pressure Transducer on MZVAV/TrueVAV/VVDA Rooftop Units</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Large Commercial CSC &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2026-03-30 &nbsp;&bull;&nbsp; Last updated: 2026-10-15</div>
+<div class="body"><p>All Trane RTUs sold for MZVAV/TrueVAV/VVDA control come with a the duct static pressure transducer installed in the unit and ready for operation. The request to move the transducer to a 2/3 location down the duct is common and although not necessary for the operation of the unit, may be required for the job. <strong>Relocating the pickup (high side connection to the transducer) and not the transducer is the only option we recommend.</strong> Below are guidelines to consider before making changes to the transducer high side pickup:</p><p> </p><ol>
+<li data-list-item-id="ece73c00fc06cb2a38308898eedd7c156">A manual reset high duct static switch <strong><span class="wysiwyg-underline">MUST</span></strong> me installed and wired to the units emergency stop terminals.<ul><li data-list-item-id="e14d80408aa81da60f6265dfdfcc2ad02">This protects the unit, duct work and property in the event of a duct work collapse or obstruction. <ul><li data-list-item-id="e0878f7d2f5c070701a306adbe9de3275">See the links below for Emergency Stop connections on the different unit control types<ul>
+<li data-list-item-id="e80726fd08c9ef7eba6741991fb615283">Symbio 700 → <a href="../General/34091968702221.html">Symbio™ 700 - Emergency Stop Input</a>
+</li>
+<li data-list-item-id="e917038b7e83b60a272c70d74258d7a6e">ReliaTel → <a href="https://support.trane.com/hc/en-us/articles/360037491412">Reliatel Emergency Stop Connection</a>
+</li>
+<li data-list-item-id="e8663185c306d58f1421b3c6db42783c7">Ipak → <a href="https://support.trane.com/hc/en-us/articles/27517129655309">Ipak Emergency Stop Connections</a>
+</li>
+</ul>
+</li></ul>
+</li></ul>
+</li>
+<li data-list-item-id="e7f8ead4c37f6162e88f61274cf4bf786">There should be no fire/smoke/isolation dampers between the RTU supply and the transducer pickup location. All Trane MZVAV/TrueVAV/VVDA units utilize a software based high duct static limit that could be compromised if the transducer can not read accurately. If the transducer sees a drop in static due to a closed fire/smoke/isolation damper/duct work collapse, the unit will begin to ramp the fan out of control and could cause damage to the unit, duct work and property. <ul><li data-list-item-id="e8bae4b2cdd2986bb22ee0ec0a816eb39">The installation of the high duct static switch is still necessary even if there are no fire/smoke/isolation dampers.</li></ul>
+</li>
+</ol><div class="callout-danger">
+<div class="callout-danger-content">
+<p>
+FAILURE TO FOLLOW THE ABOVE GUIDELINES CAN RESULT IN UNIT, DUCT WORK AND/OR PROPERTY DAMAGE. 
+</p>
+</div>
+</div><ol start="3">
+<li data-list-item-id="ec1491e8a06009d6fe784987717c2755a">The length of the tubing may require the diameter of the tubing to be increased to maintain accuracy, typically only one size larger between pickup and transducer is necessary. </li>
+<li data-list-item-id="e166d4f537af0135ee56e95742cc0bf26">Pickup location is important and should be placed a straight piece of duct work away from any duct transitions or elbows and not on or in front of any tap for a VAV box. <ul><li data-list-item-id="ed290df680f112b76aca1d41179cf85b1">Typically, the engineer for the project requiring the 2/3 location will also identify the location for the pickup to avoid the locations above. </li></ul>
+</li>
+<li data-list-item-id="e8b6f274279e47dfd7540aefc193ec526">A proper duct static pressure pickup tube must be used at the measurement location for accuracy. </li>
+</ol><p> </p><p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/44699751841293-Relocating-Duct-Static-Pressure-Transducer-on-MZVAV-TrueVAV-VVDA-Rooftop-Units" target="_blank">https://support.trane.com/hc/en-us/articles/44699751841293-Relocating-Duct-Static-Pressure-Transducer-on-MZVAV-TrueVAV-VVDA-Rooftop-Units</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

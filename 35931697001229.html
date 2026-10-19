@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio Touch Screen Display Configuration For Remote Sensor - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/35931697001229-Symbio-Touch-Screen-Display-Configuration-For-Remote-Sensor" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio Touch Screen Display Configuration For Remote Sensor</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Installation / Startup</span></div>
+<div class="meta">Section: Miscellaneous / TBD &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2025-04-17 &nbsp;&bull;&nbsp; Last updated: 2026-03-19</div>
+<div class="body"><p><br><br>The following sensors are capable of having a remote 10K type II mounted externally from the sensor in the space for control.<br> </p><p>Symbio™400/UC400: X13790993 (SEN02587)</p><p>ReliaTel™: X13790994 (BAYSENS924)</p><p>Symbio™ 700/800: X13791009 (BAYSENS800)</p><p> </p><p> </p><p>Any of Trane's Zone sensors will work with this sensor will work with this sensor as they are all 10K Type II.  Setpoint is not required, Sen01448 is recommended.<br><br><img src="../../attachments/35931641377165_35931688164493_image.png" width="691" height="140"></p><p> </p><p>Steps:</p><ol>
+<li>The sensor is wired to terminals 17 and 18 of the unit.</li>
+<li>The configuration of the inputs must be set as well as the type of sensor.  This is done from the Configuration Menu 2/4.  </li>
+<li>To enter the menu:<br><img src="../../attachments/35931641377165_35931686768141_image.png" width="338" height="567"><br> </li>
+<li>Navigate to the 2/4 Configuration page<br><img src="../../attachments/35931641377165_35931697094797_image.png" width="246" height="564">
+</li>
+<li>Set the UC17 config from None to Temp</li>
+<li>Set the Temp. sensor from Internal to Wired, <strong>DO NOT</strong> set for remote<br><br><img src="../../attachments/35931641377165_35931686770317_image.png" width="676" height="242">
+</li>
+</ol><p> </p><p>If multiple sensors are needed, 4 sensors must be added at one time and wired in a series parallel configuration as shown below.  This is for the temperature only version of the sensor.  Setpoint, Fan and On/Cancel is not supported.<br><br><img src="../../attachments/35931641377165_38993187816589_image.png" width="446" height="615"></p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/35931697001229-Symbio-Touch-Screen-Display-Configuration-For-Remote-Sensor" target="_blank">https://support.trane.com/hc/en-us/articles/35931697001229-Symbio-Touch-Screen-Display-Configuration-For-Remote-Sensor</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

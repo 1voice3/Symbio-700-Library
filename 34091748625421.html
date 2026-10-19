@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 Firmware Download and Update Guide - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/34091748625421-Symbio-700-Firmware-Download-and-Update-Guide" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 Firmware Download and Update Guide</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: General &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-02-06 &nbsp;&bull;&nbsp; Last updated: 2026-10-09</div>
+<div class="body"><p class="wysiwyg-text-align-center"></p><h2 id="h_01M4GNDVTG0AV9HZQ0G0ZQETTW"><span data-markdown-start-index="173"><strong>How to Download and Update Firmware on the Symbio™ 700</strong></span></h2><p data-pm-slice="1 1 []"><strong>Applies to:</strong> Trane® Symbio™ 700 Unit Controller</p><p>Updating the firmware on the Symbio™ 700 Unit Controller Module ensures optimal system reliability, delivers critical security patches, improves energy optimization sequences, introduces bug fixes, and enhances component compatibility across refrigeration and airside sub-assemblies.</p><p>There are three approved methods to perform a firmware upgrade:</p><ol>
+<li data-list-item-id="e5e76464b0ad563eed05e6b17b995f10a">
+<strong>Method 1: Symbio Service &amp; Installation Mobile App</strong> </li>
+<li data-list-item-id="e1b58578fb181ca36454c2e68f1c2aa9b">
+<strong>Method 2: Symbio 700 On-Board Keypad/Display Interface</strong> </li>
+<li data-list-item-id="e92b16f09939bfb853356b5ab4f03e40c">
+<strong>Method 3: Trane® Tracer® TU Service Tool</strong> </li>
+</ol><p> </p><h2 id="h_01M4GGRTTXPQCPA5KTSYP69T4E" data-pm-slice="1 3 []">Prerequisites &amp; Hardware Requirements</h2><blockquote><p><strong>CRITICAL WARNING — FILE TRANSFER PRACTICE</strong><br><strong>DO NOT</strong> drag and drop the firmware file onto your USB flash drive. Always <strong>Copy &amp; Paste</strong> the .bin / package file to prevent hidden file corruption during direct write operations.</p></blockquote><p> </p><h3 id="h_01M4GGRTTYXA5C6V280HZ6BCHV">USB Flash Drive Specifications (Methods 1 &amp; 2 only)</h3><ul data-tight="undefined">
+<li data-list-item-id="ec21be3c191cd43e49dd1ec283c480b3f">
+<strong>Storage Size:</strong> Maximum <strong>32 GB</strong> (larger capacities like 64GB/128GB are not supported by the bootloader).</li>
+<li data-list-item-id="ef0839f7bbd0ef463fe2899e87831611a">
+<strong>Format:</strong> <strong>FAT32</strong> file system. Refer to <a href="../General/15455555714701.html" title="" target="_blank" rel="noopener noreferrer">How to format USB drive to FAT32</a> if needed.</li>
+<li data-list-item-id="e900e4ef1a7d985f687dbee5e091f1926">
+<strong>Storage Directory:</strong> Place the firmware file in the <strong>root directory</strong> of the drive (do not bury inside subfolders).</li>
+</ul><p> </p><h3 id="h_01M4GNARDH1X438BEN188830JV">Download Firmware and Methods Used to Update Firmware </h3><zd-accordion class="wysiwyg-disclosure"><details><summary>Downloading the Firmware File</summary><div class="wysiwyg-disclosure-content">
+<p>Select the appropriate download repository based on your role:</p>
+<ul data-tight="undefined">
+<li data-list-item-id="e6e5787d44db522488bb720cb19c1ff08">
+<strong>Customer / General Access:</strong><br>Visit the <a href="https://www.trane.com/commercial/north-america/us/en/products-systems/building-management---automation/trane-controls-software-downloads.html" title="">Trane® Controls Software &amp; Firmware Downloads page</a>.<ol>
+<li data-list-item-id="e47c2966fc91a9307e25c4d7b4b6aede3">Click the <code>+</code> icon to expand <strong>Package Units &amp; Split Systems with Symbio™ 700</strong>.</li>
+<li data-list-item-id="e7d7dd7edd5b41c4b451488212cd49a8c">Download the latest release package.</li>
+</ol>
+</li>
+<li data-list-item-id="e43fc5fb891375e79e82de04b7f43f994">
+<strong>Internal Trane Technician Access:</strong><br>Log in to SharePoint: <a href="https://tranetechnologies.sharepoint.com/sites/softwaredownloads/SitePages/Symbio%20Software%20Downloads.aspx" title="">Download latest Symbio 700 firmware (Internal)</a>.</li>
+</ul>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1379/908;" src="../../attachments/23351688731405_43977720498445_image.png" width="1379" height="908"></figure><p class="wysiwyg-text-align-center"> </p>
+<p id="h_01HMGZQXW50FFGDX8744BKHVNS" class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 400; line-height: 1.2; font-size: 16px; font-family: ' Neue Haas Unica', Helvetica, Arial, sans-serif; color: #000000; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" data-darkreader-inline-color="" data-darkreader-inline-bgcolor="">
+    <em style="box-sizing: border-box; font-size: 14px;"><span class="wysiwyg-color-black" style="box-sizing: border-box; font-size: 14px; color: #000000;" data-darkreader-inline-color=""><strong style="box-sizing: border-box; font-weight: bolder; font-size: 14px;">* Once you have expanded the section you should see the following download buttons</strong> *</span></em>
+  </p>
+<p> </p>
+<figure class="wysiwyg-image"><img style="aspect-ratio: 1401/539;" src="../../attachments/23351688731405_49501852309389_image.png" width="1401" height="539"></figure><p class="wysiwyg-text-align-center"> </p>
+</div></details><details><summary>Method 1: Firmware Update Using the Symbio Mobile App (Recommended)</summary><div class="wysiwyg-disclosure-content">
+<p>For <strong>Method 1 (Mobile App)</strong> and <strong>Method 2 (On-Board Display)</strong>:</p>
+<ul>
+<li data-list-item-id="e173b89c6a05875d6319249ac2ae46276">
+<strong>Connect:</strong> Open the <strong>Symbio Service &amp; Installation App</strong> on your mobile device and connect via Bluetooth to the Symbio 700 controller.</li>
+<li data-list-item-id="ec1c383a706ce50734205406eb36c079f">
+<strong>Navigate:</strong> From the primary navigation menu, select <strong>Tools</strong>.</li>
+<li data-list-item-id="e78ffd6a3994b9dd0da373c33514cea10">
+<strong>Select Utility:</strong> Tap <strong>Update Firmware</strong>.</li>
+</ul>
+<p><br><img style="height: auto;" src="../../attachments/23351688731405_23359263604749_mceclip1.png" width="307" height="364"></p>
+<ul>
+<li data-list-item-id="efb11f5759a70398f15931022b07d8522">
+<strong>Select File:</strong> The app will scan the connected USB flash drive and display available firmware packages. Select the target version.</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e55a1c845c822f7fef8f4ebb18d9001c8">
+<strong>Initiate Transfer:</strong><ul data-tight="undefined">
+<li data-list-item-id="e597e73b0aebcec02cd6089944c1c1a24">Tap <strong>Update Firmware</strong>.</li>
+<li data-list-item-id="ef72e310a3876f79d242d9ce85100077a">In the confirmation dialogue box, tap <strong>UPDATE</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><br><img style="height: auto;" src="../../attachments/23351688731405_23359263611277_mceclip2.png" width="570" height="328"></p>
+<p> </p>
+<p><strong>WHAT TO EXPECT DURING THE 3–5 MINUTE UPGRADE:</strong></p>
+<ul>
+<li data-list-item-id="ee0a2020b0dd77d7bd26fde0ad2446e27">You will automatically be disconnected from the mobile app.</li>
+<li data-list-item-id="e6e86623f12f7d0d5296966392b952cf6">Partway through the sequence, all LEDs on the Symbio 700 board will extinguish momentarily. <strong>This is normal behavior.</strong>
+</li>
+<li data-list-item-id="ed4313d636de9f14876202029798ec84b">The onboard 2-line display will cycle through the following stages:<br><code>Validating FW</code> ➔ <code>Decrypting FW</code> ➔ <code>Boot Rec</code> ➔ <code>Recovery</code> ➔ <code>Validating FW</code> ➔ <code>Decrypting FW</code> ➔ <code>Updating BLE</code> ➔ <code>Updating FW</code> ➔ <code>Updating Kernel</code> ➔ <code>Updating DT</code> ➔ <code>Updating Boot1dr</code> ➔ <code>Updating Recovery</code> ➔ <code>Update Success</code>
+</li>
+<li data-list-item-id="e3776258844a6c0f1d806b2bb19257f0c">The controller will reboot, showing <code>Load Field</code> ➔ <code>Boot Field</code> ➔ <code>Symbio 700 Ready</code>.</li>
+</ul>
+<p><br><img style="height: auto;" src="../../attachments/23351688731405_23359880815629_blobid5.png" alt="" width="409" height="290"></p>
+<p><strong>Finalize &amp; Verify:</strong></p>
+<ul data-tight="undefined">
+<li data-list-item-id="e8165327285a568435ee2e3417cd47619">Wait until the display reads <code>Symbio 700 Ready</code>.</li>
+<li data-list-item-id="e6cc83582faef0c812f15b74bdac1f0b2">Power down the controller (or cycle control power safely), then remove the USB flash drive.</li>
+<li data-list-item-id="ecb9d79dbedbfdaa3c43b0fc82348131c">Power up and reconnect with the Symbio Mobile App.</li>
+<li data-list-item-id="e97280a4923f11d11de83165a5ba636ec">Under controller status/information, confirm the new firmware release version is active.</li>
+</ul>
+<p><br><img style="height: auto;" src="../../attachments/23351688731405_23359263617549_mceclip3.png" width="185" height="322"></p>
+<p> </p>
+</div></details><details><summary>Method 2: Firmware Update Using the On-Board Keypad &amp; Display</summary><div class="wysiwyg-disclosure-content">
+<p><em><strong>Use this step-by-step guide to update controller firmware directly at the unit without using a phone or laptop.</strong></em></p>
+<p><strong>Keypad Quick Reference</strong></p>
+<p>Before starting, familiarize yourself with the 6-button onboard keypad:</p>
+<ul data-tight="undefined">
+<li data-list-item-id="e3bc7882a9a6b7a57d0574c05616451b7">
+<strong>Home</strong>: Returns to the main status screen.</li>
+<li data-list-item-id="e45141ae42be701a47400bd8e890f7e69">⬆ / ⬇ <strong>[Up / Down]</strong>: Scrolls through menu items and options.</li>
+<li data-list-item-id="e6aeb3f5084d3e334d7932f39af63a83f">✔ <strong>[Checkmark / Enter]</strong>: Confirms a selection or enters a submenu.</li>
+</ul>
+<p> </p>
+<p><strong>Step 1: Insert the USB Flash Drive</strong></p>
+<ul>
+<li data-list-item-id="ed7fa8c886f98495bd402c2bba0874743">Verify that the unit and Symbio 700 controller are energized.</li>
+<li data-list-item-id="e774fde7d6cc393494e0afe9a03a4b54f">Insert your FAT32-formatted USB flash drive (≤ 32 GB containing the firmware file) into the <strong>USB Host connector (J2)</strong> located at the top-left corner of the Symbio 700 board.<br><img style="height: auto;" src="../../attachments/23351688731405_23359247155213_mceclip3.png" alt="mceclip3.png" width="259" height="268">
+</li>
+</ul>
+<p> </p>
+<p><strong>Step 2: Navigate to the Firmware Update Menu</strong></p>
+<p>Follow this key sequence on the controller's onboard interface:</p>
+<p> <code>Home</code> ➔ <code>Scroll Down</code> ➔ <code>Utilities</code> ➔ <code>Press (✔)</code> ➔ <code>Scroll Down</code> ➔ <code>Firmware Update</code> ➔ <code>Press (✔)</code></p>
+<ul>
+<li data-list-item-id="e6e6d51555a9f8994378eb726c8176ce8">Press the <strong>Home</strong> button.</li>
+<li data-list-item-id="e2108849c37c0faeb51d5b350dca457fb">Press the <strong>Down Arrow</strong> (⬇) to scroll down until <strong>Utilities</strong> is highlighted.<img style="height: auto;" src="../../attachments/23351688731405_23359896631437_blobid0.png" alt="" width="222" height="96">
+</li>
+<li data-list-item-id="e7abb1b092d61ad7a75fb52bacac12d46">Press <strong>Enter</strong> (✔) to open the Utilities menu.</li>
+<li data-list-item-id="e75706e07e6bcf2afaa0f3f2bc1485adb">The display will initially show <strong>About</strong>. Press the <strong>Down Arrow</strong> (⬇) until <strong>Firmware Update</strong> appears.</li>
+<li data-list-item-id="e41e2321a3d1b0ea3a18478c37bbe25af">
+<p>Press <strong>Enter</strong> (✔)</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359896657421_blobid1.png" alt="" width="209" height="206"></p>
+</li>
+</ul>
+<p> </p>
+<p><strong>Step 3: Select File &amp; Confirm Installation</strong></p>
+<ul>
+<li data-list-item-id="e26ff33e953aa3d43de88160c128f606b">
+<strong>Select File:</strong> The display will show the firmware filename found on the USB drive (the text will scroll horizontally from left to right).<ul data-tight="undefined"><li data-list-item-id="ed04a428029d0e50add9cdbb0a02a3b31">
+<p>Press <strong>Enter</strong> (✔) to select the file.</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359880778765_blobid2.png" alt="" width="208" height="94"><br> </p>
+</li></ul>
+</li>
+<li data-list-item-id="e473ac747cd4564dafae95c98297b189d">
+<p><strong>Confirm Selection:</strong> The display prompts:</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359896681485_blobid3.png" alt="" width="216" height="216"></p>
+</li>
+</ul>
+<p> </p>
+<p><strong>Step 4: Installation in Progress</strong></p>
+<p>Immediately upon confirmation, the display will switch to:</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359880805901_blobid4.png" alt="" width="219" height="102"></p>
+<p><strong>CRITICAL SAFETY WARNING — DO NOT INTERRUPT</strong></p>
+<ul>
+<li data-list-item-id="eb48785a5426720c19a09887f038a50be">
+<strong>DO NOT</strong> turn off or cycle power to the unit.</li>
+<li data-list-item-id="e2b0300a0baee64b42ccd35b49538b52a">
+<strong>DO NOT</strong> remove the USB flash drive.</li>
+</ul>
+<p><em>Interrupting this process while writing will may corrupt controller memory and require physical board replacement.</em></p>
+<p data-pm-slice="1 1 []">The screen will display real-time status transitions as each component updates: <code>FW Update Performing</code> ➔ <code>Symbio 700 Shutdown App</code> ➔ <code>Symbio 700 Validating FW</code> ➔ <code>Symbio 700 Decrypting FW</code> ➔ <code>Symbio 700 Boot Rec</code> ➔ <code>Symbio 700 Recovery</code> ➔ <code>Symbio 700 Loading FW File</code> ➔ <code>Symbio 700 Updating IMC dev</code> ➔ <code>Symbio 700 Updating FW</code> ➔ <code>Symbio 700 Updating Kernel</code> ➔ <code>Symbio 700 Update Recovery</code></p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359880815629_blobid5.png" alt="" width="378" height="268"></p>
+<p> </p>
+<p><strong>Step 5: Reboot and Completion</strong></p>
+<ul>
+<li data-list-item-id="e3c2137ce5f8cf247d02c873b5d7f474f">
+<p>Once the update completes, the screen briefly reads:</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359880842381_blobid6.png" alt="" width="224" height="99"></p>
+</li>
+<li data-list-item-id="e58e4478a5c56f1e4c4ee1664f62229b1"><p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'>The Symbio 700 will automatically reboot.</p></li>
+<li data-list-item-id="e1753184dd1ead6902582a23a41ed4882">
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'>The process is officially complete when the screen reads:</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23359880852493_blobid7.png" alt="" width="225" height="102"></p>
+</li>
+</ul>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>Safe to Remove:</strong> Once <strong>Symbio 700 Ready</strong> is visible, you may safely pull out the USB drive from connector J2.</p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>We highly recommend updating the firmware using the Symbio Phone App or Tracer TU.</strong></p>
+</div></details><details><summary>Method 3: Firmware Update Using Trane® Tracer® TU Service Tool (Trane Technicians)</summary><div class="wysiwyg-disclosure-content">
+<p><strong>Launch &amp; Connect:</strong> Connect your PC to the controller service port and open <strong>Tracer® TU</strong>.</p>
+<p><strong>File Transfer Utility:</strong> Click the <strong>Utilities</strong> tab, then select <strong>File Transfer Utility</strong>.<br><img style="height: auto;" src="../../attachments/23351688731405_23353904012941_mceclip0.png" width="1748" height="1033"></p>
+<p> </p>
+<p><strong>Wizard Step 1:</strong> Click <strong>Next</strong> on the introductory screen.<br><img style="height: auto;" src="../../attachments/23351688731405_23353904023181_mceclip1.png" width="1747" height="1032"></p>
+<p> </p>
+<p><strong>Select Firmware:</strong> Click <strong>Browse</strong>, locate and select the downloaded firmware file on your local hard drive, and click <strong>Open</strong>.<br><img style="height: auto;" src="../../attachments/23351688731405_23355272343693_Browse.png" alt="Browse.png" width="1920" height="1080"><br><img style="height: auto;" src="../../attachments/23351688731405_23355272355725_mceclip3.png" width="1827" height="1080"></p>
+<p> </p>
+<p><strong>Confirm:</strong> Confirm your selection and click <strong>Next</strong>.<br><img style="height: auto;" src="../../attachments/23351688731405_23355256959245_mceclip4.png" width="1828" height="1080"></p>
+<p> </p>
+<p><strong>Initiate Transfer:</strong> Click <strong>Start</strong>.<br><img style="height: auto;" src="../../attachments/23351688731405_23355256964365_mceclip5.png" width="1827" height="1080"></p>
+<p> </p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>Transfer Progress:</strong> The status indicators will display <code>Transferring started</code> followed by <code>Transferring in progress</code>.<br><img style="height: auto;" src="../../attachments/23351688731405_23355272389261_Trans.png" alt="Trans.png" width="1920" height="1080"><br><img style="height: auto;" src="../../attachments/23351688731405_23355272396045_Transfer_In_Progress.png" alt="Transfer_In_Progress.png" width="1920" height="1080"></p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'> </p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>Controller Sequence:</strong> The physical Symbio 700 display will reflect the active update sequence during laptop file streaming.</p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23355272413197_mceclip6.png" width="400" height="289"></p>
+<p> </p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>Success &amp; Reboot:</strong> Tracer TU will report <code>Transfer Successful</code>. The Symbio 700 will automatically cycle power and display <code>Symbio 700 Ready</code>.<br><img style="height: auto;" src="../../attachments/23351688731405_23355299778573_Transfer_Successful.png" alt="Transfer_Successful.png" width="1920" height="1080"></p>
+<p><img style="height: auto;" src="../../attachments/23351688731405_23355299794317_mceclip7.png" width="281" height="139"></p>
+<p> </p>
+<p data-pm-slice='1 1 ["ordered_list",null,"list_item",null]'><strong>Verification:</strong> In Tracer TU, navigate to:<br><strong>Controller Status Tab</strong> ➔ <strong>Controller</strong> ➔ <strong>Product Version</strong> to confirm the active firmware build.<br><img style="height: auto;" src="../../attachments/23351688731405_23355315650573_Confirm_Firmware.png" alt="Confirm_Firmware.png" width="1920" height="1080"></p>
+</div></details></zd-accordion><p> </p><h2 id="h_01M4GJJ0NY0H739M5NCX19FJ19" data-pm-slice="1 4 []">Troubleshooting &amp; FAQ</h2><figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 23.91%;">
+<col style="width: 27.49%;">
+<col style="width: 48.6%;">
+</colgroup>
+<thead><tr>
+<th>Symptom / Prompt</th>
+<th>Root Cause</th>
+<th>Solution</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>USB drive not recognized</strong></td>
+<td>Drive capacity &gt; 32 GB or non-FAT32 format</td>
+<td>Re-format a standard USB drive (≤ 32 GB) to <strong>FAT32</strong> using default allocation size. Ensure file is in the root directory.</td>
+</tr>
+<tr>
+<td><strong>Controller disconnects during update</strong></td>
+<td>Expected behavior during module reboot</td>
+<td>Do not cycle power. Wait 3–5 minutes until the display shows <code>Symbio 700 Ready</code>.</td>
+</tr>
+<tr>
+<td><strong>Update fails or displays error</strong></td>
+<td>Corrupted download or drag-and-drop transfer</td>
+<td>Re-download the file and <strong>copy/paste</strong> directly to the USB drive.</td>
+</tr>
+</tbody>
+</table></figure><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/34091748625421-Symbio-700-Firmware-Download-and-Update-Guide" target="_blank">https://support.trane.com/hc/en-us/articles/34091748625421-Symbio-700-Firmware-Download-and-Update-Guide</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

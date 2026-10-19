@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How do I wire a CO2 Sensor for Symbio 700 and Reliatel Controls? - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/42134049727885-How-do-I-wire-a-CO2-Sensor-for-Symbio-700-and-Reliatel-Controls" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>How do I wire a CO2 Sensor for Symbio 700 and Reliatel Controls?</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Legacy V3 (Reliatel and UCP) &nbsp;&bull;&nbsp; Category: Large Commercial RTUs | Splits | CSC<br>
+Created: 2025-12-22 &nbsp;&bull;&nbsp; Last updated: 2026-07-16</div>
+<div class="body"><h4 id="h_01JZ33RQN4G3V3PMSVQ9CVVWPN"><strong>CO2 Sensor</strong></h4><p> </p><h3 id="h_01K4AWA6CKC3VR15Z4Q4KY8YG1">Recommended Wire</h3><p id="h_01JZ33S137VJ8MRBZV3DSNZVB2">Analog input wire must be 18-gauge shielded control wire, 3 conductors</p><h3 id="h_01JZ3408KGH30SQ5N6PJTB8BRE">Sensor Information</h3><p>Trane offers two versions of CO2 sensors:</p><ul>
+<li data-list-item-id="ef482df19cd9e72e3cf862db78d7cd343">Duct Mount X13790423010 or SEN03074</li>
+<li data-list-item-id="e52be6e424545bd6ad55beed24e51b89d">Wall Mount X13790422010 or SEN01564</li>
+</ul><p>Both sensors utilize the same internal circuit board and connection and only differ in their mounting and sensor pickup location. Both are capable of 0-10vdc, 2-10vdc, 4-20mA with a range of 0-2000ppm. </p><div class="callout-info">
+  <div class="callout-info-content">
+    <span class="callout-title">
+<i class="fa-solid fa-circle-info"></i> Info
+</span>
+    <p>
+      For all Symbio 700 and ReliaTel units, 0-10vdc input is utilized.
+    </p>
+  </div>
+</div><figure class="wysiwyg-image"><img style="aspect-ratio: 363/252;" src="../../attachments/38651851169805_38651851094925_image.png" width="363" height="252"></figure><p class="wysiwyg-text-align-center">Click the Elibrary Button Below to download the latest Installation Guide</p><p class="wysiwyg-text-align-center"><a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVN160*" target="_blank" rel="noopener noreferrer" data-darkreader-inline-color="" data-darkreader-inline-bgcolor=""><img style="height: auto;" src="../../attachments/extra_26906157137805.png" width="117" height="47"></a></p><p> </p><h3 id="h_01K22X2BFGK4YQP4X97EAAKQN9">Sensor Wiring</h3><p>For Symbio 700 and ReliaTel applications, the following terminals are used:</p><ul>
+<li data-list-item-id="e49e31cfac9470ca0eb653a9784161ad0">24v</li>
+<li data-list-item-id="ea2f8963e647c7da531720dd7f44a5cd6">GND</li>
+<li data-list-item-id="ecdd08f196059d7638933b9ec05c6dbb0">OUT (older sensors may show OUT1 or OUT V)</li>
+</ul><figure class="wysiwyg-image"><img style="aspect-ratio: 269/165;" src="../../attachments/38651851169805_38651851097229_image.png" width="269" height="165"></figure><p> </p><h3 id="h_01K22X2BFGAG23V9G1QM7MCZE5">Symbio 700 Connections</h3><p>The CO2 connection on the Symbio 700 is at the bottom right corner on J22:</p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 71.5%;"><img style="aspect-ratio: 674/562;" src="../../attachments/38651851169805_38651856020237_image.png" width="674" height="562"></figure><figure class="wysiwyg-image"><img style="aspect-ratio: 452/427;" src="../../attachments/38651851169805_38651856021005_image.png" width="452" height="427"></figure><p>Drain wire can be connected on J22-3 with the ground wire. </p><h3 id="h_01K22X2BFGS3VXJEY0172JSE4D">ReliaTel Connections</h3><p>The CO2 connection on ReliaTel units are on LTB2:</p><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 71.5%;"><img style="aspect-ratio: 899/512;" src="../../attachments/38651851169805_38651851100941_image.png" width="899" height="512"></figure><p>Drain wire can be connected on LTB2-14 with the ground wire. </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/42134049727885-How-do-I-wire-a-CO2-Sensor-for-Symbio-700-and-Reliatel-Controls" target="_blank">https://support.trane.com/hc/en-us/articles/42134049727885-How-do-I-wire-a-CO2-Sensor-for-Symbio-700-and-Reliatel-Controls</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

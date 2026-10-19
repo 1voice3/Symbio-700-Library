@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Display Shows Black Boxes, Strange Characters, Unresponsive or Display is Blank - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/34094357514765-Symbio-700-Display-Shows-Black-Boxes-Strange-Characters-Unresponsive-or-Display-is-Blank" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Display Shows Black Boxes, Strange Characters, Unresponsive or Display is Blank</h1>
+<div class="badges"><span class="badge equip">General Symbio 700</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Troubleshooting &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2025-02-06 &nbsp;&bull;&nbsp; Last updated: 2026-08-07</div>
+<div class="body"><p><strong>Symbio™ 700 - Display Shows Black Boxes</strong></p>
+<p> </p>
+<p><strong>Summary:</strong></p>
+<p>The display on the Symbio 700 is a LCD display that is driven by the Symbio main processor. </p>
+<p>If the display powers up and shows <strong>black boxes</strong> <strong>across the screen</strong> like shown below:</p>
+<p class="wysiwyg-text-align-center"><img src="../../attachments/21339615142669_21339629942285_mceclip0.png" width="312" height="224"></p>
+<p class="wysiwyg-text-align-center">OR </p>
+<p class="wysiwyg-text-align-left">has <strong>strange characters on the screen</strong> like below:</p>
+<p class="wysiwyg-text-align-center"><img src="../../attachments/21339615142669_35481636954765_mceclip0.png" width="321" height="302"></p>
+<p class="wysiwyg-text-align-center"> </p>
+<p class="wysiwyg-text-align-left">Other symptoms may include:</p>
+<ul>
+<li class="wysiwyg-text-align-left">Boot looping, board is continuously rebooting itself</li>
+<li class="wysiwyg-text-align-left">Stuck in LOAD FIELD or LOAD FIELD FAILED</li>
+<li class="wysiwyg-text-align-left">Stuck in BOOT FIELD or BOOT FIELD FAILED</li>
+<li class="wysiwyg-text-align-left">Unresponsive Symbio 700 with only "SYMBIO 700" on the display, but no button functions/TU connectivity/Bluetooth connectivity available</li>
+</ul>
+<p class="wysiwyg-text-align-left">This is possibly an issue with power to the display and typically is not recoverable, but it has also been found that low power to the Symbio board can cause this along with other operation issues. </p>
+<p> </p>
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+<li>Before <strong>condemning</strong> the board, power the unit down and disconnect all plugs from the board except J4 (24vac to board). If the display powers up and starts showing the normal boot screens and/or freezes during boot, check power on J4 and verify that it is in range. It has been found that a transformer with only 1 leg of power can power the board with 10-12vac. This is enough to power Symbio but when other devices are connected (Options Modules, Tstats, Powered Zone Sensors), will drag it down internally in the board and cause low voltage issues to the 5vdc and 3.3vdc components on the board. </li>
+</ul>
+<p> </p>
+<ul>
+<li>Verify that J4-1 (black wire) to ground is 24vac or more, if between 20-23 vac, verify that transformer primary voltage is tapped correctly (208-230vac units). If very low in the 8-16vac range, verify that neutral leg of the transformer is properly grounded (see wiring diagram) </li>
+</ul>
+<p> </p>
+<ul>
+<li>If the power is in range and the board appears to be fine, start connecting plugs to the board one at a time and check power after connecting each plug to narrow down a possible high current draw through the board. </li>
+</ul>
+<p> </p>
+<ul>
+<li>If the power is in range and the display still shows the black boxes with only J4 connected, something has more than likely happened to one of the 5vdc or 3.3vdc power supplies and the board will need to be replaced. Water and physical damage have been known to cause display issues. </li>
+</ul>
+<p> </p>
+<p class="guide-markup"><strong class="guide-markup">WARNING:</strong></p><p class="guide-markup">Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/34094357514765-Symbio-700-Display-Shows-Black-Boxes-Strange-Characters-Unresponsive-or-Display-is-Blank" target="_blank">https://support.trane.com/hc/en-us/articles/34094357514765-Symbio-700-Display-Shows-Black-Boxes-Strange-Characters-Unresponsive-or-Display-is-Blank</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
