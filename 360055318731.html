@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Connecting a BAYSENS800 to Unit Controller Module - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055318731-Symbio-700-Connecting-a-BAYSENS800-to-Unit-Controller-Module" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Connecting a BAYSENS800 to Unit Controller Module</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Precedent &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-12 &nbsp;&bull;&nbsp; Last updated: 2026-10-15</div>
+<div class="body"><p> </p><zd-tabs><div class="wysiwyg-disclosure wysiwyg-tabs">
+<details open="true"><summary>Compatibility</summary><div class="wysiwyg-disclosure-content">
+<p>The <strong>BAYSENS800</strong> (Service P/N: X13791009001) is a full-color touchscreen programmable zone sensor designed for standalone HVAC applications using Trane Symbio™ 700 unit controllers.</p>
+<p> </p>
+<p><strong>IMPORTANT COMPATIBILITY RESTRICTIONS</strong></p>
+<ul>
+<li data-list-item-id="e0025fa1d855e7d81ad3f5262bddffe6f">
+<strong>Incompatible Sensors:</strong> The <strong>BAYSENS924</strong> is <strong>not</strong> compatible with the Symbio 700. Only use <strong>BAYSENS800</strong> (X13791009001).</li>
+<li data-list-item-id="e3f7efc7f457898788046b3dfc6ca6280">
+<strong>System Types:</strong> Supported on Constant Volume Zone Temperature (<strong>CVZT</strong>) and Variable Volume Zone Temperature (<strong>VVZT</strong>) systems. It is <strong>not compatible</strong> with Multiple Zone VAV (<strong>MZVAV</strong>) or Variable Volume Discharge Air (<strong>VVDA</strong>) configurations.</li>
+<li data-list-item-id="e72b809c522f8456c35e89578c9c4aa1f">
+<strong>Standalone Operation:</strong> BAYSENS800 is intended for standalone unit control. Later hardware revisions (e.g., <strong>BAYSENS800AB</strong>) may be connected to a Building Automation System (BAS) for <strong>monitoring purposes only</strong>.</li>
+<li data-list-item-id="ed91ca3e28457ce37c5aaedd81bf1d231">
+<strong>Dedicated Bus:</strong> BAYSENS800 communicates via BACnet MS/TP. If an optional LonTalk® or Air-Fi® wireless adapter is connected to the Symbio 700, it <strong>must be disconnected.</strong>
+</li>
+</ul>
+<p> </p>
+<p><strong>Unit Controller License Requirements</strong></p>
+<p>The Symbio 700 controller must possess an <strong>Advanced License</strong> to communicate with the BAYSENS800.</p>
+<figure class="wysiwyg-table wysiwyg-table-align-left"><table style="margin-left: 0px; margin-right: auto;" data-pm-slice="1 1 []">
+<thead><tr>
+<th>Item</th>
+<th>Details</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Model Digit Verification</strong></td>
+<td>Check <strong>Digit 21</strong> of the unit model number (Odyssey™ or Precedent™):<br>• 1 = Advanced License w/ BACnet® MS/TP<br>• 2 = Advanced License w/ LonTalk® <em>(Requires removal for BAYSENS800)</em><br>• 3 = Advanced License w/ Air-Fi® <em>(Requires removal for BAYSENS800)</em>
+</td>
+</tr>
+<tr>
+<td><strong>App Verification</strong></td>
+<td>Connect via the <strong>Symbio Service &amp; Installation App</strong> (v1.0.2 or higher). Navigate to <strong>Home &gt; Show More &gt; License Type</strong> to confirm <strong>Advanced</strong>.</td>
+</tr>
+<tr>
+<td><strong>Upgrade Options</strong></td>
+<td>If the controller has a <strong>Basic License</strong>:<br>1. <strong>Order Software Upgrade:</strong> Purchase license upgrade kit FRW00001 via Trane Parts.<br>2. <strong>Replace Controller:</strong> Order pre-licensed Advanced Controller MOD04044.</td>
+</tr>
+</tbody>
+</table></figure><p data-pm-slice='1 1 ["blockquote",null]'> </p>
+<p data-pm-slice='1 1 ["blockquote",null]'><strong>Symbio Service &amp; Installation App License</strong><br><img style="height: auto;" src="../../attachments/25099750248333_30831823161357_mceclip0.png" width="235" height="295"></p>
+<p data-pm-slice='1 1 ["blockquote",null]'>Screen displaying <strong>License Type: Advanced</strong> vs. <strong>License Type: Basic</strong>.</p>
+</div></details><details><summary>Wiring </summary><div class="wysiwyg-disclosure-content">
+<p>Always disconnect all electrical power sources before making electrical connections to prevent equipment damage or personal injury.</p>
+<pre data-params="" data-pm-slice="1 1 []"><code class="language-auto"> BAYSENS800 Backplate Terminals
+ ┌───┬───┬───┬───┬───┬───┬───┬───┐
+ │ A │ B │ C │ D │ E │ F │ G │ H │
+ └───┴───┴───┴───┴───┴───┴───┴───┘
+   │   │   │   │   │   │   │   │
+   │   │   │   │   │   │   └───┴── Remote Thermistor / Motion Common
+   │   │   │   │   │   └────────── Demand Shed Input
+   │   │   │   │   └────────────── BACnet Reference / Shield Ground
+   │   │   └───┴────────────────── BACnet MS/TP Comm (+ / -)
+   └───┴────────────────────────── 24 VAC Power / Ground</code></pre>
+<p> </p>
+<figure class="wysiwyg-table wysiwyg-table-align-left"><table data-pm-slice="1 1 []">
+<thead><tr>
+<th>Terminal</th>
+<th>Description</th>
+<th>Symbio 700 Connection</th>
+<th>Wire Specification</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>A (5)</strong></td>
+<td>24 VAC (Hot)</td>
+<td><strong>J19-6</strong></td>
+<td>18 AWG 2-conductor stranded</td>
+</tr>
+<tr>
+<td><strong>B (6)</strong></td>
+<td>24 VAC Ground</td>
+<td><strong>J19-7</strong></td>
+<td>18 AWG 2-conductor stranded</td>
+</tr>
+<tr>
+<td><strong>C (13)</strong></td>
+<td>BACnet (+)</td>
+<td><strong>J17-1</strong></td>
+<td>22–18 AWG shielded twisted pair (100–130 <span data-equation="\Omega"></span><span data-equation="\Omega">Ω</span> impedance)</td>
+</tr>
+<tr>
+<td><strong>D (14)</strong></td>
+<td>BACnet (-)</td>
+<td><strong>J17-2</strong></td>
+<td>22–18 AWG shielded twisted pair (100–130 <span data-equation="\Omega"></span><span data-equation="\Omega">Ω</span> impedance)</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>BACnet Reference (Shield)</td>
+<td>Chassis Ground / Earth</td>
+<td>Continuous shield tied to ground at one end only</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Demand Shed</td>
+<td>External Contact</td>
+<td>Low-voltage discrete signal (optional)</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Remote Thermistor / Motion</td>
+<td>Remote Sensor Lead 1</td>
+<td>18 AWG twisted pair (optional)</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Input Common</td>
+<td>Remote Sensor Lead 2</td>
+<td>18 AWG twisted pair (optional)</td>
+</tr>
+</tbody>
+</table></figure><p data-pm-slice='1 1 ["blockquote",null]'><em>Image details:</em> Point-to-point schematic illustrating Terminals <strong>A &amp; B</strong> routed to Symbio 700 plug <strong>J19 (pins 6 &amp; 7)</strong> and Terminals <strong>C &amp; D</strong> routed to plug <strong>J17 (pins 1 &amp; 2)</strong>, with shield grounded at J21-9</p>
+<p> </p>
+<p><strong>Basic Wiring to Symbio 700 (UC)</strong></p>
+<p><img style="height: auto;" src="../../attachments/360055318731_46406008843533_image.png" width="1600" height="900"></p>
+<p> </p>
+<p><strong>Option A: Remote Sensor(s) Connected to Symbio 700 (Preferred)</strong></p>
+<ol>
+<li data-list-item-id="edbf1ef3e1dd8f03f5087ef49dda8aa82">Land thermistor leads across the designated zone temperature input terminals on the Symbio 700 board (<strong>J16</strong>).</li>
+<li data-list-item-id="ea60225fd09d39062c902f49475e84cf6">In the BAYSENS800 menu, set the temperature source to <strong>Remote</strong>.</li>
+</ol>
+<p><strong>Wiring with Single Remote Sensor (BAYSENS077*) connected to Symbio 700 (UC)</strong></p>
+<ul><li data-list-item-id="e492e01dfdb81c7248580547848505f51">
+<em>Image details:</em> Wiring diagram showing a single BAYSENS077 remote sensor connected across Symbio 700 plug <strong>J16</strong>.</li></ul>
+<figure class="wysiwyg-image" style="height: auto;"><img style="aspect-ratio: 1600/900;" src="../../attachments/360055318731_46406017143181_image.png" width="1600" height="900"></figure><p><strong>Wiring with Four Remote Sensors (BAYSENS077*) for Sensor Averaging connected to Symbio 700 (UC)</strong></p>
+<ul><li data-list-item-id="e28ac6d3af2a3ca1d20013001fa45df60">
+<em>Image details:</em> Schematic depicting 4 sensors wired in a <span data-equation="2 \times 2"></span><span data-equation="2 \times 2">2</span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2">×</span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2">2</span> series-parallel network landed onto Symbio 700 plug <strong>J16</strong>.</li></ul>
+<p><img style="height: auto;" src="../../attachments/360055318731_46406008844301_image.png" width="1600" height="900"></p>
+<p> </p>
+<p><strong>Option B: Remote Sensor(s) Connected to BAYSENS800</strong></p>
+<ol>
+<li data-list-item-id="e87f7cabbba2a97f0743a978587d6aaf7">Connect thermistor leads to terminals <strong>G</strong> and <strong>H</strong> on the back of the BAYSENS800.</li>
+<li data-list-item-id="eb32607b01a6c4098f0e9287ceadf0401">In the BAYSENS800 menu, set UC17 config to <strong>Temp</strong> and set temperature source to <strong>Wired</strong>.</li>
+</ol>
+<p><strong>Wiring with Single Remote Sensor (BAYSENS077*) connected to the BAYSENS800</strong></p>
+<ul><li data-list-item-id="eb84360d2495e117dd7dd952b4f228d5b">
+<em>Image details:</em> Wiring schematic showing remote sensor leads connecting directly to BAYSENS800 subbase terminals <strong>G</strong> and <strong>H</strong>
+</li></ul>
+<figure class="wysiwyg-image" style="height: auto;"><img style="aspect-ratio: 1600/900;" src="../../attachments/360055318731_46406017143821_image.png" width="1600" height="900"></figure><p><strong>Wiring with Four Remote Sensors (BAYSENS077*) for Sensor Averaging connected to the BAYSENS800</strong></p>
+<ul><li data-list-item-id="e0cee3fb735dac6ac584f8dce7a1a7d26">
+<em>Image details:</em> Schematic depicting 4 sensors wired in a <span data-equation="2 \times 2"></span><span data-equation="2 \times 2">2</span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2">×</span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2"></span><span data-equation="2 \times 2">2</span> series-parallel network connected to BAYSENS800 terminals <strong>G</strong> and <strong>H</strong>.</li></ul>
+<figure class="wysiwyg-image" style="height: auto;"><img style="aspect-ratio: 1600/900;" src="../../attachments/360055318731_46406008845069_image.png" width="1600" height="900"></figure><p> </p>
+<p><strong>Multi-Sensor Averaging Rules</strong></p>
+<p>To maintain the correct 10k <span data-equation="\Omega"></span><span data-equation="\Omega">Ω</span> Type II thermistor resistance curve, sensor averaging networks <strong>must</strong> utilize a square number of identical sensors wired in series-parallel:</p>
+<ul data-tight="undefined">
+<li data-list-item-id="e58b47a9fe1a0df0ab79107d78767d512">
+<strong>4 Sensors:</strong> 2 parallel strings of 2 sensors in series.</li>
+<li data-list-item-id="eb963a7ba2edd541aba5b16fa5d40e788">
+<strong>9 Sensors:</strong> 3 parallel strings of 3 sensors in series.</li>
+<li data-list-item-id="e436fa1708b15fd606cdc6ba703a6a3e8">
+<strong>16 Sensors:</strong> 4 parallel strings of 4 sensors in series.</li>
+<li data-list-item-id="e335a7f843154e245707eecb4446146c6">
+<strong>25 Sensors:</strong> 5 parallel strings of 5 sensors in series.</li>
+</ul>
+<p>For complete schematic wiring diagrams, refer to<a href="https://support.trane.com/hc/en-us/articles/22535132675341" target="_blank" rel="noopener noreferrer"> </a><a href="https://support.trane.com/hc/en-us/articles/22535132675341" target="_blank" rel="noopener noreferrer" title="">How to average multiple zone temp sensors</a>.</p>
+<p> </p>
+<p><strong>Recommended Communication Cable</strong></p>
+<p>BACnet MS/TP communication requires low-capacitance, shielded twisted pair (STP) cable:</p>
+<ul data-tight="undefined">
+<li data-list-item-id="e592a66d4f476aba9b055f05c6e0a58d8">
+<strong>Approved Supplier:</strong> Windy City Wire<ul data-tight="undefined">
+<li data-list-item-id="edee9311d97c651fa905baa92e9acc832">
+<strong>Plenum-Rated:</strong> P/N 043005AL</li>
+<li data-list-item-id="e5868e8c89aca80029d57c632bf5c3512">
+<strong>Non-Plenum Rated:</strong> P/N 108760</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e841b8334842a2fff78229d441a3f05e6">
+<strong>Alternative Cable Specifications:</strong><ul data-tight="undefined">
+<li data-list-item-id="e784af4216213fe170b24fa97c9ebcf6b">Conductor Gauge: 22 AWG to 18 AWG stranded twisted pair with shield.</li>
+<li data-list-item-id="eb9eea68c56d874e287de3fb8b7d46674">Characteristic Impedance: 100 to 130 <span data-equation="\Omega"></span><span data-equation="\Omega">Ω</span>.</li>
+<li data-list-item-id="e7a7afc811f595d2f83e1c12cb22da03e">Capacitance (Conductor to Conductor): <span data-equation="&lt; 100\text{ pF/m}"></span><span data-equation="&lt; 100\text{ pF/m}">&lt;</span><span data-equation="&lt; 100\text{ pF/m}"></span><span data-equation="&lt; 100\text{ pF/m}"></span><span data-equation="&lt; 100\text{ pF/m}">100</span><span data-equation="&lt; 100\text{ pF/m}"> pF/m</span> (<span data-equation="&lt; 30\text{ pF/ft}"></span><span data-equation="&lt; 30\text{ pF/ft}">&lt;</span><span data-equation="&lt; 30\text{ pF/ft}"></span><span data-equation="&lt; 30\text{ pF/ft}"></span><span data-equation="&lt; 30\text{ pF/ft}">30</span><span data-equation="&lt; 30\text{ pF/ft}"> pF/ft</span>).</li>
+<li data-list-item-id="e9976565072163e1d7ff571fed08a2bd2">Capacitance (Conductor to Shield): <span data-equation="&lt; 200\text{ pF/m}"></span><span data-equation="&lt; 200\text{ pF/m}">&lt;</span><span data-equation="&lt; 200\text{ pF/m}"></span><span data-equation="&lt; 200\text{ pF/m}"></span><span data-equation="&lt; 200\text{ pF/m}">200</span><span data-equation="&lt; 200\text{ pF/m}"> pF/m</span> (<span data-equation="&lt; 60\text{ pF/ft}"></span><span data-equation="&lt; 60\text{ pF/ft}">&lt;</span><span data-equation="&lt; 60\text{ pF/ft}"></span><span data-equation="&lt; 60\text{ pF/ft}"></span><span data-equation="&lt; 60\text{ pF/ft}">60</span><span data-equation="&lt; 60\text{ pF/ft}"> pF/ft</span>).</li>
+</ul>
+</li>
+</ul>
+</div></details><details><summary>Configuration</summary><div class="wysiwyg-disclosure-content">
+<p><span class="wysiwyg-font-size-large"><strong>Controller Configuration</strong></span></p>
+<p><strong>Set Physical Rotary Dials</strong></p>
+<p>Set the physical rotary address dials on the face of the Symbio 700 module to 001.</p>
+<p><img src="../../attachments/360055318731_49508186092301_image.png" width="330" height="86"></p>
+<p data-pm-slice="1 1 []"> </p>
+<p><strong>Configure via the Symbio Service &amp; Installation Mobile App</strong></p>
+<ol>
+<li data-list-item-id="ee87bafbe81e4f6d7c35d7dc779962f7c">Connect to the Symbio 700 using Bluetooth via the <strong>Symbio Service &amp; Installation App</strong>.</li>
+<li data-list-item-id="eae6b7fb9f7e4d08b0c5e6a6c3b42d6fc">Enable <strong>External Control</strong>:<ul data-tight="undefined">
+<li data-list-item-id="e7e4bcf272d1feb07849f8eec0e0cb21a">Go to <strong>Settings &gt; System</strong>.</li>
+<li data-list-item-id="ecdf53246c9c94db583d90ef834010d86">Set <strong>Arbitration Method Request</strong> to <strong>Enable External BAS Control</strong>.<ul><li data-list-item-id="ea264cc89af8c8bbd369c4284624451d2"> <strong>Settings &gt; System</strong> with <strong>Arbitration Method Request</strong> toggled/set to <strong>Enable External BAS Control</strong>.</li></ul>
+</li>
+</ul>
+</li>
+</ol>
+<p> </p>
+<p><strong>Configure Space Controller:</strong></p>
+<ul data-tight="undefined">
+<li data-list-item-id="ee7e890bd23c10279380d13a8e02f4835">Navigate to <strong>Settings &gt; View Configuration &gt; Edit</strong>.</li>
+<li data-list-item-id="ee9fa15cd354a51c1d57944181b021494">Set <strong>Space Controller Type</strong> to <strong>Single Setpoint Zone Sensor</strong>.</li>
+<li data-list-item-id="efde576fe53816e83220668cab57afd0a">Verify that <strong>System Type</strong> is configured as <strong>CVZT</strong> or <strong>VVZT</strong> <em>(VVDA and MZVAV are not supported)</em>.<ul><li data-list-item-id="e7fed6f5a170c12c3feec03a46c2bb66c"><p data-pm-slice='1 1 ["blockquote",null]'><strong>View Configuration &gt; Edit</strong> highlighting <strong>Space Controller Type = Single Setpoint Zone Sensor</strong>.</p></li></ul>
+</li>
+</ul>
+<p> </p>
+<p><strong>Configure BACnet Protocol:</strong></p>
+<ul>
+<li data-list-item-id="e4e4b7cc90d9f343d3c296d14dfc8ece8">Navigate to <strong>Tools &gt; Protocol Configuration &gt; Protocol</strong>.</li>
+<li data-list-item-id="ea85f495619da78636bbfbbe06a705f40">Select <strong>BACnet MS/TP</strong>.</li>
+<li data-list-item-id="e6f282c8dd97b32938365dbb56cb7a7be">Set the <strong>Baud Rate</strong> to <strong>76800 bps</strong>.</li>
+<li data-list-item-id="ef0b9eb602b441c829ad9c38c39837311">Tap <strong>Save</strong>.<ul><li data-list-item-id="e568fdab1e1bc725315cd46f5e9da6b0d">
+<strong>Tools &gt; Protocol Configuration</strong> with Protocol set to <strong>BACnet MS/TP</strong> and Baud Rate set to <strong>76800</strong>.</li></ul>
+</li>
+</ul>
+<p> </p>
+<p><span class="wysiwyg-font-size-large"><strong>BAYSENS800 On-Screen Configuration</strong></span></p>
+<p><strong>Entering Technician Configuration</strong></p>
+<ol>
+<li data-list-item-id="e39fdf5a894075c20559b8f9736740bfc">Tap the touchscreen display to wake the sensor.</li>
+<li data-list-item-id="e23f7329529ffc801a1dd76edeb747ee3">Press and hold the lower right corner (or settings icon) for 5 seconds.</li>
+<li data-list-item-id="ec6fa9826275c9fd83cc9003f131b8389">Enter the Technician Passcode: 4017.</li>
+</ol>
+<p><img src="../../attachments/360055318731_49508186092813_image.png" width="216" height="379"></p>
+<p> </p>
+<p><span class="wysiwyg-font-size-large"><strong>Network Setup</strong></span></p>
+<p>Both devices must reside on the same MS/TP network with matching baud rates and unique MAC addresses/Device IDs.</p>
+<p><strong>Legacy Firmware (2 Network Configuration Pages)</strong></p>
+<ul data-tight="undefined">
+<li data-list-item-id="eb1caee4cfeda3f0c7f6f7f068f49bdd6">
+<strong>Sensor Address (MAC):</strong> 2</li>
+<li data-list-item-id="e8facdd8e0f5f56be7354270eb0cbb7e2">
+<strong>Unit Address (MAC):</strong> 1</li>
+<li data-list-item-id="e29962e828fe1047805dc6c54fabcafef">
+<strong>Baud Rate: </strong>76,800</li>
+</ul>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 265/340; height: auto; width: 231.969px;" src="../../attachments/360055318731_46406017145229_image.png" width="265" height="340"></p>
+<p> <em>Image details:</em> Screen capture/photo of legacy firmware Network Pages showing Sensor Address = 2, Unit Address = 1, and Baud Rate = 76,800.</p>
+<p> </p>
+<p><strong>Current Firmware (3 Network Configuration Pages)</strong></p>
+<ul data-tight="undefined">
+<li class="wysiwyg-list-bold" data-list-item-id="ef8c18fdc76d99dcd57ca1aa471a2e539">
+<strong>Network Page 1:</strong><ul data-tight="undefined">
+<li data-list-item-id="ef1d71616bc88ddd7701be1e8cb5850bb">Sensor Address: 2</li>
+<li data-list-item-id="e5faeca97525cf1147f862495d9046327">Baud Rate: 76,800</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="ea3d245a24f51a888d95f16797a39685d">
+<strong>Network Page 2:</strong><ul data-tight="undefined"><li data-list-item-id="eab478b409914d01eca9300b2346141e0">Sensor Device ID: 0000002</li></ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e9949960d1d233357064f524a86e2ec06">
+<strong>Network Page 3:</strong><ul data-tight="undefined"><li data-list-item-id="e1b9f22edbcb559cde45ffff0f4378fb4">Unit Device ID: 0000001</li></ul>
+</li>
+</ul>
+<p><br><img style="height: auto;" src="../../attachments/18840928694029_44016546523405_image.png" width="258" height="879"></p>
+<p><em>Image details:</em> Screen capture/photos showing Network Page 1 (Sensor Addr: 2, Baud: 76800), Page 2 (Device ID: 0000002), and Page 3 (Unit Device ID: 0000001).</p>
+<p><strong>TIP:</strong> Ensure you press the <strong>Right Arrow / Next button</strong> through all pages to commit and save the parameters to non-volatile memory.</p>
+<p> </p>
+<p><span class="wysiwyg-font-size-large"><strong>Remote Thermistor Input Setup</strong></span></p>
+<p>If an external thermistor is being utilized instead of the sensor's internal thermistor:</p>
+<ul data-tight="undefined">
+<li class="wysiwyg-list-bold" data-list-item-id="e6dc481c8f2bee7d3677b7c2c6880cdd8">
+<strong>When wired to Symbio 700 (Option A):</strong><ol>
+<li data-list-item-id="e75453b28ca18ef9281d21cee2ff3ee14">Go to <strong>Configuration Page 2</strong>.</li>
+<li data-list-item-id="e1971b8d64cf9f2d34d446db6bc7f1d03">Set <strong>Temp. Sensor</strong> to <strong>Remote</strong>.</li>
+</ol>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e8a495cd4a33233990353f8f86abcc728">
+<strong>When wired directly to BAYSENS800 (Option B):</strong><ol>
+<li data-list-item-id="e0aba9dff07d9e3d3499e28dd4299b47f">Go to <strong>Configuration Page 2</strong>.</li>
+<li data-list-item-id="e416dc0f07d831813b34eca0ab23837c6">Set <strong>UC17 config</strong> to <strong>Temp</strong>.</li>
+<li data-list-item-id="e639d01117e75ec176a3c6f32079be3ac">Set <strong>Temp. Sensor</strong> to <strong>Wired</strong>.</li>
+</ol>
+</li>
+</ul>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 267/341; height: auto; width: 239.75px;" src="../../attachments/360055318731_46406008847117_image.png" width="267" height="341"></p>
+<p><em>Image details:</em> Display screenshot showing Configuration</p>
+</div></details><details><summary>Literature Links</summary><div class="wysiwyg-disclosure-content"><ul>
+<li data-list-item-id="e5f44024ef88fd4d3e521f96a5b279249"><a href="https://support.trane.com/hc/en-us/articles/22535132675341" target="_blank" rel="noopener noreferrer">How to average multiple zone temp sensors</a></li>
+<li data-list-item-id="e578fca18fdc41160cc3f84aecf62234c">Legacy Firmware BAYSENS800 Manual <a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVN028*" target="_blank" rel="noopener noreferrer">BAS-SVN028*-EN</a>
+</li>
+<li data-list-item-id="ef3003000df0035aaa116f6d532cbb46f">Current Firmware BAYSENS800 Manual <a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVP080*" target="_blank" rel="noopener noreferrer">BAS-SVP080*-EN</a>
+</li>
+</ul></div></details><details><summary>Interactive Troubleshooting</summary><div class="wysiwyg-disclosure-content">
+
+<!-- SCOPED MAIN CONTAINER -->
+<div class="trane-sim-container" id="traneSimApp">
+  <!-- Header & Presets -->
+  <div class="sim-header">
+    <div class="sim-brand-line">
+      <div class="brand-tag-group">
+        <div class="sim-title-group">
+          <h2 id="h_01M4RC3PZ2HC8MHGHGZX08BWNY">Symbio™ 700 &amp; BAYSENS800</h2>
+        </div>
+      </div>
+      <button class="sim-btn btn-solid-reverse" onclick="loadSimScenario('valid')">
+        ✓ Normal Comm
+      </button>
+    </div>
+    <!-- Quick Scenario Preset Bar -->
+    <div class="preset-button-bar">
+      <button class="sim-btn btn-outline-fill" id="btn-reversedWiring" onclick="loadSimScenario('reversedWiring')">
+        Reverse Polarity
+      </button><button class="sim-btn btn-outline-fill" id="btn-basicLicense" onclick="loadSimScenario('basicLicense')">
+        Basic License
+      </button><button class="sim-btn btn-outline-fill" id="btn-baudMismatch" onclick="loadSimScenario('baudMismatch')">
+        Baud Mismatch
+      </button><button class="sim-btn btn-outline-fill" id="btn-vvdaConflict" onclick="loadSimScenario('vvdaConflict')">
+        VVDA Conflict
+      </button><button class="sim-btn btn-outline-fill" id="btn-addrMismatch" onclick="loadSimScenario('addrMismatch')">
+        Sensor Addr Mismatch
+      </button><button class="sim-btn btn-outline-fill" id="btn-unitAddrMismatch" onclick="loadSimScenario('unitAddrMismatch')">
+        Sensor Unit Addr Mismatch
+      </button><button class="sim-btn btn-outline-fill" id="btn-unitRotaryMismatch" onclick="loadSimScenario('unitRotaryMismatch')">
+        Unit Rotary ≠ 001
+      </button><button class="sim-btn btn-outline-fill" id="btn-unitBaudWrong" onclick="loadSimScenario('unitBaudWrong')">
+        Unit Baud ≠ 76800
+      </button><button class="sim-btn btn-outline-fill" id="btn-protocolWrong" onclick="loadSimScenario('protocolWrong')">
+        Protocol ≠ MS/TP
+      </button><button class="sim-btn btn-outline-fill" id="btn-spaceCtrlWrong" onclick="loadSimScenario('spaceCtrlWrong')">
+        Space Ctrl Type Wrong
+      </button><button class="sim-btn btn-subtle-outline" onclick="resetSimToDefaults()">
+        Reset Defaults
+      </button>
+    </div>
+  </div>
+  <!-- Main Content Workspace -->
+  <div class="sim-content">
+    <!-- Bus Schematic & Hardware Visualization -->
+    <div class="bus-schematic">
+      <div class="devices-grid">
+        <!-- Symbio 700 Module Box -->
+        <div class="device-box synced" id="cardSymbio">
+          <div class="device-header">
+            <span>Symbio™ 700 UC</span><span id="badgeSymbioLic" style="color: var(--trane-green-text); font-size: 0.675rem; font-weight: 800;">ADVANCED</span>
+          </div>
+          <div class="device-meta">
+            Rotary Dial: <strong id="lblSymbioAddr">001</strong><br>
+            Baud Rate on Symbio™ 700 UC:
+            <strong id="lblSymbioBaud">76,800 bps</strong><br>
+            System Type: <strong id="lblSymbioSys">CVZT</strong><br>
+            Protocol:
+            <strong id="lblSymbioProtocol" style="color: var(--trane-green-text);">BACnet MS/TP</strong><br>
+            Arbitration Method Request:
+            <strong id="lblSymbioArbitration" style="color: var(--trane-green-text);">External BAS Control</strong><br>
+            Space Controller:
+            <strong id="lblSymbioSpaceCtrl" style="color: var(--trane-green-text);">Single Setpoint Zone Sensor</strong><br>
+            Space Temperature:
+            <strong id="lblSymbioSpaceTemp" style="font-size: 0.855rem; color: var(--trane-green-text);">73.5°F</strong>
+          </div>
+          <!-- Symbio 700 Local Character Display -->
+          <div class="symbio-local-bezel">
+            <div class="symbio-local-lcd" id="symbioLocalLcd">
+              <span class="lcd-line" id="symbioLocalLine1">Space Temp:</span><span class="lcd-line" id="symbioLocalLine2">73.5°F</span>
+            </div>
+          </div>
+          <div class="terminal-row">
+            <div class="terminal-node">
+              <span>J17-1 (+)</span>
+              <div class="pin-indicator ok" id="dotJ17_1"></div>
+            </div>
+            <div class="terminal-node">
+              <span>J17-2 (-)</span>
+              <div class="pin-indicator ok" id="dotJ17_2"></div>
+            </div>
+            <div class="terminal-node">
+              <span>J21-9 (GND)</span>
+              <div class="pin-indicator ok" id="dotJ21_9"></div>
+            </div>
+          </div>
+        </div>
+        <!-- BAYSENS800 Module Box -->
+        <div class="device-box synced" id="cardSensor">
+          <div class="device-header">
+            <span>BAYSENS800 (Wall Sensor)</span><span id="badgeSensorState" style="color: var(--trane-blue); font-size: 0.675rem; font-weight: 800;">ONLINE</span>
+          </div>
+          <div class="device-meta">
+            Sensor Device ID: <strong id="lblSensorMac">2</strong><br>
+            Unit Device ID: <strong id="lblSensorTarget">1</strong><br>
+            Baud Rate: <strong id="lblSensorBaud">76,800 bps</strong><br>
+            Local Space Temp:
+            <strong id="lblSensorSpaceTemp" style="color: var(--trane-dark);">73.5°F</strong>
+          </div>
+          <div class="terminal-row" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="terminal-node">
+              <span>C (13) +</span>
+              <div class="pin-indicator ok" id="dotTermC"></div>
+            </div>
+            <div class="terminal-node">
+              <span>D (14) -</span>
+              <div class="pin-indicator ok" id="dotTermD"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Animated RS-485 Data Bus (left) divided from the Diagnostic
+           Rules Evaluation (right) - moved up here from the Physical
+           Wiring card so live status and the rules that explain it sit
+           together, without growing this box's height. -->
+      <div class="bus-stream">
+        <div class="bus-stream-split">
+          <div class="bus-stream-col bus-stream-col-link">
+            <div class="bus-stream-header">
+              <span>Terminal J17-1 (+) → C (13)</span><span id="busStatusText" style="color: var(--trane-green-text); font-weight: 800;">TX/RX Link</span><span>Terminal J17-2 (-) → D (14)</span>
+            </div>
+            <div class="bus-line active" id="simWireFlow">
+              <span class="packet-pill" id="simPacketPill" style="background: #FFFFFF; color: var(--trane-dark);">Communicating</span>
+            </div>
+            <div class="bus-stream-header" style="margin-bottom: 0; margin-top: 0.4rem;">
+              <span id="busNoiseLabel" style="color: var(--trane-green-text);">Shield: Grounded J21-9</span>
+            </div>
+          </div>
+          <div class="bus-stream-col bus-stream-col-diag">
+            <h4 id="h_01M4RC3PZ3HD6VTG2SZ2MAGREJ" style="margin: 0 0 0.3rem; font-size: 0.72rem; font-weight: 800; color: var(--trane-dark);">Diagnostic Rules Evaluation</h4>
+            <div class="rule-item pass" id="simRulesAllPass" style="display: none;">
+              <span class="rule-icon">✓</span><span>All diagnostic rules passing</span>
+            </div>
+            <div class="rules-list" id="simRulesList">
+              <!-- Dynamically populated by JS evaluation: failing rules only -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls Dual-Column: Hardware Wiring & Software App Configuration -->
+    <div class="config-split">
+      <!-- Physical Wiring & HW fields (packed two per row on wide
+           screens via sim-field-grid). Diagnostic Rules Evaluation now
+           lives up in the bus-stream box, beside the live link status. -->
+      <div class="config-card" style="grid-column: 1 / -1;">
+        <div class="config-card-header">
+          <h4 id="h_01M4RC3PZ3Z98FWZ6RQC30GWC8">1. Physical Wiring &amp; HW</h4>
+          <span class="status-chip" id="chipWiring" style="background: var(--trane-green); color: #FFFFFF;">OK</span>
+        </div>
+        <div class="config-card-body">
+          <div class="sim-field-group sim-field-grid">
+            <div class="sim-field">
+              <label>Symbio J17-1 (+) Wire Route:</label>
+              <select id="cfgJ17_1" onchange="runSimEvaluation()">
+                <option value="C" selected>BAYSENS800 Term C (Comm +)</option>
+                <option value="D">BAYSENS800 Term D (Comm -)</option>
+                <option value="OPEN">Disconnected / Open Circuit</option>
+              </select>
+              <span class="field-note">J17-1 must route directly to C-(13)</span>
+            </div>
+            <div class="sim-field">
+              <label>Symbio J17-2 (-) Wire Route:</label>
+              <select id="cfgJ17_2" onchange="runSimEvaluation()">
+                <option value="D" selected>BAYSENS800 Term D (Comm -)</option>
+                <option value="C">BAYSENS800 Term C (Comm +)</option>
+                <option value="OPEN">Disconnected / Open Circuit</option>
+              </select>
+              <span class="field-note">J17-2 must route directly to D-(14)</span>
+            </div>
+            <div class="sim-field">
+              <label>Shield Wire Termination:</label>
+              <select id="cfgShield" onchange="runSimEvaluation()">
+                <option value="J21-9" selected>Grounded at Symbio J21-9</option>
+                <option value="FLOATING">Floating / Not Connected</option>
+                <option value="CHASSIS_BOTH">Grounded Both Ends (Ground Loop)</option>
+              </select>
+            </div>
+            <div class="sim-field">
+              <label>Cable Type:</label>
+              <select id="cfgCable" onchange="runSimEvaluation()">
+                <option value="WCW_SHIELDED" selected>Windy City Wire 18-22AWG Shielded</option>
+                <option value="UNSHIELDED">Unshielded Thermostat Wire (Noisy)</option>
+                <option value="LONG_RUN">
+                  Overlength ( 1,000 ft Attenuation)
+                </option>
+              </select>
+            </div>
+            <div class="sim-field">
+              <label>Symbio Controller Rotary Switch:</label><input type="number" id="cfgRotary" min="0" max="127" value="1" onchange="runSimEvaluation()"><span class="field-note">Must be dialed to 001 for unit address</span>
+            </div>
+            <div class="sim-field">
+              <label>Sensor Hardware Installed:</label>
+              <select id="cfgSensorModel" onchange="runSimEvaluation()">
+                <option value="BAYSENS800" selected>X13791009001 (BAYSENS800)</option>
+                <option value="BAYSENS924">BAYSENS924 (ReliaTel Only)</option>
+                <option value="SEN02587">SEN02587 / X13790993001 (UC400)</option>
+              </select>
+            </div>
+            <div class="sim-field">
+              <label>Controller License Tier:</label>
+              <select id="cfgLicense" onchange="runSimEvaluation()">
+                <option value="ADVANCED" selected>Advanced License (BACnet Enabled)</option>
+                <option value="BASIC">Basic License (No BACnet MS/TP)</option>
+              </select>
+              <span class="field-note">Requires Advanced or MOD04044 upgrade for BACnet MS/TP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Column 2: Software & Sensor Menu Configuration. Hidden from
+           view - every one of these settings can now be changed through
+           the virtual phone app (Settings / Tools tabs) or the virtual
+           sensor's own touchscreen, so this panel is no longer shown.
+           The fields stay in the DOM (not removed) because they're the
+           shared state everything else (phone app, sensor LCD, presets,
+           diagnostics) reads from and writes to. -->
+      <div class="config-card" style="display: none;">
+        <div class="config-card-header">
+          <h4 id="h_01M4RC3PZ3VWNSSSV7BM050HS4">2. Software &amp; Settings</h4>
+          <span class="status-chip" id="chipConfig" style="background: var(--trane-green); color: #FFFFFF;">OK</span>
+        </div>
+        <div class="config-card-body">
+          <div class="sim-field">
+            <label>Arbitration Method Request:</label>
+            <select id="cfgArbitrationMethod" onchange="runSimEvaluation()">
+              <option value="EXTERNAL_BAS" selected>Enable External BAS Control</option>
+              <option value="STANDALONE">Standalone (Local Control Only)</option>
+            </select>
+            <span class="field-note">Symbio App &gt; Settings &gt; System</span>
+          </div>
+          <div class="sim-field">
+            <label>Space Controller Type:</label>
+            <select id="cfgSpaceCtrlType" onchange="runSimEvaluation()">
+              <option value="SINGLE_SETPOINT" selected>Single Setpoint Zone Sensor</option>
+              <option value="DUAL_SETPOINT">Dual Setpoint Zone Sensor</option>
+              <option value="TSTAT">T-Stat (Thermostat Mode)</option>
+            </select>
+            <span class="field-note">Symbio App &gt; View Configuration &gt; Edit</span>
+          </div>
+          <div class="sim-field">
+            <label>Unit System Type:</label>
+            <select id="cfgSysType" onchange="runSimEvaluation()">
+              <option value="CVZT" selected>CVZT (Constant Volume Zone Temp)</option>
+              <option value="VVZT">VVZT (Variable Volume Zone Temp)</option>
+              <option value="VVDA">VVDA (Variable Volume Discharge Air)</option>
+            </select>
+            <span class="field-note">BAYSENS800 cannot be used with VVDA</span>
+          </div>
+          <div class="sim-field">
+            <label>Protocol (Tools &gt; Protocol Configuration):</label>
+            <select id="cfgSymbioProtocol" onchange="runSimEvaluation()">
+              <option value="BACNET_MSTP" selected>BACnet MS/TP</option>
+              <option value="BACNET_AIRFI">BACnet Air-Fi</option>
+              <option value="BACNET_IP">BACnet/IP</option>
+              <option value="MODBUS_RTU">Modbus RTU</option>
+              <option value="MODBUS_TCP">Modbus TCP</option>
+            </select>
+            <span class="field-note">Only BACnet MS/TP talks to the BAYSENS800</span>
+          </div>
+          <div class="sim-field">
+            <label>Baud Rate on Symbio™ 700 UC:</label>
+            <select id="cfgSymbioBaud" onchange="runSimEvaluation()">
+              <option value="76800" selected>76,800 Baud</option>
+              <option value="38400">38,400 Baud</option>
+              <option value="19200">19,200 Baud</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label>BAYSENS800 Internal Baud (PW: 4017):</label>
+            <select id="cfgSensorBaud" onchange="simSyncSensorBaud('cfgSensorBaud'); runSimEvaluation()">
+              <option value="76800" selected>76,800 Baud</option>
+              <option value="38400">38,400 Baud</option>
+              <option value="19200">19,200 Baud</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label>BAYSENS800 Target Unit / Unit Device ID:</label><input type="number" id="cfgSensorTarget" min="0" max="127" value="1" onchange="runSimEvaluation()"><span class="field-note">Must match Symbio Rotary Address (001)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Split: Interactive Virtual Touchscreen & Live Diagnostic Audit -->
+    <div class="config-split">
+      <!-- Interactive Virtual BAYSENS800 LCD Screen -->
+      <div class="config-card">
+        <div class="config-card-header">
+          <h4 id="h_01M4RC3PZ3PK8YJNHHSMNCEZZ4">Virtual BAYSENS800 Touchscreen</h4>
+          <span style="font-size: 0.675rem; font-weight: 700; color: var(--trane-muted);">Installer PIN: 4017</span>
+        </div>
+        <div class="config-card-body" style="align-items: center;">
+          <div class="sensor-hardware-bezel">
+            <div class="sensor-brand-plate">
+              <span class="brand-dot" id="sensorBrandDot"></span>TRANE
+            </div>
+            <div class="lcd-screen" id="virtualSensorLcd">
+              <!-- Hotspot for Entering Configuration (Touch top center for 2s) -->
+              <div class="hotspot-top-center" id="hotspotConfig" onclick="simTriggerConfigMode()" title="Touch top center for 2 seconds to enter config">
+                Touch Top Center (2s)
+              </div>
+              <!-- VIEW 0: Normal Home Screen -->
+              <div class="lcd-menu-page active" id="lcdViewHome">
+                <div class="lcd-top-bar">
+                  <span id="lcdSysDate">2024.08.15</span><span id="lcdSysTime">2:43 PM</span>
+                </div>
+                <div class="lcd-occupancy-pill" id="lcdOccupancy">Unoccupied</div>
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-top: 0.3rem;">
+                  <div>
+                    <div class="lcd-center-label">Indoor °F</div>
+                    <div class="lcd-digits" id="lcdIndoorDigits">73.5°</div>
+                    <div class="lcd-center-label" id="lcdOutdoor">Outdoor 61.5 °F</div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.15rem;">
+                    <span style="font-size: 0.765rem; color: #9CA3AF;">▲</span><span style="font-size: 0.612rem; color: #6B7280; font-weight: 700;">75.5</span><span style="font-size: 0.612rem; color: #6B7280; font-weight: 700; margin-top: 0.3rem;">71.5</span><span style="font-size: 0.765rem; color: #9CA3AF;">▼</span>
+                  </div>
+                </div>
+                <div class="lcd-message-bar idle" id="lcdCommStatusMessage"> </div>
+                <div class="lcd-nav-footer">
+                  <span style="font-size: 0.63rem; color: #6B7280;">Auto Mode</span><span style="font-size: 0.63rem; color: #6B7280;" id="lcdTargetSetpoint">Set: 73.0°F</span>
+                </div>
+                <div style="display: flex; justify-content: space-around; padding-top: 0.4rem;">
+                  <span style="font-size: 0.855rem; color: #6B7280;">❆</span><span style="font-size: 0.855rem; color: #6B7280;">⚙</span><span style="font-size: 0.855rem; color: #6B7280;">🕐</span><span style="font-size: 0.855rem; color: #6B7280;">☀</span>
+                </div>
+              </div>
+              <!-- VIEW 1: Password Prompt Screen -->
+              <div class="lcd-menu-page" id="lcdViewPassword">
+                <div class="lcd-menu-title">Installer Password</div>
+                <p style="text-align: center; font-size: 0.675rem; margin: 0.2rem 0; color: #6B7280;">Enter the code</p>
+                <div class="lcd-digits" id="lcdPinBuffer" style="font-size: 1.62rem; margin: 0.2rem 0; letter-spacing: 0.15em;">____</div>
+                <div class="keypad-grid">
+                  <button class="keypad-btn" onclick="simPinKey('0')">0</button><button class="keypad-btn" onclick="simPinKey('1')">1</button><button class="keypad-btn" onclick="simPinKey('2')">2</button><button class="keypad-btn" onclick="simPinKey('3')">3</button><button class="keypad-btn" onclick="simPinKey('4')">4</button><button class="keypad-btn" onclick="simPinKey('5')">5</button><button class="keypad-btn" onclick="simPinKey('6')">6</button><button class="keypad-btn" onclick="simPinKey('7')">7</button><button class="keypad-btn" onclick="simPinKey('8')">8</button><button class="keypad-btn" onclick="simPinKey('9')">9</button>
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button><button class="lcd-key-btn" onclick="simClearPin()">Clear</button>
+                </div>
+              </div>
+              <!-- VIEW 2: 1/2 Setup Menu -->
+              <div class="lcd-menu-page" id="lcdViewSetup1">
+                <div class="lcd-menu-title">1 / 2 Setup</div>
+                <button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;" onclick="simSwitchLcdView('lcdViewNetwork1')">Network →</button><button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;" onclick="simSwitchLcdView('lcdViewConfig24')">Configuration →</button><button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;">Setpoints</button><button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;">Display</button><button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;">Clock - Schedule</button><button class="lcd-key-btn" style="width: 100%; height: 26px; justify-content: flex-start;" onclick="simSwitchLcdView('lcdViewServiceView')">Service View →</button>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup2')">Page 2/2 →</button>
+                </div>
+              </div>
+              <!-- VIEW 3: 2/2 Setup Menu -->
+              <div class="lcd-menu-page" id="lcdViewSetup2">
+                <div class="lcd-menu-title">2 / 2 Setup</div>
+                <button class="lcd-key-btn" style="width: 100%; height: 28px; justify-content: flex-start;" onclick="simSwitchLcdView('lcdViewLua')">Lua (Version Verify) →</button>
+                <div style="font-size: 0.675rem; color: #6B7280; margin-top: 0.5rem; line-height: 1.4;">
+                  Use Lua to verify the embedded firmware application
+                  matches Symbio 700/800 requirements.
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup1')">← Page 1/2</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button>
+                </div>
+              </div>
+              <!-- VIEW 4: 1/3 Network Settings (Figure 4 Firmware) -->
+              <div class="lcd-menu-page" id="lcdViewNetwork1">
+                <div class="lcd-menu-title">1/3 Network Settings</div>
+                <div class="lcd-menu-row">
+                  <span>Sens. address:</span><input type="number" id="simLcdSensAddr" min="0" max="127" value="2" style="width: 48px; text-align: right; background: #FFFFFF; color: #111827; font-size: 0.648rem; font-weight: 700; border: 1px solid var(--trane-border); border-radius: 2px;" onchange="simSyncSensorDeviceId(); runSimEvaluation()">
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Baud rate:</span>
+                  <select id="simLcdSensBaud" style="background: #FFFFFF; color: #111827; font-size: 0.63rem; border: 1px solid var(--trane-border); border-radius: 2px;" onchange="simSyncSensorBaud('simLcdSensBaud'); runSimEvaluation()">
+                    <option value="76800" selected>76800</option>
+                    <option value="38400">38400</option>
+                    <option value="19200">19200</option>
+                  </select>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Status:</span><strong id="lcdNetStatusText" style="color: var(--trane-green-text);">online</strong>
+                </div>
+                <div style="font-size: 0.63rem; color: #6B7280; margin-top: 0.3rem;">
+                  * If address or baud does not match Symbio,
+                  status becomes offline.
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup1')">↵ Back</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewNetwork2')">Page 2/3 →</button>
+                </div>
+              </div>
+              <!-- VIEW 5: 2/3 Sensor Device ID (Figure 4) -->
+              <div class="lcd-menu-page" id="lcdViewNetwork2">
+                <div class="lcd-menu-title">2/3 Sensor Device ID</div>
+                <div class="lcd-digits" id="lcdSensorDevId" style="font-size: 1.44rem; margin: 0.25rem 0;">0011002</div>
+                <div style="font-size: 0.63rem; color: #6B7280; text-align: center;">
+                  Tracks Sens. address (1/3). Press [R] to reset
+                  address &amp; ID to 2 / 0000002
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewNetwork1')">↵ Back</button><button class="lcd-key-btn" onclick="simResetSensorInstance()">R (Reset)</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewNetwork3')">Page 3/3 →</button>
+                </div>
+              </div>
+              <!-- VIEW 6: 3/3 Unit Device ID (Figure 4) - this is the
+                   BAYSENS800 Target Unit (sensorTarget): which Symbio
+                   unit address the sensor is trying to reach. Editing it
+                   here writes straight into cfgSensorTarget, same as the
+                   "BAYSENS800 Target Unit / Unit Device ID" field on the
+                   2. Software & Settings panel - one shared value, two
+                   front ends onto it. -->
+              <div class="lcd-menu-page" id="lcdViewNetwork3">
+                <div class="lcd-menu-title">3/3 Unit Device ID</div>
+                <input type="text" inputmode="numeric" id="simLcdUnitTarget" value="0000001" maxlength="7" class="lcd-digits" style="font-size: 1.44rem; margin: 0.25rem 0; width: 100%; background: transparent; border: none; color: inherit; font-family: inherit; text-align: left; padding: 0;" onchange="simSyncUnitTarget(); runSimEvaluation()">
+                <div style="font-size: 0.63rem; color: #6B7280; text-align: center;">Must match Symbio 700 Rotary Dial</div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewNetwork2')">↵ Back</button><button class="lcd-key-btn" onclick="simResetUnitInstance()">R (Reset)</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button>
+                </div>
+              </div>
+              <!-- VIEW 7: 2/4 Configuration (UC17 & Temp Sensor) -->
+              <div class="lcd-menu-page" id="lcdViewConfig24">
+                <div class="lcd-menu-title">2/4 Configuration</div>
+                <div class="lcd-menu-row">
+                  <span>Eco. enable:</span><strong>Off</strong>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Eco. temp. SP:</span><strong>63.0 F</strong>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>UC17 config:</span>
+                  <select id="simLcdUc17" style="background: #FFFFFF; color: #111827; font-size: 0.648rem; border: 1px solid var(--trane-border); border-radius: 2px;" onchange="runSimEvaluation()">
+                    <option value="None" selected>None</option>
+                    <option value="Motion">Motion</option>
+                    <option value="Temp">Temp (10k)</option>
+                  </select>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Temp. sensor:</span>
+                  <select id="simLcdTempSrc" style="background: #FFFFFF; color: #111827; font-size: 0.648rem; border: 1px solid var(--trane-border); border-radius: 2px;" onchange="runSimEvaluation()">
+                    <option value="Internal" selected>Internal</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Wired">Wired (17/18)</option>
+                  </select>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Occupancy src:</span><strong>Schedul</strong>
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup1')">↵ Back</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button>
+                </div>
+              </div>
+              <!-- VIEW 8: 4/7 Service View (Live Unit Status Verification) -->
+              <div class="lcd-menu-page" id="lcdViewServiceView">
+                <div class="lcd-menu-title">4/7 Service View</div>
+                <div class="lcd-menu-row" style="background: var(--trane-bg-soft); border: 1px solid var(--trane-border);">
+                  <span>Unit status:</span><strong id="lcdServiceUnitStatus" style="color: var(--trane-green-text); font-size: 0.765rem;">Online</strong>
+                </div>
+                <div class="lcd-menu-row">
+                  <span>Room temp:</span><strong id="lcdServiceRoomTemp">73.5 F</strong>
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup1')">↵ Back</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button>
+                </div>
+              </div>
+              <!-- VIEW 9: 1/3 Lua Firmware Screen -->
+              <div class="lcd-menu-page" id="lcdViewLua">
+                <div class="lcd-menu-title">1/3 Lua</div>
+                <div style="font-size: 0.675rem; font-weight: 700; color: #111827; margin-top: 0.25rem;">Trane_Symbio-v1. :</div>
+                <div style="font-size: 0.648rem; color: #6B7280;">X13791009001 (BAYSENS800)</div>
+                <div style="font-size: 0.63rem; color: #4B5563; margin-top: 0.5rem; line-height: 1.4;">
+                  Network Client for Symbio 800 rev 1.3.8 (based
+                  on Trane rev 6.11)
+                </div>
+                <div class="callout-box" style="margin-top: 0.5rem; padding: 0.4rem; font-size: 0.612rem; background: var(--trane-bg-subtle); color: #4B5563;">
+                  Confirms the zone sensor has the correct
+                  Lua script and graphic library for Symbio
+                  700/800.
+                </div>
+                <div class="lcd-nav-footer" style="margin-top: auto;">
+                  <button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewSetup2')">↵ Back</button><button class="lcd-key-btn" onclick="simSwitchLcdView('lcdViewHome')">⌂ Home</button>
+                </div>
+              </div>
+            </div>
+            <div class="sensor-home-bar"></div>
+          </div>
+          <span style="font-size: 0.675rem; color: var(--trane-muted); text-align: center;">
+            Tip: Click the top-center box on the LCD above to interactively navigate menus!
+          </span>
+        </div>
+      </div>
+      <!-- Virtual Phone App (Symbio Service & Installation App mockup),
+           its own card so it sits beside the sensor touchscreen in two
+           columns on wide screens, and stacks below it on narrow ones. -->
+      <div class="config-card">
+        <div class="config-card-header">
+          <h4 id="h_01M50A7SKRPYBT5F9HDA0GQ4G6">Symbio Service &amp; Installation App</h4>
+        </div>
+        <div class="config-card-body" style="align-items: center; justify-content: center;">
+          <div class="phone-app-wrap">
+            <div class="phone-app-shell">
+              <div class="phone-app-statusbar">
+                <span id="phoneAppTime">9:41</span><span>📶 🔋</span>
+              </div>
+              <!-- Phone View: Home (mirrors the unit's live space temperature) -->
+              <div class="phone-view active" id="phoneViewHome">
+                <div class="phone-navbar">
+                  <span class="phone-nav-icon">☰</span><span class="phone-nav-title">Home</span><span class="phone-nav-icon">⟳</span>
+                </div>
+                <div class="phone-content">
+                  <div class="phone-card-black">Symbio™ 700 App</div>
+                  <div class="phone-stat-row">
+                    <span class="phone-stat-label">SPACE TEMPERATURE ACTIVE</span><span class="phone-stat-value" id="phoneSpaceTemp">73.5 °F</span>
+                  </div>
+                </div>
+                <div class="phone-tabbar">
+                  <span class="phone-tab active">Home</span><span class="phone-tab" onclick="phoneAppSwitchView('phoneViewSettings')">Settings</span><span class="phone-tab">Status</span><span class="phone-tab">Alarms</span><span class="phone-tab" onclick="phoneAppSwitchView('phoneViewTools')">Tools</span>
+                </div>
+              </div>
+              <!-- Phone View: Settings (edits the same live config as the rest of the sim) -->
+              <div class="phone-view" id="phoneViewSettings">
+                <div class="phone-navbar">
+                  <span class="phone-nav-icon" onclick="phoneAppSwitchView('phoneViewHome')">☰</span><span class="phone-nav-title">Settings</span><span class="phone-nav-icon">⟳</span>
+                </div>
+                <div class="phone-content">
+                  <div class="phone-field">
+                    <label>Arbitration Method Request</label>
+                    <select id="phoneArbitration" onchange="phoneAppSync('cfgArbitrationMethod', this.value)">
+                      <option value="EXTERNAL_BAS">Enable External/BAS Control</option>
+                      <option value="STANDALONE">Standalone Controls</option>
+                    </select>
+                  </div>
+                  <div class="phone-field">
+                    <label>System Type</label>
+                    <select id="phoneSysType" onchange="phoneAppSync('cfgSysType', this.value)">
+                      <option value="CVZT">CVZT (Constant Volume Zone Temp)</option>
+                      <option value="VVZT">VVZT (Variable Volume Zone Temp)</option>
+                      <option value="VVDA">VVDA (Variable Volume Discharge Air)</option>
+                    </select>
+                  </div>
+                  <div class="phone-field">
+                    <label>Space Controller</label>
+                    <select id="phoneSpaceCtrl" onchange="phoneAppSync('cfgSpaceCtrlType', this.value)">
+                      <option value="SINGLE_SETPOINT">Single Setpoint Zone Sensor</option>
+                      <option value="DUAL_SETPOINT">Dual Setpoint Zone Sensor</option>
+                      <option value="TSTAT">T-Stat (Thermostat Mode)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="phone-tabbar">
+                  <span class="phone-tab" onclick="phoneAppSwitchView('phoneViewHome')">Home</span><span class="phone-tab active">Settings</span><span class="phone-tab">Status</span><span class="phone-tab">Alarms</span><span class="phone-tab" onclick="phoneAppSwitchView('phoneViewTools')">Tools</span>
+                </div>
+              </div>
+              <!-- Phone View: Tools (Protocol Configuration - protocol, baud rate, rotary dial) -->
+              <div class="phone-view" id="phoneViewTools">
+                <div class="phone-navbar">
+                  <span class="phone-nav-icon" onclick="phoneAppSwitchView('phoneViewHome')">☰</span><span class="phone-nav-title">Protocol Configuration</span><span class="phone-nav-icon">⟳</span>
+                </div>
+                <div class="phone-content">
+                  <div class="phone-field">
+                    <label>Protocol</label>
+                    <select id="phoneProtocol" onchange="phoneAppSync('cfgSymbioProtocol', this.value)">
+                      <option value="BACNET_MSTP">BACnet MS/TP</option>
+                      <option value="BACNET_AIRFI">BACnet Air-Fi</option>
+                      <option value="BACNET_IP">BACnet/IP</option>
+                      <option value="MODBUS_RTU">Modbus RTU</option>
+                      <option value="MODBUS_TCP">Modbus TCP</option>
+                    </select>
+                  </div>
+                  <div class="phone-field">
+                    <label>Baud Rate</label>
+                    <select id="phoneBaud" onchange="phoneAppSync('cfgSymbioBaud', this.value)">
+                      <option value="76800">76800 bps</option>
+                      <option value="38400">38400 bps</option>
+                      <option value="19200">19200 bps</option>
+                    </select>
+                  </div>
+                  <div class="phone-field">
+                    <label>Rotary Dial Setting</label><select id="phoneRotary" onchange="phoneAppSync('cfgRotary', this.value)">
+                      <!-- JS populates 0-127 on load -->
+                    </select>
+                  </div>
+                </div>
+                <div class="phone-tabbar">
+                  <span class="phone-tab" onclick="phoneAppSwitchView('phoneViewHome')">Home</span><span class="phone-tab" onclick="phoneAppSwitchView('phoneViewSettings')">Settings</span><span class="phone-tab">Status</span><span class="phone-tab">Alarms</span><span class="phone-tab active">Tools</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span style="font-size: 0.675rem; color: var(--trane-muted); text-align: center;">
+            Tip: Use the tab bar below the screen to switch between Home, Settings, and Tools.
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Interactive Step-by-Step Field Guide Tabs -->
+    <div class="guide-container">
+      <div class="guide-header-bar">
+        <button class="guide-tab active" onclick="switchGuideTab('tabConfigMode')">1. Enter Config</button><button class="guide-tab" onclick="switchGuideTab('tabPin')">2. Enter PIN (4017)</button><button class="guide-tab" onclick="switchGuideTab('tabNetwork')">3. Network &amp; Baud</button><button class="guide-tab" onclick="switchGuideTab('tabInstance')">4. Instance &amp; [R] Key</button><button class="guide-tab" onclick="switchGuideTab('tabUC17')">5. UC17 &amp; Temp Sensor</button><button class="guide-tab" onclick="switchGuideTab('tabServiceView')">6. Service View 4/7</button><button class="guide-tab" onclick="switchGuideTab('tabLua')">7. Verify Lua Version</button><button class="guide-tab" onclick="switchGuideTab('tabWiring')">8. Wiring</button><button class="guide-tab" onclick="switchGuideTab('tabUnitConfig')">9. Unit Configuration</button><button class="guide-tab" onclick="switchGuideTab('tabManuals')">10. Manuals</button>
+      </div>
+      <div class="guide-content-panel">
+        <!-- Tab 1: Enter Configuration Mode -->
+        <div class="guide-panel-item active" id="tabConfigMode">
+          <h4 id="h_01M4RC3PZ3VD5XR6G3YHQAAJJ3">How to Enter Configuration Mode</h4>
+          <p>
+            The BAYSENS800 touchscreen provides access to the password-protected
+            installer setup screens through a hidden touch gesture
+            on the home screen:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              Ensure the sensor is powered on and displaying the
+              Home Screen (showing indoor temperature, occupancy,
+              and time).
+            </li>
+            <li>
+              <strong>Touch and hold the top center location</strong>
+              of the display glass for <strong>2 seconds</strong>.
+            </li>
+            <li>
+              Release your finger when the display transitions
+              to the <code>Installer Password</code> keypad screen.
+            </li>
+          </ol>
+          <div class="callout-box">
+            <strong>Interactive simulation note:</strong> Click the
+            dashed <strong>[Touch Top Center (2s)]</strong> hotspot
+            on the virtual sensor above to launch the password screen
+            immediately.
+          </div>
+        </div>
+        <!-- Tab 2: Enter Password -->
+        <div class="guide-panel-item" id="tabPin">
+          <h4 id="h_01M4RC3PZ3M7T1D31NK5A0WBA3">How to Enter the Password</h4>
+          <p>All installer menus require the factory password:</p>
+          <ol class="guide-steps-list">
+            <li>
+              On the <code>Installer Password</code> screen, use
+              the numeric keypad buttons <code>0</code> through
+              <code>9</code>.
+            </li>
+            <li>
+              Enter the fixed installer password: <strong>4 0 1 7</strong>.
+            </li>
+            <li>
+              Once the fourth digit is entered, the sensor automatically
+              validates the passcode and unlocks the
+              <strong>1 / 2 Setup</strong> screen.
+            </li>
+          </ol>
+          <div class="callout-box warn">
+            <strong>Important:</strong> The installer password is
+            fixed at <code>4017</code> and cannot be modified in
+            the field.
+          </div>
+        </div>
+        <!-- Tab 3: Network & Baud Settings -->
+        <div class="guide-panel-item" id="tabNetwork">
+          <h4 id="h_01M4RC3PZ3QW74KT5Y9TDTB9P2">
+            How to Configure Network Settings (1/3 Network Settings
+            &amp; Figure 4)
+          </h4>
+          <p>
+            Proper MS/TP token passing requires matching communication
+            parameters between the Symbio 700 controller and BAYSENS800:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              From the <strong>1 / 2 Setup</strong> menu, select
+              <strong>Network</strong>.
+            </li>
+            <li>
+              On <strong>1/3 Network Settings</strong> (or 1/2
+              in legacy firmware), configure:
+              <ul>
+                <li>
+                  <strong>Sens. address:</strong> Set to a
+                  unique BACnet MAC address (typically <code>2</code>
+                  on a dedicated sensor link; range 0–127).
+                </li>
+                <li>
+                  <strong>Baud rate:</strong> Must match the
+                  Symbio 700 baud rate exactly (default: <code>76800</code>).
+                </li>
+                <li>
+                  <strong>Status:</strong> Displays <code>online</code>
+                  when valid token frames are detected. If
+                  incorrect, it indicates <code>offline</code>.
+                </li>
+              </ul>
+            </li>
+            <li>
+              In older firmware, set <strong>Unit address</strong>
+              to match the rotary dial on the Symbio 700 (typically
+              <code>1</code>).
+            </li>
+          </ol>
+          <div class="callout-box warn">
+            If the sensor address, unit address, or baud rate is
+            incorrect, communication will fail completely, causing
+            the Symbio 700 space temperature to register
+            <strong>1000001°F</strong>.
+          </div>
+        </div>
+        <!-- Tab 4: Network Instance & [R] Button Reset -->
+        <div class="guide-panel-item" id="tabInstance">
+          <h4 id="h_01M4RC3PZ3DTZXSGX38GF13QY0">
+            2/2 Network Instance / 2/3 Sensor Device ID &amp; The [R]
+            Button
+          </h4>
+          <p>
+            BACnet device instance numbers must be correctly formatted
+            to prevent network conflicts:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              Navigate to <strong>2/2 Network Instance</strong>
+              (or <strong>2/3 Sensor Device ID</strong> on updated
+              Figure 4 firmware).
+            </li>
+            <li>
+              If the displayed instance shows an unconfigured or
+              unexpected number:
+              <ul>
+                <li>
+                  Press the <strong>[R]</strong> button on
+                  the touchscreen.
+                </li>
+                <li>
+                  Touching <strong>[R]</strong> automatically
+                  copies the sensor MAC address number into
+                  the BACnet Device ID field, resetting it
+                  to <strong>000002</strong> (or <strong>0011002</strong>).
+                </li>
+              </ul>
+            </li>
+            <li>
+              Press the checkmark button (<strong>✓</strong>) to
+              confirm and save the new instance value.
+            </li>
+          </ol>
+          <div class="callout-box">
+            <strong>Figure 4 Note:</strong> Modern firmware includes
+            separate pages: <strong>2/3 Sensor Device ID</strong>
+            and <strong>3/3 Unit Device ID</strong>. Verify both
+            IDs align with your BACnet network plan.
+          </div>
+        </div>
+        <!-- Tab 5: UC17 Configuration & Temp Sensor Source -->
+        <div class="guide-panel-item" id="tabUC17">
+          <h4 id="h_01M4RC3PZ3X6ZVEXTY41NSDATQ">How to Configure 2/4 Configuration (UC17 &amp; Temp Sensor)</h4>
+          <p>
+            Terminals 17 and 18 can be configured for auxiliary sensing
+            or remote temperature:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              From the <strong>1 / 2 Setup</strong> screen, tap
+              <strong>Configuration</strong>.
+            </li>
+            <li>
+              Advance past 1/4 Configuration to page
+              <strong>2/4 Configuration</strong>.
+            </li>
+            <li>
+              Set <strong>UC17 config:</strong>
+              <ul>
+                <li>
+                  <code>None</code>: Terminals 17 and 18 are
+                  not in use (standard installation).
+                </li>
+                <li>
+                  <code>Motion</code>: Connected to a remote
+                  dry contact occupancy/motion sensor.
+                </li>
+                <li>
+                  <code>Temp</code>: Connected to an external
+                  10k Type 2 thermistor sensor.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Set <strong>Temp. sensor:</strong>
+              <ul>
+                <li>
+                  <code>Internal</code>: Uses the sensor's
+                  high-precision on-board thermistor (default).
+                </li>
+                <li>
+                  <code>Remote</code>: Uses an external sensor
+                  wired directly to the HVAC equipment.
+                </li>
+                <li>
+                  <code>Wired</code>: Uses the external sensor
+                  landed on terminals 17 and 18.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <div class="callout-box">
+            If the wired or remote sensor fails, the BAYSENS800 automatically
+            fails over to its internal 10k sensor element.
+          </div>
+        </div>
+        <!-- Tab 6: Service View 4/7 Verification -->
+        <div class="guide-panel-item" id="tabServiceView">
+          <h4 id="h_01M4RC3PZ3F9T6JS4PG0RBBVJC">How to Enter Service View 4/7 &amp; Verify Online Status</h4>
+          <p>
+            Service View allows field technicians to monitor real-time
+            controller telemetry and diagnostics without specialized
+            software:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              From the <strong>1 / 2 Setup</strong> screen, select
+              <strong>Service View</strong>.
+            </li>
+            <li>
+              Use the screen advance buttons to scroll to page
+              <strong>4/7 Service View</strong>.
+            </li>
+            <li>
+              Inspect the <strong>Unit status</strong> field:
+              <ul>
+                <li>
+                  <strong>Online:</strong> Indicates active
+                  bidirectional BACnet MS/TP communication
+                  with the Symbio 700.
+                </li>
+                <li>
+                  <strong>Offline:</strong> Indicates broken
+                  communication. Check polarity (J17-1 to C,
+                  J17-2 to D), baud mismatch, or address collision.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Also verify that the sensor failure diagnostics (<code>DAT sensor fail</code>,
+              <code>OAT sensor fail</code>, etc.) show <code>Off</code>.
+            </li>
+          </ol>
+        </div>
+        <!-- Tab 7: Lua Script Verification -->
+        <div class="guide-panel-item" id="tabLua">
+          <h4 id="h_01M4RC3PZ4FPWXBT522PYNN928">How to Verify Lua 1/3 (Trane_Symbio-v)</h4>
+          <p>
+            The BAYSENS800 uses custom embedded Lua scripts to translate
+            points for specific Trane controllers:
+          </p>
+          <ol class="guide-steps-list">
+            <li>
+              From the <strong>1 / 2 Setup</strong> screen, advance
+              to <strong>2 / 2 Setup</strong>.
+            </li>
+            <li>
+              Select <strong>Lua</strong> to enter the firmware
+              verification menu.
+            </li>
+            <li>
+              On page <strong>1/3 Lua</strong>, verify that the
+              top header reads: <strong>Trane_Symbio-v1. :</strong>
+            </li>
+            <li>
+              Confirm the hardware part number reads
+              <strong>X13791009001 (BAYSENS800)</strong>.
+            </li>
+            <li>
+              Confirm the client description reads:
+              <code>Network Client for Symbio 800 rev 1.3.8 (based on Trane rev 6.11)</code>.
+            </li>
+          </ol>
+          <div class="callout-box">
+            <strong>Compatibility:</strong> Sensors programmed with
+            Symbio 800 Lua are fully compatible with Symbio 700 controllers.
+            If the Lua screen displays <code>Trane_ReliaTel-V</code>
+            or <code>Trane_UC400</code>, the sensor is the wrong
+            model for this unit.
+          </div>
+        </div>
+        <!-- Tab 8: Wiring & Cable Requirements -->
+        <div class="guide-panel-item" id="tabWiring">
+          <h4 id="h_01M4RC3PZ4WIRING0000000001">Wiring Needed</h4>
+          <p>
+            The Programmable Zone Sensors only support the
+            <strong>BACnet
+              MS/TP</strong> communication
+            protocol for integration to
+            either Trane or non-Trane control systems.
+          </p>
+          <h4 style="margin-top: 0.9rem;" id="h_01M4RX4PBRH065AYXNP0X4TMWZ">Communication Wire</h4>
+          <p>
+            Use the correct communication wire to ensure reliable
+            communication between the zone sensor and the HVAC equipment.
+          </p>
+          <div class="callout-box">
+            <strong>Recommended supplier:</strong> Windy City Wire
+            <ul class="guide-steps-list" style="margin-top: 0.4rem;">
+              <li>
+                Plenum rated P/N: <code>043005AL</code>
+              </li>
+              <li>
+                Non-plenum rated P/N: <code>108760</code>
+              </li>
+            </ul>
+          </div>
+          <p style="margin-top: 0.75rem;">
+            Other wire may be used if it conforms with the following
+            physical characteristics:
+          </p>
+          <ol class="guide-steps-list">
+            <li>Twisted pair (2-conductor) plus shield</li>
+            <li>Characteristic impedance: 100–130 ohms</li>
+            <li>Distributed capacitance between conductors: &lt;100 pF/m</li>
+            <li>
+              Distributed capacitance between conductor and shield:
+              &lt;200 pF/m
+            </li>
+            <li>Foil or braided shield is acceptable</li>
+            <li>
+              Maximum length (end to end): <strong>4000 ft</strong>
+              with 18 AWG conductor wires
+            </li>
+            <li>
+              Maximum length (end to end): <strong>2000 ft</strong>
+              with 22 AWG conductor wires
+            </li>
+          </ol>
+        </div>
+        <!-- Tab 9: Unit-Side Configuration via the Mobile App -->
+        <div class="guide-panel-item" id="tabUnitConfig">
+          <h4 id="h_01M4RC3PZ4UNITCFG000000001">Configuring the Unit (Symbio 700)</h4>
+          <div class="callout-box">
+            <strong>Recommended:</strong> configure via the
+            <strong>Symbio Service &amp; Installation Mobile App</strong>
+            rather than the Symbio's own local keypad/display.
+          </div>
+          <h4 style="margin-top: 0.9rem;" id="h_01M4RX4PBS43Q1KZCCJBZEFFV4">1. Connect &amp; Enable External Control</h4>
+          <ol class="guide-steps-list">
+            <li>
+              Connect to the Symbio 700 using <strong>Bluetooth</strong>
+              via the Symbio Service &amp; Installation App.
+            </li>
+            <li>
+              Go to <strong>Settings &gt; System</strong>.
+            </li>
+            <li>
+              Set <strong>Arbitration Method Request</strong> to
+              <strong>Enable External BAS Control</strong>.
+            </li>
+          </ol>
+          <div class="callout-box">
+            <code>Settings &gt; System</code> with
+            <strong>Arbitration Method Request</strong> toggled/set to
+            <strong>Enable External BAS Control</strong>.
+          </div>
+          <h4 style="margin-top: 0.9rem;" id="h_01M4RX4PBSX5BG62HJRTASR48S">2. Configure Space Controller</h4>
+          <ol class="guide-steps-list">
+            <li>
+              Navigate to
+              <strong>Settings &gt; View Configuration &gt; Edit</strong>.
+            </li>
+            <li>
+              Set <strong>Space Controller Type</strong> to
+              <strong>Single Setpoint Zone Sensor</strong>.
+            </li>
+            <li>
+              Verify that <strong>System Type</strong> is configured
+              as
+              <strong>CVZT</strong> or <strong>VVZT</strong> (VVDA
+              and
+              MZVAV are not supported).
+            </li>
+          </ol>
+          <div class="callout-box">
+            <code>View Configuration &gt; Edit</code> highlighting
+            <strong>Space Controller Type = Single Setpoint Zone Sensor</strong>.
+          </div>
+          <h4 style="margin-top: 0.9rem;" id="h_01M4RX4PBSPRHRZWJEAJ6YM7DV">3. Configure BACnet Protocol</h4>
+          <ol class="guide-steps-list">
+            <li>
+              Navigate to
+              <strong>Tools &gt; Protocol Configuration &gt; Protocol</strong>.
+            </li>
+            <li>
+              Select <strong>BACnet MS/TP</strong>.
+            </li>
+            <li>
+              Set the <strong>Baud Rate</strong> to <strong>76800 bps</strong>.
+            </li>
+            <li>
+              Tap <strong>Save</strong>.
+            </li>
+          </ol>
+          <div class="callout-box">
+            <code>Tools &gt; Protocol Configuration</code> with
+            <strong>Protocol</strong> set to <strong>BACnet MS/TP</strong>
+            and <strong>Baud Rate</strong> set to <strong>76800</strong>.
+          </div>
+        </div>
+        <!-- Tab 10: Which Manual to Use -->
+        <div class="guide-panel-item" id="tabManuals">
+          <h4 id="h_01M4RC3PZ4MANUALS00000001">Which BAYSENS800 Manual to Use</h4>
+          <p>
+            Two different BAYSENS800 manuals are published, covering
+            two
+            different firmware generations of the sensor. Using the wrong
+            one for the unit in front of you is a common source of
+            confusion during setup and troubleshooting.
+          </p>
+          <div class="callout-box">
+            <strong><a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVN028*" target="_blank" rel="noopener noreferrer">BAS-SVN028*-EN</a></strong>
+            — covers the <strong>legacy firmware</strong> BAYSENS800.
+            Use this manual for older, previously-installed sensors that
+            predate the current firmware revision.
+          </div>
+          <div class="callout-box">
+            <strong><a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVP080*" target="_blank" rel="noopener noreferrer">BAS-SVP080*-EN</a></strong>
+            — covers the <strong>current firmware</strong> BAYSENS800.
+            Use this manual for new installations and any sensor shipped
+            with the latest firmware.
+          </div>
+          <p style="margin-top: 0.75rem;">
+            If the menu screens or wording on the physical sensor don't
+            match what a manual describes, check the other one —
+            it usually means the sensor is running the other firmware
+            generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scoped Footer -->
+  <div class="sim-footer">
+    <div>
+      <span>Manuals</span> •
+      <a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVN028*" target="_blank" rel="noopener noreferrer">
+        BAS-SVN028*-EN
+      </a>
+      •
+      <a href="https://elibrary.tranetechnologies.com/public/search?maxFacetValues=25&amp;n=&amp;term=publicationID_md%3ABAS-SVP080*" target="_blank" rel="noopener noreferrer">
+        BAS-SVP080*-EN
+      </a>
+    </div>
+    <div>
+      <button class="sim-btn btn-solid-reverse" style="padding: 0.35rem 0.75rem; font-size: 0.675rem;" onclick="document.getElementById('traneSimApp').scrollIntoView({behavior:'smooth'})">
+        ↑ Top
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ==========================================================================
+     SIMULATION ENGINE & SENSOR INTERACTION CONTROLLER
+     ========================================================================== -->
+
+</div></details>
+</div></zd-tabs><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055318731-Symbio-700-Connecting-a-BAYSENS800-to-Unit-Controller-Module" target="_blank">https://support.trane.com/hc/en-us/articles/360055318731-Symbio-700-Connecting-a-BAYSENS800-to-Unit-Controller-Module</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

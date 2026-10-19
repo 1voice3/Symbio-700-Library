@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odyssey Symbio Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055517711-Odyssey-Symbio-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Odyssey Symbio Pairing B Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span></div>
+<div class="meta">Section: Wiring &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-15 &nbsp;&bull;&nbsp; Last updated: 2026-10-18</div>
+<div class="body"><h1 class="wysiwyg-text-align-center" id="h_01KMNCA8BRK1RYYVDXESG07RQE"><strong>Wiring and Setup: Symbio Condenser or Heat Pump with SZVAV / 2 Speed Air Handler</strong></h1><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center">Look at the bottom of this article for a downloadable copy </p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-left"><strong>Condenser: </strong>Odyssey Condenser with Symbio 700 Controls</p><p class="wysiwyg-text-align-left"><strong>AHU:</strong> Odyssey AHU with Symbio control boards and model number digit 15 = D</p><p class="wysiwyg-text-align-left"> </p><h2 id="h_01KMNCAXWDABEK0NHE363ECACZ">Symbio 700 Quick Links</h2><ul>
+<li data-list-item-id="ec1d82dfd2cc638ad377eed975d6f4d04"><a href="../General/360060773292.html">Symbio™ 700 - Where to download the Service &amp; Installation Mobile Phone App</a></li>
+<li data-list-item-id="e2bfad5243392a77b38b016ad4f39f18f"><a href="../General/14059563735565.html">Symbio™ 700 - Bluetooth Connection Instructions</a></li>
+<li class="wysiwyg-text-align-left" data-list-item-id="eb9ebc4f8916cda7ea62282b3dbabb0c8"><a href="../Precedent/16561370756237.html">Symbio™ 700 - Precedent or Odyssey - How to configure or edit configurations using the Mobile Phone App</a></li>
+</ul><p> </p><h2 id="h_01KMNCB4126VCCG9DBANVRR9BA">How many wires do I need? </h2><p>1 - Up to 7 conductor thermostat wires between the thermostat OR zone sensor and condenser</p><p>1 - Up to 6 conductor control wires between the AHU and condenser</p><p>2 - 2-conductor twisted, shielded, stranded communication wires between the AHU and condenser. </p><p> </p><h2 class="wysiwyg-text-align-center" id="h_01KMNCA2K3WJB9HC020094Z04H"><span class="wysiwyg-font-size-large"><strong>Cable Identification</strong></span></h2><p class="wysiwyg-text-align-center"><img src="../../attachments/32480440606861_32480481608205_mceclip0.png"></p><p class="wysiwyg-text-align-center"> </p><h2 id="h_01KMNCBVR0E8ZV1Q8PJKBTSR8M">Field Wiring</h2><h3 class="wysiwyg-text-align-center" id="h_01KMNC9YGQPP7ASMS1XMQRCWQT">
+<span class="wysiwyg-font-size-large"><strong>AHU Wiring to Condenser</strong></span><br><span class="wysiwyg-font-size-large"><strong>Cable #1 Modbus Communication</strong></span>
+</h3><p class="wysiwyg-text-align-left"><strong>Cable #1 </strong>is a Modbus communication link between Symbio 700 and the AHU VFD. It is required for Pairing B as the AHU uses a communicating VFD. This cable must be a 2-conductor, twisted, shielded, stranded cable intended for 2 wire communications. We recommend Trane Purple Comm wire (Windy City Wire Spec #0523003) or any 2 conductor comm wire. 3 Conductor comm wire is also acceptable for Cable #1.  <a href="../General/360055739011.html"><em>Symbio Communication Wire</em></a></p><div class="callout-danger"><p><strong>DO NOT USE THERMOSTAT, ETHERNET OR NON-COMMUINCATION RATED WIRE FOR COMMUNICATIONS</strong></p></div><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><strong><img src="../../attachments/32480440606861_32480440579085_mceclip0.png"></strong></span></p><p><span class="wysiwyg-font-size-x-large"><img src="../../attachments/32480440606861_32480440581005_blobid1.png" alt=""></span></p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KMNC9T1EBR4GR50BK13WE5ZT">
+<span class="wysiwyg-font-size-large"><strong>AHU Wiring to Condenser</strong></span><br><span class="wysiwyg-font-size-large"><strong>Cable #2 Control Wiring</strong></span>
+</h3><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><strong><img src="../../attachments/360055517711_26695658206989_mceclip0.png"></strong></span></p><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><img src="../../attachments/360055517711_26695658219789_blobid0.png" alt=""></span></p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KMNC9KWXSJACJ8EF73S16AM5">
+<span class="wysiwyg-font-size-large"><strong>AHU Wiring to Condenser</strong></span><br><span class="wysiwyg-font-size-large"><strong>Cable #3 IMC Communications</strong></span>
+</h3><p class="wysiwyg-text-align-left"><strong>Cable #3 </strong>is an IMC communication link between Symbio 700 and the Indoor Option Module. It is required for electric heat operation and VVZT configuration. This cable must be a 2-conductor, twisted, shielded, stranded cable intended for 2 wire communications. We recommend Trane Purple Comm wire (Windy City Wire Spec #0523003) or any 2 conductor comm wire.  <a href="../General/360055739011.html"><em>Symbio Communication Wire</em></a></p><div class="callout-danger"><p><strong>DO NOT USE THERMOSTAT, ETHERNET OR NON-COMMUINCATION-RATED WIRE FOR COMMUNICATIONS</strong></p></div><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 888/151;" src="../../attachments/360055517711_33544754640653_image.png" width="888" height="151"></figure><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><img src="../../attachments/32480440606861_32480481617805_blobid1.png" alt=""></span></p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KMNC98VNW3X32MBK5BXAMADC">
+<span class="wysiwyg-font-size-large"><strong> Wiring Thermostat to Condenser</strong></span><br><span class="wysiwyg-font-size-large"><strong>Cable #4A Thermostat Wiring</strong></span>
+</h3><p class="wysiwyg-text-align-left"><strong>Cable #4A</strong> is for conventional thermostat use or when the condenser is controlled by relays. Unit will only use Cable #4A or 4B, not both. </p><figure class="wysiwyg-image"><img style="aspect-ratio: 888/268;" src="../../attachments/32480440606861_33507515121933_image.png" width="888" height="268"></figure><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><img src="../../attachments/32480440606861_32480481620365_blobid2.png" alt="" width="227" height="366"></span></p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center"> </p><h3 class="wysiwyg-text-align-center" id="h_01KMNC91RS8APFDYG4Y37JM269">
+<span class="wysiwyg-font-size-large"><strong>Wiring Zone Sensor to Condenser</strong></span><br><span class="wysiwyg-font-size-large"><strong>Cable #4B Zone Sensor Wiring</strong></span>
+</h3><p class="wysiwyg-text-align-left"><strong>Cable #4B</strong> is for zone sensor use and is required when VVZT (SZVAV) operation is desired. Zone sensors are commonly used with BAS or can be standalone. Unit will only use Cable #4A or 4B, not both.</p><figure class="wysiwyg-image"><img style="aspect-ratio: 890/229;" src="../../attachments/32480440606861_33507492841997_image.png" width="890" height="229"></figure><p class="wysiwyg-text-align-center"><img src="../../attachments/32480440606861_32480440592653_mceclip4.png"></p><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-medium">*Zone sensor wiring shown for BAYSENS135, other mechanical zone sensors similar.</span> </p><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left"> </p><h3 class="wysiwyg-text-align-center" id="h_01KMNC8TNCQ48F1F92XQNVEPKR">
+<span class="wysiwyg-font-size-large"><strong>Emergency Stop Wiring</strong></span><br><span class="wysiwyg-font-size-large"><strong>From Stop Devices to Symbio 700</strong></span>
+</h3><figure class="wysiwyg-image"><img style="aspect-ratio: 888/128;" src="../../attachments/32480440606861_33507492847885_image.png" width="888" height="128"></figure><p class="wysiwyg-text-align-center"><span class="wysiwyg-font-size-large"><img src="../../attachments/32480440606861_46577899085837_image.png" width="612" height="464"></span></p><p class="wysiwyg-text-align-left"> </p><p class="wysiwyg-text-align-left">Wiring above reflects normally closed safeties. Typically, condensate overflow switches (or pan switches) are normally closed devices. If using normally open devices, they can be wired in parallel, and the Customer Connection Polarity does not need to be changed.</p><p>For more information, see the links below:</p><ul>
+<li data-list-item-id="e781f9966bd0ce6eeb3806b0072746b70">Trane Commercial Help Center - <a href="../General/360055257251.html">Symbio™ 700 - Emergency Stop Input</a>
+</li>
+<li data-list-item-id="e24ef63a8b7deb625b02d3565804d15c5">Trane Commercial Help Center - <a href="../General/360060801931.html">Symbio 700 Demand Limit and Emergency Stop Polarity</a>
+</li>
+</ul><p> </p><h2 class="wysiwyg-text-align-center" id="h_01KMNCFQ2HGDFPTXC050T9Q4A8"><strong>Configuring Symbio 700</strong></h2><p class="wysiwyg-text-align-left">Odyssey condensers can be paired with many different Odyssey AHUs, 3rd party AHUs, and indoor coil assemblies. Due to this, Symbio 700 must be configured for the connected AHU, installed accessories, and the controlling sensor/thermostat. </p><p class="wysiwyg-text-align-left"> </p><h3 id="h_01KMNC6HR9R8ZHZYG1F050H92G">Configuring Link from Trane Commercial Help Center</h3><h4 id="h_01KMNDA5MG1AEYK1A4EWCCD6SG">Phone Application </h4><ul><li data-list-item-id="e820e24e83748db5d6be2be23d65811ed"><p class="wysiwyg-text-align-left"><a href="../Precedent/16561370756237.html" target="_blank" rel="noopener noreferrer">Symbio™ 700 - Precedent or Odyssey - How to configure or edit configurations using the Mobile Phone App</a></p></li></ul><h4 id="h_01KMNDB9B4CC9RR82TQFTQ0E3S">Onboard Display</h4><ul><li data-list-item-id="e7a0102f980a6a742358a0fddcdee804d"><a href="../Precedent/43591585514509.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/43591585514509-Symbio-700-How-to-use-the-onboard-display-to-Configure-or-Edit-Configuration</a></li></ul><h4 id="h_01KMNDCN0ZDXTW5QGFRE1EV0WG">Tracer TU</h4><ul><li data-list-item-id="e333c58fe63aa1becfe954a1d8ffac46e"><a href="../General/22501920613773.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/22501920613773-Symbio-700-Using-Trane-Tracer-TU-to-edit-or-configure</a></li></ul><p> </p><h3 id="h_01KMNCHRC5BDKJPWB26CQ6JM7V">VVZT Configuration Needed</h3><p>For <strong>Variable Volume</strong> Zone Temperature (VVZT or formerly known as SZVAV) operation, set the configuration as follows (requires zone sensor):</p><ul>
+<li data-list-item-id="ef2387c378770c4563b64c2a715657025">
+<strong>System Type</strong> = VVZT (requires zone sensor for actual VVZT operation, tstat will operate as CVZT)</li>
+<li data-list-item-id="e72eb3c85c1f6ad21c541cd907d5a4e23">
+<strong>Efficiency</strong> = Standard B</li>
+<li data-list-item-id="e668545985a9eafd78848a607e4175407">
+<strong>Indoor Fan Type </strong>= Variable Speed (should set automatically)</li>
+<li data-list-item-id="ed504074a51bacaedfd9abc5cfa6f9d31">
+<strong>Space Controller</strong> = Single Setpoint Zone sensor, or Dual Setpoint Zone Sensor</li>
+<li data-list-item-id="edbdad5a06ecfac65b369859056477151">
+<strong>Frostat</strong> = Installed (should install automatically) + (On Odyssey, this is the high limit for the VFD)</li>
+<li data-list-item-id="ed5d3cb7d37b507e63c968309e9ade28a">
+<strong>Discharge Temperature Sensor</strong> = Installed (should install automatically)</li>
+<li class="wysiwyg-list-bold" data-list-item-id="ec8a8277f37708b16abc6cf5a231f7a87">
+<strong>Field-installed electric heat <span class="wysiwyg-underline">only</span></strong><ul>
+<li class="wysiwyg-list-bold" data-list-item-id="ed1bee11ade91dfa557e3397cdea5778d">
+<strong>TTA condenser</strong><ul>
+<li data-list-item-id="ec377bbc117ef3687a63c8c39c82798ec">
+<strong>Primary Heating Source</strong> = Electric</li>
+<li data-list-item-id="ead46f9ef51e4f6205c88b91aead8d2d3">
+<strong>Primary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="eed62054b3962a09e3aff7a3d45b27341">
+<strong>TWA condenser</strong><ul>
+<li data-list-item-id="e1dbbb07c77c81f9f7c1c86ff73b62158">
+<strong>Primary Heating Source</strong> = Heat Pump</li>
+<li data-list-item-id="e2243171093f2118291d39fa4679f0c25">
+<strong>Primary Heating Stages</strong> = 1 or 2</li>
+<li data-list-item-id="e15d7187ffa1f325cd3318e4db9ecc07f">
+<strong>Secondary Heating Source</strong> = Electric</li>
+<li data-list-item-id="ec80e58ac9006f896d5f4869fda2d3241">
+<strong>Secondary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p> </p><h3 id="h_01KMNCHW8EFP2KT32XMVKJTGPD">Multispeed Configuration Needed</h3><p>For <strong>Multispeed</strong> fan operation, set the configuration as follows:</p><ul>
+<li data-list-item-id="e86eceb102e01f15fd26764e3e752e7b6">
+<strong>System Type</strong> = CVZT (thermostat or zone sensor)</li>
+<li data-list-item-id="e4632de221ad587d83a7d86bbbfb751e2">
+<strong>Efficiency</strong> = Standard B</li>
+<li data-list-item-id="e112b123b2377bac3469d0d1b8dccb2b9">
+<strong>Indoor Fan Type</strong> = Multi Speed</li>
+<li data-list-item-id="e080823f6df1db45f9cc1c41ad38f23d4">
+<strong>Space Controller</strong> = Conventional Thermostat, Single Setpoint Zone sensor, or Dual Setpoint Zone Sensor</li>
+<li data-list-item-id="e4755196cfca64e8a244533437968cec3">
+<strong>Frostat</strong> = Installed (On Odyssey, this is the high limit for the VFD)</li>
+<li data-list-item-id="e5a02a99946bcfaad99a467371213389a">
+<strong>Discharge Temperature Sensor</strong> = Installed (with zone sensor, will use DAT logic for compressor staging) or Not Installed for conventional thermostat.</li>
+<li class="wysiwyg-list-bold" data-list-item-id="ef55b44cd9d520e49338b0b8dd6f0ebb8">
+<strong>Field-installed electric heat <span class="wysiwyg-underline">only</span></strong><ul>
+<li class="wysiwyg-list-bold" data-list-item-id="e31b796eeccdb6f5e31dd0dc0adbfdd77">
+<strong>TTA condenser</strong><ul>
+<li data-list-item-id="e726c11cc2d3b8235de52e26ba04add74">
+<strong>Primary Heating Source</strong> = Electric</li>
+<li data-list-item-id="e6fcaa539254568c274ce2867c94b39d8">
+<strong>Primary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e7eadd16126a45161382f025010031031">
+<strong>TWA condenser</strong><ul>
+<li data-list-item-id="e8b95213178b4d47864b17e5a6f2981a7">
+<strong>Primary Heating Source</strong> = Heat Pump</li>
+<li data-list-item-id="edf07948a002e103842ae2b60a538c376">
+<strong>Primary Heating Stages</strong> = 1 or 2</li>
+<li data-list-item-id="e792c25afb46d51e8c0caefdc99dae4bd">
+<strong>Secondary Heating Source</strong> = Electric</li>
+<li data-list-item-id="e55951e4c47209006eab42d4c1b607cb7">
+<strong>Secondary Heating Stages</strong> = 1 or 2 (depending on electric heat kit stages)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p> </p><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p><p> </p></div>
+<div class="att"><b>Attached documents:</b><a href="../../attachments/360055517711_26744709444365_Odyssey_Pairing_B_with_Thermostat_or_Zone_Sensor.pdf" download>Odyssey Pairing B with Thermostat or Zone Sensor.pdf (730 KB)</a></div>
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055517711-Odyssey-Symbio-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler" target="_blank">https://support.trane.com/hc/en-us/articles/360055517711-Odyssey-Symbio-Pairing-B-Wiring-and-Setup-Symbio-Condenser-or-Heat-Pump-with-SZVAV-2-Speed-Air-Handler</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

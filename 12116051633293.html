@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MZVAV - Maximum Heat (Max Heat) - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12116051633293-MZVAV-Maximum-Heat-Max-Heat" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>MZVAV - Maximum Heat (Max Heat)</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Sequence of Operation [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-10 &nbsp;&bull;&nbsp; Last updated: 2026-04-06</div>
+<div class="body"><h1 id="h_01KNA96YKXMCECMHB2E1PDA915">Max Heat</h1><p>Maximum Heat is a full airflow mode of heating operation with the supply fan operating at maximum speed. The controller does not provide maximum heat; instead, the controller provides heat capacity per the Operating Mode and unit type.</p><p> </p><h2 id="h_01KNA9BGVE0PZFJNNK687BE19Z">VVDA</h2><p>Variable Volume Discharge Air control units will transition to Maximum Heat operation in heating modes (for example Occupied Heat, Morning Warm Up, Daytime Warm Up) when the installed heating capacity requires full air flow. Maximum Heat can also be a Heat Cool Mode Request command, which Symbio™ 700 will remain in the mode until the mode is released.</p><p>On the transition to Maximum Heat the Symbio 700 will reduce the supply fan to minimum speed, energize the VAV Box Relay and wait the duration of the VAV Box Stroke Time (adjustable). The VAV Box Stroke Time allows the VAV boxes in the system to open. The supply fan speed will then increase to 100 percent or the maximum speed subject to high duct static pressure limit. Once the supply fan reaches its allowed maximum speed, Symbio 700 will enable heating capacity control to Discharge Air Heating Setpoint Active. Ventilation is managed per the operating mode.</p><p>The transition from Maximum Heat back to modulating air flow control modes is as follows:</p><ol>
+<li data-list-item-id="e7ea1f5234dadd388909c8efee333f03a">Heat capacity terminates (if active), a 90 second post heat timer begins.</li>
+<li data-list-item-id="efcc1b7060e000873e8c66e68d96c4776">Supply fan speed slows to minimum speed, a 3 minute minimum speed timer begins.</li>
+<li data-list-item-id="e6289558ad0977a356657f4630207400e">VAV Box Relay de-energizes.</li>
+<li data-list-item-id="ec5174206eb6b9acd6294d11c70028a03">When the 90 second post heat and 3 minute minimum speed timer expire, modulating air flow control is enabled, operating mode transitions, and capacity control enables.</li>
+</ol><p> </p><p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 1rem; margin-top: 0px; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p><h2 id="h_01KNA9JYF8J2CJB14A2BP1CD71">Application Guide Link</h2><ul><li data-list-item-id="ed801e00c381925ac33aa786fd2883de7"><p style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 1rem; margin-top: 0px; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><a href="../Precedent/44468444639245.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/44468444639245-Precedent-Symbio-700-controller-Application-Guide</a></p></li></ul><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12116051633293-MZVAV-Maximum-Heat-Max-Heat" target="_blank">https://support.trane.com/hc/en-us/articles/12116051633293-MZVAV-Maximum-Heat-Max-Heat</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

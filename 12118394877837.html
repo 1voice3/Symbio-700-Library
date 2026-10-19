@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Precedent with Symbio 700 - Staged Gas Heat Sequence of Operation - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12118394877837-Precedent-with-Symbio-700-Staged-Gas-Heat-Sequence-of-Operation" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Precedent with Symbio 700 - Staged Gas Heat Sequence of Operation</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span></div>
+<div class="meta">Section: Gas Heat &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-10 &nbsp;&bull;&nbsp; Last updated: 2025-09-24</div>
+<div class="body"><p><strong>Gas Heat Sequence</strong></p>
+<p> </p>
+<p><strong>Summary:</strong></p>
+<p><span class="wysiwyg-font-size-medium">Symbio™ 700 supports 2 stages of gas heat for primary heating capacity. Gas heat is composed of a single manifold with a two-stage, single gas valve. The burner is the in-shot type with the induced draft. As demand for heat increases, incremental stages of heat is added. Stage 1 provides approximately 70% of the available heating capacity.</span></p>
+<p> </p>
+<p><strong>Staged Gas Heat Sequence</strong></p>
+<ol>
+<li>A call for heat is initiated by the Symbio 700 via a digital Modbus™ communication signal to the White Rogers ignition module.</li>
+<li>Pre-purge for 30 seconds. The draft inducer is energized at high speed for 25 seconds, the air pressure switch closes, and the inducer fan reduces to low speed for 5 seconds.</li>
+<li>At end of the pre-purge period, the spark and gas valve is energized.</li>
+<li>The burner ignites Stage 1 with the gas valve at low fire and low inducer fan speed. The trial for ignition is 7 seconds, in which time flame must be sensed.</li>
+<li>The unit will add Stage 2 with the gas valve at high fire and high inducer fan speed, as required.</li>
+<li>Unit continues in operation until the call for heat terminates.</li>
+<li>The gas valve is de-energized and the unit enters its post-purge at low inducer fan speed for 30 seconds.</li>
+<li>Draft inducer is shut off.</li>
+<li>When the control terminates the gas heating capacity or exits a heating mode, a post-heat fixed timer is enforced. The supply fan is kept on to remove heat from the unit before transitioning to a cooling mode or cycling the supply fan off.</li>
+</ol>
+<p><br>If the ignition is not achieved within the trial period, the gas valve is shut off; the inducer continues to run for a 30-second post-purge period. Additional ignition trials follow the specified sequence. If 3 attempts for ignition have occurred without flame detection, the gas heat ignition controller will lock out.</p>
+<p><span class="TextRun SCXW209718268 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW209718268 BCX9">The control board will reset after one hour. Control lockout can be cleared by cycling the power off for a minimum of 5 seconds.</span></span></p>
+<p><span class="NormalTextRun SCXW217664304 BCX9"> If the flame is lost </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW217664304 BCX9">once</span><span class="NormalTextRun SCXW217664304 BCX9"> it has been established, the control will shut off the gas supply within 2.0 seconds and enter the post-purge period.  Control will allow a predetermined number of flame losses before the lockout.</span></p>
+<p><span class="NormalTextRun SCXW217664304 BCX9"><span class="TextRun SCXW168462238 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW168462238 BCX9">If the flame sensor indicates the presence of flame during the purge period when no flame should be present, the inducer will remain </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW168462238 BCX9">energized</span><span class="NormalTextRun SCXW168462238 BCX9"> but the gas valve will remain off until the cause of the “false flame” is removed.</span></span><span class="EOP SCXW168462238 BCX9" data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></span></p>
+<p><span class="NormalTextRun SCXW217664304 BCX9"><span class="TextRun SCXW168462238 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW168462238 BCX9"><span class="TextRun SCXW2833954 BCX9" lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW2833954 BCX9">If the air pressure switch is closed when the inducer is de-energized or does not close after the inducer is energized, the control will wait a predetermined time for the air switch to correct itself, if not then lock out. Control will go into lockout with all outputs off.</span></span><span class="EOP SCXW2833954 BCX9" data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'></span></span></span></span></p>
+<p> </p>
+<p><strong>Note</strong>, see Appendix for a full list of gas heat diagnostics.</p>
+<p><br>The ignition control board will reset the lockout diagnostic after one hour. Control lockout can be cleared by cycling the power off for a minimum of ten seconds. An ignition module heat lockout can also be cleared by removing the call for Heat at the Thermostat, Zone Sensor, or BAS System for 5 seconds and back to heat.</p>
+<p><img src="../../attachments/12118394877837_27083851424653_mceclip0.png"></p>
+<p class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 14px; text-align: center; color: #000000; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; background-color: #ffffff;">Click the e-library symbol for the latest version</p>
+<p class="wysiwyg-text-align-center" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 14px; text-align: center; color: #000000; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; background-color: #ffffff;"><a style="box-sizing: border-box; color: #0645ad; text-decoration: none; background-color: transparent; font-size: 14px;" href="https://elibrary.tranetechnologies.com/commercial/search?maxFacetValues=300&amp;n=&amp;term=publicationID_md%3AACC-APG002*&amp;f.isCurrentDisplay_md=Current&amp;f.publicationLanguageDisplay_md=English+%5Ben%5D&amp;viewPDF=true" target="_blank" rel="noopener noreferrer"><img style="box-sizing: border-box; vertical-align: middle; border-style: none; font-size: 14px; height: auto; max-width: 100%;" src="../../attachments/extra_26906157137805.png"></a></p>
+<p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12118394877837-Precedent-with-Symbio-700-Staged-Gas-Heat-Sequence-of-Operation" target="_blank">https://support.trane.com/hc/en-us/articles/12118394877837-Precedent-with-Symbio-700-Staged-Gas-Heat-Sequence-of-Operation</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

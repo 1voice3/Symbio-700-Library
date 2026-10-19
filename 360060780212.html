@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio™ 700 - Replacing a Unit Controller Module - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360060780212-Symbio-700-Replacing-a-Unit-Controller-Module" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio™ 700 - Replacing a Unit Controller Module</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">VFD / Drives</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Precedent &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-05-12 &nbsp;&bull;&nbsp; Last updated: 2026-10-16</div>
+<div class="body"><p class="wysiwyg-text-align-center"></p><p class="wysiwyg-text-align-center"> </p><zd-tabs><div class="wysiwyg-disclosure wysiwyg-tabs">
+<details open="true"><summary><span data-markdown-start-index="671">Required Tools &amp; Prep</span></summary><div class="wysiwyg-disclosure-content">
+<aside class="callout-danger">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-circle-xmark" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">Important</p>
+      <div class="callout-body"><p>The replacement Symbio 700 unit controller ships with<strong> no configuration</strong>. Back up the existing configuration before removal, or manually reconfigure the new controller after installation.</p></div>
+    </div>
+  </div>
+</aside><p><span data-markdown-start-index="696"><strong>Before heading to the equipment</strong>, ensure you have the following items ready.</span></p>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 97.28%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 28%;">
+<col style="width: 25%;">
+<col style="width: 47%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="774">Item</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="781">Purpose</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="791">Notes</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="815"><strong>New Symbio 700 Controller</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="845">Hardware replacement</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="868">Unconfigured</span></td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="924"><strong>USB Storage Device</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="947">Backup/Restore &amp; Firmware</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="977"><strong>Must be formatted to FAT32</strong></span><span data-markdown-start-index="1005"> (16GB or smaller recommended).</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="1042"><strong>Mobile Device</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="1060">Configuration | </span><span data-markdown-start-index="947">Backup/Restore &amp; Firmware</span>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="1087">iPhone or Android with the </span><span data-markdown-start-index="1116"><strong>Symbio Service Tool app</strong></span><span data-markdown-start-index="1141"> installed.</span>
+</td>
+</tr>
+<tr>
+<td><strong>Computer</strong></td>
+<td>
+<span data-markdown-start-index="1060">Configuration | </span><span data-markdown-start-index="947">Backup/Restore &amp; Firmware</span>
+</td>
+<td>Using Tracer TU (Trane Technicians)</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="1158"><strong>Hand Tools</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="1173">Physical Installation</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="1197">Basic tools and electrical meter</span></td>
+</tr>
+</tbody>
+</table></figure><p> </p>
+</div></details><details><summary>Steps for Replacement</summary><div class="wysiwyg-disclosure-content">
+<aside class="callout-danger">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-circle-xmark" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">Alert Notice</p>
+      <div class="callout-body">
+<ul>
+<li>
+<strong>Zero Out-of-Box Config:</strong> Do not forget to back up the original controller first if it is still responsive. If the original controller is completely dead, you will need to manually configure it using the Mobile App or Tracer TU.</li>
+<li>
+<strong>Firmware Mismatch:</strong> Always verify and flash the unit to the latest approved firmware version <em>before</em> restoring the configuration to prevent database corruption.</li>
+</ul>
+<p><br></p>
+</div>
+    </div>
+  </div>
+</aside><p><span class="wysiwyg-font-size-x-large">Overview</span></p>
+<div>Replacing a Symbio 700 unit controller follows a four-step process designed to ensure a smooth transition and minimize setup issues. Before beginning, follow all company safety procedures and properly power down the equipment. First, back up the existing controller configuration to a formatted USB drive using the mobile app. This is the recommended method, although Trane technicians may also use Tracer TU. This backup lets you restore the current settings to the new controller, provided the original controller is still functional. Next, complete the physical controller replacement. After the new controller is installed, update it with the latest firmware. Then, restore the saved configuration to the new controller or complete the setup manually through the app, as needed.</div>
+<p>When followed properly, this workflow helps maintain system settings, supports compatibility with the new controller, streamlines the replacement process, and promotes safe service practices</p>
+<p> </p>
+<div class="s700-guide">
+  
+  <div class="s700-main">
+    <div class="s700-steps-nav-wrap">
+      <nav class="s700-steps-nav" id="s700-stepsNav" aria-label="Replacement steps"></nav>
+    </div>
+    <div class="s700-progress-track">
+      <div class="s700-progress-fill" id="s700-progressFill"></div>
+    </div>
+    <section class="s700-card" id="s700-card"></section>
+    <div class="s700-complete-banner" id="s700-completeBanner">
+      <span>✅</span><span>All steps complete — controller is ready for commissioning.</span>
+    </div>
+    <div class="s700-nav-row">
+      <button class="s700-pill-btn s700-ghost" id="s700-prevBtn" type="button">← Back</button><button class="s700-pill-btn s700-primary" id="s700-nextBtn" type="button">Next step →</button>
+    </div>
+  </div>
+  <p class="s700-footer">
+    Symbio 700 Unit Controller Replacement Procedure — Backup Configuration, Physical Swap, Restore and Configuration, and Firmware Update
+  </p>
+</div>
+
+</div></details><details><summary>Quick Links</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="1909">Use the targeted links below to complete each specific phase of the replacement procedure in more detail</span></p>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 96.86%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2002">Task</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2009">Actionable Guide</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2040"><strong>Prepare USB Drive</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><a href="../General/15455555714701.html" target="_blank" rel="noopener noreferrer" title="https://support.trane.com/hc/en-us/articles/15455555714701-How-to-format-USB-drive-to-FAT32"><span data-markdown-start-index="2063">How to Format a USB Drive to FAT32</span></a></td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2197"><strong>Backup Current Data</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><a href="../General/34091853381261.html" target="_blank" rel="noopener noreferrer" title="https://support.trane.com/hc/en-us/articles/34091853381261-Symbio-700-Backing-up-your-data-to-restore-your-configurations-and-settings"><span data-markdown-start-index="2222">Symbio 700: Backing Up and Restoring Configurations</span></a></td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2416"><strong>Update Firmware</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><a href="../General/23351688731405.html" target="_blank" rel="noopener noreferrer" title="https://support.trane.com/hc/en-us/articles/23351688731405-Symbio-700-Firmware-Update-for-Unit-Controller-Module"><span data-markdown-start-index="2437">Symbio 700 Firmware Update Instructions</span></a></td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2597"><strong>Configure (Mobile)</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><a href="../Precedent/16561370756237.html" target="_blank" rel="noopener noreferrer" title="https://support.trane.com/hc/en-us/articles/16561370756237-Symbio-700-Precedent-or-Odyssey-How-to-configure-or-edit-Configurations-using-the-Mobile-Phone-App"><span data-markdown-start-index="2621">How to Configure/Edit using the Mobile Service Tool App</span></a></td>
+</tr>
+<tr>
+<td><strong>Configure Onboard Display</strong></td>
+<td><a href="../Precedent/43591585514509.html">How to use the onboard display to Configure or Edit Configuration</a></td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2842"><strong>Configure (TU)</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><a href="../General/22501920613773.html" target="_blank" rel="noopener noreferrer" title="https://support.trane.com/hc/en-us/articles/22501920613773-Symbio-700-Using-Trane-Tracer-TU-to-edit-or-configure"><span data-markdown-start-index="2862">How to Configure/Edit using Trane Tracer TU</span></a></td>
+</tr>
+</tbody>
+</table></figure>
+</div></details>
+</div></zd-tabs><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360060780212-Symbio-700-Replacing-a-Unit-Controller-Module" target="_blank">https://support.trane.com/hc/en-us/articles/360060780212-Symbio-700-Replacing-a-Unit-Controller-Module</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

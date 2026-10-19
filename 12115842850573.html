@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MZVAV - Variable Volume Discharge Air Control - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12115842850573-MZVAV-Variable-Volume-Discharge-Air-Control" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>MZVAV - Variable Volume Discharge Air Control</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Dehumidification</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Sequence of Operation [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-10 &nbsp;&bull;&nbsp; Last updated: 2026-04-03</div>
+<div class="body"><h2 id="h_01KNAB92VBF8GXBVBRKBFGSG79">Variable Volume Discharge Air Control </h2><p>Variable Volume Discharge Air (VVDA) control uses available heating and cooling capacity to deliver the required temperature at the discharge of the unit. A discharge air temperature sensor is required for operation.</p><p>In cooling modes, the control uses cooling sources to deliver air temperature as required by the Discharge Air Cooling Setpoint. In heating modes, the control uses heat sources to deliver air temperature as required by the Discharge Air Heating Setpoint. Primary heat is never used in conjunction with mechanical cooling.</p><p>Symbio™ 700 operates in Discharge Air Temperature Control in all heat, cool, and occupancy modes of operation. The typical operating mode is Cooling delivering conditioned air to multiple zones of a building. These units have duct work to supply VAV terminal units. The VAV units modulate to control space comfort.</p><p>VVDA units also change over to provide heat (when installed). A building automation system or the VAV Box Relay Output can be used when the heat source requires full airflow. See Heat Types for more information. A valid space temperature input must be provided to perform heating modes such as Daytime Warm Up and Morning Warm Up (when enabled).</p><p> </p><h3 id="h_01KNABAP0FRD356VQB1YM3TYK4">Supply Air Tempering</h3><p>Supply Air Tempering is disabled by default but can be enabled when modulating heating capacity is installed. Supply air tempering initiates if discharge air temperature falls 1°F below the Discharge Air Cooling Setpoint Status setpoint and cooling capacity is 0 percent for 5 minutes and heating capacity is required to maintain discharge air cooling control. Heat is controlled with a 2°F dead band to the discharge air cooling setpoint. The control will transition back to normal cooling when heat capacity is 0 percent for 5 minutes or there is a compressor demand to manage the discharge air cooling control. Supply air tempering will also terminate if dehumidification initiates or if the controller effective occupancy is unoccupied.</p><p> </p><h3 id="h_01KNABSXS9T638XWBAG66WPETZ">Changeover Input</h3><p>Variable Volume Discharge Air units include a binary Changeover Input. An open input requests discharge air cooling operation. A closed input will request the unit to change to discharge air heating. This local input is arbitrated with building management Heat Cool Mode Request commands to determine the active mode of operation.</p><p> </p><h3 id="h_01KNABVXKY7KJ14FE5XEWHZ57B">VAV Box Relay Output</h3><p>This binary output is provided by the controller to be optionally wired to VAV units in a Multi Zone-VAV system to coordinate system changeover to full airflow heating. Reference VHR relay wired to Relay Board connection J2 and VHR wiring terminal block on unit schematics. The binary output is de-energized when the controller is operating in cooling modes. The binary output energizes when the heat type installed requires full airflow. See Maximum Heat for more details.</p><p> </p><h3 id="h_01KNABXK0GT41K6JC38M9EJS37">Discharge Air Reset</h3><p>Discharge Air Reset is a method to save energy by resetting the discharge air temperature setpoint as heating and cooling building loads change. When enabled, the controller can independently reset the Discharge Air Heating Setpoint Active and/or Discharge Air Cooling Setpoint Active based on Zone (space temperature), Outdoor Air temperature or Return Air Temperature. The new target setpoints are reported as Discharge Air Setpoint Heating Status and Discharge Air Cooling Setpoint Status.</p><p> </p><h4 id="h_01KNABYFD5K42NY9P5Q0PQJYNY">Discharge Air Cooling Reset</h4><p>The following user-adjustable points are used to calculate the Discharge Air Cooling Setpoint reset.</p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 52%;">
+<col style="width: 48%;">
+</colgroup>
+<thead><tr>
+<th>Point Reference</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">Cooling Reset Type (MV-11111)</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Cooling Reset Start Temp (AV-11150)</p></td>
+<td><p class="wysiwyg-text-align-center">90 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Cooling Reset End Temp (AV-11151)</p></td>
+<td><p class="wysiwyg-text-align-center">70 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Cooling Reset Amount (AV-11152)</p></td>
+<td><p class="wysiwyg-text-align-center">10 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Discharge Air Cooling Setpoint BAS – Active (AV-11190)</p></td>
+<td><p class="wysiwyg-text-align-center">55 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Discharge Air Cooling Setpoint Status (AV-11356)</p></td>
+<td><p class="wysiwyg-text-align-center">Result of reset calculation</p></td>
+</tr>
+</tbody>
+</table></figure><p>The active Discharge Air Cooling Setpoint BAS (55°F) will be reset 10°F over the range of outdoor air temperature of 90°F (Cooling Reset Start Temperature) to 70°F (Cooling Reset End Temperature). When outdoor air temperature is greater than 90° F, no reset is applied. When outdoor air temperature is 80°F, Discharge Air Cooling Setpoint – Active will be reset 5°F. As a result, discharge air temperature will be controlled to Discharge Air Cooling Setpoint Status of 60°F. When outdoor air temperature is 69°F, discharge air temperature will be controlled to Discharge Air Cooling Setpoint Status of 65°F.</p><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 908/592;" src="../../attachments/12115842850573_44827025593741_image.png" width="908" height="592"></figure><p> </p><p> </p><h4 id="h_01KNACG14GP0HAAN51737SMZS2">Discharge Air Heating Reset</h4><p>The following user-adjustable points are used to calculate the Discharge Air Heating Setpoint reset.</p><figure class="wysiwyg-table" style="width: 100%;"><table class="wysiwyg-table-resized">
+<colgroup>
+<col style="width: 52.86%;">
+<col style="width: 47.14%;">
+</colgroup>
+<thead><tr>
+<th>Point Reference</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p class="wysiwyg-text-align-center">Heating Reset Type (MV-11136)</p></td>
+<td><p class="wysiwyg-text-align-center">Outdoor Air</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Heating Reset Start Temp (AV-11241)</p></td>
+<td><p class="wysiwyg-text-align-center">30 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Heating Reset End Temp (AV-11242)</p></td>
+<td><p class="wysiwyg-text-align-center">50 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Heating Reset Amount (AV-11343)</p></td>
+<td><p class="wysiwyg-text-align-center">10 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Discharge Air Heating Setpoint BAS – Active (AV-11191)</p></td>
+<td><p class="wysiwyg-text-align-center">100 °F</p></td>
+</tr>
+<tr>
+<td><p class="wysiwyg-text-align-center">Discharge Air Heating Setpoint Status (AV-11129)</p></td>
+<td><p class="wysiwyg-text-align-center">Result of reset calculation</p></td>
+</tr>
+</tbody>
+</table></figure><p>The active Discharge Air Heating Setpoint BAS (100°F) will be reset 10°F over the range of outdoor air temperature of 30°F (Heating Reset Start Temperature) to 50°F (Heating Reset End Temperature). When outdoor air temperature is less than 30°F, no reset is applied. When outdoor air temperature is 40°F, Discharge Air Heating Setpoint – Active will be reset 5°F. As a result, discharge air temperature will be controlled to Discharge Air Heating Setpoint Status of 95°F. When outdoor air temperature is 55°F, discharge air temperature will be controlled to Discharge Air Heating Setpoint Status of 90°F.</p><p> </p><figure class="wysiwyg-image"><img style="aspect-ratio: 958/647;" src="../../attachments/12115842850573_44827025595021_image.png" width="958" height="647"></figure><p> </p><h3 id="h_01KNACQZHR0VGBR1D20A38QXTP">Duct Static Pressure Control</h3><p>Multi Zone-VAV equipment have variable speed supply fans and are often used in Variable Air Volume (VAV) systems consisting of ductwork serving multiple building zones and VAV boxes that control space comfort independent of the rooftop air handler. VAV boxes modulate air volume by a damper that opens and closes to maintain space comfort. In response, duct static pressure increases and decreases. The controller will modulate supply fan speed to maintain Duct Static Pressure relative to the Duct Static Pressure Setpoint.</p><p> </p><h3 id="h_01KNACS36WHKPMGJP17MR7JAQZ">Duct Static Pressure High Limit</h3><p>The controller operates the supply fan to maintain duct static pressure below the Duct Static Pressure High Limit setpoint. In the event that duct static pressure approaches the high limit setpoint, the controller will reduce and limit the supply fan speed.</p><p> </p><h3 id="h_01KNACST12QQ1H0SQPMGW6RFQH">Unoccupied Cooling</h3><p>Unoccupied Cooling mode is used when the building is unoccupied and the space conditions are exceeding temperature limits. The unit is normally off in unoccupied mode. If a valid space temperature input rises above the Unoccupied Cooling Setpoint, unit operation starts unoccupied cooling to manage space temperature. The controller operates in Discharge Air Control with ventilation disabled while DX or economizer cooling capacity increases to satisfy the Discharge Air Cooling Setpoint. VVDA System Type operate the supply fan under duct static pressure control. Cooling continues until space temperature is 4°F less than the Unoccupied Cooling Setpoint, the unit will then cycle off.</p><p> </p><h3 id="h_01KNACVFGWWFFYRXWC6Q7NR69K">Unoccupied Heating</h3><p>When the unit is in unoccupied mode and the valid space temperature input falls below the Unoccupied Heating Setpoint, unit operation starts unoccupied heating to manage space temperature. The controller operates in Discharge Air Control with ventilation disabled while heating capacity increases to satisfy the Discharge Air Heating Setpoint. The supply fan operates according to heat type installed, see Heat Types for more information. Heating continues until space temperature is 4°F greater than the Unoccupied Heating Setpoint, the unit will then cycle off.</p><p> </p><h3 id="h_01KNACWE75X9RAJSK9XCFVJ28D">Occupied Cooling with Variable Speed Compressor</h3><p>For normal cooling operation, the total cooling capacity will be modulated based on a PI algorithm in order to meet the Active Discharge Air Cooling Setpoint.</p><p>If enabled, economizer cooling will be utilized as the first stage of cooling prior to energizing the DX capacity. Economizer cooling will modulate the outdoor air damper to maintain the discharge air cooling setpoint - as on standard fixed speed compressor equipped units. Once all economizing requirements have been met, compressor operation will be enabled if the economizer alone cannot meet the demand. Once compressor operation is started, the variable speed compressor will startup, following all startup requirements, and will then be modulated to maintain the discharge air temperature to the discharge air cooling setpoint.</p><p>Once the active cooling demand has been satisfied, the variable speed compressor will begin to modulate down to its minimum speed and then will be de-energized, while adhering to all shutdown requirements. Once the variable speed compressor has deenergized, the economizer (if enabled) will be allowed to close back to minimum position if there is no longer a demand.</p><p> </p><h3 id="h_01KNACY1WY1ZNE3582GPZYW63E">Unoccupied Cooling with Variable Speed Compressor</h3><p>For Unoccupied DX and Economizer Cooling Control, the unit will operate as during normal Occupied mode – compressor capacity will be varied to maintain the discharge air temperature requirements and the supply fan will remain in-control based on the active compressor capacity and space demand. This operation is consistent with VVDA operation on standard Fixed-Speed Compressor units.</p><p> </p><p> </p><h2 id="h_01KNA9JYF8J2CJB14A2BP1CD71">Application Guide Link</h2><ul><li data-list-item-id="ed801e00c381925ac33aa786fd2883de7"><a href="../Precedent/44468444639245.html" target="_blank" rel="noopener noreferrer">https://support.trane.com/hc/en-us/articles/44468444639245-Precedent-Symbio-700-controller-Application-Guide</a></li></ul><p> </p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12115842850573-MZVAV-Variable-Volume-Discharge-Air-Control" target="_blank">https://support.trane.com/hc/en-us/articles/12115842850573-MZVAV-Variable-Volume-Discharge-Air-Control</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

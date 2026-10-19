@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio Precedent - Supply Fan Compensation &amp; Minimum Position Setting - 0 to 100% Economizer Downflow or Horizontal - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12221536593037-Symbio-Precedent-Supply-Fan-Compensation-Minimum-Position-Setting-0-to-100-Economizer-Downflow-or-Horizontal" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio Precedent - Supply Fan Compensation &amp; Minimum Position Setting - 0 to 100% Economizer Downflow or Horizontal</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Economizer [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-13 &nbsp;&bull;&nbsp; Last updated: 2026-07-16</div>
+<div class="body"><h1 id="h_01KEYG6XY5TVJ7JV1CA24D065S"><span class="wysiwyg-font-size-x-large"><strong>Supply Fan Compensation &amp; Minimum Position Setting</strong></span></h1><p> </p><h2 id="h_01KEYJKWBZ83PK239B5F7C6Z4H">Supply Fan Compensation (Default) </h2><p>The outdoor air damper minimum position is modulated to provide outdoor air based on supply fan speed. When the supply fan increases speed, the outdoor air damper minimum position is reduced to prevent over ventilation. When the supply fan decreases speed the outdoor air damper minimum position is increased to maintain design outdoor air requirements. There are three user editable design minimum settings to linearize damper position with the fan curve during Occupied and Occupied Bypass modes of operation. </p><ul>
+<li data-list-item-id="e92760ae62c94a5a29429df3ae6a4d95f">Design Minimum OA Damper Position at Min Fan Capacity (25 percent default)</li>
+<li data-list-item-id="e02a03bc3fc7fc2719075b969eb7df0db">Design Minimum OA Damper Position at Mid Fan Capacity (15 percent default)</li>
+<li data-list-item-id="e9089bc02c1313f9664931fd6965d9c44">Design Minimum OA Damper Position at Full Fan Capacity (10 percent default)</li>
+</ul><p> </p><h3 id="h_01KHYER3NKE4E4AYMZTGVK5BZG">Using the Symbio Phone App</h3><ul>
+<li data-list-item-id="e18ce51dce5943efc6e0eb8ed9149af9b">Connect to the Symbio™ 700 board through <strong>Bluetooth</strong>.</li>
+<li data-list-item-id="e63e635f7f2239993fef8740c76888978">Select the <strong>Settings</strong> menu.</li>
+<li data-list-item-id="e21ec85a6554ff20577ed10bde07f2df1">Select <strong>View Configuration</strong>.</li>
+<li data-list-item-id="e62fee0e4a68df82fb850e1df0f24473a">Scroll down to the <strong>Fresh/Return Air</strong> section.</li>
+</ul><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 50%;"><img style="aspect-ratio: 677/632;" src="../../attachments/12221536593037_42668894177293_image.png" width="677" height="632"></figure><p> </p><h3 id="h_01KHV5C5ZAY4HWCMPQ4RDE634M">Using the Symbio 700 Onboard menu and keypad</h3><p><img style="height: auto;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></p><ol>
+<li data-list-item-id="e200f98ea13d2d9539a59dcaf60d5ba36">Press <strong>Home</strong>.</li>
+<li data-list-item-id="eccb37b3707c98bd881ffc4827d4a02c2">Press the <strong>Down Arrow</strong> and select <strong>Settings</strong>.</li>
+<li data-list-item-id="e4351896e4954d5e961e69763e0362b1b">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e20f88839beaf72010517174cfb0caca0">Press the <strong>Down Arrow</strong> and select <strong>Fresh/Rutrun Air</strong>.</li>
+<li data-list-item-id="e0765e243ece388ae1ad5d33ffa088569">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e72ea7958966995855bd798b8f095ad66">You will see <strong>Design Minimum OA Damper Position at Min Fan Capacity</strong> (25 percent default), Press the <strong>Check</strong> to change the percentage, or Press the<strong> Down Arrow</strong> for the next selection. (IF you enter the selection and make a change, Press the <strong>Check</strong> to <strong>Save</strong> the change)</li>
+<li data-list-item-id="e12baf61c24a74279995acb85391735a7">For <strong>Design Minimum OA Damper Position at Mid Fan Capacity</strong> (15 percent default), Press the <strong>Check</strong> to change the percentage, or Press the<strong> Down Arrow</strong> for the next selection. (IF you enter the selection and make a change, Press the <strong>Check</strong> to <strong>Save</strong> the change)</li>
+<li data-list-item-id="e8c32e002aee203ebeda9c737bf117b19">For <strong>Design Minimum OA Damper Position at Mid Fan Capacity</strong> (15 percent default), Press the <strong>Check</strong> to change the percentage, or Press the<strong> Down Arrow</strong> for the next selection. (IF you enter the selection and make a change, Press the <strong>Check</strong> to <strong>Save</strong> the change)</li>
+</ol><ul><li data-list-item-id="edbe859e0d9d72a7cef1fd4294cbce12e">You may not have all three <strong>Design Minimum OA Damper Positions.</strong>
+</li></ul><p> </p><h2 id="h_01KEYGV8YQA77PPMAYAS3B3ZR7">Outdoor Air Minimum Position Control</h2><p>Available only when supply fan compensation is disabled, this function provides a fixed damper position for minimum outdoor air requirements. The damper is controlled to a position determined by the Economizer Minimum Position Setpoint.</p><p> </p><h3 id="h_01KHYG0J9CD8H77GVK6AN8ZF9P">Using the Symbio Phone App</h3><ul>
+<li data-list-item-id="e4226ef2eb7450e65d2dd0ee1cfdc503c">Connect to the Symbio™ 700 board through <strong>Bluetooth</strong>.</li>
+<li data-list-item-id="e8eea76e6e63483511797ecc98669691c">Select the <strong>Settings</strong> menu.</li>
+<li data-list-item-id="e41dd7db9e201d1c4cc80b60b5e643457">Select <strong>View Configuration</strong>.</li>
+<li data-list-item-id="e932604ceeb0f8db45ffc30613ba0c4f8">Scroll down to the <strong>Fresh/Return Air</strong> section.</li>
+</ul><figure class="wysiwyg-image wysiwyg-image-resized" style="width: 30%;"><img style="aspect-ratio: 332/614;" src="../../attachments/12221536593037_42668916933005_image.png" width="332" height="614"></figure><p> </p><h3 id="h_01KHYG0J9CQ9DP5G8PCRDD6X9N">Using the Symbio 700 Onboard menu and keypad</h3><p><img style="height: auto;" src="../../attachments/12206337173389_44398070365197_image.png" width="326" height="146"></p><ol>
+<li data-list-item-id="eaeed8b1f80624a35e990a01d5f82a7fe">Press <strong>Home</strong>.</li>
+<li data-list-item-id="e69e5148bc2ef299354072984c781bc35">Press the <strong>Down Arrow</strong> and select <strong>Settings</strong>.</li>
+<li data-list-item-id="e7dbffaf7cabdea08ef92bac1194c230a">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e80256a56d67982d816b748891e6fc6ca">Press the <strong>Down Arrow</strong> and select <strong>Fresh/Rutrun Air</strong>.</li>
+<li data-list-item-id="e2799df195c79e640e6d2ad91bc4ddc43">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="ee7ace1c10b26f25022d5ae43afa93c13">Press the <strong>Down Arrow</strong> and select <strong>Supply Fan Compensation</strong>.</li>
+<li data-list-item-id="e7cdbbcaac23acb2594c01dddeddfe8f6">Press the <strong>Check</strong>.</li>
+<li data-list-item-id="e41713215fa172a16a27242d5236e4984">Change the <strong>Supply Fan Compensation</strong> from Enable to Disabled.</li>
+<li data-list-item-id="e14eb950573639fb2a74c34b1b149bc05">Press the <strong>Check</strong>.</li>
+</ol><p> </p><ul><li data-list-item-id="e06be91a5037d06bcddf6feda07b47ab5">Economizer Minimum Position Setpoint BAS (25 percent default)</li></ul><p> </p><p> </p><h4 id="h_01KT5157GKYX86PXNDZRW6P69H">Symbio Precedent Application Guide</h4><ul><li data-list-item-id="e457a4d9b4c747a423e6ebf9f46c0c7d0"><a href="../Precedent/44468444639245.html" target="_blank" rel="noopener noreferrer">Precedent - Symbio® 700 controller - Application Guide – Trane Commercial HVAC Help Center</a></li></ul><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12221536593037-Symbio-Precedent-Supply-Fan-Compensation-Minimum-Position-Setting-0-to-100-Economizer-Downflow-or-Horizontal" target="_blank">https://support.trane.com/hc/en-us/articles/12221536593037-Symbio-Precedent-Supply-Fan-Compensation-Minimum-Position-Setting-0-to-100-Economizer-Downflow-or-Horizontal</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

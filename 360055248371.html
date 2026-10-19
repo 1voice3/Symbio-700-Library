@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symbio 700 - Compressor Proving Circuit Troubleshooting - Precedent and Large Foundation - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/360055248371-Symbio-700-Compressor-Proving-Circuit-Troubleshooting-Precedent-and-Large-Foundation" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Symbio 700 - Compressor Proving Circuit Troubleshooting - Precedent and Large Foundation</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge equip">Odyssey</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Compressor / Compressor Proving</span><span class="badge topic">Wiring / Wire Pairing</span><span class="badge topic">Troubleshooting</span><span class="badge topic">Firmware / Software</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Communications / BACnet</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Refrigeration / Charging</span><span class="badge topic">Safety / Emergency Stop</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Precedent &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2021-01-11 &nbsp;&bull;&nbsp; Last updated: 2026-10-14</div>
+<div class="body"><h2 id="h_01M2R6KZ68MENJC5R75TJRW7J8">Compressor Proving Troubleshooting</h2><p>Are you looking for this Symbio 700 Compressor Proving Circuit Troubleshooting for Precedent and Large Foundation? For units with ReliaTel controls (RTRM), see the <a href="https://support.trane.com/hc/en-us/articles/42150055236109" target="_blank" rel="noopener noreferrer">ReliaTel Compressor Proving article</a>, and for units with a Symbio 700 unit controller for Odyssey (TTA or TWA), see the <a href="../Precedent/39347684774541.html" target="_blank" rel="noopener noreferrer">Odyssey Compressor Proving article</a>.</p><p>This troubleshooting guide applies to Symbio 700 unit controllers on Precedent and Large Foundation units with model number prefixes: Precedent - DHJ, DHK, DSJ, DSK, THJ, THK, TSJ, TSK, TZK, WHJ, WHK, WSJ, WSK, YHJ, YHK, YSJ, YSK, and YZK, and Large Foundation - EDK and GDK. Use it when diagnosing compressor 1 proving, compressor 2 proving, compressor proving trip, compressor proving lockout, and compressor contactor fail alarms. It covers compressor will not start, contactor not pulling in, proving circuit open, relay contact resistance, auxiliary switch checks, and the exact connector and wire paths used to verify the circuit.</p><zd-accordion class="wysiwyg-disclosure">
+  <details>
+    <summary>Symptoms and alarm codes</summary>
+    <div class="wysiwyg-disclosure-content">
+      <p>
+        Use this section to match the alarm behavior to the likely fault.
+      </p>
+      <ul>
+        <li data-list-item-id="ed8e03e59b9fb4b8285087537c4772fff">
+          <strong>Alarm - Compressor Proving Trip Diagnostic – 15-minute lockout</strong>:
+          The HPC or DTL opens while the compressor is running after
+          the
+          circuit has proved, and the Compressor Contactor loses its
+          24
+          VAC, causing the Aux Switch to open.
+        </li>
+        <li data-list-item-id="e2c69ba656669dfc1f43a620a322bc4b8">
+          <strong>Alarm - Compressor Proving Lockout Diagnostic – INSTANT UNIT LOCKOUT!</strong>:
+          The Symbio Board calls for the Compressor Contactor, and
+          the
+          Contactor doesn't pull in within 7 seconds.
+        </li>
+        <li data-list-item-id="e898bddee2bcc528233daebe3cdd3a6aa">
+          <strong>Alarm - Compressor Proving Lockout Diagnostic – INSTANT UNIT LOCKOUT!</strong>:
+          The Symbio Board calls for the Compressor Contactor; it pulls
+          in and drops back out after 7 seconds.
+        </li>
+        <li data-list-item-id="e8d22b25e0405c7b8121f060f9b812b9d">
+          <strong>Alarm - Compressor Contactor Fail Diagnostic – INSTANT UNIT LOCKOUT!</strong>:
+          The Compressor Contactor Aux Switch closes before it is supposed
+          to.
+        </li>
+      </ul>
+      <p>
+        <strong>Possible causes:</strong> HPC and/or DTL open, contactor
+        coil open, wiring/connection error, no 24 VAC at the black wire
+        on
+        the Aux Switch, bad Aux Switch, Aux Switch not on the contactor
+        correctly,
+        technician manually pushes in the contactor, or the contactor
+        is
+        welded shut.
+      </p>
+    </div>
+  </details>
+  <details>
+    <summary>Abbreviation Names</summary>
+    <div class="wysiwyg-disclosure-content">
+      <figure class="wysiwyg-table" style="width: 100%;">
+        <table class="wysiwyg-table-resized" style="margin-left: 0px; margin-right: auto;">
+          <colgroup>
+            <col style="width: 22%;">
+            <col style="width: 78%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Abbreviation</th>
+              <th>Abbreviation Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>UC</strong>
+              </td>
+              <td>
+                <strong>Unit Controller (Symbio 700)</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>AB</strong>
+              </td>
+              <td>
+                <strong>Adapter Board</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>HPC</strong>
+              </td>
+              <td>
+                <strong>High-Pressure Cutout</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>DTL</strong>
+              </td>
+              <td>
+                <strong>Discharge Temperature Limit </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>CC</strong>
+              </td>
+              <td>
+                <strong>Contactor</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>TNS</strong>
+              </td>
+              <td>
+                <strong>Transformer</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>AUX</strong>
+              </td>
+              <td>
+                <strong>Auxiliary</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    </div>
+  </details>
+  <details open="true">
+    <summary>Interactive Troubleshooting</summary>
+    <div class="wysiwyg-disclosure-content">
+      
+      <div id="s700-wizard">
+        <div class="hdr">
+          <h2 id="h_01M4BT1RMZ2KWHCWXTZ5TWAMJP">Symbio 700 Compressor Proving Troubleshooter</h2>
+          <p>
+            Precedent &amp; Large Foundation — interactive companion
+            to the Compressor
+            Proving Circuit article
+          </p>
+        </div>
+        <div class="body">
+          <div class="crumbs" id="s700-crumbs"></div>
+          <div class="card" id="s700-card"></div>
+          <div class="footer-row">
+            <span id="s700-stepcount"></span><button class="btn-ghost btn-sm" id="s700-restart" type="button">Start Over</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </details>
+</zd-accordion><aside class="callout-tip">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-lightbulb" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">An Important verification that is often overlooked</p>
+      <div class="callout-body">
+<p>If the HPC or DTL opened while the compressor was already running and the circuit had previously proved, do <strong>not</strong>assume the fault is only in the proving wiring, voltage, resistance, or board issue. This type of trip can also indicate a <strong>refrigerant-system problem, such as incorrect charge, restricted airflow, condenser issues, or another condition that causes</strong> abnormal head pressure or temperature. <strong>Power down the unit and unplug the compressor. </strong>Isolate power, unplug the compressor, and wait about 15 minutes before determining the next step.</p>
+<p>If the fault does not return quickly while the compressor is unplugged, focus first on troubleshooting the refrigerant circuit rather than assuming a wiring, voltage, resistance, or board issue. If you find no refrigerant-side issue, continue below to test the Compressor Proving wiring<strong>.</strong></p>
+</div>
+    </div>
+  </div>
+</aside><h3 id="h_01M4XMTTFQ49EARTCAJAXG2163">Compressor 1</h3><zd-accordion class="wysiwyg-disclosure"><details><summary>Compressor 1: 24VAC Voltage Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="2728">Verify if 24VAC control power is present at the Unit Controller.</span></p>
+<ul>
+<li data-list-item-id="e6f55ff2760d766f3cdb82db3ff5bb56d">
+<span data-markdown-start-index="2800"><strong>Setup:</strong></span><span data-markdown-start-index="2808"> Unit powered </span><span data-markdown-start-index="2824"><strong>ON</strong></span><span data-markdown-start-index="2828">. Set your multimeter to </span><span data-markdown-start-index="2855"><strong>VAC</strong></span><span data-markdown-start-index="2860">.</span>
+</li>
+<li data-list-item-id="ed6abe02a5e6f577804374593ee34cf49">
+<span data-markdown-start-index="2868"><strong>Reference Point:</strong></span><span data-markdown-start-index="2886"> Place your black meter lead on clean </span><span data-markdown-start-index="2926"><strong>Chassis Ground</strong></span><span data-markdown-start-index="2942">.</span>
+</li>
+</ul>
+<p><img src="../../attachments/360055248371_44517750174605_image.png" width="747" height="323"></p>
+<h4 id="h_01M4EJM6Y1R37NSNACBPF17TJ5"><span data-markdown-start-index="2948">Voltage Diagnostics Table</span></h4>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 101.14%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 13%;">
+<col style="width: 21%;">
+<col style="width: 11%;">
+<col style="width: 45%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2978">Test Point</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="2991">Wire Color</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3004">When should power be here?</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3033">Expected</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3044">What to do if it FAILS</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3093"><strong>UC-P8-4</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3105">🟠 Orange</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="3121"><strong>Always</strong></span><span data-markdown-start-index="3129"> (when unit power is ON)</span>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3158"><strong>24VAC</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="3170"><strong>No Voltage:</strong></span><span data-markdown-start-index="3183"> Go to the </span><span data-markdown-start-index="3195">UC-P8-4 Power Supply Path</span><span data-markdown-start-index="3250"> below to locate the break.</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3281"><strong>UC-P8-5</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3293">🟡 Yellow</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="3307">Only during an active </span><span data-markdown-start-index="3331"><strong>Normal Call</strong></span><span data-markdown-start-index="3344"> or </span><span data-markdown-start-index="3350"><strong>Service Test</strong></span>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="3369"><strong>24VAC</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="3381"><strong>No Voltage (LED 5 is ON):</strong></span><span data-markdown-start-index="3408"> The board relay is failing to output power. Go to </span><span data-markdown-start-index="3460">Relay Resistance Test</span><span data-markdown-start-index="3533">. </span><em><span data-markdown-start-index="3536">Note: You only have a 5-second window to test this.</span></em>
+</td>
+</tr>
+</tbody>
+</table></figure><div><div> </div></div>
+<h4 id="h_01M4EJM6Y326S55RHDREXG0PME"><span data-markdown-start-index="3621">UC-P8-4 Power Supply Path</span></h4>
+<p><span data-markdown-start-index="3649">If </span><span data-markdown-start-index="3654"><strong>UC-P8-4</strong></span><span data-markdown-start-index="3663"> has no voltage, track back through these connectors in order to find where the power is lost:</span></p>
+<ol>
+<li data-list-item-id="e35ffd14a0594838be9cc5c07dc3cc5c3">
+<span data-markdown-start-index="3762"><strong>AB-J20-4</strong></span><span data-markdown-start-index="3772"> (🟠 Orange wire)</span>
+</li>
+<li data-list-item-id="ea7f02b8a5c5c05693a44af2cf18251f8">
+<span data-markdown-start-index="3794"><strong>AB-J8-1</strong></span><span data-markdown-start-index="3803"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="e9075c7d20ba7b4eb2c8642bd61e5777b">
+<span data-markdown-start-index="3823"><strong>PPM72 / PPF72-3</strong></span><span data-markdown-start-index="3840"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="e4eba1ca5b3ab15e048be542d52742f41">
+<span data-markdown-start-index="3860"><strong>PPF2 / PPM2-1</strong></span><span data-markdown-start-index="3875"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="e29b632b8b59825a707da5bef03323395">
+<span data-markdown-start-index="3895"><strong>TNS2</strong></span><span data-markdown-start-index="3901"> (Transformer 2)</span>
+</li>
+</ol>
+</div></details><details><summary>Compressor 1: Resistance &amp; Safety Circuit Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="4664">If you have 24VAC leaving the controller on </span><span data-markdown-start-index="4710"><strong>UC-P8-5</strong></span><span data-markdown-start-index="4719"> but the contactor coil (</span><span data-markdown-start-index="4746"><strong>CC1</strong></span><span data-markdown-start-index="4751">) refuses to pull in, check the safety limit switches and the contactor coil resistance.</span></p>
+<ul><li data-list-item-id="e0a6fb5a195b2413d8490ce841d2883ad">
+<span data-markdown-start-index="4846"><strong>Setup:</strong></span><span data-markdown-start-index="4854"> Unit powered </span><span data-markdown-start-index="4870"><strong>OFF</strong></span><span data-markdown-start-index="4875">. Set your multimeter to </span><span data-markdown-start-index="4902"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="4919">.</span>
+</li></ul>
+<p><img src="../../attachments/360055248371_44517750174605_image.png" width="747" height="323"></p>
+<figure class="wysiwyg-image"><img></figure><figure class="wysiwyg-image"><img></figure><p><img src="../../attachments/360055248371_40781809162253_image.png" width="1152" height="709"></p>
+<p> </p>
+<h4 id="h_01M4EJM6Y8G923XMVAHAZH6TDS"><span data-markdown-start-index="5281">Resistance Diagnostics Table</span></h4>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 101.14%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 12%;">
+<col style="width: 38%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5314">Test Point 1</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5329">Test Point 2</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5344">Expected Resistance</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5366">What it means if it FAILS</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5414"><strong>UC-P8-5</strong></span><span data-markdown-start-index="5423"> </span><em><span data-markdown-start-index="5425">(🟡 Yellow)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5444"><strong>AB-J5-9</strong></span><span data-markdown-start-index="5453"> </span><em><span data-markdown-start-index="5455">(🟠/⚫ Org/Blk)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5479"><strong>≤ 0.6 Ω</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5496"><strong>Higher than 0.6 Ω / O.L:</strong></span><span data-markdown-start-index="5523"> A wire harness plug is loose/unseated, or a safety limit switch (</span><span data-markdown-start-index="5591"><strong>DTL1</strong></span><span data-markdown-start-index="5597"> / </span><span data-markdown-start-index="5602"><strong>HCP1</strong></span><span data-markdown-start-index="5608">) is tripped or failed open. Use the </span><span data-markdown-start-index="5646">Run Circuit Paths</span><span data-markdown-start-index="5698"> below to trace.</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5710"><strong>AB-J5-9</strong></span><span data-markdown-start-index="5719"> </span><em><span data-markdown-start-index="5721">(🟠/⚫ Org/Blk)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5745"><strong>AB-J5-10</strong></span><span data-markdown-start-index="5755"> </span><em><span data-markdown-start-index="5757">(🟡/⚫ Yel/Blk)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="5781"><strong>5 to 12 Ω</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="5798"><strong>O.L (Open Circuit):</strong></span><span data-markdown-start-index="5819"> The contactor coil itself is burnt out, or there is a break in the coil wiring. Use the </span><span data-markdown-start-index="5909">CC1 Coil Path</span><span data-markdown-start-index="5950"> below to isolate.</span>
+</td>
+</tr>
+</tbody>
+</table></figure><div><div> </div></div>
+<h4 id="h_01M4EJM6YABHKE602AW4ECW1C8"><span data-markdown-start-index="5966">Compressor 1 Run Circuit Paths</span></h4>
+<p><span data-markdown-start-index="6005">Revision C (Older Boards)</span></p>
+<p><span data-markdown-start-index="6030">If you measure an open circuit (</span><span data-markdown-start-index="6061"><strong>O.L.</strong></span><span data-markdown-start-index="6066">), trace these connection points in order with your meter leads to locate the break:</span></p>
+<ul>
+<li data-list-item-id="e0eb4d1e1d5d67af1ae55ee87945591da">
+<span data-markdown-start-index="6156"><strong>UC-P8-5</strong></span><span data-markdown-start-index="6165"> (🟡 Yellow) to </span><span data-markdown-start-index="6185"><strong>AB-J13-4</strong></span><span data-markdown-start-index="6195"> (🟠 Orange)</span>
+</li>
+<li data-list-item-id="ed08692732f405040a144a4d6ec58921d">
+<span data-markdown-start-index="6211"><strong>DTL1</strong></span><span data-markdown-start-index="6217"> (🔴 Red wires) (Discharge Temperature Limit)</span>
+</li>
+<li data-list-item-id="e4a4f4f2ef125e8a0f1f9afba0bad76a0">
+<span data-markdown-start-index="6268"><strong>AB-J13-3</strong></span><span data-markdown-start-index="6278"> (🔵 Blue) to </span><span data-markdown-start-index="6296"><strong>AB-J13-2</strong></span><span data-markdown-start-index="6306"> (🔴 Red)</span>
+</li>
+<li data-list-item-id="e8d340dc743a0cd90fcde6148f4b5549d">
+<span data-markdown-start-index="6319"><strong>HCP1</strong></span><span data-markdown-start-index="6325"> (🔴 Red wires) (High Pressure Control)</span>
+</li>
+<li data-list-item-id="e148223524b71ef1f0492e0713595117d">
+<span data-markdown-start-index="6370"><strong>AB-J13-1</strong></span><span data-markdown-start-index="6380"> (⚫ Black) to </span><span data-markdown-start-index="6398"><strong>AB-J20-5</strong></span><span data-markdown-start-index="6408"> (🟡 Yellow)</span>
+</li>
+</ul>
+<p> </p>
+<p><span data-markdown-start-index="6424">Revision E (Newer Boards with Test Pins)</span></p>
+<p><img src="../../attachments/360055248371_46722076372749_image.png" width="1180" height="531"></p>
+<p><span data-markdown-start-index="6464">If your board has physical test pins, trace along this specific path:</span></p>
+<p><span data-markdown-start-index="6537"><strong>Path:</strong></span><span data-markdown-start-index="6544"> J20-4 <strong>&gt;</strong> UC-J8-4 <strong>&gt;</strong> UC-J8-5 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6544"> J20-5 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6544"> </span><span data-markdown-start-index="6603"><strong>Test Pin Comp 1 Run</strong></span><span data-markdown-start-index="6624"> </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6624"> J13-1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6624"> BK HPC1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6624"> R HPC1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6624"> J13-2 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6624"> </span><span data-markdown-start-index="6689"><strong>Test Pin HPC1</strong></span><span data-markdown-start-index="6704"> </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6704"> J13-3 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6704"> BL DTL1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6704"> O DTL1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6704"> J13-4 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6704"> </span><span data-markdown-start-index="6769"><strong>Test Pin DLT1</strong></span><span data-markdown-start-index="6784"> </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6784"> J5-9 </span><span data-markdown-start-index="6544"><strong>&gt; </strong></span><span data-markdown-start-index="6784">O/BK CC1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6784"> Y/BK CC1 </span><span data-markdown-start-index="6544"><strong>&gt;</strong></span><span data-markdown-start-index="6784"> J5-10</span></p>
+<p> </p>
+<h4 id="h_01M4EJM6YHPFB0YNXYSSTDVAXR"><span data-markdown-start-index="6774">CC1 Coil Backtrace Path</span></h4>
+<p><span data-markdown-start-index="6800">If your coil resistance test is </span><span data-markdown-start-index="6834"><strong>O.L.</strong></span><span data-markdown-start-index="6839">, trace through these physical plugs:</span></p>
+<ol>
+<li data-list-item-id="e49b001bce6c3ba142349a15865e1ce79">
+<span data-markdown-start-index="6881"><strong>PPF81 / PPM81</strong></span><span data-markdown-start-index="6896"> (🟠/⚫ Pin 9 or 🟡/⚫ Pin 10)</span>
+</li>
+<li data-list-item-id="ea9b6e190f00b66c16caeca7c0bd24ab5">
+<span data-markdown-start-index="6929"><strong>PPF23</strong></span><span data-markdown-start-index="6936"> (🟠/⚫ Pin 1) or </span><span data-markdown-start-index="6959"><strong>PPM23</strong></span><span data-markdown-start-index="6966"> (⚫ Pin 1)</span>
+</li>
+<li data-list-item-id="e930be4527b2b1a5bc9b9ceb759d31f14">
+<span data-markdown-start-index="6977"><strong>CC1 Contactor Coil Terminals</strong></span><span data-markdown-start-index="7007"> (⚫ Black wires)</span>
+</li>
+</ol>
+</div></details><details><summary>Compressor 1: Auxiliary Contact Feedback Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="7082">These tests confirm that the contactor auxiliary switch successfully tells the Unit Controller the contactor has pulled in.</span></p>
+<p><strong>Revision C</strong></p>
+<p><img src="../../attachments/360055248371_41018116606349_image.png" width="325" height="305"></p>
+<p><img src="../../attachments/360055248371_41018116608909_image.png" width="1105" height="765"></p>
+<p> </p>
+<h3 id="h_01M4EGTYDGVXXG13FG3MEDZG1B"><span data-markdown-start-index="7577">Aux Voltage &amp; Feedback Tests (Unit Powered ON)</span></h3>
+<ol>
+<li class="wysiwyg-list-bold" data-list-item-id="e6b545839d46bfcf63be2932b1f7e1b00">
+<span data-markdown-start-index="7631"><strong>Check Input Power:</strong></span><ul>
+<li data-list-item-id="eb8a09bd363db9940d81bcdafec0c62d5">
+<span data-markdown-start-index="7657">Measure </span><span data-markdown-start-index="7667"><strong>VAC</strong></span><span data-markdown-start-index="7672"> from </span><span data-markdown-start-index="7680"><strong>UC-P8-2</strong></span><span data-markdown-start-index="7689"> (🔴 Red) to </span><span data-markdown-start-index="7706"><strong>Chassis Ground</strong></span><span data-markdown-start-index="7722">.</span>
+</li>
+<li data-list-item-id="e6fbc8f1f2a22e16ac67eb9eee55de406">
+<em><span data-markdown-start-index="7728">Expected:</span></em><span data-markdown-start-index="7738"> </span><span data-markdown-start-index="7741"><strong>24VAC</strong></span><span data-markdown-start-index="7748">.</span>
+</li>
+<li data-list-item-id="e00d365ea26534fbd6d82b53abce6ec7e">
+<em><span data-markdown-start-index="7756">If no power:</span></em><span data-markdown-start-index="7769"> Check </span><span data-markdown-start-index="7778"><strong>AB-J18-1</strong></span><span data-markdown-start-index="7788"> (sourced from </span><span data-markdown-start-index="7805"><strong>UC-P3-1</strong></span><span data-markdown-start-index="7814">). If </span><span data-markdown-start-index="7822"><strong>UC-P3-1</strong></span><span data-markdown-start-index="7831"> is dead, trace back: </span><span data-markdown-start-index="7855"><strong>UC-J4-1</strong></span><span data-markdown-start-index="7864"> &gt; </span><span data-markdown-start-index="7874"><strong>PPF72/PPM72</strong></span><span data-markdown-start-index="7887"> &gt; </span><span data-markdown-start-index="7897"><strong>PPF1/PPM1</strong></span><span data-markdown-start-index="7908"> &gt; </span><span data-markdown-start-index="7918"><strong>TNS1</strong></span><span data-markdown-start-index="7924"> (Transformer 1).</span>
+</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="e1204ba3b383fe94a6144aa045d36d124">
+<span data-markdown-start-index="7934"><strong>Check Proving Output:</strong></span><ul><li data-list-item-id="ef1619f4960c4b619321149ad53b1790a">
+<span data-markdown-start-index="7963">When the </span><span data-markdown-start-index="7974"><strong>CC1</strong></span><span data-markdown-start-index="7979"> contactor closes, the auxiliary contacts must close and send </span><span data-markdown-start-index="8043"><strong>24VAC</strong></span><span data-markdown-start-index="8050"> back to </span><span data-markdown-start-index="8061"><strong>UC-P8-3</strong></span><span data-markdown-start-index="8070"> (🔵 Blue).</span>
+</li></ul>
+</li>
+</ol>
+<h3 id="h_01M4EGT4ME7VRBQECGF0H1BAJ1"><span data-markdown-start-index="8086">Aux Resistance Test (Unit Powered OFF)</span></h3>
+<ol>
+<li data-list-item-id="e1151147f3cebcb3714a45727507e7632">
+<span data-markdown-start-index="8130">Set meter to </span><span data-markdown-start-index="8145"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="8162">.</span>
+</li>
+<li data-list-item-id="eb70fa560d3d28b13aaf98d916e20bc33">
+<span data-markdown-start-index="8165">Place one lead on </span><span data-markdown-start-index="8185"><strong>UC-P8-3</strong></span><span data-markdown-start-index="8194"> (🔵 Blue) and the other lead on </span><span data-markdown-start-index="8231"><strong>UC-P8-2</strong></span><span data-markdown-start-index="8240"> (🔴 Red).</span>
+</li>
+<li data-list-item-id="e06808a20dd0a337ccd0a7ad90be7c8e0">
+<span data-markdown-start-index="8253"><strong>Manually push in the CC1 contactor plunger</strong></span><span data-markdown-start-index="8297">.</span>
+</li>
+<li data-list-item-id="e1a7623bbc38dc4b7d8ae08b00f9062f0">
+<em><span data-markdown-start-index="8302">Expected:</span></em><span data-markdown-start-index="8312"> </span><span data-markdown-start-index="8315"><strong>≤ 0.6 Ω</strong></span><span data-markdown-start-index="8327">. If higher or open, the auxiliary block contacts are dirty/failed and must be replaced.</span>
+</li>
+</ol>
+<p> </p>
+<h3 id="h_01M4EHBQC9B5K0DFFR51VJSCMT"><span data-markdown-start-index="8417">Compressor 1 Auxiliary Contact Wiring Paths</span></h3>
+<p><span data-markdown-start-index="8469">Revision C Path</span></p>
+<ul>
+<li data-list-item-id="eca1bd4f16704fe0d53ef114965e53feb">
+<span data-markdown-start-index="8490"><strong>Yellow Wire Leg:</strong></span><span data-markdown-start-index="8508"> CC1 Aux N.O. (🟡 Y) &gt; Plug PPF81/PPM81-5 (🟡 Y) &gt; AB-J5-5 (🟡 Y) &gt; AB-J20-2 (🔴 R) &gt; </span><span data-markdown-start-index="8624"><strong>UC-P8-2</strong></span><span data-markdown-start-index="8633"> (🔴 R)</span>
+</li>
+<li data-list-item-id="e918dece98faff83ed2711510ee56dda6">
+<span data-markdown-start-index="8622"><strong>Brown Wire Leg:</strong></span><span data-markdown-start-index="8639"> CC1 Aux N.O. (🟤 BR) &gt; Plug PPF81/PPM81-6 (🟤 BR) &gt; AB-J5-6 (🟤 BR) &gt; AB-J20-3 (🔵 BL) &gt; </span><span data-markdown-start-index="8759"><strong>UC-P8-3</strong></span><span data-markdown-start-index="8768"> (🔵 BL)</span>
+</li>
+</ul>
+<p><span data-markdown-start-index="8758">Revision E Path (With Test Pins)</span></p>
+<p><span data-markdown-start-index="8794"><strong>Path:</strong></span><span data-markdown-start-index="8801"> UC-J8-2 &gt; J20-2 &gt; </span><span data-markdown-start-index="8832"><strong>Test Pin TNS</strong></span><span data-markdown-start-index="8846"> &gt; J5-5 &gt; Y/BK CC1 &gt; O/BK CC1 &gt; J5-6 &gt; </span><span data-markdown-start-index="8912"><strong>Test Pin Comp1 Prov</strong></span><span data-markdown-start-index="8933"> &gt; J20-3 &gt; UC-J8-3</span></p>
+<p> </p>
+</div></details></zd-accordion><p> </p><h3 id="h_01M4EJM6YMJJQCQR2R2MG98V09">Compressor 2</h3><zd-accordion class="wysiwyg-disclosure"><details><summary>Compressor 2: 24VAC Voltage Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="8971">Verify if 24VAC control power is present at the Unit Controller.</span></p>
+<ul>
+<li data-list-item-id="eb7054dcc191cfb032dafce161bec62c5">
+<span data-markdown-start-index="9042"><strong>Setup:</strong></span><span data-markdown-start-index="9050"> Unit powered </span><span data-markdown-start-index="9066"><strong>ON</strong></span><span data-markdown-start-index="9070">. Set your multimeter to </span><span data-markdown-start-index="9097"><strong>VAC</strong></span><span data-markdown-start-index="9102">.</span>
+</li>
+<li data-list-item-id="e4f831a4e0c2a27cce987f04b0c4aabaf">
+<span data-markdown-start-index="9109"><strong>Reference Point:</strong></span><span data-markdown-start-index="9127"> Place your black meter lead on clean </span><span data-markdown-start-index="9167"><strong>Chassis Ground</strong></span><span data-markdown-start-index="9183">.</span>
+</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="../../attachments/360055248371_44514744862605_image.png" width="977" height="502"></p>
+<p> </p>
+<h4 id="h_01M4EJM6Z26DT1202MSG9QX2GP"><span data-markdown-start-index="9546">Voltage Diagnostics Table</span></h4>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 101.14%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 15%;">
+<col style="width: 30%;">
+<col style="width: 12%;">
+<col style="width: 31%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9576">Test Point</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9589">Wire Color</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9602">When should power be here?</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9631">Expected</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9642">What to do if it FAILS</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9691"><strong>UC-P9-4</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9703">🟡/⚫ Yel/Blk</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="9724"><strong>Always</strong></span><span data-markdown-start-index="9732"> (when unit power is ON)</span>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9761"><strong>24VAC</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="9773"><strong>No Voltage:</strong></span><span data-markdown-start-index="9786"> Go to the </span><span data-markdown-start-index="9798">UC-P9-4 Power Supply Path</span><span data-markdown-start-index="9853"> below to locate the break.</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9882"><strong>UC-P9-5</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9894">🟤 Brown</span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="9907">Only during an active </span><span data-markdown-start-index="9931"><strong>Normal Call</strong></span><span data-markdown-start-index="9944"> or </span><span data-markdown-start-index="9950"><strong>Service Test</strong></span>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="9969"><strong>24VAC</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="9981"><strong>No Voltage (LED 15 is ON):</strong></span><span data-markdown-start-index="10009"> The board relay is failing to output power. Go to </span><span data-markdown-start-index="10061">Relay Resistance Test</span><span data-markdown-start-index="10134">. </span><em><span data-markdown-start-index="10137">Note: You only have a 5-second window to test this.</span></em>
+</td>
+</tr>
+</tbody>
+</table></figure><div><div> </div></div>
+<h4 id="h_01M4EJM6Z5S6W82CDAC7ADBV88"><span data-markdown-start-index="10222">UC-P9-4 Power Supply Path</span></h4>
+<p><span data-markdown-start-index="10250">If </span><span data-markdown-start-index="10255"><strong>UC-P9-4</strong></span><span data-markdown-start-index="10264"> has no voltage, track back through these connectors in order to find where the power is lost:</span></p>
+<ol>
+<li data-list-item-id="eeb33061c798d0e82b0e7c387bddedc07">
+<span data-markdown-start-index="10363"><strong>AB-J20-4</strong></span><span data-markdown-start-index="10373"> (🟡/⚫ Yellow/Black wire)</span>
+</li>
+<li data-list-item-id="ec0cc1db8f7eb75765b04fb7bd9861f1e">
+<span data-markdown-start-index="10403"><strong>AB-J8-1</strong></span><span data-markdown-start-index="10412"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="e5717507660f89791f86410222c5257a1">
+<span data-markdown-start-index="10432"><strong>PPM72 / PPF72-3</strong></span><span data-markdown-start-index="10449"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="ebc1b13535045990a44246b6ceb8904d9">
+<span data-markdown-start-index="10469"><strong>PPF2 / PPM2-1</strong></span><span data-markdown-start-index="10484"> (🔵 Blue wire)</span>
+</li>
+<li data-list-item-id="e87830b7a0421f3777a642d149aff16fa">
+<span data-markdown-start-index="10504"><strong>TNS2</strong></span><span data-markdown-start-index="10510"> (Transformer 2)</span>
+</li>
+</ol>
+</div></details><details><summary>Compressor 2: Resistance &amp; Safety Circuit Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="10587">If you have 24VAC leaving the controller on </span><span data-markdown-start-index="10633"><strong>UC-P9-5</strong></span><span data-markdown-start-index="10642"> but the contactor coil (</span><span data-markdown-start-index="10669"><strong>CC2</strong></span><span data-markdown-start-index="10674">) refuses to pull in, check the safety limit switches and the contactor coil resistance.</span></p>
+<ul><li data-list-item-id="e7c632a3a5e5a3fa6aee9b6653ea4c757">
+<span data-markdown-start-index="10769"><strong>Setup:</strong></span><span data-markdown-start-index="10777"> Unit powered </span><span data-markdown-start-index="10793"><strong>OFF</strong></span><span data-markdown-start-index="10798">. Set your multimeter to </span><span data-markdown-start-index="10825"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="10842">.</span>
+</li></ul>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 988/363; width: 85%;" src="../../attachments/360055248371_41018122929293_image.png" width="988" height="363"></p>
+<p> </p>
+<p><strong>Revision C without Test Pins</strong></p>
+<p><img src="../../attachments/360055248371_40781809166477_image.png" width="1000" height="659"></p>
+<p> </p>
+<h4 id="h_01M4EJM6ZB32SYYD1QV6P7GYD8"><span data-markdown-start-index="11204">Resistance Diagnostics Table</span></h4>
+<figure class="wysiwyg-table wysiwyg-table-align-left" style="width: 101.14%;"><table class="wysiwyg-table-resized" style="border-collapse: collapse; margin-left: 0px; margin-right: auto;">
+<colgroup>
+<col style="width: 21%;">
+<col style="width: 26%;">
+<col style="width: 13%;">
+<col style="width: 40%;">
+</colgroup>
+<thead><tr>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11237">Test Point 1</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11252">Test Point 2</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11267">Expected Resistance</span></th>
+<th style="background-color: transparent; padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11289">What it means if it FAILS</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11337"><strong>UC-P9-5</strong></span><span data-markdown-start-index="11346"> </span><em><span data-markdown-start-index="11348">(🟤 Brown)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11366"><strong>AB-J5-11</strong></span><span data-markdown-start-index="11376"> </span><em><span data-markdown-start-index="11378">(🟤/⚫ Brn/Blk)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11402"><strong>≤ 0.6 Ω</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11419"><strong>Higher than 0.6 Ω / O.L.:</strong></span><span data-markdown-start-index="11446"> A wire harness plug is loose/unseated, or a safety limit switch (</span><span data-markdown-start-index="11514"><strong>DTL2</strong></span><span data-markdown-start-index="11520"> / </span><span data-markdown-start-index="11525"><strong>HCP2</strong></span><span data-markdown-start-index="11531">) is tripped or failed open. Use the </span><span data-markdown-start-index="11569">Run Circuit Paths</span><span data-markdown-start-index="11621"> below to trace.</span>
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11633"><strong>AB-J5-11</strong></span><span data-markdown-start-index="11643"> </span><em><span data-markdown-start-index="11645">(🟤/⚫ Brn/Blk)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11669"><strong>AB-J5-12</strong></span><span data-markdown-start-index="11679"> </span><em><span data-markdown-start-index="11681">(⚫/🔴 Blk/Red)</span></em>
+</td>
+<td style="padding: 8px; text-align: start; vertical-align: top;"><span data-markdown-start-index="11705"><strong>5 to 12 Ω</strong></span></td>
+<td style="padding: 8px; text-align: start; vertical-align: top;">
+<span data-markdown-start-index="11722"><strong>O.L (Open Circuit):</strong></span><span data-markdown-start-index="11743"> The contactor coil itself is burnt out, or there is a break in the coil wiring. Use the </span><span data-markdown-start-index="11833">CC2 Coil Path</span><span data-markdown-start-index="11874"> below to isolate.</span>
+</td>
+</tr>
+</tbody>
+</table></figure><div><div> </div></div>
+<h4 id="h_01M4EJM6ZFF1DCA4P4CSZAKKG3"><span data-markdown-start-index="11890">Compressor 2 Run Circuit Paths</span></h4>
+<p><span data-markdown-start-index="11929">Revision C (Older Boards)</span></p>
+<p><span data-markdown-start-index="11954">If you measure an open circuit (</span><span data-markdown-start-index="11985"><strong>O.L.</strong></span><span data-markdown-start-index="11990">), trace these connection points in order with your meter leads to locate the break:</span></p>
+<ul>
+<li data-list-item-id="e90fd72b7ec943a0373a0e3c9ad380af1">
+<span data-markdown-start-index="12080"><strong>UC-P9-5</strong></span><span data-markdown-start-index="12089"> (🟤 Brown) to </span><span data-markdown-start-index="12108"><strong>AB-J11-4</strong></span><span data-markdown-start-index="12118"> (🟠 Orange)</span>
+</li>
+<li data-list-item-id="e33a9364c0f14b3d50b5c2a802c8de63f">
+<span data-markdown-start-index="12134"><strong>DTL2</strong></span><span data-markdown-start-index="12140"> (🔴 Red wires) (Discharge Temperature Limit)</span>
+</li>
+<li data-list-item-id="ed4686a2a0013b519c4315dbabfbde0c1">
+<span data-markdown-start-index="12191"><strong>AB-J11-3</strong></span><span data-markdown-start-index="12201"> (🔵 Blue) to </span><span data-markdown-start-index="12219"><strong>AB-J11-2</strong></span><span data-markdown-start-index="12229"> (🔴 Red)</span>
+</li>
+<li data-list-item-id="e007a064eef7e89aa099b80e6410995e4">
+<span data-markdown-start-index="12242"><strong>HCP2</strong></span><span data-markdown-start-index="12248"> (🔴 Red wires) (High Pressure Control)</span>
+</li>
+<li data-list-item-id="ebf450c14001f86a2d00a8fb50b5dddc6">
+<span data-markdown-start-index="12293"><strong>AB-J11-1</strong></span><span data-markdown-start-index="12303"> (⚫ Black) to </span><span data-markdown-start-index="12321"><strong>AB-J20-11</strong></span><span data-markdown-start-index="12332"> (🟤 Brown)</span>
+</li>
+</ul>
+<p> </p>
+<p><span data-markdown-start-index="12347">Revision E (Newer Boards with Test Pins)</span></p>
+<p><img src="../../attachments/360055248371_46722076377229_image.png" width="1200" height="527"></p>
+<p><span data-markdown-start-index="12387">If your board has physical test pins, trace along this specific path:</span></p>
+<p><span data-markdown-start-index="12460"><strong>Path:</strong></span><span data-markdown-start-index="12467"> J20-10 &gt; UC-J9-4 &gt; J20-11 &gt; </span><span data-markdown-start-index="12513"><strong>Test Pin Comp2 Run</strong></span><span data-markdown-start-index="12533"> &gt; J11-1 &gt; BK HPC2 &gt; R HPC2 &gt; J11-2 &gt; </span><span data-markdown-start-index="12598"><strong>Test Pin HPC2</strong></span><span data-markdown-start-index="12613"> &gt; J11-3 &gt; BL DLT2 &gt; R DLT2 &gt; J11-4 &gt; </span><span data-markdown-start-index="12678"><strong>Test Pin DLT2</strong></span><span data-markdown-start-index="12693"> &gt; J5-11 &gt; BR/BK CC2 &gt; BK/R CC2 &gt; J5-12</span></p>
+<p> </p>
+<h4 id="h_01M4EJM6ZQ6YY9105YY98199Y2"><span data-markdown-start-index="12689">CC2 Coil Backtrace Path</span></h4>
+<p><span data-markdown-start-index="12715">If your coil resistance test is </span><span data-markdown-start-index="12749"><strong>O.L.</strong></span><span data-markdown-start-index="12754">, trace through these physical plugs:</span></p>
+<ol>
+<li data-list-item-id="e5ef54817beceb8958c9dfe9c21a42bfd">
+<span data-markdown-start-index="12796"><strong>PPF81 / PPM81</strong></span><span data-markdown-start-index="12811"> (🟤/⚫ Pin 9 or ⚫/🔴 Pin 10)</span>
+</li>
+<li data-list-item-id="e092573c9277afbf27048b918b37cecf9">
+<span data-markdown-start-index="12844"><strong>PPF24</strong></span><span data-markdown-start-index="12851"> (🟤/⚫ Pin 1) or </span><span data-markdown-start-index="12874"><strong>PPM23</strong></span><span data-markdown-start-index="12881"> (⚫ Pin 1 or 2)</span>
+</li>
+<li data-list-item-id="e46b84093a28be683b69f9f58cb339111">
+<span data-markdown-start-index="12897"><strong>CC2 Contactor Coil Terminals</strong></span><span data-markdown-start-index="12927"> (⚫ Black wires)</span>
+</li>
+</ol>
+</div></details><details><summary>Compressor 2: Auxiliary Contact Feedback Tests</summary><div class="wysiwyg-disclosure-content">
+<p><span data-markdown-start-index="13002">These tests prove whether the contactor auxiliary switch is successfully telling the Unit Controller that the contactor has pulled in.</span></p>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 344/407; width: 40%;" src="../../attachments/360055248371_41018116612493_image.png" width="344" height="407"></p>
+<p> </p>
+<p><strong>Revision C without Test Pins</strong></p>
+<p><img src="../../attachments/360055248371_41018116613517_image.png" width="1129" height="774"></p>
+<p> </p>
+<h4 id="h_01M4EJM6ZYFQJZP488QE4H27X0"><span data-markdown-start-index="13497">Aux Voltage &amp; Feedback Tests (Unit Powered ON)</span></h4>
+<ol>
+<li class="wysiwyg-list-bold" data-list-item-id="ec65e41d69054627b3e0fadabe7eb43d1">
+<span data-markdown-start-index="13551"><strong>Check Input Power:</strong></span><ul>
+<li data-list-item-id="efd9a0dc87c7008abf924e7e03ac73691">
+<span data-markdown-start-index="13577">Measure </span><span data-markdown-start-index="13587"><strong>VAC</strong></span><span data-markdown-start-index="13592"> from </span><span data-markdown-start-index="13600"><strong>UC-P9-2</strong></span><span data-markdown-start-index="13609"> (🔵/⚫ Blue/Black) to </span><span data-markdown-start-index="13637"><strong>Chassis Ground</strong></span><span data-markdown-start-index="13653">.</span>
+</li>
+<li data-list-item-id="ed82a2bf5e7c39f1747fb75c633559a6e">
+<em><span data-markdown-start-index="13657">Expected:</span></em><span data-markdown-start-index="13667"> </span><span data-markdown-start-index="13670"><strong>24VAC</strong></span><span data-markdown-start-index="13677">.</span>
+</li>
+<li data-list-item-id="efc8968c9bd4098c0ac278dd17e0adf9b">
+<em><span data-markdown-start-index="13685">If no power:</span></em><span data-markdown-start-index="13698"> Check </span><span data-markdown-start-index="13707"><strong>AB-J18-1</strong></span><span data-markdown-start-index="13717"> (sourced from </span><span data-markdown-start-index="13734"><strong>UC-P3-1</strong></span><span data-markdown-start-index="13743">). If </span><span data-markdown-start-index="13751"><strong>UC-P3-1</strong></span><span data-markdown-start-index="13760"> is dead, trace back: </span><span data-markdown-start-index="13784"><strong>UC-J4-1</strong></span><span data-markdown-start-index="13793"> &gt; </span><span data-markdown-start-index="13803"><strong>PPF72/PPM72</strong></span><span data-markdown-start-index="13816"> &gt; </span><span data-markdown-start-index="13826"><strong>PPF1/PPM1</strong></span><span data-markdown-start-index="13837"> &gt; </span><span data-markdown-start-index="13847"><strong>TNS1</strong></span><span data-markdown-start-index="13853"> (Transformer 1).</span>
+</li>
+</ul>
+</li>
+<li class="wysiwyg-list-bold" data-list-item-id="ec56d866cded9f2efee7630e9fbc27525">
+<span data-markdown-start-index="13863"><strong>Check Proving Output:</strong></span><ul><li data-list-item-id="ed7a0b86411a6147f173e091acb215ed2">
+<span data-markdown-start-index="13892">When the </span><span data-markdown-start-index="13903"><strong>CC2</strong></span><span data-markdown-start-index="13908"> contactor closes, the auxiliary contacts must close and send </span><span data-markdown-start-index="13972"><strong>24VAC</strong></span><span data-markdown-start-index="13979"> back to </span><span data-markdown-start-index="13990"><strong>UC-P9-3</strong></span><span data-markdown-start-index="13999"> (🟠/⚫ Orange/Black).</span>
+</li></ul>
+</li>
+</ol>
+<p> </p>
+<h4 id="h_01M4EJM700JA2MCV3SA5HZTTXF"><span data-markdown-start-index="14025">Aux Resistance Test (Unit Powered OFF)</span></h4>
+<ol>
+<li data-list-item-id="e0130a96e856cc1dafde8e5f04dc0c31b">
+<span data-markdown-start-index="14069">Set meter to </span><span data-markdown-start-index="14084"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="14101">.</span>
+</li>
+<li data-list-item-id="eb540485468db6e6e7a93294507f9a608">
+<span data-markdown-start-index="14104">Place one lead on </span><span data-markdown-start-index="14124"><strong>UC-P9-3</strong></span><span data-markdown-start-index="14133"> (🟠/⚫ Orange/Black) and the other lead on </span><span data-markdown-start-index="14182"><strong>UC-P9-2</strong></span><span data-markdown-start-index="14191"> (🔵/⚫ Blue/Black).</span>
+</li>
+<li data-list-item-id="ede83ec29284a05454d10e7a97ca5905f">
+<span data-markdown-start-index="14211"><strong>Manually push in the CC2 contactor plunger</strong></span><span data-markdown-start-index="14255">.</span>
+</li>
+<li data-list-item-id="ec291245a1eb2da9f4f704ef8d949f366">
+<em><span data-markdown-start-index="14260">Expected:</span></em><span data-markdown-start-index="14270"> </span><span data-markdown-start-index="14273"><strong>≤ 0.6 Ω</strong></span><span data-markdown-start-index="14285">. If higher or open, the auxiliary block contacts are dirty/failed and must be replaced.</span>
+</li>
+</ol>
+<p> </p>
+<h4 id="h_01M4EJM702DQ3PHH58ERZ8XG6A"><span data-markdown-start-index="14375">Compressor 2 Auxiliary Contact Wiring Paths</span></h4>
+<p><span data-markdown-start-index="14427">Revision C Path</span></p>
+<ul>
+<li data-list-item-id="ea0ea43acec01d3bf97bbb7d83e23b8bc">
+<span data-markdown-start-index="14448"><strong>Red/Black Wire Leg:</strong></span><span data-markdown-start-index="14469"> CC2 Aux N.O. (🔴/⚫ R/BK) &gt; Plug PPF81/PPM81-7 (🔴/⚫ R/BK) &gt; AB-J5-7 (🔴/⚫ R/BK) &gt; AB-J20-8 (🔵/⚫ BL/BK) &gt; </span><span data-markdown-start-index="14614"><strong>UC-P9-2</strong></span><span data-markdown-start-index="14623"> (🔵/⚫ BL/BK)</span>
+</li>
+<li data-list-item-id="ef8db21b83c6e4956f9bc741df0cdaad6">
+<span data-markdown-start-index="14610"><strong>Brown Wire Leg:</strong></span><span data-markdown-start-index="14627"> CC2 Aux N.O. (🔵/⚫ BL/BK) &gt; Plug PPF81/PPM81-8 (🔵/⚫ BL/BK) &gt; AB-J5-8 (🔵/⚫ BL/BK) &gt; AB-J20-9 (🟠/⚫ O/BK) &gt; </span><span data-markdown-start-index="14774"><strong>UC-P9-3</strong></span><span data-markdown-start-index="14783"> (🟠/⚫ O/BK)</span>
+</li>
+</ul>
+<p> </p>
+<p><span data-markdown-start-index="14769">Revision E Path (With Test Pins)</span></p>
+<p><img src="../../attachments/360055248371_46722102650381_image.png" width="927" height="578"></p>
+<p><span data-markdown-start-index="14805"><strong>Path:</strong></span><span data-markdown-start-index="14812"> UC-J9-2 &gt; J20-8 &gt; </span><span data-markdown-start-index="14843"><strong>Test Pin TNS</strong></span><span data-markdown-start-index="14857"> &gt; J5-7 &gt; R/BK CC2 &gt; BL/BK CC2 &gt; J5-8 &gt; </span><span data-markdown-start-index="14924"><strong>Test Pin Comp2 Prov</strong></span><span data-markdown-start-index="14945"> &gt; J20-9 &gt; UC-J9-3</span></p>
+</div></details></zd-accordion><p> </p><h3 id="h_01M4EJM70BE4V4AH9RNMFTV8QN"><span data-markdown-start-index="14947">Board Diagnostic: Relay Contact Resistance Check</span></h3><p><span data-markdown-start-index="14999">If you suspect the Symbio 700 board's internal compressor relays are damaged (pitted or sticking), perform this manual test using your phone's service app.</span></p><zd-accordion class="wysiwyg-disclosure"><details><summary><span data-markdown-start-index="15691">Compressor 1 (CC1 Relay) Check Steps</span></summary><div class="wysiwyg-disclosure-content">
+<ol>
+<li data-list-item-id="ebb4424ac9c5c779f3b4918a5671bfc86">
+<span data-markdown-start-index="15735"><strong>Unplug</strong></span><span data-markdown-start-index="15743"> the </span><span data-markdown-start-index="15750"><strong>UC-J8</strong></span><span data-markdown-start-index="15757"> harness from the </span><span data-markdown-start-index="15777"><strong>Red P8</strong></span><span data-markdown-start-index="15785"> connector on the Symbio board.</span><ul><li data-list-item-id="e65f4a54a0cb869577c926a38afe7df8f">
+<em><span data-markdown-start-index="15823">Take note:</span></em><span data-markdown-start-index="15834"> Orange wire is </span><span data-markdown-start-index="15852"><strong>UC-P8-4</strong></span><span data-markdown-start-index="15861">, Yellow wire is </span><span data-markdown-start-index="15880"><strong>UC-P8-5</strong></span><span data-markdown-start-index="15889">.</span>
+</li></ul>
+</li>
+<li data-list-item-id="e5e46a4e8ae63033bcc1d2df36d8d2920">
+<span data-markdown-start-index="15893">Connect to the board with the Symbio Mobile App. Go to </span><span data-markdown-start-index="15950"><strong>Tools</strong></span><span data-markdown-start-index="15957"> &gt; </span><span data-markdown-start-index="15967"><strong>Service Test Mode</strong></span><span data-markdown-start-index="15986">.</span>
+</li>
+<li data-list-item-id="e580bcdc14b5e112c669b3dda07dce266">
+<span data-markdown-start-index="15986">Force initiate </span><span data-markdown-start-index="16003"><strong>Cool 2</strong></span><span data-markdown-start-index="16011"> in the app to energize the relay. </span><span data-markdown-start-index="16048"><strong>LED 5</strong></span><span data-markdown-start-index="16055"> on the board must turn </span><span data-markdown-start-index="16081"><strong>ON</strong></span><span data-markdown-start-index="16085">.</span>
+</li>
+<li data-list-item-id="ed136f835f3ebfe9118aeb973bb70966f">
+<span data-markdown-start-index="16089">Measure </span><span data-markdown-start-index="16099"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="16116"> directly across board pins </span><span data-markdown-start-index="16146"><strong>P8-4</strong></span><span data-markdown-start-index="16152"> and </span><span data-markdown-start-index="16159"><strong>P8-5</strong></span><span data-markdown-start-index="16165">.</span><ul><li class="ck-list-marker-italic" data-list-item-id="edceba1844c075c1dfbe0b69b159f3408"><em><span data-markdown-start-index="16171">You only have a 5-second window to read this.</span></em></li></ul>
+</li>
+<li data-list-item-id="e77ddc2d6783525b7118a3cb91cdcd1da">
+<span data-markdown-start-index="16266"><strong>Specification:</strong></span><span data-markdown-start-index="16282"> Must be </span><span data-markdown-start-index="16293"><strong>&lt; 10 Ω</strong></span><span data-markdown-start-index="16302">. Repeat this test 3–4 times. If it ever reads above 10 ohms, replace the board.</span>
+</li>
+</ol>
+<p><img src="../../attachments/360055248371_31369962357773_mceclip5.png" width="609" height="229"></p>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 3024/4032; width: 30%;" src="../../attachments/360055248371_39023444760077_P8.jpg" width="3024" height="4032"></p>
+</div></details><details><summary><span data-markdown-start-index="16386">Compressor 2 (CC2 Relay) Check Steps</span></summary><div class="wysiwyg-disclosure-content">
+<ol>
+<li data-list-item-id="e6eb50bdbbdc5fc5efe48375d72157912">
+<span data-markdown-start-index="16430"><strong>Unplug</strong></span><span data-markdown-start-index="16438"> the </span><span data-markdown-start-index="16445"><strong>UC-J9</strong></span><span data-markdown-start-index="16452"> harness from the </span><span data-markdown-start-index="16472"><strong>White UC-P9</strong></span><span data-markdown-start-index="16485"> connector on the Symbio board.</span><ul><li data-list-item-id="efe58d449ec328d4e98bb62ce87817677">
+<em><span data-markdown-start-index="16522">Take note:</span></em><span data-markdown-start-index="16533"> Yellow/Black wire is </span><span data-markdown-start-index="16557"><strong>UC-P9-4</strong></span><span data-markdown-start-index="16566">, Brown/Black wire is </span><span data-markdown-start-index="16590"><strong>UC-P9-5</strong></span><span data-markdown-start-index="16599">.</span>
+</li></ul>
+</li>
+<li data-list-item-id="efabefd6b7e7e73707c4dba19905f4d40">
+<span data-markdown-start-index="16603">Connect to the board with the Symbio Mobile App. Go to </span><span data-markdown-start-index="16660"><strong>Tools</strong></span><span data-markdown-start-index="16667"> &gt; </span><span data-markdown-start-index="16677"><strong>Service Test Mode</strong></span><span data-markdown-start-index="16696">.</span>
+</li>
+<li data-list-item-id="eac9fb3af977885f53661df71da05ad14">
+<span data-markdown-start-index="16696">Force initiate </span><span data-markdown-start-index="16713"><strong>Cool 1</strong></span><span data-markdown-start-index="16721"> in the app to energize the relay. </span><span data-markdown-start-index="16758"><strong>LED 15</strong></span><span data-markdown-start-index="16766"> on the board must turn </span><span data-markdown-start-index="16792"><strong>ON</strong></span><span data-markdown-start-index="16796">.</span>
+</li>
+<li data-list-item-id="ea9206b5eec8c38a624b51d8d5ded2b25">
+<span data-markdown-start-index="16800">Measure </span><span data-markdown-start-index="16810"><strong>Resistance (Ω)</strong></span><span data-markdown-start-index="16827"> directly across board pins </span><span data-markdown-start-index="16857"><strong>P9-4</strong></span><span data-markdown-start-index="16863"> and </span><span data-markdown-start-index="16870"><strong>P9-5</strong></span><span data-markdown-start-index="16876">.</span><ul><li class="ck-list-marker-italic" data-list-item-id="ed736432a929f8ed10dff68b5545ec133"><em><span data-markdown-start-index="16882">You only have a 5-second window to read this.</span></em></li></ul>
+</li>
+<li data-list-item-id="e7e76058fa86b2304231f6c4e4311f1e4">
+<span data-markdown-start-index="16977"><strong>Specification:</strong></span><span data-markdown-start-index="16993"> Must be </span><span data-markdown-start-index="17004"><strong>&lt; 10 Ω</strong></span><span data-markdown-start-index="17013">. Repeat this test 3–4 times. If it ever reads above 10 ohms, replace the board.</span>
+</li>
+</ol>
+<p><img src="../../attachments/360055248371_31369975260429_mceclip4.png" width="633" height="234"></p>
+<p><img class="wysiwyg-image-resized" style="aspect-ratio: 3024/4032; width: 30%;" src="../../attachments/360055248371_39023430046093_P9.jpg" width="3024" height="4032"></p>
+<p> </p>
+</div></details></zd-accordion><aside class="callout-danger">
+  <div class="callout-content">
+    <i class="callout-icon fa-solid fa-circle-xmark" aria-hidden="true"></i>
+    <div>
+      <p class="callout-title">
+        Complete the troubleshooting outlined above before replacing any
+        parts.
+      </p>
+      <div class="callout-body">
+        <p>
+          For confirmed Symbio 700 relay failures, replace the Symbio 700
+          and Adapter board using the kits listed below; see the matrix
+          for kit number vs. product.
+        </p>
+        <figure class="wysiwyg-table" style="width: 100%;">
+          <table class="wysiwyg-table-resized" style="margin-left: 0px; margin-right: auto; color: #000;">
+            <colgroup>
+              <col style="width: 23%;">
+              <col style="width: 30%;">
+              <col style="width: 47%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Symbio 700 License Type</th>
+                <th>
+                  <strong>Kit Part #</strong>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <p class="wysiwyg-text-align-center">Precedent</p>
+                </td>
+                <td>
+                  <p class="wysiwyg-text-align-center">Advanced</p>
+                </td>
+                <td>
+                  <p class="wysiwyg-text-align-center">KIT20878 (Incl. MOD04044 &amp; MOD04170)</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="wysiwyg-text-align-center">Basic</p>
+                </td>
+                <td>
+                  <p class="wysiwyg-text-align-center">KIT20879 (Incl. MOD04045 &amp; MOD04170)</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="wysiwyg-text-align-center">Large Foundation</p>
+                </td>
+                <td>
+                  <p class="wysiwyg-text-align-center">
+                    <strong>*</strong>Basic
+                  </p>
+                </td>
+                <td>
+                  <p class="wysiwyg-text-align-center">KIT20879 (Incl. MOD04045 &amp; MOD04170)</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>
+          <strong>* Advanced License is not applicable to Foundation Products</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</aside><p> </p><p>Current Precedent and Foundation Adapter Board with Relay Protection and Test Pins.</p><p><img class="wysiwyg-image-resized" style="aspect-ratio: 2043/1117; width: 50%;" src="../../attachments/360055248371_44656033247245_image.png" width="2043" height="1117"></p><p> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/360055248371-Symbio-700-Compressor-Proving-Circuit-Troubleshooting-Precedent-and-Large-Foundation" target="_blank">https://support.trane.com/hc/en-us/articles/360055248371-Symbio-700-Compressor-Proving-Circuit-Troubleshooting-Precedent-and-Large-Foundation</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>

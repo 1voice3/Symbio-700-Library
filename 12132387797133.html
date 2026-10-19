@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Economizer Cooling - Trane Symbio 700 Library</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f8;color:#1b2733}
+.top{background:#0d3b5c;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a{color:#cfe8ff;text-decoration:none}
+.top .brand{font-size:19px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;background:#e3edf5;color:#0d3b5c;border:1px solid #c6d8e4}
+.badge.equip{background:#fff3d6;border-color:#e8d19a;color:#7a5b12}
+.badge.topic{background:#e3f3e3;border-color:#b7dcb7;color:#2e5b2e}
+.meta{color:#5a6b7a;font-size:13px;margin:6px 0 14px}
+.card{background:#fff;max-width:960px;margin:18px auto;padding:28px 34px;border-radius:10px;box-shadow:0 1px 4px rgba(20,40,60,.08)}
+h1{font-size:22px;margin:0 0 4px;color:#0d3b5c}
+h2{font-size:18px;color:#0d3b5c;border-bottom:2px solid #e3edf5;padding-bottom:6px}
+.body{line-height:1.55;font-size:15px}
+.body img{max-width:100%;height:auto;margin:8px 0;border:1px solid #dde5ec;border-radius:6px}
+.body table{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}
+.body td,.body th{border:1px solid #c9d5e0;padding:6px 10px;font-size:14px}
+.att{margin:16px 0;padding:12px 16px;background:#f2f7fa;border:1px solid #d5e2ec;border-radius:8px}
+.att a{display:block;padding:3px 0;color:#0b62a4;text-decoration:none;font-weight:600;word-break:break-all}
+.att a:hover{text-decoration:underline}
+.src{font-size:13px;color:#5a6b7a;border-top:1px solid #e0e8ee;margin-top:24px;padding-top:10px}
+</style></head><body>
+<div class="top"><span class="brand">Symbio 700 Document Library</span>
+<span><a href="../../index.html">&larr; Back to index</a> &nbsp;|&nbsp; <a href="https://support.trane.com/hc/en-us/articles/12132387797133-Economizer-Cooling" target="_blank">View original on Trane Support &rarr;</a></span></div>
+<div class="card">
+<h1>Economizer Cooling</h1>
+<div class="badges"><span class="badge equip">Precedent</span><span class="badge topic">Airflow / Fans</span><span class="badge topic">Sensors / Modules</span><span class="badge topic">Economizer / Ventilation</span><span class="badge topic">Installation / Startup</span><span class="badge topic">Heating</span><span class="badge topic">Manuals / Literature</span></div>
+<div class="meta">Section: Economizer [LCU] &nbsp;&bull;&nbsp; Category: Light Commercial Rooftops | Splits<br>
+Created: 2023-01-10 &nbsp;&bull;&nbsp; Last updated: 2026-03-03</div>
+<div class="body"><p> </p><p><span class="wysiwyg-font-size-large"><strong>Economizer Cooling</strong></span></p><p>Symbio™ 700 supports a 0 to 100% economizer damper which requires a discharge air temperature sensor to be installed for economizer cooling. There are four configurable economizer types: fixed dry bulb, differential dry bulb, reference enthalpy, and comparative enthalpy. Each type, enable, and the high limit disables criteria are defined as follows.</p><p> </p><p><strong>Table 4. Economizer Type</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 835/656;" src="../../attachments/12132387797133_12131684802701_mceclip1.png" alt="mceclip1.png" width="835" height="656"></figure><p> </p><p>While the configuration parameters will be used to determine which method of economizer control will be utilized, the table below describes the needed sensor data for each control method.</p><p><strong>Table 5. Sensor Data</strong></p><figure class="wysiwyg-image"><img style="aspect-ratio: 646/271;" src="../../attachments/12132387797133_13068501539597_mceclip0.png" alt="mceclip0.png" width="646" height="271"></figure><p> </p><p>When conditions are suitable for economizer operation, the outdoor air damper modulates between a calculated outdoor air damper minimum position (based on Supply Fan Compensation and Demand Controlled Ventilation) and 100% open. Economizing will not allow additional mechanical cooling until the damper position is 100% and the supply fan has reached 100% capacity for 5 minutes. If economizer cooling becomes disabled, the damper will revert to minimum position control, and transition to mechanical cooling.</p><p><br>A building automation system can directly command economizer operation via Economizer Airside Enable (auto, enable, disable). If commanded Enable, the controller will start economizer cooling, regardless of outdoor air conditions. If commanded Disable, economizer cooling will be disabled (except if a mode of Night Purge is commanded to the controller). If commanded Auto, the controller will use the configured Economizer high limit method and input values to determine if economizer cooling is<br>available.</p><p> </p><p class="wysiwyg-text-align-center"> </p><p class="wysiwyg-text-align-center">Click the e-library symbol for the latest version of the <strong>Symbio Precedent Application Guide</strong>.</p><p class="wysiwyg-text-align-center"><a href="../Precedent/15455235169677.html" target="_blank" rel="noopener noreferrer"><img style="height: auto;" src="../../attachments/extra_26906157137805.png" width="117" height="47"></a></p><p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 1rem; margin-top: 0px; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p><p class="wysiwyg-text-align-center" style="-webkit-text-stroke-width: 0px; background-color: #ffffff; box-sizing: border-box; color: #000000; font-family: ' Neue Haas Unica' , Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; margin-bottom: 1rem; margin-top: 0px; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; text-decoration-thickness: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"> </p><p><strong>WARNING:</strong></p><p>Information in this article is intended for use by individuals possessing adequate backgrounds of electrical and mechanical experience and who comply with all federal, state, and local laws, rules, orders, or regulations related to the installation, service, or repair of a heating or central air conditioning product. Any attempt to install, service, or repair a heating or central air conditioning product may result in personal injury and/or property damage. The manufacturer or seller cannot be responsible for the interpretation of the information contained herein, nor can it assume any liability in connection with its use.</p></div>
+
+<div class="src">Source: <a href="https://support.trane.com/hc/en-us/articles/12132387797133-Economizer-Cooling" target="_blank">https://support.trane.com/hc/en-us/articles/12132387797133-Economizer-Cooling</a><br>
+Captured from the Trane Support knowledge base (support.trane.com) for offline reference.</div>
+</div></body></html>
